@@ -1,0 +1,23 @@
+Legacy dosyalar C:\ordino-legacy klasorunde. Navbar icin index.html'deki <nav id="navbar"> ve styles.css'deki NAVIGATION bolumu (satir 30). Footer icin index.html'in alti ve styles.css'deki FOOTER (satir 1498). SideFixed icin styles.css SIDE FIXED ELEMENTS (satir 129).
+
+Tailwind + globals.css henuz yapilmadi. Tailwind v4 @theme directive kullaniyoruz.
+
+Sira:
+1. lib/utils.ts
+2. lib/data/site.ts
+3. lib/data/nav.ts
+4. app/globals.css
+5. app/layout.tsx
+6. components/layout/SideFixed.tsx
+7. components/layout/Navbar.tsx
+8. components/layout/Footer.tsx
+9. app/layout.tsx'e component'leri ekle
+10. app/page.tsx Home placeholder
+
+Her dosya icin:
+- Legacy'deki karsiligi oku
+- Icerigi goster, onay bekle
+- Yaz, test edilebilir soyle
+- Sonraki dosyaya gec
+
+Ilk dosya lib/utils.ts. Goster ve yaz.
