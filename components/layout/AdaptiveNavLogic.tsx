@@ -66,30 +66,26 @@ export function useAdaptiveNav({
       }
 
       const rect = nav.getBoundingClientRect();
-      // 5-point sampling grid below the nav: 3 horizontal × 2 vertical.
-      // Majority rule handles ambient overlays, padding gaps, and absolutely-
-      // positioned decorative elements that don't carry a data-theme.
+      // Sampling grid below the nav: 3 horizontal × 3 vertical = 9 points.
+      // Any single dark sample flips the nav white — prioritizes readability
+      // over threshold voting, since black-on-black is a hard accessibility
+      // failure but white-on-light still has minimum contrast.
       const vw = window.innerWidth;
-      const x1 = vw * 0.2;
-      const x2 = vw * 0.5;
-      const x3 = vw * 0.8;
-      const y1 = rect.bottom + 8;
-      const y2 = rect.bottom + 40;
-      const samples = [
-        sampleThemeAt(x1, y1, nav),
-        sampleThemeAt(x2, y1, nav),
-        sampleThemeAt(x3, y1, nav),
-        sampleThemeAt(x1, y2, nav),
-        sampleThemeAt(x2, y2, nav),
-      ];
-      const darkCount = samples.filter((s) => s === "dark").length;
-      const nullCount = samples.filter((s) => s === null).length;
+      const xs = [vw * 0.2, vw * 0.5, vw * 0.8];
+      const ys = [rect.bottom + 8, rect.bottom + 40, rect.bottom + 80];
+      const samples: Array<"dark" | "light" | null> = [];
+      for (const y of ys) {
+        for (const x of xs) {
+          samples.push(sampleThemeAt(x, y, nav));
+        }
+      }
+      const hasDark = samples.some((s) => s === "dark");
+      const hasLight = samples.some((s) => s === "light");
 
-      if (darkCount >= 2) {
+      if (hasDark) {
         setIsDark(true);
-      } else if (nullCount >= 3) {
-        // Most samples hit elements without a themed ancestor — fall back to
-        // the pathname-based seed.
+      } else if (!hasLight) {
+        // No explicit theme at any point — fall back to the pathname-based seed.
         setIsDark(
           pathname ? KNOWN_DARK_ROUTES.includes(pathname) : false,
         );
