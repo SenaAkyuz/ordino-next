@@ -9,6 +9,9 @@ type CtaProps = {
   id?: string;
 };
 
+const isInternal = (href: string) =>
+  href.startsWith("/") || href.startsWith("#");
+
 export function Cta({
   title = "Imagine what we'll",
   emphasis = "create together.",
@@ -16,6 +19,8 @@ export function Cta({
   href = "/contact",
   id = "contact",
 }: CtaProps) {
+  const linkClass =
+    "inline-block rounded-[10em] border border-white px-[50px] py-[18px] font-body text-base font-normal text-white transition-[background,color] duration-[400ms] hover:bg-white hover:text-black";
   return (
     <section
       id={id}
@@ -29,12 +34,15 @@ export function Cta({
         </h2>
       </Reveal>
       <Reveal>
-        <Link
-          href={href}
-          className="inline-block rounded-[10em] border border-white px-[50px] py-[18px] font-body text-base font-normal text-white transition-[background,color] duration-[400ms] hover:bg-white hover:text-black"
-        >
-          {buttonLabel}
-        </Link>
+        {isInternal(href) ? (
+          <Link href={href} className={linkClass}>
+            {buttonLabel}
+          </Link>
+        ) : (
+          <a href={href} className={linkClass}>
+            {buttonLabel}
+          </a>
+        )}
       </Reveal>
     </section>
   );
