@@ -33,7 +33,7 @@ export function Hero() {
 
         <Reveal delay={0.3}>
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="mt-[50px] inline-block rounded-[10em] border border-white px-12 py-4 text-[0.95rem] text-white transition-[background,color] duration-[400ms] hover:bg-white hover:text-dark-bg"
           >
             Schedule A Meeting

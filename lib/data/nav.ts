@@ -14,5 +14,5 @@ export const navLinks: NavLink[] = [
 
 export const navCta: NavLink = {
   label: "Schedule A Meeting",
-  href: "/contact#form",
+  href: "/contact#contact-form",
 };

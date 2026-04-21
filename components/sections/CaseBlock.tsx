@@ -71,7 +71,7 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
             <Reveal>
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href="/contact"
+                  href="/contact#contact-form"
                   className="rounded-[10em] border border-black bg-black px-[34px] py-[14px] font-body text-[0.9rem] font-normal text-white transition-[background,color] duration-[400ms] hover:bg-transparent hover:text-black"
                 >
                   Request Demo

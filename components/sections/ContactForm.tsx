@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Reveal } from "@/components/ui/Reveal";
 
 const roles = [
@@ -51,21 +51,48 @@ const budgets = [
 ];
 
 const inputClass =
-  "w-full border-0 border-b border-[#ddd] bg-transparent py-[14px] font-body text-base font-light text-black outline-none transition-colors duration-300 focus:border-b-accent";
+  "w-full border-0 border-b border-[#ddd] bg-transparent py-[14px] font-body text-base font-light text-black outline-none transition-colors duration-300 focus:border-b-accent disabled:opacity-60";
 const labelClass =
   "mb-[10px] block font-body text-[0.75rem] font-medium uppercase tracking-[2px] text-gray";
 
+type Status = "idle" | "pending" | "success";
+
 export function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
+  const formRef = useRef<HTMLFormElement>(null);
+  const dismissRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (dismissRef.current !== null) {
+        window.clearTimeout(dismissRef.current);
+      }
+    };
+  }, []);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (status !== "idle") return;
+
+    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+    // Backend not wired yet — log the brief so nothing is silently lost.
+    // eslint-disable-next-line no-console
+    console.log("[contact-form] submitted:", data);
+
+    setStatus("pending");
+    window.setTimeout(() => {
+      setStatus("success");
+      formRef.current?.reset();
+      dismissRef.current = window.setTimeout(() => {
+        setStatus("idle");
+        dismissRef.current = null;
+      }, 5000);
+    }, 1000);
   };
 
   return (
     <section
-      id="form"
+      id="contact-form"
       data-theme="light"
       className="bg-white px-5 py-[100px] md:px-10 md:py-[120px] lg:px-20 lg:py-[140px]"
     >
@@ -130,131 +157,172 @@ export function ContactForm() {
         </Reveal>
 
         <Reveal>
-          {submitted ? (
-            <div className="flex h-full flex-col justify-center rounded-[4px] border border-[#eaeaea] bg-light-bg p-10">
-              <h4 className="mb-4 font-display text-[1.5rem] font-normal">
-                Thanks — we&rsquo;ll be in touch within one business day.
-              </h4>
-              <p className="font-body text-[0.95rem] font-light text-[#666]">
-                Your brief is in our inbox. We&rsquo;ll reply with next steps shortly.
+          <div className="relative">
+            <div
+              role="status"
+              aria-live="polite"
+              className={`absolute inset-0 flex flex-col justify-center rounded-[4px] border border-[#d8e5d4] bg-[#f3f8f0] p-10 transition-opacity duration-500 ${
+                status === "success"
+                  ? "pointer-events-auto opacity-100"
+                  : "pointer-events-none opacity-0"
+              }`}
+            >
+              <div className="mb-4 flex items-center gap-3">
+                <span
+                  aria-hidden="true"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#3b8b4a] text-white"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    className="h-4 w-4"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 12.5l4.5 4.5L19 7"
+                    />
+                  </svg>
+                </span>
+                <h4 className="font-display text-[1.5rem] font-normal text-black">
+                  Message received.
+                </h4>
+              </div>
+              <p className="font-body text-[0.95rem] font-light leading-[1.6] text-[#3b5e42]">
+                Thanks — we&rsquo;ll get back to you shortly.
               </p>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-7">
-              <p className="mb-[10px] font-body text-[0.95rem] font-light leading-[1.6] text-[#666]">
-                Submit a quick brief — we&rsquo;ll reply within one business day.
-              </p>
 
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <Field id="name" label="Your Name">
-                  <input type="text" id="name" name="name" required className={inputClass} />
-                </Field>
-                <Field id="company" label="Company">
-                  <input type="text" id="company" name="company" required className={inputClass} />
-                </Field>
-              </div>
-
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <Field id="email" label="Email">
-                  <input type="email" id="email" name="email" required className={inputClass} />
-                </Field>
-                <Field id="phone" label="Phone (optional)">
-                  <input type="tel" id="phone" name="phone" className={inputClass} />
-                </Field>
-              </div>
-
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <Field id="role" label="Your Role">
-                  <select id="role" name="role" defaultValue="" className={inputClass}>
-                    <option value="">Select a role…</option>
-                    {roles.map((r) => (
-                      <option key={r}>{r}</option>
-                    ))}
-                  </select>
-                </Field>
-                <Field id="industry" label="Industry">
-                  <select id="industry" name="industry" defaultValue="" className={inputClass}>
-                    <option value="">Select an industry…</option>
-                    {industries.map((r) => (
-                      <option key={r}>{r}</option>
-                    ))}
-                  </select>
-                </Field>
-              </div>
-
-              <div>
-                <label className={labelClass}>
-                  Desired Services{" "}
-                  <span className="ml-[6px] text-[0.65rem] font-light tracking-[1px] normal-case text-gray">
-                    (select all that apply)
-                  </span>
-                </label>
-                <div className="mt-1 flex flex-wrap gap-[10px]">
-                  {services.map((s) => (
-                    <label key={s} className="relative cursor-pointer select-none">
-                      <input
-                        type="checkbox"
-                        name="services"
-                        value={s}
-                        className="peer pointer-events-none absolute opacity-0"
-                      />
-                      <span className="inline-block rounded-[10em] border border-[#ddd] bg-transparent px-5 py-[10px] font-body text-[0.85rem] text-black transition-[background,color,border-color] duration-300 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white">
-                        {s}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <Field id="timing" label="Timing">
-                  <select id="timing" name="timing" defaultValue="" className={inputClass}>
-                    <option value="">Select timing…</option>
-                    {timings.map((t) => (
-                      <option key={t}>{t}</option>
-                    ))}
-                  </select>
-                </Field>
-                <Field id="budget" label="Monthly Ad Budget">
-                  <select id="budget" name="budget" defaultValue="" className={inputClass}>
-                    <option value="">Select a range…</option>
-                    {budgets.map((b) => (
-                      <option key={b}>{b}</option>
-                    ))}
-                  </select>
-                </Field>
-              </div>
-
-              <Field id="message" label="Tell us about your project">
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  placeholder="Goals, timelines, current stack, biggest challenge…"
-                  className={`${inputClass} min-h-[120px] resize-y`}
-                />
-              </Field>
-
-              <div className="mt-[10px] flex flex-wrap items-center justify-between gap-[30px]">
-                <button
-                  type="submit"
-                  className="self-start cursor-pointer rounded-[10em] border border-black bg-white px-12 py-4 font-body text-[0.95rem] font-normal text-black transition-[background,color] duration-[400ms] hover:bg-black hover:text-white"
-                >
-                  Send Message
-                </button>
-                <p className="m-0 max-w-[280px] font-body text-[0.78rem] font-light leading-[1.5] text-gray">
-                  By submitting, you agree to our{" "}
-                  <a
-                    href="#"
-                    className="border-b border-[#ccc] text-black transition-colors hover:border-black"
-                  >
-                    Privacy Policy
-                  </a>
-                  . No spam — just one real reply.
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className={`flex flex-col gap-7 transition-opacity duration-500 ${
+                status === "success" ? "opacity-0" : "opacity-100"
+              }`}
+              aria-hidden={status === "success"}
+            >
+              <fieldset
+                disabled={status !== "idle"}
+                className="contents"
+              >
+                <p className="mb-[10px] font-body text-[0.95rem] font-light leading-[1.6] text-[#666]">
+                  Submit a quick brief — we&rsquo;ll reply within one business day.
                 </p>
-              </div>
+
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <Field id="name" label="Your Name">
+                    <input type="text" id="name" name="name" required className={inputClass} />
+                  </Field>
+                  <Field id="company" label="Company">
+                    <input type="text" id="company" name="company" required className={inputClass} />
+                  </Field>
+                </div>
+
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <Field id="email" label="Email">
+                    <input type="email" id="email" name="email" required className={inputClass} />
+                  </Field>
+                  <Field id="phone" label="Phone (optional)">
+                    <input type="tel" id="phone" name="phone" className={inputClass} />
+                  </Field>
+                </div>
+
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <Field id="role" label="Your Role">
+                    <select id="role" name="role" defaultValue="" className={inputClass}>
+                      <option value="">Select a role…</option>
+                      {roles.map((r) => (
+                        <option key={r}>{r}</option>
+                      ))}
+                    </select>
+                  </Field>
+                  <Field id="industry" label="Industry">
+                    <select id="industry" name="industry" defaultValue="" className={inputClass}>
+                      <option value="">Select an industry…</option>
+                      {industries.map((r) => (
+                        <option key={r}>{r}</option>
+                      ))}
+                    </select>
+                  </Field>
+                </div>
+
+                <div>
+                  <label className={labelClass}>
+                    Desired Services{" "}
+                    <span className="ml-[6px] text-[0.65rem] font-light tracking-[1px] normal-case text-gray">
+                      (select all that apply)
+                    </span>
+                  </label>
+                  <div className="mt-1 flex flex-wrap gap-[10px]">
+                    {services.map((s) => (
+                      <label key={s} className="relative cursor-pointer select-none">
+                        <input
+                          type="checkbox"
+                          name="services"
+                          value={s}
+                          className="peer pointer-events-none absolute opacity-0"
+                        />
+                        <span className="inline-block rounded-[10em] border border-[#ddd] bg-transparent px-5 py-[10px] font-body text-[0.85rem] text-black transition-[background,color,border-color] duration-300 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white">
+                          {s}
+                        </span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                  <Field id="timing" label="Timing">
+                    <select id="timing" name="timing" defaultValue="" className={inputClass}>
+                      <option value="">Select timing…</option>
+                      {timings.map((t) => (
+                        <option key={t}>{t}</option>
+                      ))}
+                    </select>
+                  </Field>
+                  <Field id="budget" label="Monthly Ad Budget">
+                    <select id="budget" name="budget" defaultValue="" className={inputClass}>
+                      <option value="">Select a range…</option>
+                      {budgets.map((b) => (
+                        <option key={b}>{b}</option>
+                      ))}
+                    </select>
+                  </Field>
+                </div>
+
+                <Field id="message" label="Tell us about your project">
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    placeholder="Goals, timelines, current stack, biggest challenge…"
+                    className={`${inputClass} min-h-[120px] resize-y`}
+                  />
+                </Field>
+
+                <div className="mt-[10px] flex flex-wrap items-center justify-between gap-[30px]">
+                  <button
+                    type="submit"
+                    disabled={status !== "idle"}
+                    className="self-start cursor-pointer rounded-[10em] border border-black bg-white px-12 py-4 font-body text-[0.95rem] font-normal text-black transition-[background,color] duration-[400ms] hover:bg-black hover:text-white disabled:cursor-wait disabled:opacity-70 disabled:hover:bg-white disabled:hover:text-black"
+                  >
+                    {status === "pending" ? "Sending…" : "Send Message"}
+                  </button>
+                  <p className="m-0 max-w-[280px] font-body text-[0.78rem] font-light leading-[1.5] text-gray">
+                    By submitting, you agree to our{" "}
+                    <a
+                      href="#"
+                      className="border-b border-[#ccc] text-black transition-colors hover:border-black"
+                    >
+                      Privacy Policy
+                    </a>
+                    . No spam — just one real reply.
+                  </p>
+                </div>
+              </fieldset>
             </form>
-          )}
+          </div>
         </Reveal>
       </div>
     </section>

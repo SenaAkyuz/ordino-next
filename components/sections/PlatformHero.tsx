@@ -67,7 +67,7 @@ export function PlatformHero() {
         <Reveal>
           <div className="mb-[60px] flex flex-wrap justify-center gap-[14px]">
             <Link
-              href="/contact#form"
+              href="/contact#contact-form"
               className="inline-flex items-center gap-[10px] rounded-[10em] border border-white bg-white px-9 py-[15px] font-body text-[0.88rem] font-normal text-black transition-all duration-[400ms] hover:-translate-y-[1px] hover:border-accent hover:bg-accent hover:text-white"
             >
               Start Free Trial

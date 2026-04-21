@@ -16,7 +16,7 @@ export function Cta({
   title = "Imagine what we'll",
   emphasis = "create together.",
   buttonLabel = "Let's do this",
-  href = "/contact",
+  href = "/contact#contact-form",
   id = "contact",
 }: CtaProps) {
   const linkClass =
