@@ -3,31 +3,41 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState, type RefObject } from "react";
 
-/**
- * Find the theme of whatever themed section currently crosses a viewport Y
- * coordinate. Iterates every `[data-theme]` element and returns the deepest
- * match (innermost wins when nested). Returns `null` if no themed element
- * overlaps that Y.
- *
- * This replaces the older `elementFromPoint`-based approach which was
- * unreliable because `pointer-events: none` on the nav does not cascade to
- * its children, so samples often hit nav links and returned null.
- */
-export function themeAtY(y: number): "dark" | "light" | null {
-  const themed = document.querySelectorAll<HTMLElement>("[data-theme]");
-  let winner: HTMLElement | null = null;
-  for (const el of themed) {
-    const r = el.getBoundingClientRect();
-    if (r.top <= y && r.bottom > y) {
-      // Prefer the most deeply nested match so inner themed sections
-      // (e.g. CaseBlock's stats-bar) override their outer wrapper.
-      if (!winner || winner.contains(el)) {
-        winner = el;
-      }
-    }
+// ——— Ported verbatim from legacy script.js ———
+// Strategy: sample the actual background below the nav at 5 horizontal
+// points, walk up each element's ancestor chain to find the first opaque
+// background, compute WCAG luminance, and average. Below 0.5 = dark.
+
+type Rgb = { r: number; g: number; b: number };
+
+function parseRgb(color: string): Rgb | null {
+  const m = color.match(/rgba?\(([^)]+)\)/);
+  if (!m) return null;
+  const parts = m[1].split(",").map((s) => parseFloat(s.trim()));
+  if (parts.length < 3) return null;
+  const alpha = parts.length === 4 ? parts[3] : 1;
+  if (alpha <= 0.1) return null;
+  return { r: parts[0], g: parts[1], b: parts[2] };
+}
+
+function getEffectiveBackground(el: Element | null): Rgb | null {
+  let current: Element | null = el;
+  while (current && current !== document.documentElement) {
+    const bg = window.getComputedStyle(current).backgroundColor;
+    const rgb = parseRgb(bg);
+    if (rgb) return rgb;
+    current = current.parentElement;
   }
-  if (!winner) return null;
-  return winner.dataset.theme === "dark" ? "dark" : "light";
+  const bodyBg = window.getComputedStyle(document.body).backgroundColor;
+  return parseRgb(bodyBg) ?? { r: 255, g: 255, b: 255 };
+}
+
+function luminance({ r, g, b }: Rgb): number {
+  const toLin = (c: number) => {
+    const s = c / 255;
+    return s <= 0.03928 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4);
+  };
+  return 0.2126 * toLin(r) + 0.7152 * toLin(g) + 0.0722 * toLin(b);
 }
 
 type AdaptiveNavState = {
@@ -40,9 +50,8 @@ type Options = {
   forceDark?: boolean;
 };
 
-// Routes whose top section is known to be dark. Used to seed the initial
-// render so the nav doesn't flash black-on-black before the first measurement.
-// Keep in sync with the first <section> of each page.
+// Seed for initial SSR render so the nav doesn't flash the wrong colour on
+// pages whose first section is known to be dark.
 const KNOWN_DARK_ROUTES = ["/", "/platform", "/contact", "/services"];
 
 export function useAdaptiveNav({
@@ -70,21 +79,38 @@ export function useAdaptiveNav({
       }
 
       const rect = nav.getBoundingClientRect();
-      // Look up the themed section directly beneath the nav by scanning
-      // [data-theme] elements rather than hit-testing. This avoids the
-      // pointer-events pitfalls of elementFromPoint and is O(n) across ~15
-      // themed elements on the page — negligible cost per frame.
-      const theme = themeAtY(rect.bottom + 4);
-      if (theme === "dark") {
-        setIsDark(true);
-      } else if (theme === "light") {
-        setIsDark(false);
-      } else {
-        // No themed section at the nav line — use the pathname-based seed.
-        setIsDark(
-          pathname ? KNOWN_DARK_ROUTES.includes(pathname) : false,
-        );
+      const sampleY = rect.bottom + 4;
+      const vw = window.innerWidth;
+      const sampleXs = [vw * 0.1, vw * 0.3, vw * 0.5, vw * 0.7, vw * 0.9];
+
+      // Hide the nav from hit-testing so elementFromPoint sees through it.
+      const prevPointer = nav.style.pointerEvents;
+      nav.style.pointerEvents = "none";
+
+      let totalLum = 0;
+      let validSamples = 0;
+      for (const x of sampleXs) {
+        const el = document.elementFromPoint(x, sampleY);
+        if (!el) continue;
+        const bg = getEffectiveBackground(el);
+        if (!bg) continue;
+        totalLum += luminance(bg);
+        validSamples++;
       }
+
+      nav.style.pointerEvents = prevPointer;
+
+      let avgLum: number;
+      if (validSamples === 0) {
+        const body = parseRgb(
+          window.getComputedStyle(document.body).backgroundColor,
+        );
+        avgLum = body ? luminance(body) : 1;
+      } else {
+        avgLum = totalLum / validSamples;
+      }
+
+      setIsDark(avgLum < 0.5);
     };
 
     const onScrollOrResize = () => {
@@ -96,11 +122,8 @@ export function useAdaptiveNav({
       });
     };
 
-    // First measure: run immediately (DOM is committed by now) AND on next
-    // frame (so any mid-flight layout changes are captured).
     measure();
     const rafId = requestAnimationFrame(measure);
-    // Re-measure after layout settles (fonts, images, late hydration).
     const t1 = window.setTimeout(measure, 100);
     const t2 = window.setTimeout(measure, 500);
 
@@ -119,4 +142,13 @@ export function useAdaptiveNav({
   }, [navRef, forceDark, pathname]);
 
   return { isDark, isScrolled };
+}
+
+// ——— Also exported for SideFixed which samples near the bottom of viewport ———
+export function backgroundLuminanceAt(x: number, y: number): number | null {
+  const el = document.elementFromPoint(x, y);
+  if (!el) return null;
+  const bg = getEffectiveBackground(el);
+  if (!bg) return null;
+  return luminance(bg);
 }
