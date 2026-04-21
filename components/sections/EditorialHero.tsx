@@ -19,6 +19,7 @@ export function EditorialHero({
   const isDark = variant === "dark";
   return (
     <section
+      data-theme={isDark ? "dark" : "light"}
       className={cn(
         "px-6 pt-[120px] pb-20 text-center md:pt-[160px] md:pb-[100px] lg:px-20 lg:pt-[200px] lg:pb-[140px]",
         isDark ? "bg-dark-bg-2 text-white" : "bg-white text-black",

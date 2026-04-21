@@ -4,6 +4,7 @@ export function PlatformProduct() {
   return (
     <section
       id="product"
+      data-theme="dark"
       className="border-t border-white/[0.06] bg-dark-bg-2 px-5 py-[100px] text-white md:px-10 md:py-[140px] lg:px-20"
     >
       <div className="mx-auto grid max-w-[1300px] grid-cols-1 items-start gap-10 md:grid-cols-[1fr_2.4fr] md:gap-[60px]">

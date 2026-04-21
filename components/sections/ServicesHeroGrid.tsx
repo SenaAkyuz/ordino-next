@@ -8,7 +8,7 @@ type ServicesHeroGridProps = {
 
 export function ServicesHeroGrid({ cards }: ServicesHeroGridProps) {
   return (
-    <section className="bg-white">
+    <section data-theme="light" className="bg-white">
       <div className="mx-auto grid max-w-[1300px] grid-cols-1 border-l border-t border-[#eaeaea] px-6 py-20 md:grid-cols-2 md:px-10 md:pb-[120px] md:pt-20 lg:grid-cols-3 lg:px-20">
         {cards.map((card) => (
           <Reveal key={card.slug}>

@@ -14,7 +14,10 @@ export function Leadership({
   leader,
 }: LeadershipProps) {
   return (
-    <section className="bg-light-bg px-5 py-[100px] md:px-10 md:py-[140px] lg:px-20 lg:py-[160px]">
+    <section
+      data-theme="light"
+      className="bg-light-bg px-5 py-[100px] md:px-10 md:py-[140px] lg:px-20 lg:py-[160px]"
+    >
       {lead && (
         <div className="mx-auto mb-12 grid max-w-[1200px] grid-cols-1 gap-10 md:mb-[70px] md:grid-cols-[200px_1fr] md:gap-[60px]">
           <Reveal>

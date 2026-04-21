@@ -14,7 +14,7 @@ export function Showreel({
   videoSrc,
 }: ShowreelProps) {
   return (
-    <section className="relative w-full bg-dark-bg">
+    <section data-theme="dark" className="relative w-full bg-dark-bg">
       <div className="relative max-h-[88vh] w-full overflow-hidden bg-dark-bg-2 aspect-video">
         {videoSrc ? (
           <video

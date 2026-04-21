@@ -21,7 +21,10 @@ export function WhereWeWork({
   cards,
 }: WhereWeWorkProps) {
   return (
-    <section className="bg-dark-bg px-5 py-[80px] text-white md:px-10 md:pt-[120px] md:pb-[100px] lg:px-20 lg:pt-[140px] lg:pb-[120px]">
+    <section
+      data-theme="dark"
+      className="bg-dark-bg px-5 py-[80px] text-white md:px-10 md:pt-[120px] md:pb-[100px] lg:px-20 lg:pt-[140px] lg:pb-[120px]"
+    >
       <div className="mx-auto mb-12 grid max-w-[1300px] grid-cols-1 items-start gap-6 md:mb-20 md:grid-cols-[1fr_2.4fr] md:gap-[60px]">
         <Reveal>
           <p className="pt-[10px] font-body text-[0.72rem] font-medium uppercase tracking-[4px] text-white/60">

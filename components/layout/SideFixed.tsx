@@ -1,21 +1,57 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { site } from "@/lib/data/site";
 import { cn } from "@/lib/utils";
+import { sampleThemeAt } from "@/components/layout/AdaptiveNavLogic";
 
 export function SideFixed() {
-  const pathname = usePathname();
-  const isDark = pathname?.startsWith("/platform") ?? false;
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    let rafPending = false;
+
+    const measure = () => {
+      // Sample where SideFixed actually sits — near the bottom edge of viewport.
+      const y = window.innerHeight - 120;
+      const leftTheme = sampleThemeAt(40, y);
+      const rightTheme = sampleThemeAt(window.innerWidth - 40, y);
+      // If either side is dark, treat as dark (labels need to be readable).
+      setIsDark(leftTheme === "dark" || rightTheme === "dark");
+    };
+
+    const onScrollOrResize = () => {
+      if (rafPending) return;
+      rafPending = true;
+      requestAnimationFrame(() => {
+        measure();
+        rafPending = false;
+      });
+    };
+
+    measure();
+    const t1 = window.setTimeout(measure, 100);
+    const t2 = window.setTimeout(measure, 500);
+
+    window.addEventListener("scroll", onScrollOrResize, { passive: true });
+    window.addEventListener("resize", onScrollOrResize);
+
+    return () => {
+      window.removeEventListener("scroll", onScrollOrResize);
+      window.removeEventListener("resize", onScrollOrResize);
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+    };
+  }, []);
 
   const linkClass = cn(
-    "[writing-mode:vertical-rl] text-[0.7rem] tracking-[1px] transition-colors duration-300",
+    "[writing-mode:vertical-rl] text-[0.7rem] tracking-[1px] transition-colors duration-300 ease-in-out",
     isDark
       ? "text-white/50 hover:text-white"
       : "text-gray hover:text-black",
   );
   const lineClass = cn(
-    "w-px",
+    "w-px transition-colors duration-300 ease-in-out",
     isDark ? "bg-white/30" : "bg-gray",
   );
 

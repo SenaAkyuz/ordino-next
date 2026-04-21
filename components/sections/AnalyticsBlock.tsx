@@ -14,7 +14,10 @@ export function AnalyticsBlock({
   items,
 }: AnalyticsBlockProps) {
   return (
-    <section className="bg-dark-bg px-5 py-[100px] text-white md:px-10 md:py-[140px] lg:px-20 lg:py-[160px]">
+    <section
+      data-theme="dark"
+      className="bg-dark-bg px-5 py-[100px] text-white md:px-10 md:py-[140px] lg:px-20 lg:py-[160px]"
+    >
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-start gap-12 md:grid-cols-2 md:gap-20">
         <div>
           <Reveal>

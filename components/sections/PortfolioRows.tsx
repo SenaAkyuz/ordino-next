@@ -7,7 +7,7 @@ type PortfolioRowsProps = {
 
 export function PortfolioRows({ items, id = "portfolio" }: PortfolioRowsProps) {
   return (
-    <section id={id} className="w-full">
+    <section id={id} data-theme="dark" className="w-full">
       {Array.from({ length: Math.ceil(items.length / 2) }, (_, rowIdx) => {
         const pair = items.slice(rowIdx * 2, rowIdx * 2 + 2);
         return (

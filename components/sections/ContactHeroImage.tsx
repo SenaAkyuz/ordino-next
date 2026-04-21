@@ -7,7 +7,7 @@ type ContactHeroImageProps = {
 
 export function ContactHeroImage({ imageSrc, imageAlt }: ContactHeroImageProps) {
   return (
-    <section className="w-full bg-black pt-20">
+    <section data-theme="dark" className="w-full bg-black pt-20">
       <div className="group relative max-h-[88vh] min-h-[420px] w-full overflow-hidden bg-dark-bg-2 md:min-h-[520px]">
         <div className="relative aspect-[4/5] w-full md:aspect-video">
           {imageSrc ? (

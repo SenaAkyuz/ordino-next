@@ -4,7 +4,10 @@ import { clients } from "@/lib/data/clients";
 
 export function ClientsShowcase() {
   return (
-    <section className="bg-white px-5 py-[140px] md:px-10 lg:px-20">
+    <section
+      data-theme="light"
+      className="bg-white px-5 py-[140px] md:px-10 lg:px-20"
+    >
       <div className="mx-auto max-w-[1300px]">
         <Reveal>
           <div className="mb-20 text-center">

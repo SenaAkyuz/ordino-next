@@ -16,7 +16,7 @@ export function FullVideo({
   placeholder = "dark-breathe",
 }: FullVideoProps) {
   return (
-    <section className="relative w-full bg-white">
+    <section data-theme="dark" className="relative w-full bg-white">
       <div className="relative aspect-video max-h-[85vh] w-full overflow-hidden bg-[#0a0b0c]">
         {videoSrc ? (
           <video

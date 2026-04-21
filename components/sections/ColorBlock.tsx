@@ -86,6 +86,7 @@ export function ColorBlock({
 
   return (
     <section
+      data-theme={variant === "tan" ? "light" : "dark"}
       className={cn(
         "relative overflow-hidden text-white px-5 py-[100px] md:px-10 md:py-[140px] lg:px-20 lg:py-[160px]",
         bgMap[variant],

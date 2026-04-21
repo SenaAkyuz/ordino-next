@@ -4,7 +4,10 @@ import { portfolioHighlights } from "@/lib/data/portfolio";
 
 export function HorizontalScroll() {
   return (
-    <section className="overflow-hidden bg-dark-bg py-[120px] pl-5 md:pl-10 lg:pl-20">
+    <section
+      data-theme="dark"
+      className="overflow-hidden bg-dark-bg py-[120px] pl-5 md:pl-10 lg:pl-20"
+    >
       <Reveal>
         <div className="mx-auto mb-[60px] flex max-w-[1400px] items-end justify-between pr-5 text-white md:pr-10 lg:pr-20">
           <div>

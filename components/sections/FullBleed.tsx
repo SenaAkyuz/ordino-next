@@ -68,11 +68,15 @@ export function FullBleed({
 
   if (href) {
     return (
-      <Link href={href} className={className}>
+      <Link href={href} data-theme="dark" className={className}>
         {content}
       </Link>
     );
   }
 
-  return <section className={className}>{content}</section>;
+  return (
+    <section data-theme="dark" className={className}>
+      {content}
+    </section>
+  );
 }

@@ -19,6 +19,7 @@ export function ServiceDetail({
   return (
     <section
       id={slug}
+      data-theme="light"
       className={cn(
         "px-5 py-[100px] md:px-10 md:py-[120px] lg:px-20 lg:py-[140px]",
         alt ? "bg-light-bg" : "bg-white",

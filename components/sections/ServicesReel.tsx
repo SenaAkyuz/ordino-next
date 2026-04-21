@@ -4,7 +4,7 @@ type ServicesReelProps = {
 
 export function ServicesReel({ videoSrc }: ServicesReelProps) {
   return (
-    <section className="relative w-full bg-black pt-20">
+    <section data-theme="dark" className="relative w-full bg-black pt-20">
       <div className="relative max-h-[92vh] min-h-[420px] w-full overflow-hidden bg-black md:min-h-[520px]">
         <div className="relative flex aspect-[4/5] w-full items-center justify-center overflow-hidden transition-transform duration-[1400ms] ease-[cubic-bezier(0.25,1,0.5,1)] md:aspect-video">
           {videoSrc ? (

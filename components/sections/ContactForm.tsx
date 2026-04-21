@@ -66,6 +66,7 @@ export function ContactForm() {
   return (
     <section
       id="form"
+      data-theme="light"
       className="bg-white px-5 py-[100px] md:px-10 md:py-[120px] lg:px-20 lg:py-[140px]"
     >
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-16 md:grid-cols-[1fr_1.2fr] md:gap-[100px]">

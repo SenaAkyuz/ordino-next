@@ -72,7 +72,7 @@ function Cell({ cell }: { cell: DualGridCell }) {
 
 export function DualGrid({ cells }: DualGridProps) {
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2">
+    <section data-theme="dark" className="grid grid-cols-1 md:grid-cols-2">
       <Cell cell={cells[0]} />
       <Cell cell={cells[1]} />
     </section>

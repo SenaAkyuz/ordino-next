@@ -19,7 +19,10 @@ export function PowerOf({
   gradient = "radial-gradient(circle at 30% 40%, rgba(178,143,108,0.2), transparent 55%), linear-gradient(135deg, #1a0a1a 0%, #3d0c2e 30%, #6b1d4e 70%, #c03070 100%)",
 }: PowerOfProps) {
   return (
-    <section className="overflow-hidden bg-dark-bg px-6 pt-[100px] text-center text-white md:px-10 md:pt-[140px]">
+    <section
+      data-theme="dark"
+      className="overflow-hidden bg-dark-bg px-6 pt-[100px] text-center text-white md:px-10 md:pt-[140px]"
+    >
       <Reveal>
         <p className="mb-6 font-body text-[0.75rem] uppercase tracking-[4px] text-white/75">
           {eyebrow}

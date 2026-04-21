@@ -24,6 +24,7 @@ export function Cta({
   return (
     <section
       id={id}
+      data-theme="dark"
       className="bg-dark-bg px-5 py-[120px] text-center text-white md:px-10 md:py-[160px] lg:py-[180px]"
     >
       <Reveal>

@@ -22,6 +22,7 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
   return (
     <article id={data.slug} className="group relative scroll-mt-24">
       <section
+        data-theme="light"
         className={cn(
           "px-5 py-[100px] md:px-10 md:py-[120px] lg:px-20 lg:pb-[100px] lg:pt-[140px]",
           stripeBg,
@@ -98,7 +99,10 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
         </div>
       </section>
 
-      <section className="bg-dark-bg px-5 py-20 text-white md:px-10 md:py-20 lg:px-20">
+      <section
+        data-theme="dark"
+        className="bg-dark-bg px-5 py-20 text-white md:px-10 md:py-20 lg:px-20"
+      >
         <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-10 md:grid-cols-3 md:gap-10">
           {data.stats.map((stat, i) => (
             <Reveal
@@ -121,6 +125,7 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
 
       <section
         id={`${data.slug}-detail`}
+        data-theme="light"
         className={cn(
           "px-5 py-[80px] md:px-10 md:py-[100px] lg:px-20 lg:py-[120px]",
           stripeBg,
@@ -175,7 +180,10 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
         </div>
       </section>
 
-      <section className="bg-accent px-5 py-[80px] text-center text-white md:px-10 md:py-[120px] lg:px-20">
+      <section
+        data-theme="dark"
+        className="bg-accent px-5 py-[80px] text-center text-white md:px-10 md:py-[120px] lg:px-20"
+      >
         <Reveal>
           <div className="mx-auto max-w-[900px]">
             <blockquote className="mb-10 font-display text-[clamp(1.6rem,2.8vw,2.4rem)] font-light italic leading-[1.4] tracking-[-0.5px] before:content-['“'] after:content-['”']">

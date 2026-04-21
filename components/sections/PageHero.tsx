@@ -9,7 +9,10 @@ type PageHeroProps = {
 
 export function PageHero({ label, title, emphasis, sub }: PageHeroProps) {
   return (
-    <section className="flex min-h-[60vh] items-center justify-center bg-white px-5 pt-[140px] pb-20 text-center md:min-h-[70vh] md:px-10 md:pt-[160px] md:pb-[80px] lg:px-20">
+    <section
+      data-theme="light"
+      className="flex min-h-[60vh] items-center justify-center bg-white px-5 pt-[140px] pb-20 text-center md:min-h-[70vh] md:px-10 md:pt-[160px] md:pb-[80px] lg:px-20"
+    >
       <div className="mx-auto max-w-[1100px]">
         <Reveal>
           <p className="mb-6 font-body text-[0.75rem] uppercase tracking-[3px] text-gray">

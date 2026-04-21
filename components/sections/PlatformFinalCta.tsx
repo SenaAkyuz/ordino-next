@@ -5,6 +5,7 @@ export function PlatformFinalCta() {
   return (
     <section
       id="demo"
+      data-theme="dark"
       className="relative overflow-hidden border-t border-white/[0.06] bg-dark-bg-2 px-5 py-[120px] text-center text-white md:px-10 md:py-[160px] lg:px-20"
     >
       <div className="relative z-[1] mx-auto max-w-[900px]">

@@ -30,6 +30,7 @@ export function HowWeWork({
   return (
     <section
       id={id}
+      data-theme="dark"
       className="bg-dark-bg text-white px-5 py-[100px] md:px-10 md:py-[140px] lg:px-20 lg:py-[160px]"
     >
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-16 md:grid-cols-2 md:gap-[100px]">

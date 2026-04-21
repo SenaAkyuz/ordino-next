@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function PlatformPage() {
   return (
-    <div className="bg-dark-bg-2">
+    <div data-theme="dark" className="bg-dark-bg-2">
       <PlatformHero />
       <PlatformProduct />
       <PlatformFeatures />

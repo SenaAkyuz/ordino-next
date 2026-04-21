@@ -5,6 +5,7 @@ export function Hero() {
   return (
     <section
       id="home"
+      data-theme="dark"
       className="relative flex h-screen min-h-[720px] items-center justify-center overflow-hidden bg-dark-bg-2 text-center text-white"
     >
       <div className="absolute inset-0 z-0 overflow-hidden">

@@ -3,7 +3,7 @@ import { latestWorks } from "@/lib/data/latestWorks";
 
 export function LatestWorks() {
   return (
-    <section className="w-full">
+    <section data-theme="dark" className="w-full">
       <div className="grid grid-cols-1 gap-0 md:grid-cols-2 lg:grid-cols-3">
         {latestWorks.map((item) => (
           <Link

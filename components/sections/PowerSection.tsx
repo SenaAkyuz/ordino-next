@@ -8,7 +8,10 @@ type PowerSectionProps = {
 
 export function PowerSection({ label, title, emphasis }: PowerSectionProps) {
   return (
-    <section className="bg-accent px-5 py-[100px] text-center text-white md:px-10 md:py-[140px] lg:py-[160px]">
+    <section
+      data-theme="light"
+      className="bg-accent px-5 py-[100px] text-center text-white md:px-10 md:py-[140px] lg:py-[160px]"
+    >
       <Reveal>
         <p className="mb-[30px] font-body text-[0.75rem] uppercase tracking-[3px] opacity-80">
           {label}

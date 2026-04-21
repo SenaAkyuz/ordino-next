@@ -13,7 +13,7 @@ type StudioGalleryProps = {
 
 export function StudioGallery({ items }: StudioGalleryProps) {
   return (
-    <section className="bg-white">
+    <section data-theme="light" className="bg-white">
       <div className="grid w-full grid-cols-1 gap-1 bg-black md:grid-cols-3">
         {items.map((item, i) => (
           <Reveal key={i}>

@@ -21,7 +21,10 @@ export function Footer() {
   const instagram = site.social.find((s) => s.name === "Instagram");
 
   return (
-    <footer className="bg-dark-bg text-white px-10 pt-20 pb-10 lg:px-20">
+    <footer
+      data-theme="dark"
+      className="bg-dark-bg text-white px-10 pt-20 pb-10 lg:px-20"
+    >
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1.5fr_1fr_1fr] gap-10 lg:gap-20 pb-20">
         <div>
           <p className="text-[0.9rem] leading-[1.8] text-gray font-light">

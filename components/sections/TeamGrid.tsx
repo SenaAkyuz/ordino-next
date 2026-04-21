@@ -15,7 +15,10 @@ export function TeamGrid({
   members,
 }: TeamGridProps) {
   return (
-    <section className="bg-white px-5 py-[100px] md:px-10 md:py-[140px] lg:px-20 lg:py-[160px]">
+    <section
+      data-theme="light"
+      className="bg-white px-5 py-[100px] md:px-10 md:py-[140px] lg:px-20 lg:py-[160px]"
+    >
       <div className="mx-auto max-w-[1300px]">
         <div className="mx-auto mb-16 grid max-w-[1200px] grid-cols-1 gap-10 md:mb-20 md:grid-cols-[200px_1fr] md:gap-[60px]">
           <Reveal>

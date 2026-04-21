@@ -5,7 +5,10 @@ type WorkReelProps = {
 
 export function WorkReel({ videoSrc, poster }: WorkReelProps) {
   return (
-    <section className="relative flex w-full items-center justify-center overflow-hidden bg-dark-bg-2 px-5 py-10 md:px-10 md:py-20">
+    <section
+      data-theme="dark"
+      className="relative flex w-full items-center justify-center overflow-hidden bg-dark-bg-2 px-5 py-10 md:px-10 md:py-20"
+    >
       <div
         className="pointer-events-none absolute inset-0 [background:radial-gradient(ellipse_at_25%_40%,rgba(178,143,108,0.08),transparent_55%),radial-gradient(ellipse_at_75%_60%,rgba(74,107,142,0.06),transparent_60%)]"
         aria-hidden="true"

@@ -7,7 +7,10 @@ type WhatWeDoProps = {
 
 export function WhatWeDo({ eyebrow = "What We Do", title }: WhatWeDoProps) {
   return (
-    <section className="bg-dark-bg px-5 py-[80px] text-white md:px-10 md:py-[120px] lg:px-20 lg:py-[140px]">
+    <section
+      data-theme="dark"
+      className="bg-dark-bg px-5 py-[80px] text-white md:px-10 md:py-[120px] lg:px-20 lg:py-[140px]"
+    >
       <div className="mx-auto grid max-w-[1300px] grid-cols-1 items-start gap-10 md:grid-cols-[1fr_2.4fr] md:gap-[60px]">
         <Reveal>
           <p className="pt-3 font-body text-[0.72rem] font-medium uppercase tracking-[4px] text-white/60">

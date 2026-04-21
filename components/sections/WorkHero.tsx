@@ -19,6 +19,7 @@ export function WorkHero({
   return (
     <section
       id="top"
+      data-theme="light"
       className="relative flex min-h-[70vh] items-center justify-center bg-white px-6 pt-[120px] pb-10 md:min-h-[90vh] md:px-10 md:pt-[180px] md:pb-[60px] lg:px-20"
     >
       <div className="relative mx-auto max-w-[1400px] text-center">

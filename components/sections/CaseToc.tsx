@@ -7,7 +7,10 @@ type CaseTocProps = {
 
 export function CaseToc({ items }: CaseTocProps) {
   return (
-    <section className="border-b border-[#eee] bg-white px-5 pb-20 pt-8 md:px-10 lg:px-20">
+    <section
+      data-theme="light"
+      className="border-b border-[#eee] bg-white px-5 pb-20 pt-8 md:px-10 lg:px-20"
+    >
       <Reveal>
         <div className="mx-auto flex max-w-[1200px] flex-wrap justify-center gap-4">
           {items.map((item) => (

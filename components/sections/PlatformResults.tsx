@@ -11,6 +11,7 @@ export function PlatformResults() {
   return (
     <section
       id="results"
+      data-theme="dark"
       className="border-t border-white/[0.06] bg-dark-bg-2 px-5 py-[100px] text-white md:px-10 md:py-[140px] lg:px-20"
     >
       <div className="mx-auto max-w-[1300px]">

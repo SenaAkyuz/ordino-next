@@ -5,7 +5,10 @@ const channels = ["TikTok", "Meta", "Google", "LinkedIn", "X Ads"];
 
 export function PlatformHero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-dark-bg-2 px-5 pt-[140px] pb-[80px] md:px-10 md:pt-[180px] md:pb-[120px] lg:px-20">
+    <section
+      data-theme="dark"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-dark-bg-2 px-5 pt-[140px] pb-[80px] md:px-10 md:pt-[180px] md:pb-[120px] lg:px-20"
+    >
       <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
         <div
           className="absolute left-[-80px] top-[-120px] h-[560px] w-[560px] rounded-full opacity-35 blur-[110px] motion-safe:animate-[orbDrift_22s_ease-in-out_infinite]"

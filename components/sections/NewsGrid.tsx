@@ -8,7 +8,10 @@ type NewsGridProps = {
 
 export function NewsGrid({ posts }: NewsGridProps) {
   return (
-    <section className="bg-white px-5 py-[100px] md:px-10 md:py-[140px] lg:px-20 lg:py-[160px]">
+    <section
+      data-theme="light"
+      className="bg-white px-5 py-[100px] md:px-10 md:py-[140px] lg:px-20 lg:py-[160px]"
+    >
       <div className="mx-auto max-w-[1200px]">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:gap-x-10 md:gap-y-[50px] lg:grid-cols-3">
           {posts.map((post) => (
