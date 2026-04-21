@@ -444,6 +444,100 @@ Sırayla:
 5. `next/image` ile tüm resimleri optimize
 6. Lighthouse skorlarını kontrol (Performance, SEO, Accessibility > 90)
 
+
+## 🆕 Aşama 7.5: Sanity CMS Entegrasyonu
+
+### Amaç
+Site'nin tüm içeriğini (yazılar, görseller, videolar, ekip, portfolyo, blog) admin rolündeki takım üyelerinin koddan değil **Sanity Studio admin paneli**'nden yönetebilmesini sağlamak. SEO meta etiketleri dahil her şey panel üzerinden değişecek.
+
+### Mevcut Sanity durumu
+- Mevcut Sanity hesabı var, eski bir projeden kalan organization aktif
+- Bu organization içinde Ordino için **yeni bir proje** açılacak (yeni hesap/organization gerekmiyor)
+- Şu anki kullanıcı (proje sahibi) organization'da admin rolünde
+- Site içeriğini yönetecek olan: **takımdaki diğer admin rolündeki üyeler** (müşteri DEĞİL)
+- Müşteri panel'e erişmeyecek — bu önemli kısıt: panel UX'i admin/teknik kullanıcı seviyesinde olabilir, çok süslemeye gerek yok
+
+### Yaklaşım
+- **Sanity Cloud** kullanılacak (self-hosted değil) — ücretsiz tier yeterli
+- **Mevcut organization** içinde yeni proje: "Ordino" adıyla
+- **Sanity Studio** mevcut Next.js projesinin içine `app/studio/[[...tool]]/page.tsx` route'u olarak entegre edilecek (embedded mode)
+- Admin'ler `theordino.com/studio` adresinden Sanity hesaplarıyla login olup içerik yönetecek
+- Veri kaynağı `lib/data/*.ts` dosyalarından Sanity GROQ sorgularına geçecek
+- Component'lerin yapısı değişmeyecek, sadece veri kaynakları değişecek
+
+### Yönetilecek schema'lar (12 adet)
+1. **siteSettings** — email, telefon, adres, sosyal linkler, footer metin
+2. **navigation** — nav linkleri (sayfa adı + slug)
+3. **homeSections** — ana sayfanın her section'ının başlık/altyazı/CTA metni
+4. **portfolio** — projeler (başlık, kategori, image, video URL, açıklama, slug)
+5. **caseStudy** — vaka çalışmaları (başlık, client, hero image, içerik, istatistikler, alıntılar)
+6. **service** — hizmet blokları (başlık, alt başlıklar, ikon, sıralama)
+7. **teamMember** — ekip üyeleri (isim, pozisyon, foto, bio, sosyal, founder mı, sıralama)
+8. **client** — client logoları (isim, logo image, sıralama)
+9. **newsPost** — blog/news yazıları (başlık, kategori, tarih, kapak, body, slug)
+10. **platformFeature** — platform sayfası 6 kartı + AI engine 4 adımı + sonuç sayıları
+11. **page** — her sayfanın SEO metadata'sı (title, description, OG image, slug)
+12. **mediaAsset** — site genelinde kullanılan video/image referansları
+
+### Kurulum stratejisi — KRİTİK
+**Sanity'i tek başına kur, test et, siteyi canlıya al, en sonda manuel olarak takım üyelerini davet et.**
+
+Sebepleri:
+- Schema'lar kurulurken Studio sürekli değişir — erken davet edilen üyeler karışır
+- Mevcut `lib/data/*.ts` içeriğini Sanity'e aktarma işi tek kişilik iş (iki kişi paralel çalışırsa veri çakışması olur)
+- Yanlış schema tasarımını kullanıcılar girmeden düzeltmek 10 kat kolay
+- Dokümantasyon yazarken neyi anlatacağını ancak kendin kullanınca anlarsın
+- Takım üyelerinin zamanını boşa harcama — sadece hazır bir panel sunulur
+
+### Teknik adımlar
+
+**Aşama 7.5 — Solo kurulum (sen yapacaksın)**
+1. Mevcut Sanity organization'ında "Ordino" adıyla yeni proje oluştur (sanity.io/manage üzerinden, doğru organization seçildiğini iki kez kontrol et)
+2. `npm create sanity@latest` ile mevcut Next.js projesine Studio kur (embedded mode, yeni oluşturulan proje ID'si ile)
+3. `sanity/schemas/` altında 12 schema dosyası tanımla — TypeScript ile, tek tek test ederek
+4. `lib/sanity/client.ts` — Sanity client setup
+5. `lib/sanity/queries.ts` — GROQ sorguları (her schema için fetch fonksiyonu)
+6. Mevcut `lib/data/*.ts` içeriklerini Sanity'e import et (migration script veya manuel Studio'dan)
+7. Tüm component'lerin data import'larını Sanity sorgularıyla değiştir
+8. `app/studio/[[...tool]]/page.tsx` — Studio route
+9. `next.config.ts`'e Sanity image CDN domain'i ekle (cdn.sanity.io)
+10. ISR (Incremental Static Regeneration) ayarla — `revalidate: 60` ile sayfa 60sn'de bir Sanity'den yenilenir
+11. Preview mode aktif et (`next/draft-mode`)
+12. **Smoke test:** Kendin panel'de her schema tipi için bir örnek ekle-düzenle-sil, görsel yükle, bir blog yazısı yayınla-geri çek. Hepsi çalışmadan ileri gitme.
+
+**Aşama 8 — Deploy (Vercel)**
+13. Site Vercel'e deploy edilir — Sanity Studio da `theordino.com/studio` adresinde otomatik olarak canlıya çıkar
+
+**Aşama 8 sonrası — Manuel davet (en sonda, sen yapacaksın)**
+14. Site canlı ve çalışır durumdayken Sanity.io/manage'de Ordino projesine git
+15. "Members" / "Invite" menüsünden takım üyelerini **tek tek manuel olarak** admin rolünde davet et
+16. Her davet emailine Studio URL'i ve kısa bir "nasıl giriş yapılır" not'u ekle
+17. Davet kararı tamamen sende — kimi ne zaman davet edeceğini sen belirlersin
+
+### Önemli kararlar
+- **Kullanıcılar:** Tüm panel kullanıcıları admin rolünde takım üyeleri olacak — viewer/editor ayrımı YAPILMAYACAK (basitlik için)
+- **Image handling:** `next-sanity` paketinin `<Image>` component'i kullanılacak (Sanity CDN + Next.js optimization)
+- **Video:** Admin panel'e YouTube/Vimeo URL'i girer, ya da Sanity asset olarak yükler. Büyük videolar için `next/video` + Mux entegrasyonu ayrıca düşünülebilir
+- **Preview mode:** Admin yayınlamadan önce taslağı görebilsin diye `next/draft-mode` aktif edilecek
+- **Backup:** Sanity haftalık otomatik backup yapar, ek bir şey gerekmez
+- **Çoklu dil:** Şu an site Türkçe ağırlıklı ama İngilizce metinli. İleride çoklu dil eklenirse Sanity'nin `internationalization` plugin'i kurulur, şimdi YAPILMAYACAK
+
+### Süre tahmini
+11-13 saat ek iş — Aşama 7 ile Aşama 8 arasına sığar.
+
+### Maliyet
+Mevcut organization'a yeni proje eklemenin maliyeti yok. Ücretsiz tier yeterli (3 user, 10K dokuman, 5GB asset, 100GB bandwidth/ay). Organization plan'ı ne ise (Free/Growth) Ordino projesi de ondan yararlanacak.
+
+### Junior için tuzaklar
+- Sanity Studio "embedded mode" ile aynı Next.js projesinde çalışır — ayrı sunucu/deploy yok
+- Mevcut organization'a yeni proje açarken **doğru organization'ı seçmek** kritik (yanlış yere açılırsa silmek karmaşık)
+- GROQ sorgusu SQL'e benzer ama farklı — sözdizimi öğrenmek 30 dk
+- `'use server'` ve `revalidatePath()` ile webhook tetikleyerek anlık güncelleme yapılabilir
+- Image upload sonrası Sanity URL'i otomatik üretir, manuel asset yönetimi yok
+- **Önemli:** İlk schema yazılırken "_type" field'ı her dokümanın zorunlu kısmıdır — bu Sanity'nin temel düşünce yapısı
+
+---
+
 ### Aşama 8: Deploy (15 dk)
 1. GitHub repo oluştur, push et
 2. Vercel hesabına bağla
@@ -473,16 +567,15 @@ Sırayla:
 
 7. **`em` içeren başlıklar** — Cormorant italic em'leri JSX'te yazılacak:
 ```tsx
-<h1>We elevate <em>ads.</em></h1>
+   <h1>We elevate <em>ads.</em></h1>
 ```
-Tailwind ile: `[&_em]:italic [&_em]:font-normal`
+   Tailwind ile: `[&_em]:italic [&_em]:font-normal`
 
 8. **`body.dark-page`** yerine → Platform sayfasında layout veya page'de bir prop ile nav'a "force-dark" ilet.
 
 9. **Placeholder'lar** — `placeholder-img` + inline gradient'ler tasarımın kritik parçası. `<Placeholder gradient="..." />` component yap, inline style kalsın.
 
 10. **TypeScript strict mode** — her data objesi için `type` tanımla. Vakit kaybetme gibi görünebilir ama sonradan 10 kat geri öder.
-
 ---
 
 ## 🎯 İlk görev: Aşama 0 — Proje kurulumu
@@ -526,3 +619,85 @@ Kullanıcının elinde 10 dosyalık v19 zip'i var:
 **Kullanıcı bunları migration sırasında Claude Code'un okuyabileceği bir klasöre (örn: `ordino-next/_legacy/`) koyacak. Sen referans olarak bu klasörü okuyabilir, class isimlerini/yapıyı birebir karşılaştırabilirsin.**
 
 Bu belge, Claude Code olarak sana (ve bu projeyi dış birisi devralırsa ona) yol gösterir. **İçindeki her karara saygı göster, sadece gerektiğinde ve kullanıcıya açıklayarak sap.**
+
+
+---
+
+## 🔧 Ek düzeltme — Adaptif Nav + Buton Okunabilirliği (Aşama 4 revizyonu)
+
+### Sorun
+Mevcut pixel-sampling adaptif nav implementasyonu bazı durumlarda yanılıyor:
+- Platform sayfasının ambient glow'ları (radial gradient'ler) luminance hesabını yanıltıyor — dark arkaplanda nav siyah kalıyor
+- Karmaşık gradient'li section'larda tutarsız davranış
+- "Schedule A Meeting" butonu dark arkaplanda siyah çerçeveli + siyah yazılı → okunmuyor
+
+### Çözüm yaklaşımı — data-theme attribute
+Pixel sampling yerine her section **kendi temasını deklare etsin**. Nav o anda viewport'un üst kısmında olan section'un `data-theme` attribute'una bakıp renk alır. Bu daha deterministik.
+
+### Yapılacaklar (sırayla)
+
+**1. components/layout/AdaptiveNavLogic.tsx'i yeniden yaz**
+- Mevcut pixel sampling kodunu SİL
+- Yeni mantık: `document.elementFromPoint(x, navHeight + 20)` ile nav altındaki elementi bul
+- Element'ten yukarı doğru `.closest('[data-theme]')` ile en yakın tema bilgisini bul
+- `data-theme="dark"` → `isDark=true` (nav beyaz)
+- `data-theme="light"` → `isDark=false` (nav siyah)
+- Hiç bulamazsa default: `light`
+- scroll + resize event'lerinde `requestAnimationFrame` throttle ile tekrar hesapla
+- SSR'da default `light` başlasın, client-side'da `useEffect` ile ilk tick'te güncelle — hydration mismatch olmasın
+
+**2. Tüm section component'lerine data-theme ekle**
+
+DARK section'lar (`data-theme="dark"`):
+- Hero, FullVideo, FullBleed, HowWeWork, AnalyticsBlock, Cta
+- ColorBlock (purple varyant), PowerOf (eğer dark-bg ise)
+- WorkHero, WorkReel, EditorialHero (dark ise), Showreel
+- WhereWeWork, ContactHeroImage
+- PlatformHero, PlatformProduct, PlatformFeatures, AIEngine, PlatformResults, PlatformFinalCta
+- Leadership (dark ise), ServicesReel, WhatWeDo, ServiceDetail (dark olanlar)
+- CaseBlock (dark olanlar), PageHero (news dark hero)
+
+LIGHT section'lar (`data-theme="light"`):
+- ClientsShowcase, LatestWorks, HorizontalScroll, DualGrid, PushForward
+- ColorBlock (tan varyant), ServicesGrid
+- StudioGallery, TeamGrid, PowerSection (light)
+- NewsGrid, ContactForm, CaseToc
+- ServicesHeroGrid, PortfolioRows
+
+**Not:** Kararsız olduğun section'larda legacy styles.css'e bakıp background değerine göre karar ver. Yanlış tema tespit edersen kullanıcıya sor.
+
+**3. Footer component'ine `data-theme="dark"` ekle** (footer tamamen siyah)
+
+**4. Navbar.tsx'i güncelle** — `isDark` prop'una göre:
+- `isDark=true`: nav linkleri beyaz, "Schedule A Meeting" butonu beyaz çerçeveli + beyaz yazı, hover'da beyaz dolgu + siyah yazı, Instagram ikonu beyaz
+- `isDark=false`: nav linkleri siyah, buton siyah çerçeveli + siyah yazı, hover'da siyah dolgu + beyaz yazı, Instagram ikonu siyah
+- Tailwind ile yap, `currentColor` kullan ki ikon'lar otomatik renk alsın
+- `transition-colors duration-300 ease-in-out` ki scroll sırasında yumuşak değişsin
+
+**5. SideFixed.tsx'i aynı şekilde güncelle** — `isDark` prop'u al, sol/sağ dikey yazıları ve çizgileri buna göre renklendir
+
+### Test planı
+
+Her sayfayı sırayla aç, scroll ederken nav'ın rengini gözlemle:
+
+1. `/` — scroll ile dark (Hero) → light (ClientsShowcase) → dark (HowWeWork) → light (PushForward) geçişleri
+2. `/platform` — tamamen dark, nav her zaman beyaz olmalı
+3. `/about` — light hero, scroll ile dark section'larda beyaz
+4. `/work` — dark editorial hero, nav beyaz başlamalı
+5. `/contact` — image section'a göre değişken
+6. `/news` — dark hero, light grid
+7. `/services` — karma geçişler
+8. `/case-studies` — karma
+
+### Kritik notlar
+- Geçişler **yumuşak** olmalı (300ms transition)
+- Hydration mismatch yok — SSR/client ilk render aynı
+- Section sınırlarında nav kararsız kalmasın — viewport'un üstündeki section'a göre kesin karar
+
+### Sıra
+1. Önce AdaptiveNavLogic.tsx'i yeniden yaz — tek başına test et
+2. Sonra 2-3 section'a data-theme ekle, nav'ın doğru çalıştığını doğrula
+3. Navbar + SideFixed button renklerini güncelle
+4. Kalan section'lara data-theme ekle (batch işlem)
+5. Footer'a data-theme ekle
+6. Her sayfayı test et, sorunları raporla
