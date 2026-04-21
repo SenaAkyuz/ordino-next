@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { site } from "@/lib/data/site";
 import { cn } from "@/lib/utils";
-import { sampleThemeAt } from "@/components/layout/AdaptiveNavLogic";
+import { themeAtY } from "@/components/layout/AdaptiveNavLogic";
 
 export function SideFixed() {
   const [isDark, setIsDark] = useState(false);
@@ -12,12 +12,10 @@ export function SideFixed() {
     let rafPending = false;
 
     const measure = () => {
-      // Sample where SideFixed actually sits — near the bottom edge of viewport.
-      const y = window.innerHeight - 120;
-      const leftTheme = sampleThemeAt(40, y);
-      const rightTheme = sampleThemeAt(window.innerWidth - 40, y);
-      // If either side is dark, treat as dark (labels need to be readable).
-      setIsDark(leftTheme === "dark" || rightTheme === "dark");
+      // SideFixed sits near the bottom edge — read the theme of whatever
+      // section crosses that Y.
+      const theme = themeAtY(window.innerHeight - 120);
+      setIsDark(theme === "dark");
     };
 
     const onScrollOrResize = () => {

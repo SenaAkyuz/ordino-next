@@ -4,26 +4,30 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState, type RefObject } from "react";
 
 /**
- * Sample the theme at a viewport point. Looks for the nearest ancestor with
- * a `data-theme` attribute. Returns `null` when no themed ancestor is found
- * so the caller can distinguish "unknown" from an explicit "light".
+ * Find the theme of whatever themed section currently crosses a viewport Y
+ * coordinate. Iterates every `[data-theme]` element and returns the deepest
+ * match (innermost wins when nested). Returns `null` if no themed element
+ * overlaps that Y.
+ *
+ * This replaces the older `elementFromPoint`-based approach which was
+ * unreliable because `pointer-events: none` on the nav does not cascade to
+ * its children, so samples often hit nav links and returned null.
  */
-export function sampleThemeAt(
-  x: number,
-  y: number,
-  hideEl?: HTMLElement | null,
-): "dark" | "light" | null {
-  let prevPointer = "";
-  if (hideEl) {
-    prevPointer = hideEl.style.pointerEvents;
-    hideEl.style.pointerEvents = "none";
+export function themeAtY(y: number): "dark" | "light" | null {
+  const themed = document.querySelectorAll<HTMLElement>("[data-theme]");
+  let winner: HTMLElement | null = null;
+  for (const el of themed) {
+    const r = el.getBoundingClientRect();
+    if (r.top <= y && r.bottom > y) {
+      // Prefer the most deeply nested match so inner themed sections
+      // (e.g. CaseBlock's stats-bar) override their outer wrapper.
+      if (!winner || winner.contains(el)) {
+        winner = el;
+      }
+    }
   }
-  const el = document.elementFromPoint(x, y);
-  if (hideEl) hideEl.style.pointerEvents = prevPointer;
-
-  const themed = el?.closest?.("[data-theme]") as HTMLElement | null;
-  if (!themed) return null;
-  return themed.dataset.theme === "dark" ? "dark" : "light";
+  if (!winner) return null;
+  return winner.dataset.theme === "dark" ? "dark" : "light";
 }
 
 type AdaptiveNavState = {
@@ -66,31 +70,20 @@ export function useAdaptiveNav({
       }
 
       const rect = nav.getBoundingClientRect();
-      // Sampling grid below the nav: 3 horizontal × 3 vertical = 9 points.
-      // Any single dark sample flips the nav white — prioritizes readability
-      // over threshold voting, since black-on-black is a hard accessibility
-      // failure but white-on-light still has minimum contrast.
-      const vw = window.innerWidth;
-      const xs = [vw * 0.2, vw * 0.5, vw * 0.8];
-      const ys = [rect.bottom + 8, rect.bottom + 40, rect.bottom + 80];
-      const samples: Array<"dark" | "light" | null> = [];
-      for (const y of ys) {
-        for (const x of xs) {
-          samples.push(sampleThemeAt(x, y, nav));
-        }
-      }
-      const hasDark = samples.some((s) => s === "dark");
-      const hasLight = samples.some((s) => s === "light");
-
-      if (hasDark) {
+      // Look up the themed section directly beneath the nav by scanning
+      // [data-theme] elements rather than hit-testing. This avoids the
+      // pointer-events pitfalls of elementFromPoint and is O(n) across ~15
+      // themed elements on the page — negligible cost per frame.
+      const theme = themeAtY(rect.bottom + 4);
+      if (theme === "dark") {
         setIsDark(true);
-      } else if (!hasLight) {
-        // No explicit theme at any point — fall back to the pathname-based seed.
+      } else if (theme === "light") {
+        setIsDark(false);
+      } else {
+        // No themed section at the nav line — use the pathname-based seed.
         setIsDark(
           pathname ? KNOWN_DARK_ROUTES.includes(pathname) : false,
         );
-      } else {
-        setIsDark(false);
       }
     };
 
