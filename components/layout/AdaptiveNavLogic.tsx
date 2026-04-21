@@ -5,13 +5,14 @@ import { useEffect, useState, type RefObject } from "react";
 
 /**
  * Sample the theme at a viewport point. Looks for the nearest ancestor with
- * a `data-theme` attribute. Returns "dark" or "light" (default).
+ * a `data-theme` attribute. Returns `null` when no themed ancestor is found
+ * so the caller can distinguish "unknown" from an explicit "light".
  */
 export function sampleThemeAt(
   x: number,
   y: number,
   hideEl?: HTMLElement | null,
-): "dark" | "light" {
+): "dark" | "light" | null {
   let prevPointer = "";
   if (hideEl) {
     prevPointer = hideEl.style.pointerEvents;
@@ -21,7 +22,8 @@ export function sampleThemeAt(
   if (hideEl) hideEl.style.pointerEvents = prevPointer;
 
   const themed = el?.closest?.("[data-theme]") as HTMLElement | null;
-  return themed?.dataset.theme === "dark" ? "dark" : "light";
+  if (!themed) return null;
+  return themed.dataset.theme === "dark" ? "dark" : "light";
 }
 
 type AdaptiveNavState = {
@@ -64,19 +66,36 @@ export function useAdaptiveNav({
       }
 
       const rect = nav.getBoundingClientRect();
-      // Sample three points below the nav — if any is dark, treat as dark.
-      // This handles edge cases where a single point misses the themed region
-      // (e.g. sitting in padding, hitting a floating overlay).
-      const ys = [rect.bottom + 4, rect.bottom + 20, rect.bottom + 60];
-      const x = window.innerWidth / 2;
-      let dark = false;
-      for (const y of ys) {
-        if (sampleThemeAt(x, y, nav) === "dark") {
-          dark = true;
-          break;
-        }
+      // 5-point sampling grid below the nav: 3 horizontal × 2 vertical.
+      // Majority rule handles ambient overlays, padding gaps, and absolutely-
+      // positioned decorative elements that don't carry a data-theme.
+      const vw = window.innerWidth;
+      const x1 = vw * 0.2;
+      const x2 = vw * 0.5;
+      const x3 = vw * 0.8;
+      const y1 = rect.bottom + 8;
+      const y2 = rect.bottom + 40;
+      const samples = [
+        sampleThemeAt(x1, y1, nav),
+        sampleThemeAt(x2, y1, nav),
+        sampleThemeAt(x3, y1, nav),
+        sampleThemeAt(x1, y2, nav),
+        sampleThemeAt(x2, y2, nav),
+      ];
+      const darkCount = samples.filter((s) => s === "dark").length;
+      const nullCount = samples.filter((s) => s === null).length;
+
+      if (darkCount >= 2) {
+        setIsDark(true);
+      } else if (nullCount >= 3) {
+        // Most samples hit elements without a themed ancestor — fall back to
+        // the pathname-based seed.
+        setIsDark(
+          pathname ? KNOWN_DARK_ROUTES.includes(pathname) : false,
+        );
+      } else {
+        setIsDark(false);
       }
-      setIsDark(dark);
     };
 
     const onScrollOrResize = () => {
