@@ -1,0 +1,41 @@
+import Link from "next/link";
+import { Reveal } from "@/components/ui/Reveal";
+
+type CtaProps = {
+  title?: string;
+  emphasis?: string;
+  buttonLabel?: string;
+  href?: string;
+  id?: string;
+};
+
+export function Cta({
+  title = "Imagine what we'll",
+  emphasis = "create together.",
+  buttonLabel = "Let's do this",
+  href = "/contact",
+  id = "contact",
+}: CtaProps) {
+  return (
+    <section
+      id={id}
+      className="bg-dark-bg px-5 py-[120px] text-center text-white md:px-10 md:py-[160px] lg:py-[180px]"
+    >
+      <Reveal>
+        <h2 className="mx-auto mb-12 max-w-[800px] font-display text-[clamp(2.5rem,5vw,4.5rem)] font-light leading-[1.2] md:mb-[50px] [&_em]:italic [&_em]:font-normal">
+          {title}
+          <br />
+          <em>{emphasis}</em>
+        </h2>
+      </Reveal>
+      <Reveal>
+        <Link
+          href={href}
+          className="inline-block rounded-[10em] border border-white px-[50px] py-[18px] font-body text-base font-normal text-white transition-[background,color] duration-[400ms] hover:bg-white hover:text-black"
+        >
+          {buttonLabel}
+        </Link>
+      </Reveal>
+    </section>
+  );
+}
