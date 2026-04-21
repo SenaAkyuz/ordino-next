@@ -22,9 +22,28 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Ordino — AI-Powered Ad Intelligence",
+  metadataBase: new URL("https://theordino.com"),
+  title: {
+    default: "Ordino — AI-Powered Ad Intelligence",
+    template: "%s",
+  },
   description:
     "AI-powered ad intelligence platform and performance marketing agency. Istanbul-based, managing $180M+ in ad spend for 230+ brands since 2021.",
+  openGraph: {
+    title: "Ordino — AI-Powered Ad Intelligence",
+    description:
+      "AI-powered ad intelligence platform and performance marketing agency.",
+    url: "https://theordino.com",
+    siteName: "Ordino",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ordino — AI-Powered Ad Intelligence",
+    description:
+      "AI-powered ad intelligence platform and performance marketing agency.",
+  },
 };
 
 export default function RootLayout({

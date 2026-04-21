@@ -23,7 +23,7 @@ export default function WorkPage() {
         sub="AI, advanced automation, and a powerful media network."
         scrollTo="#portfolio"
       />
-      <WorkReel />
+      <WorkReel videoSrc="/video/work-reel.mp4" />
       <PortfolioRows items={workPortfolio} />
       <LatestWorks />
       <AnalyticsBlock
