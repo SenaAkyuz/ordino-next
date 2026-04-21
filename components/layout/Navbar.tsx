@@ -55,11 +55,10 @@ export function Navbar({ forceDark = false }: NavbarProps) {
     <nav
       ref={navRef}
       className={cn(
-        "fixed inset-x-0 top-0 z-[1000] flex items-center justify-between transition-[padding,background-color,backdrop-filter] duration-300 ease-in-out",
+        "fixed inset-x-0 top-0 z-[1000] flex items-center justify-between transition-[padding] duration-300 ease-in-out",
         isScrolled
-          ? "px-5 py-3 md:px-[30px] md:py-4 lg:px-[60px] lg:py-5 backdrop-blur-md"
+          ? "px-5 py-3 md:px-[30px] md:py-4 lg:px-[60px] lg:py-5"
           : "px-5 py-[18px] md:px-[30px] md:py-5 lg:px-[60px] lg:py-[27px]",
-        isScrolled && (isDark ? "bg-black/30" : "bg-white/30"),
       )}
     >
       <Link
