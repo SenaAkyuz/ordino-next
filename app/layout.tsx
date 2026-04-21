@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Jost } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SideFixed } from "@/components/layout/SideFixed";
+import { CustomCursor } from "@/components/ui/CustomCursor";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -38,6 +39,7 @@ export default function RootLayout({
         <SideFixed />
         <main className="flex-1">{children}</main>
         <Footer />
+        <CustomCursor />
       </body>
     </html>
   );

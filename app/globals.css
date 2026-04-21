@@ -161,3 +161,48 @@ a {
   -ms-overflow-style: none;
 }
 .no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ===== Custom cursor (desktop with fine pointer only) ===== */
+@media (hover: hover) and (pointer: fine) {
+  html, body,
+  a, button, input, select, textarea, label,
+  [role="button"], [data-cursor="hover"] {
+    cursor: none;
+  }
+
+  .cursor-dot,
+  .cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    will-change: transform;
+  }
+
+  .cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    transition: opacity 0.2s ease;
+  }
+
+  .cursor-ring {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #fff;
+    transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+  }
+
+  .cursor-ring.is-hover {
+    width: 64px;
+    height: 64px;
+  }
+
+  .cursor-dot.is-hidden,
+  .cursor-ring.is-hidden {
+    opacity: 0;
+  }
+}
