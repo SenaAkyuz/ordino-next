@@ -35,4 +35,19 @@ export const latestWorks: LatestWork[] = [
     label: "Automotive",
     gradient: "linear-gradient(135deg, #1a1a40 0%, #2e2e6e 100%)",
   },
+  {
+    slug: "beauty-skincare",
+    label: "Beauty & Skincare",
+    gradient: "linear-gradient(135deg, #44262a 0%, #6e3f44 100%)",
+  },
+  {
+    slug: "consumer-electronics",
+    label: "Consumer Electronics",
+    gradient: "linear-gradient(135deg, #3a3a3a 0%, #5a5a5a 100%)",
+  },
+  {
+    slug: "subscription-service",
+    label: "Subscription Service",
+    gradient: "linear-gradient(135deg, #2b2b4a 0%, #44446e 100%)",
+  },
 ];
