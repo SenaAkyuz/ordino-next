@@ -8,6 +8,7 @@ export type CaseStudy = {
   titleEm2?: string;
   lead: string;
   tags: { label: string; variant: "t1" | "t2" | "t3" | "t4" | "t5" }[];
+  image?: string; // /case-studies/xxx.jpg gibi path
   gradient: string;
   stats: { value: string; label: string }[];
   challenge: {
@@ -90,6 +91,7 @@ export const caseStudies: CaseStudy[] = [
       { label: "Multi-Channel", variant: "t4" },
       { label: "Education", variant: "t3" },
     ],
+    image: "/case-studies/gobritanya.jpg",
     gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
     stats: [
       { value: "5,400+", label: "Qualified Student Leads" },
@@ -137,6 +139,7 @@ export const caseStudies: CaseStudy[] = [
       { label: "Programmatic", variant: "t2" },
       { label: "Local Targeting", variant: "t5" },
     ],
+    image: "/case-studies/yuvamaya.jpg",
     gradient: "linear-gradient(135deg, #b28f6c 0%, #8b6f50 50%, #6e553d 100%)",
     stats: [
       { value: "+312%", label: "Property Inquiry Volume" },
@@ -184,6 +187,7 @@ export const caseStudies: CaseStudy[] = [
       { label: "LinkedIn", variant: "t4" },
       { label: "Aviation", variant: "t2" },
     ],
+    image: "/case-studies/turkish-technic.jpg",
     gradient: "linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #4a2080 100%)",
     stats: [
       { value: "6×", label: "Qualified Pipeline Velocity" },

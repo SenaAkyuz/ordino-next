@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
@@ -86,14 +87,25 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
             </Reveal>
           </div>
           <Reveal>
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <div
-                className="flex h-full w-full items-center justify-center font-display text-[2rem] font-light text-white/70 transition-transform duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.03]"
-                style={{ background: data.gradient }}
-                aria-hidden="true"
-              >
-                {data.brand}
-              </div>
+            <div className="relative aspect-[16/9] overflow-hidden">
+              {data.image ? (
+                <Image
+                  src={data.image}
+                  alt={`${data.brand} case study`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.03]"
+                  priority={false}
+                />
+              ) : (
+                <div
+                  className="flex h-full w-full items-center justify-center font-display text-[2rem] font-light text-white/70 transition-transform duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.03]"
+                  style={{ background: data.gradient }}
+                  aria-hidden="true"
+                >
+                  {data.brand}
+                </div>
+              )}
             </div>
           </Reveal>
         </div>
