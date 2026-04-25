@@ -10,36 +10,36 @@ type Feature = {
 const features: Feature[] = [
   {
     num: "01",
-    title: "Unified Campaigns",
-    text: "Launch a campaign once, deploy it across every channel. Creative variants, audiences, and budgets — synced automatically, no tab-hopping.",
+    title: "Birleşik Kampanyalar",
+    text: "Bir kampanyayı bir kez kurun, her kanalda yayına alın. Kreatif varyantlar, hedef kitleler ve bütçeler otomatik senkron — sekmeler arasında dolaşmadan.",
   },
   {
     num: "02",
     title: "",
-    titleEm: "AI Optimization",
-    text: "Our engine reads performance every fifteen minutes and shifts budget, pauses losers, and scales winners — transparently, with every decision logged.",
+    titleEm: "AI Optimizasyonu",
+    text: "Motorumuz performansı her on beş dakikada bir okur; bütçeyi kaydırır, kaybedenleri durdurur, kazananları ölçeklendirir — şeffaf bir şekilde, her karar loglanır.",
   },
   {
     num: "03",
-    title: "Negative Keywords",
-    text: "AI search-term analysis eliminates wasted spend on Google in minutes, not hours. The average Ordino account clears 23% of wasted spend in week one.",
+    title: "Negatif Anahtar Kelimeler",
+    text: "AI arama terimi analizi, Google'da boşa harcamayı saatler değil dakikalar içinde temizler. Ortalama bir Ordino hesabı ilk haftada %23 boşa harcamayı eler.",
   },
   {
     num: "04",
     title: "",
-    titleEm: "Creative Intelligence",
-    text: "Upload ad variants, the engine tests them in disciplined reads, and surfaces the patterns that are actually moving your numbers — not just CTR.",
+    titleEm: "Yaratıcı Zekâ",
+    text: "Reklam varyantlarınızı yükleyin; motor disiplinli ölçümlerle bunları test eder ve sayılarınızı gerçekten oynatan desenleri yüzeye çıkarır — sadece CTR'ı değil.",
   },
   {
     num: "05",
-    title: "Blended Reporting",
-    text: "ROAS, CAC, payback window, contribution margin — in a single dashboard that ties ad spend to pipeline and revenue, not vanity impressions.",
+    title: "Harmanlı Raporlama",
+    text: "ROAS, CAC, geri ödeme süresi, katkı marjı — reklam harcamasını gösterimlere değil, pipeline ve gelire bağlayan tek bir dashboard.",
   },
   {
     num: "06",
     title: "",
-    titleEm: "Team Workflows",
-    text: "Approvals, annotations, handoffs. Built for agencies and in-house teams who need to run twenty accounts without drowning in spreadsheets.",
+    titleEm: "Ekip Akışları",
+    text: "Onaylar, notlar, devirler. Yirmi hesabı tablolarda boğulmadan yöneten ajanslar ve in-house ekipler için tasarlandı.",
   },
 ];
 
@@ -54,14 +54,14 @@ export function PlatformFeatures() {
         <div className="mb-16 max-w-[900px] md:mb-20">
           <Reveal>
             <p className="mb-5 font-body text-[0.72rem] font-medium uppercase tracking-[4px] text-white/50">
-              Features
+              Özellikler
             </p>
           </Reveal>
           <Reveal>
             <h2 className="font-display text-[clamp(2rem,3.8vw,3.4rem)] font-light leading-[1.15] tracking-[-0.5px] text-white [&_em]:italic [&_em]:font-normal [&_em]:text-accent">
-              Built for teams that treat paid
+              Paid medyayı bir
               <br />
-              as a <em>core product surface.</em>
+              <em>çekirdek ürün yüzeyi</em> olarak gören ekipler için.
             </h2>
           </Reveal>
         </div>

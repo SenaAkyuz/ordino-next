@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 import type { ServiceDetail as ServiceDetailData } from "@/lib/data/services";
@@ -54,6 +55,14 @@ export function ServiceDetail({
                 </li>
               ))}
             </ul>
+          </Reveal>
+          <Reveal>
+            <Link
+              href="/iletisim"
+              className="mt-10 inline-block rounded-[10em] border border-black bg-black px-8 py-3 font-body text-[0.85rem] text-white transition-[background,color] duration-[400ms] hover:bg-transparent hover:text-black"
+            >
+              Detaylı Bilgi Al →
+            </Link>
           </Reveal>
         </div>
       </div>

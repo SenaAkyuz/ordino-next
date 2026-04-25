@@ -12,11 +12,11 @@ export function ClientsShowcase() {
         <Reveal>
           <div className="mb-20 text-center">
             <h2 className="mb-6 font-display text-[clamp(2.4rem,4vw,3.6rem)] font-light tracking-[-0.8px] text-black">
-              Our Clients
+              Çalıştığımız Markalar
             </h2>
             <div className="mx-auto mb-6 h-px w-20 bg-accent" aria-hidden="true" />
             <p className="mx-auto max-w-[520px] font-body text-[1rem] font-light leading-[1.6] text-gray">
-              Serving growth-stage, high-profile, and leading brands.
+              Stratejik ortaklıklarla büyüyen markalara hizmet veriyoruz.
             </p>
           </div>
         </Reveal>

@@ -20,24 +20,31 @@ export function Hero() {
       <div className="relative z-[2] px-6">
         <Reveal>
           <h1 className="font-display text-[clamp(3rem,7vw,6.5rem)] font-light leading-[1.05] tracking-[-1.5px] text-white [&_em]:font-normal [&_em]:italic">
-            We elevate <em>ads.</em>
+            Strateji. <em>Yaratıcılık.</em> Büyüme.
           </h1>
         </Reveal>
 
         <Reveal delay={0.15}>
           <p className="mx-auto mt-[30px] max-w-[640px] font-body text-[1.1rem] font-light leading-[1.6] tracking-[0.5px] text-white/75">
-            AI-powered ad intelligence for smarter campaigns, sharper targeting,
-            and measurable growth.
+            AI destekli reklam zekası ile daha akıllı kampanyalar, hedefli iletişim ve ölçülebilir büyüme.
           </p>
         </Reveal>
 
         <Reveal delay={0.3}>
-          <Link
-            href="/contact#contact-form"
-            className="mt-[50px] inline-block rounded-[10em] border border-white px-12 py-4 text-[0.95rem] text-white transition-[background,color] duration-[400ms] hover:bg-white hover:text-dark-bg"
-          >
-            Schedule A Meeting
-          </Link>
+          <div className="mt-[50px] flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/hizmetler"
+              className="inline-block rounded-[10em] border border-white bg-white px-10 py-4 text-[0.95rem] text-dark-bg transition-[background,color] duration-[400ms] hover:bg-transparent hover:text-white"
+            >
+              Hizmetleri Keşfet
+            </Link>
+            <Link
+              href="/iletisim"
+              className="inline-block rounded-[10em] border border-white px-10 py-4 text-[0.95rem] text-white transition-[background,color] duration-[400ms] hover:bg-white hover:text-dark-bg"
+            >
+              İletişime Geç
+            </Link>
+          </div>
         </Reveal>
       </div>
 

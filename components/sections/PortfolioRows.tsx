@@ -31,7 +31,7 @@ export function PortfolioRows({ items, id = "portfolio" }: PortfolioRowsProps) {
                   aria-hidden="true"
                 />
                 <span className="absolute bottom-10 left-10 z-[2] translate-y-[8px] font-display text-[1.5rem] font-normal text-white opacity-[0.92] transition-[transform,opacity] duration-[600ms] group-hover:translate-y-0 group-hover:opacity-100">
-                  {item.label}
+                  {item.brand}
                 </span>
               </div>
             ))}

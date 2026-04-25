@@ -1,53 +1,54 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import { Reveal } from "@/components/ui/Reveal";
 
 const roles = [
-  "Founder / CEO",
-  "CMO / Marketing Lead",
-  "Growth / Performance Lead",
-  "Brand / Creative Lead",
-  "Agency Partner",
-  "Other",
+  "Kurucu / CEO",
+  "CMO / Pazarlama Direktörü",
+  "Büyüme / Performans Lideri",
+  "Marka / Yaratıcı Direktör",
+  "Ajans Ortağı",
+  "Diğer",
 ];
 
 const industries = [
-  "E-Commerce / DTC",
-  "SaaS / Software",
-  "Travel / Hospitality",
-  "Education",
-  "Real Estate",
-  "Finance / Fintech",
-  "Healthcare",
-  "B2B / Industrial",
-  "Public Sector",
-  "Other",
+  "E-Ticaret / DTC",
+  "SaaS / Yazılım",
+  "Seyahat / Konaklama",
+  "Eğitim",
+  "Gayrimenkul",
+  "Finans / Fintech",
+  "Sağlık",
+  "B2B / Endüstriyel",
+  "Kamu Sektörü",
+  "Diğer",
 ];
 
 const services = [
-  "Strategy & Audit",
-  "Performance Media",
-  "Creative & Production",
-  "Analytics & Attribution",
-  "Growth & Partnerships",
-  "CRO / Landing Pages",
-  "Full-Service Partnership",
+  "Strateji & Denetim",
+  "Performans Medya",
+  "Yaratıcı & Prodüksiyon",
+  "Analitik & Atribüsyon",
+  "Büyüme & Ortaklıklar",
+  "CRO / Landing Page",
+  "Tam Servis Ortaklığı",
 ];
 
 const timings = [
-  "We need to start ASAP",
-  "Within the next month",
-  "3+ months out",
-  "Just exploring",
+  "Hemen başlamamız gerek",
+  "Önümüzdeki ay içinde",
+  "3+ ay sonra",
+  "Sadece keşfediyoruz",
 ];
 
 const budgets = [
-  "Under $10k",
-  "$10k — $50k",
-  "$50k — $250k",
-  "$250k — $1M",
-  "$1M+",
+  "10.000 TL altı",
+  "10.000 — 50.000 TL",
+  "50.000 — 250.000 TL",
+  "250.000 — 1M TL",
+  "1M TL üzeri",
 ];
 
 const inputClass =
@@ -58,6 +59,7 @@ const labelClass =
 type Status = "idle" | "pending" | "success";
 
 export function ContactForm() {
+  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const formRef = useRef<HTMLFormElement>(null);
   const dismissRef = useRef<number | null>(null);
@@ -75,19 +77,13 @@ export function ContactForm() {
     if (status !== "idle") return;
 
     const data = Object.fromEntries(new FormData(e.currentTarget).entries());
-    // Backend not wired yet — log the brief so nothing is silently lost.
     // eslint-disable-next-line no-console
     console.log("[contact-form] submitted:", data);
 
     setStatus("pending");
     window.setTimeout(() => {
-      setStatus("success");
-      formRef.current?.reset();
-      dismissRef.current = window.setTimeout(() => {
-        setStatus("idle");
-        dismissRef.current = null;
-      }, 5000);
-    }, 1000);
+      router.push("/iletisim/tesekkurler");
+    }, 600);
   };
 
   return (
@@ -100,9 +96,9 @@ export function ContactForm() {
         <Reveal>
           <div>
             <h3 className="mb-[30px] font-display text-[1.8rem] font-normal [&_em]:italic [&_em]:font-normal">
-              Start the <em>conversation.</em>
+              Görüşmeyi <em>başlatalım.</em>
             </h3>
-            <InfoBlock label="New Business">
+            <InfoBlock label="Yeni İş">
               <a
                 href="mailto:info@theordino.com"
                 className="block font-body text-base font-light leading-[1.6] text-black transition-colors hover:text-accent"
@@ -110,7 +106,7 @@ export function ContactForm() {
                 info@theordino.com
               </a>
             </InfoBlock>
-            <InfoBlock label="Careers">
+            <InfoBlock label="Kariyer">
               <a
                 href="mailto:careers@theordino.com"
                 className="block font-body text-base font-light leading-[1.6] text-black transition-colors hover:text-accent"
@@ -118,7 +114,7 @@ export function ContactForm() {
                 careers@theordino.com
               </a>
             </InfoBlock>
-            <InfoBlock label="Phone">
+            <InfoBlock label="Telefon">
               <a
                 href="tel:+905352946540"
                 className="block font-body text-base font-light leading-[1.6] text-black transition-colors hover:text-accent"
@@ -126,24 +122,24 @@ export function ContactForm() {
                 +90 535 294 65 40
               </a>
             </InfoBlock>
-            <InfoBlock label="Studio">
+            <InfoBlock label="Stüdyo">
               <p className="block font-body text-base font-light leading-[1.6] text-black">
                 Ferko Signature Plaza, A Blok
                 <br />
                 Büyükdere Caddesi No: 175, Esentepe
                 <br />
-                34394 Şişli / Istanbul — Turkey
+                34394 Şişli / Istanbul — Türkiye
               </p>
             </InfoBlock>
-            <InfoBlock label="Hours">
+            <InfoBlock label="Çalışma Saatleri">
               <p className="block font-body text-base font-light leading-[1.6] text-black">
-                Monday — Friday
+                Pazartesi — Cuma
                 <br />
                 09:00 — 19:00 (GMT+3)
               </p>
             </InfoBlock>
-            <InfoBlock label="Follow">
-              {["Instagram", "LinkedIn", "X / Twitter"].map((label) => (
+            <InfoBlock label="Takip Et">
+              {["Instagram", "LinkedIn"].map((label) => (
                 <a
                   key={label}
                   href="#"
@@ -187,11 +183,11 @@ export function ContactForm() {
                   </svg>
                 </span>
                 <h4 className="font-display text-[1.5rem] font-normal text-black">
-                  Message received.
+                  Mesajınız alındı.
                 </h4>
               </div>
               <p className="font-body text-[0.95rem] font-light leading-[1.6] text-[#3b5e42]">
-                Thanks — we&rsquo;ll get back to you shortly.
+                Teşekkürler — kısa süre içinde dönüş yapacağız.
               </p>
             </div>
 
@@ -208,39 +204,39 @@ export function ContactForm() {
                 className="contents"
               >
                 <p className="mb-[10px] font-body text-[0.95rem] font-light leading-[1.6] text-[#666]">
-                  Submit a quick brief — we&rsquo;ll reply within one business day.
+                  Kısa bir brief gönderin — bir iş günü içinde dönüş yapacağız.
                 </p>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <Field id="name" label="Your Name">
+                  <Field id="name" label="Adınız">
                     <input type="text" id="name" name="name" required className={inputClass} />
                   </Field>
-                  <Field id="company" label="Company">
+                  <Field id="company" label="Şirket">
                     <input type="text" id="company" name="company" required className={inputClass} />
                   </Field>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <Field id="email" label="Email">
+                  <Field id="email" label="E-posta">
                     <input type="email" id="email" name="email" required className={inputClass} />
                   </Field>
-                  <Field id="phone" label="Phone (optional)">
+                  <Field id="phone" label="Telefon (opsiyonel)">
                     <input type="tel" id="phone" name="phone" className={inputClass} />
                   </Field>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <Field id="role" label="Your Role">
+                  <Field id="role" label="Pozisyonunuz">
                     <select id="role" name="role" defaultValue="" className={inputClass}>
-                      <option value="">Select a role…</option>
+                      <option value="">Pozisyon seçin…</option>
                       {roles.map((r) => (
                         <option key={r}>{r}</option>
                       ))}
                     </select>
                   </Field>
-                  <Field id="industry" label="Industry">
+                  <Field id="industry" label="Sektör">
                     <select id="industry" name="industry" defaultValue="" className={inputClass}>
-                      <option value="">Select an industry…</option>
+                      <option value="">Sektör seçin…</option>
                       {industries.map((r) => (
                         <option key={r}>{r}</option>
                       ))}
@@ -250,9 +246,9 @@ export function ContactForm() {
 
                 <div>
                   <label className={labelClass}>
-                    Desired Services{" "}
+                    İstenen Hizmetler{" "}
                     <span className="ml-[6px] text-[0.65rem] font-light tracking-[1px] normal-case text-gray">
-                      (select all that apply)
+                      (uygun olanları seçin)
                     </span>
                   </label>
                   <div className="mt-1 flex flex-wrap gap-[10px]">
@@ -273,17 +269,17 @@ export function ContactForm() {
                 </div>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <Field id="timing" label="Timing">
+                  <Field id="timing" label="Zamanlama">
                     <select id="timing" name="timing" defaultValue="" className={inputClass}>
-                      <option value="">Select timing…</option>
+                      <option value="">Zamanlama seçin…</option>
                       {timings.map((t) => (
                         <option key={t}>{t}</option>
                       ))}
                     </select>
                   </Field>
-                  <Field id="budget" label="Monthly Ad Budget">
+                  <Field id="budget" label="Aylık Reklam Bütçesi">
                     <select id="budget" name="budget" defaultValue="" className={inputClass}>
-                      <option value="">Select a range…</option>
+                      <option value="">Aralık seçin…</option>
                       {budgets.map((b) => (
                         <option key={b}>{b}</option>
                       ))}
@@ -291,12 +287,12 @@ export function ContactForm() {
                   </Field>
                 </div>
 
-                <Field id="message" label="Tell us about your project">
+                <Field id="message" label="Projeniz hakkında bize bilgi verin">
                   <textarea
                     id="message"
                     name="message"
                     required
-                    placeholder="Goals, timelines, current stack, biggest challenge…"
+                    placeholder="Hedefler, zamanlama, mevcut araçlar, en büyük zorluk…"
                     className={`${inputClass} min-h-[120px] resize-y`}
                   />
                 </Field>
@@ -307,17 +303,17 @@ export function ContactForm() {
                     disabled={status !== "idle"}
                     className="self-start cursor-pointer rounded-[10em] border border-black bg-white px-12 py-4 font-body text-[0.95rem] font-normal text-black transition-[background,color] duration-[400ms] hover:bg-black hover:text-white disabled:cursor-wait disabled:opacity-70 disabled:hover:bg-white disabled:hover:text-black"
                   >
-                    {status === "pending" ? "Sending…" : "Send Message"}
+                    {status === "pending" ? "Gönderiliyor…" : "Mesaj Gönder"}
                   </button>
                   <p className="m-0 max-w-[280px] font-body text-[0.78rem] font-light leading-[1.5] text-gray">
-                    By submitting, you agree to our{" "}
+                    Göndererek{" "}
                     <a
-                      href="#"
+                      href="/gizlilik-politikasi"
                       className="border-b border-[#ccc] text-black transition-colors hover:border-black"
                     >
-                      Privacy Policy
-                    </a>
-                    . No spam — just one real reply.
+                      Gizlilik Politikamızı
+                    </a>{" "}
+                    kabul etmiş olursunuz. Spam yok — sadece samimi bir yanıt.
                   </p>
                 </div>
               </fieldset>

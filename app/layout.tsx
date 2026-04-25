@@ -4,6 +4,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SideFixed } from "@/components/layout/SideFixed";
 import { CustomCursor } from "@/components/ui/CustomCursor";
+import { CookieBanner } from "@/components/ui/CookieBanner";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -52,13 +53,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
+    <html lang="tr" className={`${cormorant.variable} ${jost.variable}`}>
       <body className="min-h-screen flex flex-col">
         <Navbar />
         <SideFixed />
         <main className="flex-1">{children}</main>
         <Footer />
         <CustomCursor />
+        <CookieBanner />
       </body>
     </html>
   );

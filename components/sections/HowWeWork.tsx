@@ -4,10 +4,10 @@ import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 type Stat = { value: string; label: string };
 
 const defaultStats: Stat[] = [
-  { value: "5+ Years", label: "Experience" },
-  { value: "50% Analytical", label: "Data-Driven" },
-  { value: "50% AI", label: "Machine Learning" },
-  { value: "100% Results", label: "Exceptional" },
+  { value: "11", label: "Yıllık Tecrübe" },
+  { value: "50+", label: "Marka ile Çalışıldı" },
+  { value: "₺200M+", label: "Yönetilen Reklam Bütçesi" },
+  { value: "Binlerce", label: "Yönetilen Kampanya" },
 ];
 
 type HowWeWorkProps = {
@@ -20,10 +20,10 @@ type HowWeWorkProps = {
 };
 
 export function HowWeWork({
-  eyebrow = "How We Work",
-  title = "Creative +",
-  emphasis = "Analytical",
-  description = "Data-driven creatives delivering exceptional ad optimization, memorable campaign strategies, and measurable growth. We combine AI intelligence with marketing expertise to craft campaigns that drive awareness, engagement, and conversion.",
+  eyebrow = "Nasıl Çalışıyoruz",
+  title = "Yaratıcı +",
+  emphasis = "Analitik",
+  description = "Veriye dayalı yaratıcılarız. Veri bilimi ile pazarlama uzmanlığını birleştirip ölçülebilir büyüme sağlarız. Markanızın hikayesini stratejik analiz, AI optimizasyonu ve yaratıcı prodüksiyonla anlamlı sonuçlara dönüştürüyoruz.",
   stats = defaultStats,
   id = "about",
 }: HowWeWorkProps) {
@@ -52,17 +52,26 @@ export function HowWeWork({
       </div>
 
       <div className="mx-auto mt-20 grid max-w-[1200px] grid-cols-2 gap-8 border-t border-white/10 pt-[60px] md:mt-[80px] md:grid-cols-4 md:gap-10">
-        {stats.map((stat) => (
-          <Reveal key={stat.label} className="text-center">
-            <AnimatedNumber
-              target={stat.value}
-              className="mb-[10px] block font-display text-[2.2rem] md:text-[3rem] font-light"
-            />
-            <p className="font-body text-[0.8rem] uppercase tracking-[2px] text-gray">
-              {stat.label}
-            </p>
-          </Reveal>
-        ))}
+        {stats.map((stat) => {
+          const hasNumber = /\d/.test(stat.value);
+          return (
+            <Reveal key={stat.label} className="text-center">
+              {hasNumber ? (
+                <AnimatedNumber
+                  target={stat.value}
+                  className="mb-[10px] block font-display text-[2.2rem] md:text-[3rem] font-light"
+                />
+              ) : (
+                <span className="mb-[10px] block font-display text-[2.2rem] md:text-[3rem] font-light">
+                  {stat.value}
+                </span>
+              )}
+              <p className="font-body text-[0.8rem] uppercase tracking-[2px] text-gray">
+                {stat.label}
+              </p>
+            </Reveal>
+          );
+        })}
       </div>
     </section>
   );

@@ -2,24 +2,24 @@ import { Reveal } from "@/components/ui/Reveal";
 
 const steps = [
   {
-    num: "Step 01",
-    title: "Ingest",
-    text: "Every fifteen minutes the engine pulls impression, click, conversion, and cost data from every platform you've connected. Nothing gets sampled — we read the full account.",
+    num: "Adım 01",
+    title: "Topla",
+    text: "Motor her on beş dakikada bir, bağladığınız her platformdan gösterim, tıklama, dönüşüm ve maliyet verisini çeker. Hiçbir şey örneklenmez — hesabın tamamını okuruz.",
   },
   {
-    num: "Step 02",
-    title: "Reason",
-    text: "A model trained on two hundred and thirty client accounts ranks every active asset by its contribution to your actual business metric — not the platform's proxy score.",
+    num: "Adım 02",
+    title: "Akıl Yürüt",
+    text: "İki yüz otuz müşteri hesabı üzerinde eğitilmiş bir model, her aktif varlığı gerçek iş metriğinize katkısına göre sıralar — platformun proxy skoruna değil.",
   },
   {
-    num: "Step 03",
-    title: "Act",
-    text: "Budget shifts, pauses, negative keyword pushes, creative rotations — executed automatically inside your platform accounts, with a full audit trail you can roll back in one click.",
+    num: "Adım 03",
+    title: "Aksiyon Al",
+    text: "Bütçe kaydırmaları, duraklatmalar, negatif anahtar kelime aktarımları, yaratıcı rotasyonları — platform hesaplarınızda otomatik yürütülür, tek tıkla geri alınabilir tam bir denetim izi ile.",
   },
   {
-    num: "Step 04",
-    title: "Report",
-    text: "Every action is logged in plain language. Your Monday report writes itself: what was changed, why, and how it moved the numbers.",
+    num: "Adım 04",
+    title: "Raporla",
+    text: "Her aksiyon sade bir dille loglanır. Pazartesi raporunuz kendini yazar: ne değişti, neden değişti ve sayıları nasıl oynattı.",
   },
 ];
 
@@ -38,12 +38,12 @@ export function AIEngine() {
         <div className="mb-20 text-center md:mb-[100px]">
           <Reveal>
             <p className="mb-5 font-body text-[0.72rem] font-medium uppercase tracking-[4px] text-white/50">
-              The AI Engine
+              AI Motoru
             </p>
           </Reveal>
           <Reveal>
             <h2 className="font-display text-[clamp(2.2rem,4.5vw,4rem)] font-light leading-[1.08] tracking-[-1px] text-white [&_em]:italic [&_em]:font-normal [&_em]:text-accent">
-              How the <em>brain</em> works.
+              <em>Beyin</em> nasıl çalışır.
             </h2>
           </Reveal>
         </div>

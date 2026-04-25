@@ -37,8 +37,13 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
               </p>
             </Reveal>
             <Reveal>
-              <p className="mb-[30px] font-body text-base font-medium uppercase tracking-[6px] text-black">
+              <p className="mb-[8px] font-body text-base font-medium uppercase tracking-[6px] text-black">
                 {data.brand}
+              </p>
+            </Reveal>
+            <Reveal>
+              <p className="mb-[30px] font-body text-[0.75rem] uppercase tracking-[2px] text-gray">
+                {data.sector}
               </p>
             </Reveal>
             <Reveal>

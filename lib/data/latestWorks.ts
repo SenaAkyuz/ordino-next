@@ -1,53 +1,69 @@
 export type LatestWork = {
   slug: string;
   label: string;
+  sector: string;
   gradient: string;
 };
 
 export const latestWorks: LatestWork[] = [
   {
-    slug: "travel-agency",
-    label: "Travel Agency",
-    gradient: "linear-gradient(135deg, #1a1a1a 0%, #333 100%)",
+    slug: "turkish-technic",
+    label: "Turkish Technic",
+    sector: "Havacılık / MRO",
+    gradient: "linear-gradient(135deg, #8b0000 0%, #a02020 100%)",
   },
   {
-    slug: "education-platform",
-    label: "Education Platform",
-    gradient: "linear-gradient(135deg, #2c3e50 0%, #34495e 100%)",
+    slug: "aiata",
+    label: "Aiata Boats",
+    sector: "Denizcilik / Lüks",
+    gradient: "linear-gradient(135deg, #0d3b2e 0%, #2a7a5a 100%)",
   },
   {
-    slug: "fashion-brand",
-    label: "Fashion Brand",
+    slug: "gobritanya",
+    label: "GoBritanya",
+    sector: "Eğitim / Yurt Dışı",
+    gradient: "linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%)",
+  },
+  {
+    slug: "allium-bodrum",
+    label: "Allium Bodrum",
+    sector: "Konaklama / Lüks",
+    gradient: "linear-gradient(135deg, #2c1810 0%, #5a3825 100%)",
+  },
+  {
+    slug: "yuva-maya",
+    label: "Yuva Maya",
+    sector: "Gıda",
+    gradient: "linear-gradient(135deg, #b28f6c 0%, #8b6f50 100%)",
+  },
+  {
+    slug: "marie-claire",
+    label: "Marie Claire",
+    sector: "Medya / Yayıncılık",
     gradient: "linear-gradient(135deg, #4a0e2e 0%, #6b1a3a 100%)",
   },
   {
-    slug: "food-beverage",
-    label: "Food & Beverage",
-    gradient: "linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%)",
+    slug: "fortune",
+    label: "Fortune",
+    sector: "Medya / Yayıncılık",
+    gradient: "linear-gradient(135deg, #2d1b4e 0%, #4a2080 100%)",
   },
   {
-    slug: "real-estate",
-    label: "Real Estate",
-    gradient: "linear-gradient(135deg, #3d0c02 0%, #6b1d0e 100%)",
-  },
-  {
-    slug: "automotive",
-    label: "Automotive",
+    slug: "anadolu-motor",
+    label: "Anadolu Motor",
+    sector: "Otomotiv",
     gradient: "linear-gradient(135deg, #1a1a40 0%, #2e2e6e 100%)",
   },
   {
-    slug: "beauty-skincare",
-    label: "Beauty & Skincare",
-    gradient: "linear-gradient(135deg, #44262a 0%, #6e3f44 100%)",
+    slug: "tff",
+    label: "TFF",
+    sector: "Spor / Federasyon",
+    gradient: "linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%)",
   },
   {
-    slug: "consumer-electronics",
-    label: "Consumer Electronics",
-    gradient: "linear-gradient(135deg, #3a3a3a 0%, #5a5a5a 100%)",
-  },
-  {
-    slug: "subscription-service",
-    label: "Subscription Service",
-    gradient: "linear-gradient(135deg, #2b2b4a 0%, #44446e 100%)",
+    slug: "turizm-bakanligi",
+    label: "T.C. Kültür ve Turizm Bakanlığı",
+    sector: "Kamu / Turizm",
+    gradient: "linear-gradient(135deg, #c03030 0%, #a02020 100%)",
   },
 ];

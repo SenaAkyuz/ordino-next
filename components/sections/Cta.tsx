@@ -13,10 +13,10 @@ const isInternal = (href: string) =>
   href.startsWith("/") || href.startsWith("#");
 
 export function Cta({
-  title = "Imagine what we'll",
-  emphasis = "create together.",
-  buttonLabel = "Let's do this",
-  href = "/contact#contact-form",
+  title = "Birlikte neler",
+  emphasis = "yaratacağız.",
+  buttonLabel = "Toplantı Planla",
+  href = "/iletisim#contact-form",
   id = "contact",
 }: CtaProps) {
   const linkClass =

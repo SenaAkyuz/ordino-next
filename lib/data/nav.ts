@@ -4,15 +4,15 @@ export type NavLink = {
 };
 
 export const navLinks: NavLink[] = [
-  { label: "Work", href: "/work" },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "Services", href: "/services" },
+  { label: "Hizmetler", href: "/hizmetler" },
+  { label: "Çalışmalar", href: "/calisma" },
+  { label: "Referanslar", href: "/referanslar" },
   { label: "Platform", href: "/platform" },
-  { label: "About", href: "/about" },
-  { label: "Work Together", href: "/contact" },
+  { label: "Hakkımızda", href: "/hakkimizda" },
+  { label: "İletişim", href: "/iletisim" },
 ];
 
 export const navCta: NavLink = {
-  label: "Schedule A Meeting",
-  href: "/contact#contact-form",
+  label: "Toplantı Planla",
+  href: "/iletisim#contact-form",
 };

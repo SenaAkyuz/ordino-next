@@ -3,34 +3,46 @@ import { latestWorks } from "@/lib/data/latestWorks";
 
 export function LatestWorks() {
   return (
-    <section data-theme="dark" className="w-full">
-      <div className="grid grid-cols-1 gap-0 md:grid-cols-2 lg:grid-cols-3">
-        {latestWorks.map((item) => (
-          <Link
-            key={item.slug}
-            href={`/work#${item.slug}`}
-            className="group relative block aspect-square overflow-hidden"
-          >
-            <div
-              className="absolute inset-0 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.03]"
-              style={{ background: item.gradient }}
-              aria-hidden="true"
-            />
-
-            <div
-              className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(0,0,0,0)_55%,rgba(0,0,0,0.55)_100%)] opacity-[0.85]"
-              aria-hidden="true"
-            />
-            <div
-              className="pointer-events-none absolute bottom-0 left-0 z-[1] h-[120px] w-full bg-gradient-to-b from-transparent to-black/30 opacity-0 transition-opacity duration-[400ms] group-hover:opacity-100"
-              aria-hidden="true"
-            />
-
-            <span className="absolute bottom-10 left-10 z-[2] translate-y-[8px] font-display text-[1.5rem] font-normal text-white opacity-[0.92] transition-[transform,opacity] duration-[600ms] group-hover:translate-y-0 group-hover:opacity-100">
-              {item.label}
-            </span>
-          </Link>
-        ))}
+    <section data-theme="dark" className="w-full bg-dark-bg">
+      <div className="mx-auto max-w-[1400px] px-5 py-[100px] md:px-10 md:py-[120px] lg:px-20">
+        <div className="mb-16 text-center">
+          <p className="mb-4 font-body text-[0.75rem] uppercase tracking-[3px] text-white/60">
+            Featured Work
+          </p>
+          <h2 className="font-display text-[clamp(2.4rem,4vw,3.6rem)] font-light text-white">
+            Çalıştığımız <em className="italic font-normal">markalar.</em>
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          {latestWorks.map((item) => (
+            <Link
+              key={item.slug}
+              href={`/referanslar/${item.slug}`}
+              className="group relative block aspect-[4/3] overflow-hidden"
+            >
+              <div
+                className="absolute inset-0 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.05]"
+                style={{ background: item.gradient }}
+                aria-hidden="true"
+              />
+              <div
+                className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(0,0,0,0)_50%,rgba(0,0,0,0.7)_100%)]"
+                aria-hidden="true"
+              />
+              <div className="absolute bottom-6 left-6 z-[2]">
+                <p className="mb-1 font-body text-[0.7rem] uppercase tracking-[2px] text-white/70">
+                  {item.sector}
+                </p>
+                <p className="font-display text-[1.4rem] font-normal text-white">
+                  {item.label}
+                </p>
+                <p className="mt-2 font-body text-[0.75rem] uppercase tracking-[1.5px] text-white/0 transition-[color] duration-300 group-hover:text-white/90">
+                  Detayları Gör →
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -14,7 +14,7 @@ type WhereWeWorkProps = {
 };
 
 export function WhereWeWork({
-  eyebrow = "Where we work",
+  eyebrow = "Çalıştığımız Yer",
   title,
   emphasis,
   titleTail,

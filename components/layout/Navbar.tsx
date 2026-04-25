@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { navLinks, navCta } from "@/lib/data/nav";
+import { site } from "@/lib/data/site";
 import { cn } from "@/lib/utils";
 import { useAdaptiveNav } from "@/components/layout/AdaptiveNavLogic";
 
@@ -24,6 +25,23 @@ function InstagramIcon({ className }: { className?: string }) {
   );
 }
 
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect x="2" y="9" width="4" height="12" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+}
+
 type NavbarProps = { forceDark?: boolean };
 
 export function Navbar({ forceDark = false }: NavbarProps) {
@@ -31,6 +49,8 @@ export function Navbar({ forceDark = false }: NavbarProps) {
   const [open, setOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const { isDark, isScrolled } = useAdaptiveNav({ navRef, forceDark });
+  const instagram = site.social.find((s) => s.name === "Instagram");
+  const linkedin = site.social.find((s) => s.name === "LinkedIn");
 
   useEffect(() => {
     setOpen(false);
@@ -81,7 +101,7 @@ export function Navbar({ forceDark = false }: NavbarProps) {
         ))}
       </ul>
 
-      <div className="hidden md:flex items-center gap-[25px]">
+      <div className="hidden md:flex items-center gap-[20px]">
         <Link
           href={navCta.href}
           className={cn(
@@ -93,16 +113,34 @@ export function Navbar({ forceDark = false }: NavbarProps) {
         >
           {navCta.label}
         </Link>
-        <a
-          href="#"
-          aria-label="Instagram"
-          className={cn(
-            "transition-colors duration-300 ease-in-out",
-            textColor,
-          )}
-        >
-          <InstagramIcon className="w-5 h-5" />
-        </a>
+        {instagram && (
+          <a
+            href={instagram.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className={cn(
+              "transition-colors duration-300 ease-in-out",
+              textColor,
+            )}
+          >
+            <InstagramIcon className="w-5 h-5" />
+          </a>
+        )}
+        {linkedin && (
+          <a
+            href={linkedin.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className={cn(
+              "transition-colors duration-300 ease-in-out",
+              textColor,
+            )}
+          >
+            <LinkedInIcon className="w-5 h-5" />
+          </a>
+        )}
       </div>
 
       <button

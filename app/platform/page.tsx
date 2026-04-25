@@ -9,7 +9,7 @@ import { PlatformFinalCta } from "@/components/sections/PlatformFinalCta";
 export const metadata: Metadata = {
   title: "Platform — Ordino AI",
   description:
-    "All Your Ads. One Brain. Create, manage, and optimize campaigns across TikTok, Meta, Google & more from a single AI-powered command center.",
+    "Tüm Reklamlarınız. Tek Beyin. TikTok, Meta, Google ve daha fazlasında kampanyalarınızı tek bir AI destekli komuta merkezinden oluşturun, yönetin ve optimize edin.",
 };
 
 export default function PlatformPage() {
