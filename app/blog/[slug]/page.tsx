@@ -17,9 +17,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = news.find((p) => p.slug === slug);
-  if (!post) return { title: "Yazı bulunamadı — Ordino" };
+  if (!post) return { title: "Yazı bulunamadı" };
   return {
-    title: `${post.title} — Ordino`,
+    title: post.title,
     description: post.excerpt,
   };
 }

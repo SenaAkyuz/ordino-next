@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { caseStudies } from "@/lib/data/caseStudies";
 
 export const metadata: Metadata = {
-  title: "Referanslar — Ordino",
+  title: "Referanslar",
   description:
     "Gerçek markalar. Gerçek sonuçlar. Veri odaklı strateji, AI destekli optimizasyon ve dönüşüme odaklı yaratıcılık ile elde ettiğimiz başarı hikayeleri.",
 };

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
+import { site } from "@/lib/data/site";
 
 export function Hero() {
   return (
@@ -8,15 +9,31 @@ export function Hero() {
       data-theme="dark"
       className="relative flex h-screen min-h-[720px] items-center justify-center overflow-hidden bg-dark-bg-2 text-center text-white"
     >
+      {/* Katman 0a: Gradient fallback */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="hero-breathe h-full w-full" />
       </div>
 
-      <div
-        className="absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.45)_100%)]"
+      {/* Katman 0b: HTML5 video background */}
+      <video
+        src="/hero/hero.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster={`https://vumbnail.com/${site.heroVideoId}.jpg`}
+        className="absolute inset-0 z-0 h-full w-full object-cover"
         aria-hidden="true"
       />
 
+      {/* Katman 1: Karartma overlay */}
+      <div
+        className="absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.65)_100%)]"
+        aria-hidden="true"
+      />
+
+      {/* Katman 2: Icerik */}
       <div className="relative z-[2] px-6">
         <Reveal>
           <h1 className="font-display text-[clamp(3rem,7vw,6.5rem)] font-light leading-[1.05] tracking-[-1.5px] text-white [&_em]:font-normal [&_em]:italic">
@@ -48,6 +65,7 @@ export function Hero() {
         </Reveal>
       </div>
 
+      {/* Scroll indikatoru */}
       <div className="absolute bottom-10 left-1/2 z-[2] flex -translate-x-1/2 flex-col items-center gap-[14px] text-[0.7rem] uppercase tracking-[3px] text-white/60">
         Scroll
         <span

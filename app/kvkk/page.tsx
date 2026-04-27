@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 
 export const metadata: Metadata = {
-  title: "KVKK Aydınlatma Metni — Ordino",
+  title: "KVKK Aydınlatma Metni",
   description:
     "6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında aydınlatma metni.",
 };

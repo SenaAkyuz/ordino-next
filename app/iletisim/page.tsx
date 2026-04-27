@@ -8,7 +8,7 @@ import { Cta } from "@/components/sections/Cta";
 import { site } from "@/lib/data/site";
 
 export const metadata: Metadata = {
-  title: "İletişim — Ordino",
+  title: "İletişim",
   description:
     "Bize ulaşın. Markanız hakkında bilgi verin, bir iş günü içinde dönüş yapacağız.",
 };

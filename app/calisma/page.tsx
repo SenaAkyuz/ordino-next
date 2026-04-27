@@ -6,7 +6,7 @@ import { Cta } from "@/components/sections/Cta";
 import { workPortfolio } from "@/lib/data/workPortfolio";
 
 export const metadata: Metadata = {
-  title: "Çalışmalar — Ordino",
+  title: "Çalışmalar",
   description:
     "Türk ve uluslararası markalara hizmet veren Ordino'nun seçili çalışmaları. Strateji, yaratıcılık ve büyüme odaklı projeler.",
 };

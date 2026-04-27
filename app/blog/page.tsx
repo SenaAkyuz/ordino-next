@@ -6,7 +6,7 @@ import { Cta } from "@/components/sections/Cta";
 import { news } from "@/lib/data/news";
 
 export const metadata: Metadata = {
-  title: "Blog & İçgörüler — Ordino",
+  title: "Blog & İçgörüler",
   description:
     "Dijital pazarlama, SEO, AI, sosyal medya ve sektör haberleri üzerine Ordino ekibinden içgörüler.",
 };

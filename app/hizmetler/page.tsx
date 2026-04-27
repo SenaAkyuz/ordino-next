@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { WhatWeDo } from "@/components/sections/WhatWeDo";
 import { ServicesHeroGrid } from "@/components/sections/ServicesHeroGrid";
-import { ServiceDetail } from "@/components/sections/ServiceDetail";
-import { ClientsShowcase } from "@/components/sections/ClientsShowcase";
+import { ServicesAccordion } from "@/components/sections/ServicesAccordion";
 import { PowerSection } from "@/components/sections/PowerSection";
 import { AnalyticsBlock } from "@/components/sections/AnalyticsBlock";
 import { Cta } from "@/components/sections/Cta";
@@ -14,7 +13,7 @@ import {
 } from "@/lib/data/services";
 
 export const metadata: Metadata = {
-  title: "Hizmetler — Ordino",
+  title: "Hizmetler",
   description:
     "Tam servis ve çok disiplinli reklam ajansı. Strateji, yaratıcılık, performans, analitik, büyüme ve dijital deneyim.",
 };
@@ -28,12 +27,12 @@ export default function HizmetlerPage() {
         emphasis="Çok disiplinli."
         sub="Strateji, yaratıcılık, performans medya, analitik, büyüme ve dijital deneyim — tek elden, ölçülebilir sonuçlarla."
       />
-      <WhatWeDo title="Tam servis ve <em>çok disiplinli.</em><br>İşimiz: veri odaklı ve <em>yaratıcı zekayla</em>." />
+      <WhatWeDo
+        eyebrow="Neler Yapıyoruz?"
+        title="Veriyi <em>yaratıcılıkla</em> bütünleştiriyor,<br><em>çok disiplinli</em> yapımızla yenilikçi çözümler üretiyoruz."
+      />
       <ServicesHeroGrid cards={serviceCards} />
-      {serviceDetails.map((detail, i) => (
-        <ServiceDetail key={detail.slug} {...detail} alt={i % 2 === 1} />
-      ))}
-      <ClientsShowcase />
+      <ServicesAccordion details={serviceDetails} />
       <PowerSection
         label="Yapay Zekanın Gücü"
         title="En iyi kampanyalarınız için"

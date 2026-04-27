@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 import type { CaseStudy } from "@/lib/data/caseStudies";
@@ -74,22 +73,6 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
                 ))}
               </div>
             </Reveal>
-            <Reveal>
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  href="/contact#contact-form"
-                  className="rounded-[10em] border border-black bg-black px-[34px] py-[14px] font-body text-[0.9rem] font-normal text-white transition-[background,color] duration-[400ms] hover:bg-transparent hover:text-black"
-                >
-                  Request Demo
-                </Link>
-                <Link
-                  href={`#${data.slug}-detail`}
-                  className="rounded-[10em] border border-black bg-transparent px-[34px] py-[14px] font-body text-[0.9rem] font-normal text-black transition-[background,color] duration-[400ms] hover:bg-black hover:text-white"
-                >
-                  Read More
-                </Link>
-              </div>
-            </Reveal>
           </div>
           <Reveal>
             <div className="relative aspect-[16/9] overflow-hidden">
@@ -151,7 +134,7 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
         <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-12 md:grid-cols-2 md:gap-[100px]">
           <Reveal>
             <h4 className="mb-5 font-body text-[0.75rem] font-medium uppercase tracking-[3px] text-accent">
-              The Challenge
+              Zorluk
             </h4>
             <h3 className="mb-6 font-display text-[clamp(1.8rem,2.8vw,2.4rem)] font-light leading-[1.3] [&_em]:italic [&_em]:font-normal">
               {data.challenge.head}
@@ -169,7 +152,7 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
 
           <Reveal>
             <h4 className="mb-5 font-body text-[0.75rem] font-medium uppercase tracking-[3px] text-accent">
-              The Solution
+              Çözüm
             </h4>
             <h3 className="mb-6 font-display text-[clamp(1.8rem,2.8vw,2.4rem)] font-light leading-[1.3] [&_em]:italic [&_em]:font-normal">
               {data.solution.head}

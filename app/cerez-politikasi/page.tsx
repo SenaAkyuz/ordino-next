@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 
 export const metadata: Metadata = {
-  title: "Çerez Politikası — Ordino",
+  title: "Çerez Politikası",
   description: "Ordino web sitesinde kullanılan çerezler hakkında detaylı bilgi.",
 };
 

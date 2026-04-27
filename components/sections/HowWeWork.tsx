@@ -6,7 +6,7 @@ type Stat = { value: string; label: string };
 const defaultStats: Stat[] = [
   { value: "11", label: "Yıllık Tecrübe" },
   { value: "50+", label: "Marka ile Çalışıldı" },
-  { value: "₺200M+", label: "Yönetilen Reklam Bütçesi" },
+  { value: "₺200M+ · $1M+ · £2M+", label: "Yönetilen Reklam Bütçesi" },
   { value: "Binlerce", label: "Yönetilen Kampanya" },
 ];
 
@@ -53,7 +53,7 @@ export function HowWeWork({
 
       <div className="mx-auto mt-20 grid max-w-[1200px] grid-cols-2 gap-8 border-t border-white/10 pt-[60px] md:mt-[80px] md:grid-cols-4 md:gap-10">
         {stats.map((stat) => {
-          const hasNumber = /\d/.test(stat.value);
+          const hasNumber = /\d/.test(stat.value) && !stat.value.includes(" · ");
           return (
             <Reveal key={stat.label} className="text-center">
               {hasNumber ? (
@@ -62,7 +62,7 @@ export function HowWeWork({
                   className="mb-[10px] block font-display text-[2.2rem] md:text-[3rem] font-light"
                 />
               ) : (
-                <span className="mb-[10px] block font-display text-[2.2rem] md:text-[3rem] font-light">
+                <span className="mb-[10px] block font-display text-[1.4rem] sm:text-[1.8rem] md:text-[2.2rem] lg:text-[2.6rem] font-light leading-[1.2]">
                   {stat.value}
                 </span>
               )}

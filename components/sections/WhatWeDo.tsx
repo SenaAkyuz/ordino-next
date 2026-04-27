@@ -5,7 +5,7 @@ type WhatWeDoProps = {
   title: string;
 };
 
-export function WhatWeDo({ eyebrow = "What We Do", title }: WhatWeDoProps) {
+export function WhatWeDo({ eyebrow = "Yaptıklarımız", title }: WhatWeDoProps) {
   return (
     <section
       data-theme="dark"

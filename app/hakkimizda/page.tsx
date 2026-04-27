@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { EditorialHero } from "@/components/sections/EditorialHero";
-import { PushForward } from "@/components/sections/PushForward";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { Showreel } from "@/components/sections/Showreel";
 import { Leadership } from "@/components/sections/Leadership";
@@ -10,7 +9,7 @@ import { Cta } from "@/components/sections/Cta";
 import { leadership, teamStructure } from "@/lib/data/team";
 
 export const metadata: Metadata = {
-  title: "Hakkımızda — Ordino",
+  title: "Hakkımızda",
   description:
     "Ordino, London ve Istanbul merkezli full-service reklam ajansıdır. Google, Meta, TikTok ve X'te resmi reklam partnerliği ile Türk ve uluslararası markalara hizmet verir.",
 };
@@ -20,17 +19,12 @@ export default function HakkimizdaPage() {
     <>
       <EditorialHero
         eyebrow="Hakkımızda"
-        title="Strateji."
-        emphasis="Yaratıcılık. Büyüme."
-        prose={[
-          "Ordino, London ve Istanbul merkezli full-service reklam ajansıdır. Stratejik yaklaşım, yaratıcı üretim ve veri odaklı büyüme — bu üç temel değer üzerine kurulu.",
-          "Google, Meta, TikTok ve X'te resmi reklam partnerliği ile faaliyet gösteren ekibimiz, Türk ve uluslararası markalara ölçülebilir sonuçlar sağlamak için çalışır. Istanbul'da Ferko Signature Plaza'da bulunan ofisimizden global olarak hizmet veriyoruz.",
-        ]}
-      />
-      <PushForward
         title="London ve Istanbul bazlı"
         emphasis="full-service ajans."
-        text="Google, Meta, TikTok ve X'te resmi reklam partnerliği. Türk ve uluslararası markalara hizmet veren bir ajans. 11 yıllık tecrübemizle 50'den fazla markanın büyüme yolculuğuna eşlik ettik — UK, USA ve Türkiye'de toplamda yüz milyonlarca reklam bütçesi yönettik."
+        prose={[
+          "Google, Meta, TikTok ve X'te resmi reklam partnerliği.",
+          "Türk ve uluslararası markalara hizmet.",
+        ]}
       />
       <HowWeWork
         eyebrow="Rakamlarla Ordino"
@@ -40,7 +34,7 @@ export default function HakkimizdaPage() {
         stats={[
           { value: "11", label: "Yıllık Tecrübe" },
           { value: "50+", label: "Marka ile Çalışıldı" },
-          { value: "₺200M+", label: "Yönetilen Reklam Bütçesi" },
+          { value: "₺200M+ · $1M+ · £2M+", label: "Yönetilen Reklam Bütçesi" },
           { value: "Binlerce", label: "Yönetilen Kampanya" },
         ]}
       />

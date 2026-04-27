@@ -28,15 +28,24 @@ export function ClientsShowcase() {
                 key={c.slug}
                 className="group flex h-[120px] w-full items-center justify-center p-5"
               >
-                <div className="relative h-[70%] w-[70%]">
-                  <Image
-                    src={`/clients/${c.slug}.png`}
-                    alt={c.alt}
-                    fill
-                    sizes="(max-width: 768px) 40vw, (max-width: 1200px) 25vw, 200px"
-                    className="object-contain opacity-70 [filter:grayscale(40%)] transition-[opacity,filter,transform] duration-[400ms] group-hover:scale-[1.05] group-hover:opacity-100 group-hover:[filter:grayscale(0%)]"
-                  />
-                </div>
+                {c.hasLogo ? (
+                  <div className="relative h-[70%] w-[70%]">
+                    <Image
+                      src={`/clients/${c.slug}.png`}
+                      alt={c.alt}
+                      fill
+                      sizes="(max-width: 768px) 40vw, (max-width: 1200px) 25vw, 200px"
+                      className="object-contain opacity-70 [filter:grayscale(40%)] transition-[opacity,filter,transform] duration-[400ms] group-hover:scale-[1.05] group-hover:opacity-100 group-hover:[filter:grayscale(0%)]"
+                    />
+                  </div>
+                ) : (
+                  <span
+                    className="font-display text-[1.05rem] uppercase tracking-[2px] text-[#999] opacity-70 transition-[color,opacity] duration-[400ms] group-hover:text-black group-hover:opacity-100"
+                    aria-label={c.alt}
+                  >
+                    {c.name}
+                  </span>
+                )}
               </li>
             ))}
           </ul>

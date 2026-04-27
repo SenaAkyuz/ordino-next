@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import type { Leader } from "@/lib/data/team";
@@ -38,14 +39,24 @@ export function Leadership({
           {leaders.map((leader) => (
             <Reveal key={leader.name}>
               <div className="group">
-                <div className="mb-6 aspect-square w-full overflow-hidden">
-                  <div
-                    className="flex h-full w-full items-center justify-center font-display text-[3.5rem] font-light text-white/70 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.04]"
-                    style={{ background: leader.gradient }}
-                    aria-hidden="true"
-                  >
-                    {leader.initials}
-                  </div>
+                <div className="relative mb-6 aspect-square w-full overflow-hidden">
+                  {leader.photo ? (
+                    <Image
+                      src={leader.photo}
+                      alt={leader.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.04]"
+                    />
+                  ) : (
+                    <div
+                      className="flex h-full w-full items-center justify-center font-display text-[3.5rem] font-light text-white/70 transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.04]"
+                      style={{ background: leader.gradient }}
+                      aria-hidden="true"
+                    >
+                      {leader.initials}
+                    </div>
+                  )}
                 </div>
                 <h3 className="mb-2 font-display text-[1.4rem] font-normal leading-[1.3] text-black">
                   {leader.name}

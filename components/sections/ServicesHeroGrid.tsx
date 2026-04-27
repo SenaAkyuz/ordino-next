@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import type { ServiceCard } from "@/lib/data/services";
 
@@ -12,7 +11,7 @@ export function ServicesHeroGrid({ cards }: ServicesHeroGridProps) {
       <div className="mx-auto grid max-w-[1300px] grid-cols-1 border-l border-t border-[#eaeaea] px-6 py-20 md:grid-cols-2 md:px-10 md:pb-[120px] md:pt-20 lg:grid-cols-3 lg:px-20">
         {cards.map((card) => (
           <Reveal key={card.slug}>
-            <Link
+            <a
               href={`#${card.slug}`}
               className="group relative block h-full border-b border-r border-[#eaeaea] p-9 transition-colors duration-500 hover:bg-light-bg"
             >
@@ -29,7 +28,7 @@ export function ServicesHeroGrid({ cards }: ServicesHeroGridProps) {
               <span className="absolute right-9 top-9 -translate-x-[6px] text-[1.2rem] text-accent opacity-0 transition-[opacity,transform] duration-500 group-hover:translate-x-0 group-hover:opacity-100">
                 →
               </span>
-            </Link>
+            </a>
           </Reveal>
         ))}
       </div>

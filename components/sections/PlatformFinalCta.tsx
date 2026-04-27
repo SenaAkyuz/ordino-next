@@ -34,12 +34,6 @@ export function PlatformFinalCta() {
             >
               Erken Erişim Talep Et
             </Link>
-            <Link
-              href="/iletisim#contact-form"
-              className="inline-flex items-center gap-[10px] rounded-[10em] border border-white/30 bg-transparent px-9 py-[15px] font-body text-[0.88rem] font-normal text-white transition-all duration-[400ms] hover:border-white/50 hover:bg-white/[0.08]"
-            >
-              Bizimle Konuş
-            </Link>
           </div>
         </Reveal>
       </div>

@@ -18,9 +18,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const study = caseStudies.find((c) => c.slug === slug);
-  if (!study) return { title: "Referans bulunamadı — Ordino" };
+  if (!study) return { title: "Referans bulunamadı" };
   return {
-    title: `${study.brand} — Referans — Ordino`,
+    title: `${study.brand} — Referans`,
     description: study.lead,
   };
 }
