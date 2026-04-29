@@ -22,22 +22,21 @@ export function ClientsShowcase() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <ul className="grid list-none grid-cols-2 items-center justify-items-center gap-x-10 gap-y-10 md:grid-cols-3 md:gap-x-[60px] md:gap-y-10">
+          <ul className="grid list-none grid-cols-2 items-center justify-items-center gap-x-12 gap-y-16 md:grid-cols-3 lg:grid-cols-4 md:gap-x-[80px] md:gap-y-20">
             {clients.map((c) => (
               <li
                 key={c.slug}
-                className="group flex h-[120px] w-full items-center justify-center p-5"
+                className="group flex h-[100px] w-[160px] items-center justify-center"
               >
                 {c.hasLogo ? (
-                  <div className="relative h-[70%] w-[70%]">
-                    <Image
-                      src={`/clients/${c.slug}.png`}
-                      alt={c.alt}
-                      fill
-                      sizes="(max-width: 768px) 40vw, (max-width: 1200px) 25vw, 200px"
-                      className="object-contain opacity-70 [filter:grayscale(40%)] transition-[opacity,filter,transform] duration-[400ms] group-hover:scale-[1.05] group-hover:opacity-100 group-hover:[filter:grayscale(0%)]"
-                    />
-                  </div>
+                  <Image
+                    src={`/clients/${c.slug}.${c.logoExt ?? "png"}`}
+                    alt={c.alt}
+                    width={200}
+                    height={80}
+                    style={{ transform: `scale(${c.scale ?? 1})` }}
+                    className="max-h-[80px] max-w-[140px] h-auto w-auto object-contain opacity-70 [filter:grayscale(40%)] transition-[opacity,filter,transform] duration-[400ms] group-hover:opacity-100 group-hover:[filter:grayscale(0%)]"
+                  />
                 ) : (
                   <span
                     className="font-display text-[1.05rem] uppercase tracking-[2px] text-[#999] opacity-70 transition-[color,opacity] duration-[400ms] group-hover:text-black group-hover:opacity-100"

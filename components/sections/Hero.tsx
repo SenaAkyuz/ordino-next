@@ -3,33 +3,36 @@ import { Reveal } from "@/components/ui/Reveal";
 import { site } from "@/lib/data/site";
 
 export function Hero() {
+  const vimeoSrc = `https://player.vimeo.com/video/${site.heroVideoId}?background=1&autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&transparent=0&dnt=1&quality=1080p&autopause=0`;
+
   return (
     <section
       id="home"
       data-theme="dark"
-      className="relative flex h-screen min-h-[720px] items-center justify-center overflow-hidden bg-dark-bg-2 text-center text-white"
+      className="relative flex h-screen min-h-[720px] items-center justify-center overflow-hidden bg-black text-center text-white"
     >
-      {/* Katman 0a: Gradient fallback */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      {/* Katman 0a: Gradient fallback (iframe yuklenirken) — sadece video alaninda */}
+      <div className="absolute inset-x-0 top-[80px] bottom-0 z-0 overflow-hidden">
         <div className="hero-breathe h-full w-full" />
       </div>
 
-      {/* Katman 0b: HTML5 video background */}
-      <video
-        src="/hero/hero.mp4"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        poster={`https://vumbnail.com/${site.heroVideoId}.jpg`}
-        className="absolute inset-0 z-0 h-full w-full object-cover"
-        aria-hidden="true"
-      />
+      {/* Katman 0b: Vimeo iframe — navbar altinda baslar (top-[80px]) */}
+      <div className="absolute inset-x-0 top-[80px] bottom-0 z-0 overflow-hidden">
+        <iframe
+          src={vimeoSrc}
+          loading="eager"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+          title="Hero video"
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[100%] w-[177.77%] min-h-[100%] min-w-[100%] -translate-x-1/2 -translate-y-1/2 border-0"
+          style={{ aspectRatio: "16/9" }}
+        />
+      </div>
 
-      {/* Katman 1: Karartma overlay */}
+      {/* Katman 1: Karartma overlay — sadece video alaninda (top-[80px]'den) */}
       <div
-        className="absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.65)_100%)]"
+        className="absolute inset-x-0 top-[80px] bottom-0 z-[1] bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.65)_100%)]"
         aria-hidden="true"
       />
 

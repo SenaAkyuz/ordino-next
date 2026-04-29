@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useRef } from "react";
 
 const hoverSelector =
@@ -10,13 +9,29 @@ export function CustomCursor() {
   const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Server-side guard
     if (typeof window === "undefined") return;
-    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches)
-      return;
 
+    // Hover/pointer destegi yoksa erken return (mobile/tablet)
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+      return;
+    }
+
+    // Touch device kontrolu (iPad Pro vb.)
+    if ("ontouchstart" in window) return;
+
+    // Firefox tespiti — Firefox'ta custom cursor render sorunlu, default kalsin
+    const ua = navigator.userAgent.toLowerCase();
+    const isFirefox = ua.includes("firefox");
+    if (isFirefox) return;
+
+    // Refs hazir mi kontrol
     const dot = dotRef.current;
     const ring = ringRef.current;
     if (!dot || !ring) return;
+
+    // JS yuklendi + desktop + non-touch + Firefox degil: custom cursor aktif
+    document.body.classList.add("custom-cursor-active");
 
     let mx = 0;
     let my = 0;
@@ -46,6 +61,7 @@ export function CustomCursor() {
       dot.classList.add("is-hidden");
       ring.classList.add("is-hidden");
     };
+
     const onEnter = () => {
       dot.classList.remove("is-hidden");
       ring.classList.remove("is-hidden");
@@ -57,6 +73,7 @@ export function CustomCursor() {
         ring.classList.add("is-hover");
       }
     };
+
     const onOut = (e: MouseEvent) => {
       const target = e.target as Element | null;
       if (target?.closest?.(hoverSelector)) {
@@ -77,6 +94,7 @@ export function CustomCursor() {
       document.removeEventListener("mouseover", onOver);
       document.removeEventListener("mouseout", onOut);
       if (rafId !== null) cancelAnimationFrame(rafId);
+      document.body.classList.remove("custom-cursor-active");
     };
   }, []);
 

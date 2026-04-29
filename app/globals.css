@@ -165,10 +165,18 @@ body {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 
 /* ===== Custom cursor (desktop with fine pointer only) ===== */
+/* Default: native cursor gozukur (Firefox uyumluluk + JS hata fallback) */
 @media (hover: hover) and (pointer: fine) {
-  html, body,
-  a, button, input, select, textarea, label,
-  [role="button"], [data-cursor="hover"] {
+  /* Sadece body'ye custom-cursor-active class eklendiyse native cursor gizle */
+  body.custom-cursor-active,
+  body.custom-cursor-active a,
+  body.custom-cursor-active button,
+  body.custom-cursor-active input,
+  body.custom-cursor-active select,
+  body.custom-cursor-active textarea,
+  body.custom-cursor-active label,
+  body.custom-cursor-active [role="button"],
+  body.custom-cursor-active [data-cursor="hover"] {
     cursor: none;
   }
 
