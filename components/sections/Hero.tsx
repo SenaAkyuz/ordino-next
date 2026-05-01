@@ -7,9 +7,9 @@ export function Hero() {
     <section
       id="home"
       data-theme="dark"
-      className="relative flex h-screen min-h-[720px] items-end justify-center overflow-hidden bg-white text-center text-white"
+      className="relative flex h-screen min-h-[600px] items-end justify-center overflow-hidden bg-white text-center text-white md:min-h-[720px]"
     >
-      <div className="absolute inset-x-0 bottom-0 top-[100px] z-0 overflow-hidden">
+      <div className="absolute inset-x-0 bottom-0 top-[70px] z-0 overflow-hidden md:top-[100px]">
         <Image
           src="/hero/hero-bg.webp"
           alt="Ordino — Strateji, Yaratıcılık, Büyüme"
@@ -35,16 +35,16 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={0.3}>
-          <div className="mt-[50px] flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-[40px] flex flex-wrap items-center justify-center gap-3 md:mt-[50px] md:gap-4">
             <Link
               href="/hizmetler"
-              className="inline-block rounded-[10em] border border-white bg-white px-10 py-4 text-[0.95rem] text-dark-bg transition-[background,color] duration-[400ms] hover:bg-transparent hover:text-white"
+              className="inline-block rounded-[10em] border border-white bg-white px-7 py-3 text-[0.9rem] text-dark-bg transition-[background,color] duration-[400ms] hover:bg-transparent hover:text-white md:px-10 md:py-4 md:text-[0.95rem]"
             >
               Hizmetleri Keşfet
             </Link>
             <Link
               href="/iletisim"
-              className="inline-block rounded-[10em] border border-white px-10 py-4 text-[0.95rem] text-white transition-[background,color] duration-[400ms] hover:bg-white hover:text-dark-bg"
+              className="inline-block rounded-[10em] border border-white px-7 py-3 text-[0.9rem] text-white transition-[background,color] duration-[400ms] hover:bg-white hover:text-dark-bg md:px-10 md:py-4 md:text-[0.95rem]"
             >
               İletişime Geç
             </Link>

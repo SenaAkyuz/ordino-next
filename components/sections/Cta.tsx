@@ -20,7 +20,7 @@ export function Cta({
   id = "contact",
 }: CtaProps) {
   const linkClass =
-    "inline-block rounded-[10em] border border-white px-[50px] py-[18px] font-body text-base font-normal text-white transition-[background,color] duration-[400ms] hover:bg-white hover:text-black";
+    "inline-block rounded-[10em] border border-white px-8 py-4 font-body text-[0.95rem] font-normal text-white transition-[background,color] duration-[400ms] hover:bg-white hover:text-black md:px-[50px] md:py-[18px] md:text-base";
   return (
     <section
       id={id}
