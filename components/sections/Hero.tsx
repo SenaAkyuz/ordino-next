@@ -10,15 +10,30 @@ export function Hero() {
       className="relative flex h-screen min-h-[600px] items-end justify-center overflow-hidden bg-white text-center text-white md:min-h-[720px]"
     >
       <div className="absolute inset-x-0 bottom-0 top-[70px] z-0 overflow-hidden md:top-[100px]">
-        <Image
-          src="/hero/hero-bg.webp"
-          alt="Ordino — Strateji, Yaratıcılık, Büyüme"
-          fill
-          priority
-          quality={90}
-          sizes="100vw"
-          className="object-cover"
-        />
+        {/* Mobil: dikey 1080x1440 gorsel */}
+        <div className="relative block h-full w-full md:hidden">
+          <Image
+            src="/hero/hero-bg-mobile.jpeg"
+            alt="Ordino — Strateji, Yaratıcılık, Büyüme"
+            fill
+            priority
+            quality={90}
+            sizes="(max-width: 768px) 100vw, 0px"
+            className="object-cover object-center"
+          />
+        </div>
+        {/* Tablet + PC: yatay landscape gorsel */}
+        <div className="relative hidden h-full w-full md:block">
+          <Image
+            src="/hero/hero-bg.webp"
+            alt="Ordino — Strateji, Yaratıcılık, Büyüme"
+            fill
+            priority
+            quality={90}
+            sizes="(min-width: 768px) 100vw, 0px"
+            className="object-cover"
+          />
+        </div>
       </div>
 
       <div className="relative z-[2] mb-[2vh] px-6">
