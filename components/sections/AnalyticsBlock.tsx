@@ -30,8 +30,11 @@ export function AnalyticsBlock({
   partners = defaultPartners,
   showPartners = true,
 }: AnalyticsBlockProps) {
-  // Marquee icin 4x duplicate (track viewport'tan genis olsun, bos kalmasin)
-  const marqueeItems = [...partners, ...partners, ...partners, ...partners];
+  // Marquee icin 8x duplicate (mobilde dar viewport icin ekstra guvenlik)
+  const marqueeItems = [
+    ...partners, ...partners, ...partners, ...partners,
+    ...partners, ...partners, ...partners, ...partners,
+  ];
 
   return (
     <section
@@ -83,8 +86,8 @@ export function AnalyticsBlock({
           </p>
           <div className="marquee-pause relative w-full overflow-hidden py-10 md:py-12">
             {/* Sol/sag yatay fade-out (beyazdan saydama) */}
-            <div className="pointer-events-none absolute left-0 top-0 z-[2] h-full w-[100px] bg-gradient-to-r from-white via-white/80 to-transparent md:w-[160px]" aria-hidden="true" />
-            <div className="pointer-events-none absolute right-0 top-0 z-[2] h-full w-[100px] bg-gradient-to-l from-white via-white/80 to-transparent md:w-[160px]" aria-hidden="true" />
+            <div className="pointer-events-none absolute left-0 top-0 z-[2] h-full w-[30px] bg-gradient-to-r from-white via-white/80 to-transparent md:w-[160px]" aria-hidden="true" />
+            <div className="pointer-events-none absolute right-0 top-0 z-[2] h-full w-[30px] bg-gradient-to-l from-white via-white/80 to-transparent md:w-[160px]" aria-hidden="true" />
 
             {/* Marquee track */}
             <div className="animate-marquee flex w-max items-center">
