@@ -21,12 +21,7 @@ export function Hero() {
         />
       </div>
 
-      <div
-        className="absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.55)_100%)]"
-        aria-hidden="true"
-      />
-
-      <div className="relative z-[2] mb-[5vh] px-6">
+      <div className="relative z-[2] mb-[2vh] px-6">
         <Reveal>
           <h1 className="font-display text-[clamp(3rem,7vw,6.5rem)] font-light leading-[1.05] tracking-[-1.5px] text-white [&_em]:font-normal [&_em]:italic">
             Strateji. <em>Yaratıcılık.</em> Büyüme.
@@ -34,7 +29,7 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <p className="mx-auto mt-[30px] max-w-[640px] font-body text-[1.1rem] font-light leading-[1.6] tracking-[0.5px] text-white/75">
+          <p className="mx-auto mt-[30px] max-w-[640px] font-body text-[1.15rem] font-normal leading-[1.6] tracking-[0.5px] text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.55)]">
             AI destekli reklam zekası ile daha akıllı kampanyalar, hedefli iletişim ve ölçülebilir büyüme.
           </p>
         </Reveal>
