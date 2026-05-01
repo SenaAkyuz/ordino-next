@@ -91,7 +91,7 @@ export function AnalyticsBlock({
               {marqueeItems.map((partner, index) => (
                 <div
                   key={`${partner.name}-${index}`}
-                  className="flex h-[60px] shrink-0 items-center justify-center px-12 md:h-[80px] md:px-20"
+                  className="flex h-[60px] shrink-0 items-center justify-center px-6 md:h-[80px] md:px-20"
                 >
                   <Image
                     src={partner.logo}
