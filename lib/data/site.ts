@@ -14,8 +14,8 @@ export const site = {
 
   email: "theordino.com",
   careersEmail: "careers@theordino.com",
-  phone: "+90 212 996 71 74",
-  phoneHref: "tel:+902129967174",
+  phone: "0212 996 71 47",
+  phoneHref: "tel:+902129967147",
   address: "Ferko Signature Plaza, A Blok, Büyükdere Caddesi No:175, Esentepe, 34394 Şişli / İstanbul, Türkiye",
   londonAddress: "20-22 Wenlock Road, London, N1 7GU, United Kingdom",
 

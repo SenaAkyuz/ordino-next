@@ -38,10 +38,10 @@ export default function TesekkurlerPage() {
         <p className="mb-12 font-body text-base font-light leading-[1.7] text-[#666]">
           Mesajınızı başarıyla aldık. Ekibimiz brief&apos;inizi inceleyecek ve bir iş günü içinde size dönüş yapacaktır. Acil durumlarda{" "}
           <a
-            href="tel:+902129967174"
+            href="tel:+902129967147"
             className="text-black underline transition-colors hover:text-accent"
           >
-            +90 212 996 71 74
+            0212 996 71 47
           </a>{" "}
           numaramızı arayabilirsiniz.
         </p>

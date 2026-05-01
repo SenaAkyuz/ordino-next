@@ -116,10 +116,10 @@ export function ContactForm() {
             </InfoBlock>
             <InfoBlock label="Telefon">
               <a
-                href="tel:+902129967174"
+                href="tel:+902129967147"
                 className="block font-body text-base font-light leading-[1.6] text-black transition-colors hover:text-accent"
               >
-                +90 212 996 71 74
+                0212 996 71 47
               </a>
             </InfoBlock>
             <InfoBlock label="Stüdyo">

@@ -25,7 +25,7 @@ export function SchemaMarkup() {
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: "+90-212-996-71-74",
+        telephone: "+90-212-996-71-47",
         contactType: "customer service",
         email: "theordino.com",
         availableLanguage: ["Turkish", "English"],
@@ -42,7 +42,7 @@ export function SchemaMarkup() {
     name: "Ordino — Istanbul Ofisi",
     image: "https://theordino.com/og.jpg",
     url: "https://theordino.com",
-    telephone: "+90-212-996-71-74",
+    telephone: "+90-212-996-71-47",
     email: "theordino.com",
     priceRange: "$$$",
     address: {
