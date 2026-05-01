@@ -108,10 +108,10 @@ export function ContactForm() {
             </InfoBlock>
             <InfoBlock label="Kariyer">
               <a
-                href="mailto:careers@theordino.com"
+                href="mailto:info@theordino.com"
                 className="block font-body text-base font-light leading-[1.6] text-black transition-colors hover:text-accent"
               >
-                careers@theordino.com
+                info@theordino.com
               </a>
             </InfoBlock>
             <InfoBlock label="Telefon">

@@ -52,7 +52,7 @@ type Options = {
 
 // Seed for initial SSR render so the nav doesn't flash the wrong colour on
 // pages whose first section is known to be dark.
-const KNOWN_DARK_ROUTES = ["/", "/platform", "/contact", "/services"];
+const KNOWN_DARK_ROUTES = ["/platform", "/contact", "/services"];
 
 export function useAdaptiveNav({
   navRef,

@@ -7,9 +7,9 @@ export function Hero() {
     <section
       id="home"
       data-theme="dark"
-      className="relative flex h-screen min-h-[720px] items-end justify-center overflow-hidden bg-black text-center text-white"
+      className="relative flex h-screen min-h-[720px] items-end justify-center overflow-hidden bg-white text-center text-white"
     >
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-x-0 bottom-0 top-[100px] z-0 overflow-hidden">
         <Image
           src="/hero/hero-bg.webp"
           alt="Ordino — Strateji, Yaratıcılık, Büyüme"
