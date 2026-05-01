@@ -19,7 +19,12 @@ export function Hero() {
             priority
             quality={95}
             sizes="(max-width: 768px) 100vw, 0px"
-            className="object-contain object-center"
+            className="object-contain object-top"
+          />
+          {/* Alt bolgeye yumusak gradient — yazi okunabilirligi icin */}
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-black/55 via-black/20 to-transparent"
+            aria-hidden="true"
           />
         </div>
         {/* Tablet + PC: yatay landscape gorsel */}
