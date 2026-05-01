@@ -115,7 +115,7 @@ export function ServicesGrid({
     <section
       id={id}
       data-theme="light"
-      className="bg-white px-5 py-[100px] md:px-10 md:py-[140px] lg:px-20 lg:py-[160px]"
+      className="bg-white px-5 pt-[60px] pb-[100px] md:px-10 md:pt-[90px] md:pb-[140px] lg:px-20 lg:pt-[110px] lg:pb-[160px]"
     >
       <div className="mx-auto max-w-[1200px]">
         <Reveal>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { ClientsShowcase } from "@/components/sections/ClientsShowcase";
 import { HowWeWork } from "@/components/sections/HowWeWork";
+import { PartnerMarquee } from "@/components/sections/PartnerMarquee";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { LatestWorks } from "@/components/sections/LatestWorks";
 import { ScheduleMeeting } from "@/components/sections/ScheduleMeeting";
@@ -23,6 +24,7 @@ export default function Home() {
       <Hero />
       <ClientsShowcase />
       <HowWeWork />
+      <PartnerMarquee />
       <ServicesGrid />
       <LatestWorks />
       <ScheduleMeeting calendlyUrl={site.meetingUrl} />

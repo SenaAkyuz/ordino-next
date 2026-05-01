@@ -17,9 +17,9 @@ export function Hero() {
             alt="Ordino — Strateji, Yaratıcılık, Büyüme"
             fill
             priority
-            quality={90}
+            quality={95}
             sizes="(max-width: 768px) 100vw, 0px"
-            className="object-cover object-center"
+            className="object-contain object-center"
           />
         </div>
         {/* Tablet + PC: yatay landscape gorsel */}
