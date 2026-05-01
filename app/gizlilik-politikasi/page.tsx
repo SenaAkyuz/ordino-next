@@ -121,10 +121,10 @@ export default function GizlilikPolitikasiPage() {
           <p>
             Haklarınızı kullanmak için{" "}
             <a
-              href="mailto:info@theordino.com"
+              href="mailto:theordino.com"
               className="text-accent hover:underline"
             >
-              info@theordino.com
+              theordino.com
             </a>{" "}
             adresine yazılı başvuruda bulunabilirsiniz.
           </p>
@@ -146,10 +146,10 @@ export default function GizlilikPolitikasiPage() {
           <p>
             Gizlilik politikamız hakkında sorularınız için:{" "}
             <a
-              href="mailto:info@theordino.com"
+              href="mailto:theordino.com"
               className="text-accent hover:underline"
             >
-              info@theordino.com
+              theordino.com
             </a>
           </p>
         </div>

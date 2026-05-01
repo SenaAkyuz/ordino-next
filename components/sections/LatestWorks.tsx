@@ -10,7 +10,7 @@ export function LatestWorks() {
             Seçili Çalışmalar
           </p>
           <h2 className="font-display text-[clamp(2.4rem,4vw,3.6rem)] font-light text-white">
-            Markalara <em className="italic font-normal">kazandırdıklarımız.</em>
+            Sektöre Göre <em className="italic font-normal">Sağladığımız Hizmetler</em>
           </h2>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">

@@ -45,7 +45,7 @@ export function ServicesAccordion({ details }: ServicesAccordionProps) {
               Hizmet Kategorileri
             </p>
             <h2 className="font-display text-[clamp(2.4rem,4vw,3.6rem)] font-light leading-[1.2] tracking-[-0.5px] text-black [&_em]:italic [&_em]:font-normal">
-              10 alanda <em>uzman.</em> Tek elden <em>yönetim.</em>
+              9 alanda <em>uzman.</em> Tek elden <em>yönetim.</em>
             </h2>
           </div>
         </Reveal>

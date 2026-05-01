@@ -7,19 +7,19 @@ export type ServiceBlock = {
 
 const defaultServices: ServiceBlock[] = [
   {
-    title: "01 — Dijital Pazarlama",
+    title: "01 — Medya & Reklam",
     items: [
-      "Dijital strateji",
-      "Çok kanallı kampanya",
-      "Landing page tasarımı",
-      "E-posta pazarlama",
-      "Web analitiği",
+      "Medya planlama ve satın alma",
+      "Programatik reklam yönetimi",
+      "TV, radyo ve geleneksel medya",
+      "Outdoor (DOOH)",
+      "TVC ve dijital film prodüksiyonu",
     ],
   },
   {
-    title: "02 — Sosyal Medya",
+    title: "02 — Sosyal Medya Yönetimi",
     items: [
-      "İçerik takvimi",
+      "İçerik takvimi ve strateji",
       "Instagram, TikTok, LinkedIn",
       "Topluluk yönetimi",
       "Influencer iş birlikleri",
@@ -27,83 +27,73 @@ const defaultServices: ServiceBlock[] = [
     ],
   },
   {
-    title: "03 — SEO",
+    title: "03 — İçerik Üretimi",
+    items: [
+      "Video prodüksiyon",
+      "Fotoğraf çekim",
+      "Copywriting",
+      "Grafik ve motion tasarım",
+      "Marka hikayesi",
+    ],
+  },
+  {
+    title: "04 — SEO & Organik Büyüme",
     items: [
       "Teknik SEO denetimi",
       "Anahtar kelime stratejisi",
       "On-page optimizasyon",
       "Lokal SEO",
-      "Performans raporlama",
+      "Schema markup",
     ],
   },
   {
-    title: "04 — Yazılım & Teknoloji",
-    items: [
-      "Web sitesi geliştirme",
-      "E-ticaret platformu",
-      "Mobil uygulama",
-      "Özel CRM yazılımları",
-      "API entegrasyonları",
-    ],
-  },
-  {
-    title: "05 — Medya",
-    items: [
-      "Medya planlama",
-      "Programatik reklam",
-      "TV ve geleneksel medya",
-      "Outdoor (DOOH)",
-      "CTV ve streaming",
-    ],
-  },
-  {
-    title: "06 — 360° İletişim",
-    items: [
-      "Halkla ilişkiler",
-      "Basın bülteni",
-      "Medya ilişkileri",
-      "Kriz iletişimi",
-      "Marka tonu yönetimi",
-    ],
-  },
-  {
-    title: "07 — Reklam",
-    items: [
-      "Kampanya konsepti",
-      "TVC ve dijital film",
-      "Print ve outdoor",
-      "Yaratıcı yönetim",
-      "ATL ve BTL entegrasyon",
-    ],
-  },
-  {
-    title: "08 — AI & Otomasyon",
-    items: [
-      "AI destekli içerik",
-      "Müşteri segmentasyonu",
-      "Kampanya otomasyonu",
-      "Chatbot çözümleri",
-      "İş akışı otomasyonu",
-    ],
-  },
-  {
-    title: "09 — Performans Marketing",
-    items: [
-      "Google Ads",
-      "Meta (Facebook & Instagram)",
-      "TikTok ve Pinterest",
-      "Smart Bidding",
-      "ROAS optimizasyonu",
-    ],
-  },
-  {
-    title: "10 — Kurumsal Kimlik & Tasarım",
+    title: "05 — Görsel Tasarım",
     items: [
       "Logo ve marka kimliği",
       "Marka rehberi",
       "Tipografi ve renk",
       "Ambalaj tasarımı",
-      "Pazarlama materyalleri",
+      "Kampanya görselleri",
+    ],
+  },
+  {
+    title: "06 — Web Sitesi Geliştirme & Optimizasyon",
+    items: [
+      "Next.js ve React geliştirme",
+      "Kurumsal site ve landing page",
+      "Core Web Vitals optimizasyonu",
+      "CMS entegrasyonu",
+      "API entegrasyonları",
+    ],
+  },
+  {
+    title: "07 — E-ticaret Çözümleri",
+    items: [
+      "Shopify mağaza geliştirme",
+      "WooCommerce ve özel platform",
+      "Ödeme ve kargo entegrasyonu",
+      "Sepet terk optimizasyonu",
+      "E-ticaret SEO",
+    ],
+  },
+  {
+    title: "08 — Mailing & CRM",
+    items: [
+      "E-posta pazarlama strateji",
+      "Otomasyon flow'ları",
+      "Müşteri segmentasyonu",
+      "CRM entegrasyonu",
+      "Newsletter tasarım",
+    ],
+  },
+  {
+    title: "09 — AI & Otomasyon",
+    items: [
+      "AI destekli içerik üretimi",
+      "Müşteri davranışı tahminleme",
+      "Kampanya AI otomasyonu",
+      "Chatbot çözümleri",
+      "İş akışı otomasyonu",
     ],
   },
 ];

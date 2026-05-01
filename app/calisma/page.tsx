@@ -27,12 +27,11 @@ export default function CalismaPage() {
         emphasis="sonuçlar."
         description="Aktif müşteri hesapları üzerinden son on iki ayın ortalama değerleri. Seçilmiş başarı hikayeleri değil — gerçek rakamlar."
         items={[
-          "Ortalama %187 ROAS artışı (90 günde)",
-          "Ortalama %42 CPA azaltma",
-          "B2B müşteriler için 3.8× pipeline hızı",
-          "AI arama-terimi analizi ile %23 boşa harcama eliminasyonu",
-          "24 ayda %98 müşteri tutma oranı",
+          "50'den fazla marka büyüme hikayesi",
+          "₺200M+ · $1M+ · £2M+ Yönetilen Reklam Bütçesi",
+          "AI Optimizasyonları ile güncel başarı",
         ]}
+        showPartners={false}
       />
       <Cta
         title="Bir sonraki başarı hikayesi"

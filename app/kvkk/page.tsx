@@ -139,10 +139,10 @@ export default function KvkkPage() {
             <li>
               E-posta ile:{" "}
               <a
-                href="mailto:info@theordino.com"
+                href="mailto:theordino.com"
                 className="text-accent hover:underline"
               >
-                info@theordino.com
+                theordino.com
               </a>
             </li>
             <li>Yazılı olarak: Ferko Signature Plaza, Şişli, İstanbul</li>

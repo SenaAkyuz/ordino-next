@@ -17,19 +17,25 @@ const defaultPartners: Partner[] = [
     name: "Google Partner",
     description: "Resmi Reklam Partneri",
     logo: "/partners/googlePartner.png",
-    showLogo: false, // gercek badge gelince true yap
+    showLogo: true,
   },
   {
     name: "Meta Business Partner",
     description: "Resmi Business Partner",
     logo: "/partners/metaBusinessPartner.png",
-    showLogo: false,
+    showLogo: true,
+  },
+  {
+    name: "Google Analytics Partner",
+    description: "Resmi Analytics Partner",
+    logo: "/partners/googleAnalyticsPartner.png",
+    showLogo: true,
   },
   {
     name: "TikTok Marketing Partner",
     description: "Resmi Marketing Partner",
     logo: "/partners/tiktokBusinessPartner.png",
-    showLogo: false,
+    showLogo: true,
   },
 ];
 
@@ -45,7 +51,7 @@ export function PartnerLogos({
   eyebrow = "Resmi Reklam Ortaklıklarımız",
   title = "Sektörün lider platformlarıyla",
   emphasis = "doğrulanmış partnerlikler.",
-  description = "Google, Meta ve TikTok'un resmi reklam programlarındaki partner statümüz, kampanyalarınızda en güncel araçlara, beta özelliklere ve uzman desteğe doğrudan erişim sağlar.",
+  description = "Google, Meta, Google Analytics ve TikTok'un resmi reklam programlarındaki partner statümüz, kampanyalarınızda en güncel araçlara, beta özelliklere ve uzman desteğe doğrudan erişim sağlar.",
   partners = defaultPartners,
 }: PartnerLogosProps) {
   return (
@@ -70,18 +76,19 @@ export function PartnerLogos({
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {partners.map((partner) => (
             <Reveal key={partner.name}>
-              <div className="flex h-[220px] flex-col items-center justify-center gap-5 rounded-[8px] border border-[#e0e0e0] bg-white p-8 transition-[border-color,transform] duration-300 hover:border-accent hover:scale-[1.02]">
+              <div className="flex h-[200px] flex-col items-center justify-center gap-5 rounded-[8px] border border-[#e0e0e0] bg-white p-6 transition-[border-color,transform] duration-300 hover:border-accent hover:scale-[1.02]">
                 {partner.showLogo ? (
-                  <div className="relative h-[80px] w-[200px]">
+                  <div className="flex h-[80px] w-full items-center justify-center">
                     <Image
                       src={partner.logo}
                       alt={partner.name}
-                      fill
-                      sizes="200px"
-                      className="object-contain"
+                      width={300}
+                      height={80}
+                      className="h-[60px] w-auto object-contain md:h-[70px]"
+                      unoptimized
                     />
                   </div>
                 ) : (

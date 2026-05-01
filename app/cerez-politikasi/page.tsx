@@ -148,10 +148,10 @@ export default function CerezPolitikasiPage() {
           <p>
             Çerez politikamız hakkında sorularınız için:{" "}
             <a
-              href="mailto:info@theordino.com"
+              href="mailto:theordino.com"
               className="text-accent hover:underline"
             >
-              info@theordino.com
+              theordino.com
             </a>
           </p>
         </div>

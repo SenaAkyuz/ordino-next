@@ -22,24 +22,25 @@ export function ClientsShowcase() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <ul className="grid list-none grid-cols-2 items-center justify-items-center gap-x-12 gap-y-16 md:grid-cols-3 lg:grid-cols-4 md:gap-x-[80px] md:gap-y-20">
+          <ul className="grid list-none grid-cols-2 items-center justify-items-center gap-x-12 gap-y-24 md:grid-cols-3 lg:grid-cols-4 md:gap-x-[80px] md:gap-y-28">
             {clients.map((c) => (
               <li
                 key={c.slug}
-                className="group flex h-[100px] w-[160px] items-center justify-center"
+                className="group flex h-[140px] w-[220px] items-center justify-center"
               >
                 {c.hasLogo ? (
                   <Image
                     src={`/clients/${c.slug}.${c.logoExt ?? "png"}`}
                     alt={c.alt}
-                    width={200}
-                    height={80}
+                    width={240}
+                    height={120}
                     style={{ transform: `scale(${c.scale ?? 1})` }}
-                    className="max-h-[80px] max-w-[140px] h-auto w-auto object-contain opacity-70 [filter:grayscale(40%)] transition-[opacity,filter,transform] duration-[400ms] group-hover:opacity-100 group-hover:[filter:grayscale(0%)]"
+                    className="max-h-[110px] max-w-[200px] h-auto w-auto object-contain transition-transform duration-[400ms] group-hover:scale-[1.05]"
+                    unoptimized
                   />
                 ) : (
                   <span
-                    className="font-display text-[1.05rem] uppercase tracking-[2px] text-[#999] opacity-70 transition-[color,opacity] duration-[400ms] group-hover:text-black group-hover:opacity-100"
+                    className="font-display text-[1.05rem] uppercase tracking-[2px] text-black transition-colors duration-[400ms] group-hover:text-accent"
                     aria-label={c.alt}
                   >
                     {c.name}

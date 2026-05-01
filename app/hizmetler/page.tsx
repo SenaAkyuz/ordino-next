@@ -45,8 +45,8 @@ export default function HizmetlerPage() {
         items={analyticsPlatforms}
       />
       <Cta
-        title="Büyüme motorunuzu"
-        emphasis="birlikte kuralım."
+        title="Büyüme yolculuğunuza hız katmak için"
+        emphasis="toplantıyı şimdi planlayın."
         buttonLabel="Toplantı Planla"
         href="/iletisim#contact-form"
       />

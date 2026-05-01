@@ -82,7 +82,7 @@ export function PortfolioGrid({ items }: PortfolioGridProps) {
                   {item.brand}
                 </h3>
                 <p className="mb-4 font-body text-[0.85rem] font-light leading-[1.6] text-[#666]">
-                  {item.resultText}
+                  {item.featuredServicesShort.join(" · ")}
                 </p>
                 <span className="inline-flex items-center gap-2 font-body text-[0.75rem] uppercase tracking-[1.5px] text-black transition-transform duration-300 group-hover:translate-x-1">
                   Detayları Gör →

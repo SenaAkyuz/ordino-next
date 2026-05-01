@@ -100,10 +100,10 @@ export function ContactForm() {
             </h3>
             <InfoBlock label="Yeni İş">
               <a
-                href="mailto:info@theordino.com"
+                href="mailto:theordino.com"
                 className="block font-body text-base font-light leading-[1.6] text-black transition-colors hover:text-accent"
               >
-                info@theordino.com
+                theordino.com
               </a>
             </InfoBlock>
             <InfoBlock label="Kariyer">
@@ -116,10 +116,10 @@ export function ContactForm() {
             </InfoBlock>
             <InfoBlock label="Telefon">
               <a
-                href="tel:+905352946540"
+                href="tel:+902129967174"
                 className="block font-body text-base font-light leading-[1.6] text-black transition-colors hover:text-accent"
               >
-                +90 535 294 65 40
+                +90 212 996 71 74
               </a>
             </InfoBlock>
             <InfoBlock label="Stüdyo">

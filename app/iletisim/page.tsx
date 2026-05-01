@@ -46,8 +46,8 @@ export default function IletisimPage() {
       <Cta
         title="Birlikte"
         emphasis="harekete geçelim."
-        buttonLabel="info@theordino.com"
-        href="mailto:info@theordino.com"
+        buttonLabel="theordino.com"
+        href="mailto:theordino.com"
       />
     </>
   );

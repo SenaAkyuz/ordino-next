@@ -8,13 +8,13 @@ type CaseBlockProps = {
   alt?: boolean;
 };
 
-const tagColors = {
-  t1: "bg-[#1a1a2e]",
-  t2: "bg-accent",
-  t3: "bg-[#2a7a5a]",
-  t4: "bg-[#4a2080]",
-  t5: "bg-[#8b0000]",
-} as const;
+const serviceColors = [
+  "bg-[#1a1a2e]",
+  "bg-accent",
+  "bg-[#2a7a5a]",
+  "bg-[#4a2080]",
+  "bg-[#8b0000]",
+] as const;
 
 export function CaseBlock({ data, alt = false }: CaseBlockProps) {
   const stripeBg = alt ? "bg-light-bg" : "bg-white";
@@ -60,15 +60,15 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
             </Reveal>
             <Reveal>
               <div className="mb-[30px] flex flex-wrap gap-[10px]">
-                {data.tags.map((tag) => (
+                {data.featuredServices.map((service, i) => (
                   <span
-                    key={tag.label}
+                    key={service}
                     className={cn(
                       "rounded-[10em] px-4 py-[6px] font-body text-[0.7rem] font-medium uppercase tracking-[1.5px] text-white",
-                      tagColors[tag.variant],
+                      serviceColors[i % serviceColors.length],
                     )}
                   >
-                    {tag.label}
+                    {service}
                   </span>
                 ))}
               </div>
@@ -180,24 +180,6 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
         </div>
       </section>
 
-      <section
-        data-theme="dark"
-        className="bg-accent px-5 py-[80px] text-center text-white md:px-10 md:py-[120px] lg:px-20"
-      >
-        <Reveal>
-          <div className="mx-auto max-w-[900px]">
-            <blockquote className="mb-10 font-display text-[clamp(1.6rem,2.8vw,2.4rem)] font-light italic leading-[1.4] tracking-[-0.5px] before:content-['“'] after:content-['”']">
-              {data.quote.text}
-            </blockquote>
-            <cite className="block font-body text-[0.85rem] uppercase tracking-[2px] not-italic opacity-90">
-              {data.quote.author}
-              <span className="mt-[6px] block text-[0.75rem] normal-case tracking-[1.5px] opacity-75">
-                {data.quote.role}
-              </span>
-            </cite>
-          </div>
-        </Reveal>
-      </section>
     </article>
   );
 }

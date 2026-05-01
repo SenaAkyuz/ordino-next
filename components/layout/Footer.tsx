@@ -37,16 +37,15 @@ function FooterLinkedInIcon() {
 }
 
 const services = [
-  { label: "Dijital Pazarlama", href: "/hizmetler#dijital-pazarlama" },
-  { label: "Sosyal Medya", href: "/hizmetler#sosyal-medya" },
-  { label: "SEO", href: "/hizmetler#seo" },
-  { label: "Yazılım & Teknoloji", href: "/hizmetler#yazilim-teknoloji" },
-  { label: "Medya", href: "/hizmetler#medya" },
-  { label: "360° İletişim", href: "/hizmetler#360-iletisim" },
-  { label: "Reklam", href: "/hizmetler#reklam" },
+  { label: "Medya & Reklam", href: "/hizmetler#medya-reklam" },
+  { label: "Sosyal Medya Yönetimi", href: "/hizmetler#sosyal-medya-yonetimi" },
+  { label: "İçerik Üretimi", href: "/hizmetler#icerik-uretimi" },
+  { label: "SEO & Organik Büyüme", href: "/hizmetler#seo-organik-buyume" },
+  { label: "Görsel Tasarım", href: "/hizmetler#gorsel-tasarim" },
+  { label: "Web Sitesi Geliştirme & Optimizasyon", href: "/hizmetler#web-gelistirme" },
+  { label: "E-ticaret Çözümleri", href: "/hizmetler#e-ticaret" },
+  { label: "Mailing & CRM", href: "/hizmetler#mailing-crm" },
   { label: "AI & Otomasyon", href: "/hizmetler#ai-otomasyon" },
-  { label: "Performans Marketing", href: "/hizmetler#performans-marketing" },
-  { label: "Kurumsal Kimlik & Tasarım", href: "/hizmetler#kurumsal-kimlik" },
 ];
 
 const company = [
@@ -144,13 +143,19 @@ export function Footer() {
                   {site.phone}
                 </a>
               </li>
-              <li className="pt-2">
-                <p className="font-body text-[0.85rem] font-light leading-[1.7] text-gray">
+              <li className="pt-4">
+                <p className="mb-1 font-body text-[0.7rem] font-medium uppercase tracking-[1.5px] text-white/80">
+                  İstanbul Ofisi
+                </p>
+                <p className="font-body text-[0.82rem] font-light leading-[1.65] text-gray">
                   {site.address}
                 </p>
               </li>
-              <li>
-                <p className="font-body text-[0.85rem] font-light italic leading-[1.7] text-gray/70">
+              <li className="pt-3">
+                <p className="mb-1 font-body text-[0.7rem] font-medium uppercase tracking-[1.5px] text-white/80">
+                  Londra Ofisi
+                </p>
+                <p className="font-body text-[0.82rem] font-light leading-[1.65] text-gray">
                   {site.londonAddress}
                 </p>
               </li>

@@ -28,10 +28,10 @@ export default function ReferanslarPage() {
         <div className="mx-auto max-w-[1300px]">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {caseStudies.map((c) => (
-              <Reveal key={c.slug}>
+              <Reveal key={c.slug} className="h-full">
                 <Link
                   href={`/referanslar/${c.slug}`}
-                  className="group block overflow-hidden"
+                  className="group flex h-full flex-col overflow-hidden"
                 >
                   <div className="relative mb-6 aspect-[4/3] w-full overflow-hidden">
                     {c.image ? (
@@ -58,10 +58,10 @@ export default function ReferanslarPage() {
                   <h3 className="mb-3 font-display text-[1.4rem] font-normal leading-[1.3] text-black transition-colors duration-300 group-hover:text-accent">
                     {c.brand}
                   </h3>
-                  <p className="mb-4 font-body text-[0.85rem] font-light leading-[1.6] text-[#666] line-clamp-3">
-                    {c.lead}
+                  <p className="mb-4 font-body text-[0.85rem] font-light leading-[1.6] text-[#666]">
+                    {c.brandIntro}
                   </p>
-                  <span className="inline-flex items-center gap-2 font-body text-[0.75rem] uppercase tracking-[1.5px] text-black transition-transform duration-300 group-hover:translate-x-1">
+                  <span className="mt-auto inline-flex items-center gap-2 font-body text-[0.75rem] uppercase tracking-[1.5px] text-black transition-transform duration-300 group-hover:translate-x-1">
                     Detayları Gör →
                   </span>
                 </Link>

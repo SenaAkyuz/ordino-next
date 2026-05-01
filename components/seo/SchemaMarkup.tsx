@@ -25,9 +25,9 @@ export function SchemaMarkup() {
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: "+90-535-294-65-40",
+        telephone: "+90-212-996-71-74",
         contactType: "customer service",
-        email: "info@theordino.com",
+        email: "theordino.com",
         availableLanguage: ["Turkish", "English"],
         areaServed: ["TR", "GB", "US"],
       },
@@ -42,8 +42,8 @@ export function SchemaMarkup() {
     name: "Ordino — Istanbul Ofisi",
     image: "https://theordino.com/og.jpg",
     url: "https://theordino.com",
-    telephone: "+90-535-294-65-40",
-    email: "info@theordino.com",
+    telephone: "+90-212-996-71-74",
+    email: "theordino.com",
     priceRange: "$$$",
     address: {
       "@type": "PostalAddress",

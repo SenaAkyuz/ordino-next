@@ -1,43 +1,32 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
-import { site } from "@/lib/data/site";
 
 export function Hero() {
-  const vimeoSrc = `https://player.vimeo.com/video/${site.heroVideoId}?background=1&autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&transparent=0&dnt=1&quality=1080p&autopause=0`;
-
   return (
     <section
       id="home"
       data-theme="dark"
-      className="relative flex h-screen min-h-[720px] items-center justify-center overflow-hidden bg-black text-center text-white"
+      className="relative flex h-screen min-h-[720px] items-end justify-center overflow-hidden bg-black text-center text-white"
     >
-      {/* Katman 0a: Gradient fallback (iframe yuklenirken) — sadece video alaninda */}
-      <div className="absolute inset-x-0 top-[80px] bottom-0 z-0 overflow-hidden">
-        <div className="hero-breathe h-full w-full" />
-      </div>
-
-      {/* Katman 0b: Vimeo iframe — navbar altinda baslar (top-[80px]) */}
-      <div className="absolute inset-x-0 top-[80px] bottom-0 z-0 overflow-hidden">
-        <iframe
-          src={vimeoSrc}
-          loading="eager"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
-          title="Hero video"
-          aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/2 h-[100%] w-[177.77%] min-h-[100%] min-w-[100%] -translate-x-1/2 -translate-y-1/2 border-0"
-          style={{ aspectRatio: "16/9" }}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Image
+          src="/hero/hero-bg.webp"
+          alt="Ordino — Strateji, Yaratıcılık, Büyüme"
+          fill
+          priority
+          quality={90}
+          sizes="100vw"
+          className="object-cover"
         />
       </div>
 
-      {/* Katman 1: Karartma overlay — sadece video alaninda (top-[80px]'den) */}
       <div
-        className="absolute inset-x-0 top-[80px] bottom-0 z-[1] bg-[linear-gradient(180deg,rgba(0,0,0,0.45)_0%,rgba(0,0,0,0.65)_100%)]"
+        className="absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgba(0,0,0,0.25)_0%,rgba(0,0,0,0.55)_100%)]"
         aria-hidden="true"
       />
 
-      {/* Katman 2: Icerik */}
-      <div className="relative z-[2] px-6">
+      <div className="relative z-[2] mb-[5vh] px-6">
         <Reveal>
           <h1 className="font-display text-[clamp(3rem,7vw,6.5rem)] font-light leading-[1.05] tracking-[-1.5px] text-white [&_em]:font-normal [&_em]:italic">
             Strateji. <em>Yaratıcılık.</em> Büyüme.
@@ -68,11 +57,10 @@ export function Hero() {
         </Reveal>
       </div>
 
-      {/* Scroll indikatoru */}
-      <div className="absolute bottom-10 left-1/2 z-[2] flex -translate-x-1/2 flex-col items-center gap-[14px] text-[0.7rem] uppercase tracking-[3px] text-white/60">
+      <div className="absolute bottom-10 right-6 z-[2] flex flex-col items-center gap-[14px] text-[0.65rem] uppercase tracking-[3px] text-white/45 md:right-10">
         Scroll
         <span
-          className="h-10 w-px bg-gradient-to-b from-transparent to-white/50"
+          className="h-10 w-px bg-gradient-to-b from-transparent to-white/35"
           aria-hidden="true"
         />
       </div>

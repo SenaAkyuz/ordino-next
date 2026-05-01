@@ -27,8 +27,8 @@ export default function Home() {
       <LatestWorks />
       <ScheduleMeeting calendlyUrl={site.meetingUrl} />
       <Cta
-        title="Birlikte neler"
-        emphasis="yaratacağız."
+        title="Markanızın büyüme yolculuğunda büyük bir adım atmak için"
+        emphasis="şimdi tanışalım."
         buttonLabel="İletişime Geç"
         href="/iletisim"
       />
