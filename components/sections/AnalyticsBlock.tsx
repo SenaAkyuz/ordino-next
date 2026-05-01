@@ -84,24 +84,24 @@ export function AnalyticsBlock({
           <p className="mb-8 px-5 text-center font-body text-[0.72rem] uppercase tracking-[3px] text-black/50 md:px-10 lg:px-20">
             Resmi Reklam Ortaklıkları
           </p>
-          <div className="marquee-pause relative w-full overflow-hidden py-10 md:py-12">
-            {/* Sol/sag yatay fade-out (beyazdan saydama) */}
-            <div className="pointer-events-none absolute left-0 top-0 z-[2] h-full w-[30px] bg-gradient-to-r from-white via-white/80 to-transparent md:w-[160px]" aria-hidden="true" />
-            <div className="pointer-events-none absolute right-0 top-0 z-[2] h-full w-[30px] bg-gradient-to-l from-white via-white/80 to-transparent md:w-[160px]" aria-hidden="true" />
+          <div className="marquee-pause relative w-full overflow-hidden py-6 md:py-12">
+            {/* Sol/sag yatay fade-out (beyazdan saydama) — mobilde cok dar */}
+            <div className="pointer-events-none absolute left-0 top-0 z-[2] h-full w-[20px] bg-gradient-to-r from-white via-white/70 to-transparent md:w-[160px]" aria-hidden="true" />
+            <div className="pointer-events-none absolute right-0 top-0 z-[2] h-full w-[20px] bg-gradient-to-l from-white via-white/70 to-transparent md:w-[160px]" aria-hidden="true" />
 
             {/* Marquee track */}
             <div className="animate-marquee flex w-max items-center">
               {marqueeItems.map((partner, index) => (
                 <div
                   key={`${partner.name}-${index}`}
-                  className="flex h-[60px] shrink-0 items-center justify-center px-4 md:h-[80px] md:px-20"
+                  className="flex h-[70px] w-[150px] shrink-0 items-center justify-center px-2 md:h-[80px] md:w-auto md:px-20"
                 >
                   <Image
                     src={partner.logo}
                     alt={partner.name}
                     width={240}
                     height={80}
-                    className="max-h-[50px] max-w-[180px] h-auto w-auto object-contain transition-transform duration-300 hover:scale-[1.05] md:max-h-[70px] md:max-w-[220px]"
+                    className="max-h-[55px] max-w-[130px] h-auto w-auto object-contain transition-transform duration-300 hover:scale-[1.05] md:max-h-[70px] md:max-w-[220px]"
                     unoptimized
                   />
                 </div>
