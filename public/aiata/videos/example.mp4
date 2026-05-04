@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Intiba - We Define Brands Through Visual Storytelling</title>
+    <meta name="title" content="Intiba - We Define Brands Through Visual Storytelling">
+    <meta name="description" content="Premium video production agency defining brands through cinematic excellence. Specializing in hospitality, gastronomy, fashion, and corporate films. Operating in Bodrum, Istanbul, London, Dubai, and worldwide.">
+    <meta name="keywords" content="video production, brand storytelling, visual storytelling, cinematic video, hospitality video, fashion film, corporate video, intiba production, bodrum, istanbul, london, dubai">
+    <meta name="author" content="Intiba Production">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://intiba.com/">
+    <meta property="og:title" content="Intiba - We Define Brands Through Visual Storytelling">
+    <meta property="og:description" content="Premium video production agency defining brands through cinematic excellence. Operating worldwide from Bodrum, Istanbul, London, Dubai and more.">
+    <meta property="og:image" content="https://intiba.com/og-image.jpg">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="Intiba Production">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://intiba.com/">
+    <meta property="twitter:title" content="Intiba - We Define Brands Through Visual Storytelling">
+    <meta property="twitter:description" content="Premium video production defining brands through cinematic excellence. Worldwide service.">
+    <meta property="twitter:image" content="https://intiba.com/og-image.jpg">
+    
+    <!-- Mobile App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Intiba">
+    <meta name="application-name" content="Intiba">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://intiba.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/images/intibalogo.svg">
+    <link rel="apple-touch-icon" href="/images/intibalogo.svg">
+    
+    <!-- Preload critical fonts (WOFF2) -->
+    <link rel="preload" href="/fonts/TT Ramillas Trial Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/TT Ramillas Trial Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Google Fonts — preconnect + preload stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+
+    <!-- Preconnect to external resources for better performance -->
+    <link rel="preconnect" href="https://ml0qkja5xmbjesrt.public.blob.vercel-storage.com" crossorigin>
+    <link rel="dns-prefetch" href="https://ml0qkja5xmbjesrt.public.blob.vercel-storage.com">
+    <style>
+        /* Custom scrollbar for a cleaner look (dark theme) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f5f5f5; /* Light gray for white theme */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4d4d4; /* Corresponds to Tailwind neutral-300 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a3a3a3; /* Corresponds to Tailwind neutral-400 */
+        }
+        /* Page Load Animations */
+        @keyframes fade-in-left {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+<!-- Structured Data / JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoProductionCompany",
+  "name": "Intiba Production",
+  "alternateName": "Intiba",
+  "url": "https://intiba.com",
+  "logo": "https://intiba.com/images/intibalogo.svg",
+  "description": "Premium video production agency defining brands through visual storytelling. Specializing in hospitality, gastronomy, fashion, and corporate films.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bodrum",
+    "addressRegion": "Muğla",
+    "addressCountry": "TR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 37.0344,
+    "longitude": 27.4305
+  },
+  "telephone": "+90-XXX-XXX-XXXX",
+  "email": "info@intiba.com",
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "priceRange": "$$$",
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 37.0344,
+      "longitude": 27.4305
+    },
+    "geoRadius": "100000"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Video Prodüksiyon Hizmetleri",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Otel Tanıtım Filmleri",
+          "description": "Lüks oteller için sinematik tanıtım videoları"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Gastronomi Videoları",
+          "description": "Restoranlar ve yemek deneyimleri için profesyonel video çekimi"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Moda Çekimleri",
+          "description": "Moda markaları için yaratıcı video prodüksiyonları"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Kurumsal Videolar",
+          "description": "Şirketler için profesyonel tanıtım ve reklam filmleri"
+        }
+      }
+    ]
+  },
+  "sameAs": [
+    "https://www.instagram.com/intiba",
+    "https://www.youtube.com/@intiba",
+    "https://www.linkedin.com/company/intiba"
+  ],
+  "foundingDate": "2020",
+  "founders": [{
+    "@type": "Person",
+    "name": "Intiba Team"
+  }],
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "minValue": 10,
+    "maxValue": 50
+  }
+}
+</script>
+
+<!-- BreadcrumbList Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://intiba.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hizmetler",
+      "item": "https://intiba.com/#services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Portfolio",
+      "item": "https://intiba.com/#portfolio"
+    }
+  ]
+}
+</script>
+
+  <script type="module" crossorigin src="/assets/index-CszUMLPK.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/three-CFd3TA6H.js">
+  <link rel="modulepreload" crossorigin href="/assets/react-three-L__diFx_.js">
+  <link rel="stylesheet" crossorigin href="/assets/index-5uzzRO09.css">
+</head>
+<body class="bg-white text-neutral-900 overflow-x-hidden max-w-full">
+    <div id="root"></div>
+</body>
+</html>

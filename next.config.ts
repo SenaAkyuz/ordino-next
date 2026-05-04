@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async rewrites() {
+    return [
+      { source: "/aiata", destination: "/aiata/index.html" },
+      { source: "/aiata/", destination: "/aiata/index.html" },
+    ];
+  },
 };
 
 export default nextConfig;
