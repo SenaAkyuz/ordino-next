@@ -1,113 +1,87 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
+
+const PHONE_VIDEO_SRC =
+  "https://player.vimeo.com/video/1189048954?background=1&autoplay=1&loop=1&muted=1&dnt=1&playsinline=1";
 
 export function Hero() {
   return (
     <section
       id="home"
-      data-theme="dark"
-      className="relative overflow-hidden bg-white text-center text-white"
+      data-theme="light"
+      className="relative overflow-hidden bg-[#f0efed] text-dark-bg"
     >
-      {/* MOBİL — Yazılar görselin üst kısmında, butonlar görselin alt kısmında */}
-      <div className="flex min-h-screen w-full flex-col md:hidden">
-        <div className="h-[70px] shrink-0 bg-white" aria-hidden="true" />
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at 25% 45%, rgba(178,143,108,0.22), transparent 55%), radial-gradient(ellipse at 75% 70%, rgba(74,107,142,0.10), transparent 60%), linear-gradient(135deg, #f8f7f5 0%, #efeeec 45%, #e3e1de 100%)",
+        }}
+        aria-hidden="true"
+      />
 
-        <div className="relative w-full flex-1 overflow-hidden">
-          <Image
-            src="/hero/hero-bg-mobile.jpeg"
-            alt="Ordino — Strateji, Yaratıcılık, Büyüme"
-            fill
-            priority
-            quality={95}
-            sizes="100vw"
-            className="object-cover object-center"
-          />
+      {/* MOBİL */}
+      <div className="relative z-[2] flex min-h-screen w-full flex-col items-center justify-center gap-9 px-6 pt-[120px] pb-16 text-center md:hidden">
+        <Reveal>
+          <h1 className="font-display text-[clamp(2.4rem,9vw,3.6rem)] font-light leading-[1.08] tracking-[-1px] text-dark-bg [&_em]:font-normal [&_em]:italic">
+            Strateji. <em>Yaratıcılık.</em> Büyüme.
+          </h1>
+        </Reveal>
 
-          {/* Üst overlay — yazı okunabilirliği */}
-          <div
-            className="pointer-events-none absolute inset-x-0 top-0 h-[55%] bg-gradient-to-b from-black/55 via-black/25 to-transparent"
-            aria-hidden="true"
-          />
-          {/* Alt overlay — buton okunabilirliği */}
-          <div
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-black/75 via-black/30 to-transparent"
-            aria-hidden="true"
-          />
+        <Reveal delay={0.15}>
+          <p className="mx-auto max-w-[420px] font-body text-[0.95rem] leading-[1.6] tracking-[0.3px] text-dark-bg/70">
+            AI destekli reklam zekası ile daha akıllı kampanyalar, hedefli iletişim ve ölçülebilir büyüme.
+          </p>
+        </Reveal>
 
-          {/* Üstte yazılar */}
-          <div className="absolute inset-x-0 top-0 z-[2] px-6 pt-8 text-center">
-            <Reveal>
-              <h1 className="font-display text-[clamp(2.2rem,8.5vw,3.4rem)] font-light leading-[1.1] tracking-[-1px] text-white [&_em]:font-normal [&_em]:italic">
-                Strateji. <em>Yaratıcılık.</em> Büyüme.
-              </h1>
-            </Reveal>
+        <Reveal delay={0.25}>
+          <PhoneMockup className="w-[260px]" />
+        </Reveal>
 
-            <Reveal delay={0.15}>
-              <p className="mx-auto mt-4 max-w-[420px] font-body text-[0.92rem] leading-[1.5] tracking-[0.3px] text-white/90 [text-shadow:0_2px_8px_rgba(0,0,0,0.5)]">
-                AI destekli reklam zekası ile daha akıllı kampanyalar, hedefli iletişim ve ölçülebilir büyüme.
-              </p>
-            </Reveal>
+        <Reveal delay={0.35}>
+          <div className="flex w-full flex-col items-center justify-center gap-3">
+            <Link
+              href="/hizmetler"
+              className="inline-block w-full max-w-[300px] rounded-[10em] border border-dark-bg bg-dark-bg px-7 py-3 text-center text-[0.92rem] text-white"
+            >
+              Hizmetleri Keşfet
+            </Link>
+            <Link
+              href="/iletisim"
+              className="inline-block w-full max-w-[300px] rounded-[10em] border border-dark-bg px-7 py-3 text-center text-[0.92rem] text-dark-bg"
+            >
+              İletişime Geç
+            </Link>
           </div>
-
-          {/* Altta butonlar */}
-          <Reveal delay={0.3}>
-            <div className="absolute inset-x-0 bottom-10 z-[2] flex flex-col items-center justify-center gap-3 px-6">
-              <Link
-                href="/hizmetler"
-                className="inline-block w-full max-w-[300px] rounded-[10em] border border-white bg-white px-7 py-3 text-center text-[0.92rem] text-dark-bg transition-[background,color] duration-[400ms]"
-              >
-                Hizmetleri Keşfet
-              </Link>
-              <Link
-                href="/iletisim"
-                className="inline-block w-full max-w-[300px] rounded-[10em] border border-white px-7 py-3 text-center text-[0.92rem] text-white transition-[background,color] duration-[400ms]"
-              >
-                İletişime Geç
-              </Link>
-            </div>
-          </Reveal>
-        </div>
+        </Reveal>
       </div>
 
-      {/* PC + Tablet — mevcut layout (değişmedi) */}
-      <div className="relative hidden h-screen min-h-[720px] w-full items-end justify-center md:flex">
-        <div className="absolute inset-x-0 bottom-0 top-[100px] z-0 overflow-hidden">
-          <Image
-            src="/hero/hero-bg.webp"
-            alt="Ordino — Strateji, Yaratıcılık, Büyüme"
-            fill
-            priority
-            quality={90}
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-
-        <div className="relative z-[2] mb-[2vh] px-6">
+      {/* DESKTOP + Tablet */}
+      <div className="relative z-[2] mx-auto hidden min-h-screen w-full max-w-[1400px] items-center justify-between gap-10 px-10 pt-[120px] pb-16 md:flex lg:px-20">
+        <div className="flex max-w-[640px] flex-1 flex-col items-start text-left">
           <Reveal>
-            <h1 className="font-display text-[clamp(3rem,7vw,6.5rem)] font-light leading-[1.05] tracking-[-1.5px] text-white [&_em]:font-normal [&_em]:italic">
+            <h1 className="font-display text-[clamp(2.8rem,5.6vw,5.4rem)] font-light leading-[1.04] tracking-[-1.5px] text-dark-bg [&_em]:font-normal [&_em]:italic">
               Strateji. <em>Yaratıcılık.</em> Büyüme.
             </h1>
           </Reveal>
 
           <Reveal delay={0.15}>
-            <p className="mx-auto mt-[30px] max-w-[640px] font-body text-[1.15rem] font-normal leading-[1.6] tracking-[0.5px] text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.55)]">
+            <p className="mt-7 max-w-[560px] font-body text-[1.05rem] font-light leading-[1.65] tracking-[0.3px] text-dark-bg/70">
               AI destekli reklam zekası ile daha akıllı kampanyalar, hedefli iletişim ve ölçülebilir büyüme.
             </p>
           </Reveal>
 
           <Reveal delay={0.3}>
-            <div className="mt-[40px] flex flex-wrap items-center justify-center gap-3 md:mt-[50px] md:gap-4">
+            <div className="mt-10 flex flex-wrap items-center gap-3 md:gap-4">
               <Link
                 href="/hizmetler"
-                className="inline-block rounded-[10em] border border-white bg-white px-7 py-3 text-[0.9rem] text-dark-bg transition-[background,color] duration-[400ms] hover:bg-transparent hover:text-white md:px-10 md:py-4 md:text-[0.95rem]"
+                className="inline-block rounded-[10em] border border-dark-bg bg-dark-bg px-9 py-[14px] text-[0.92rem] text-white transition-[background,color] duration-[400ms] hover:bg-transparent hover:text-dark-bg"
               >
                 Hizmetleri Keşfet
               </Link>
               <Link
                 href="/iletisim"
-                className="inline-block rounded-[10em] border border-white px-7 py-3 text-[0.9rem] text-white transition-[background,color] duration-[400ms] hover:bg-white hover:text-dark-bg md:px-10 md:py-4 md:text-[0.95rem]"
+                className="inline-block rounded-[10em] border border-dark-bg px-9 py-[14px] text-[0.92rem] text-dark-bg transition-[background,color] duration-[400ms] hover:bg-dark-bg hover:text-white"
               >
                 İletişime Geç
               </Link>
@@ -115,14 +89,42 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <div className="absolute bottom-10 right-6 z-[2] flex flex-col items-center gap-[14px] text-[0.65rem] uppercase tracking-[3px] text-white/45 md:right-10">
+        <Reveal delay={0.2}>
+          <div className="flex flex-1 items-center justify-end">
+            <PhoneMockup className="w-[340px] lg:w-[400px]" />
+          </div>
+        </Reveal>
+
+        <div className="absolute bottom-10 right-6 z-[2] flex flex-col items-center gap-[14px] text-[0.65rem] uppercase tracking-[3px] text-dark-bg/45 md:right-10">
           Scroll
           <span
-            className="h-10 w-px bg-gradient-to-b from-transparent to-white/35"
+            className="h-10 w-px bg-gradient-to-b from-transparent to-dark-bg/35"
             aria-hidden="true"
           />
         </div>
       </div>
     </section>
+  );
+}
+
+function PhoneMockup({ className = "" }: { className?: string }) {
+  return (
+    <div
+      className={`relative aspect-[9/19.5] rounded-[44px] bg-black shadow-[0_40px_70px_-20px_rgba(0,0,0,0.35)] ring-1 ring-black/10 ${className}`}
+    >
+      <div className="absolute inset-[10px] overflow-hidden rounded-[36px] bg-black">
+        <iframe
+          src={PHONE_VIDEO_SRC}
+          title="Ordino showreel"
+          allow="autoplay; fullscreen; picture-in-picture"
+          className="absolute inset-0 h-full w-full"
+          style={{ border: 0 }}
+        />
+        <div
+          className="pointer-events-none absolute left-1/2 top-2 z-[2] h-[22px] w-[110px] -translate-x-1/2 rounded-full bg-black"
+          aria-hidden="true"
+        />
+      </div>
+    </div>
   );
 }
