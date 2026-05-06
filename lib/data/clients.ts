@@ -8,11 +8,11 @@ export type Client = {
 };
 
 export const clients: Client[] = [
+  { slug: "anadolu-group", name: "Anadolu Group", alt: "Anadolu Group — Holding", logoExt: "png", hasLogo: true, scale: 1.0 },
   { slug: "turkish-technic", name: "Turkish Technic", alt: "Turkish Technic — Havacılık / MRO", logoExt: "png", hasLogo: true, scale: 1.0 },
   { slug: "turizm-bakanligi", name: "Turizm Bakanlığı", alt: "T.C. Kültür ve Turizm Bakanlığı", logoExt: "png", hasLogo: true, scale: 1.25 },
   { slug: "tff", name: "TFF", alt: "Türkiye Futbol Federasyonu", logoExt: "png", hasLogo: true, scale: 1.2 },
   { slug: "anadolu-motor", name: "Anadolu Motor", alt: "Anadolu Motor — Otomotiv", logoExt: "png", hasLogo: true, scale: 1.0 },
-  { slug: "anadolu-group", name: "Anadolu Group", alt: "Anadolu Group — Holding", logoExt: "png", hasLogo: true, scale: 1.0 },
   { slug: "aiata", name: "Aiata Boats", alt: "Aiata Boats — Denizcilik / Lüks", logoExt: "png", hasLogo: true, scale: 1.0 },
   { slug: "allium-bodrum", name: "Allium Bodrum", alt: "Allium Bodrum — Konaklama / Lüks", logoExt: "png", hasLogo: true, scale: 1.2 },
   { slug: "yuva-maya", name: "Yuva Maya", alt: "Yuva Maya — Gıda", logoExt: "png", hasLogo: true, scale: 1.2 },
