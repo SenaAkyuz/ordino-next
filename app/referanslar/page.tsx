@@ -33,7 +33,7 @@ export default function ReferanslarPage() {
                   href={`/referanslar/${c.slug}`}
                   className="group flex h-full flex-col overflow-hidden"
                 >
-                  <div className="relative mb-6 aspect-[4/3] w-full overflow-hidden">
+                  <div className="relative mb-6 aspect-[16/9] w-full overflow-hidden">
                     {c.image ? (
                       <Image
                         src={c.image}

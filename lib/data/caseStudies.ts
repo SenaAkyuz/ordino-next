@@ -46,6 +46,7 @@ export const caseStudies: CaseStudy[] = [
       "Mailing",
       "Etkinlik İletişimi",
     ],
+    image: "/case-studies/aiata.png",
     gradient: "linear-gradient(135deg, #0d3b2e 0%, #1a5c4a 50%, #2a7a5a 100%)",
     stats: [
       { value: "3 Ülke", label: "USA · Spain · Greece" },

@@ -56,7 +56,7 @@ export function PortfolioGrid({ items }: PortfolioGridProps) {
                 href={`/referanslar/${item.slug}`}
                 className="group block overflow-hidden"
               >
-                <div className="relative mb-6 aspect-[3/2] w-full overflow-hidden">
+                <div className="relative mb-6 aspect-[16/9] w-full overflow-hidden">
                   {item.image ? (
                     <Image
                       src={item.image}
