@@ -23,7 +23,7 @@ export const workPortfolio: WorkPortfolioItem[] = [
     brand: "Aiata Boats",
     sector: "Denizcilik / Lüks",
     featuredServicesShort: ["Reklam Yönetimi", "SEO", "Global Sosyal Medya"],
-    image: "/case-studies/aiata.png",
+    image: "/case-studies/aiata.jpg",
     gradient: "linear-gradient(135deg, #0d3b2e 0%, #1a5c4a 50%, #2a7a5a 100%)",
     hasDetail: true,
   },
