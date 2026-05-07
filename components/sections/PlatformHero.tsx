@@ -72,7 +72,7 @@ export function PlatformHero() {
             Tüm Reklamlarınız.
             <br />
             <em className="bg-gradient-to-br from-[#d4a574] via-[#b28f6c] to-[#9b7a5a] bg-clip-text font-normal italic text-transparent">
-              Tek Beyin.
+              ORDINO.AI
             </em>
           </h1>
         </Reveal>
