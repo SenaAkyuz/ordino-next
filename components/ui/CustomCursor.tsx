@@ -25,13 +25,28 @@ export function CustomCursor() {
     const isFirefox = ua.includes("firefox");
     if (isFirefox) return;
 
+    // Safari tespiti — Safari'de mix-blend-mode: difference + position: fixed
+    // kombinasyonu render bug'i tetikliyor; custom cursor gorunmez kaliyor ve
+    // native cursor da gizlendigi icin kullanici imleci goremiyor. Default kalsin.
+    const isSafari =
+      ua.includes("safari") &&
+      !ua.includes("chrome") &&
+      !ua.includes("chromium") &&
+      !ua.includes("edg");
+    if (isSafari) return;
+
     // Refs hazir mi kontrol
     const dot = dotRef.current;
     const ring = ringRef.current;
     if (!dot || !ring) return;
 
-    // JS yuklendi + desktop + non-touch + Firefox degil: custom cursor aktif
-    document.body.classList.add("custom-cursor-active");
+    // INVARIANT: Sayfa baslangicta native cursor'la gorunur. custom-cursor-active
+    // class'i SADECE kullanici ilk kez mouse'u oynattiginda eklenir — boylece:
+    //  1) Sayfa yuklenirken native cursor gorunur (cursorless page yok)
+    //  2) Class eklenirken cursor da ayni anda gorunur olur (is-hidden kaldirilir)
+    //  3) Hydration race / mouseenter'in atesleNmediği senaryolarda kullanici
+    //     hicbir zaman cursor'siz sayfa gormez.
+    let activated = false;
 
     let mx = 0;
     let my = 0;
@@ -54,6 +69,14 @@ export function CustomCursor() {
       mx = e.clientX;
       my = e.clientY;
       dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+      if (!activated) {
+        // Pozisyon set edildikten SONRA aktive et — class eklenir, is-hidden
+        // kalkar, hepsi tek frame icinde olur. Hicbir an cursor'siz sayfa olmaz.
+        document.body.classList.add("custom-cursor-active");
+        dot.classList.remove("is-hidden");
+        ring.classList.remove("is-hidden");
+        activated = true;
+      }
       if (rafId === null) rafId = requestAnimationFrame(tick);
     };
 
@@ -94,7 +117,9 @@ export function CustomCursor() {
       document.removeEventListener("mouseover", onOver);
       document.removeEventListener("mouseout", onOut);
       if (rafId !== null) cancelAnimationFrame(rafId);
-      document.body.classList.remove("custom-cursor-active");
+      if (activated) {
+        document.body.classList.remove("custom-cursor-active");
+      }
     };
   }, []);
 

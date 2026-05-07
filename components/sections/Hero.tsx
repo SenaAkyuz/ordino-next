@@ -94,14 +94,17 @@ export function Hero() {
             <PhoneMockup className="w-[340px] lg:w-[400px]" />
           </div>
         </Reveal>
+      </div>
 
-        <div className="absolute bottom-10 right-6 z-[2] flex flex-col items-center gap-[14px] text-[0.65rem] uppercase tracking-[3px] text-dark-bg/45 md:right-10">
-          Scroll
-          <span
-            className="h-10 w-px bg-gradient-to-b from-transparent to-dark-bg/35"
-            aria-hidden="true"
-          />
-        </div>
+      {/* Scroll gostergesi — section'in dogrudan cocugu, viewport sag kenarina
+          sabit. Onceden max-w-[1400px] container icindeydi ve telefonla
+          cakisiyordu. */}
+      <div className="pointer-events-none absolute bottom-10 right-4 z-[3] hidden flex-col items-center gap-[14px] text-[0.65rem] uppercase tracking-[3px] text-dark-bg/45 md:flex lg:right-6">
+        Scroll
+        <span
+          className="h-10 w-px bg-gradient-to-b from-transparent to-dark-bg/35"
+          aria-hidden="true"
+        />
       </div>
     </section>
   );
