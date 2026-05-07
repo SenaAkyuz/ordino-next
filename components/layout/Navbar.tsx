@@ -116,9 +116,15 @@ export function Navbar({ forceDark = false }: NavbarProps) {
       <ul className="hidden md:flex items-center gap-11 list-none">
         {navLinks.map((link) => (
           <li key={link.href}>
-            <Link href={link.href} className={linkClass(link.href)}>
-              {link.label}
-            </Link>
+            {link.external ? (
+              <a href={link.href} className={linkClass(link.href)}>
+                {link.label}
+              </a>
+            ) : (
+              <Link href={link.href} className={linkClass(link.href)}>
+                {link.label}
+              </Link>
+            )}
           </li>
         ))}
       </ul>
@@ -204,9 +210,15 @@ export function Navbar({ forceDark = false }: NavbarProps) {
         >
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} className={linkClass(link.href)}>
-                {link.label}
-              </Link>
+              {link.external ? (
+                <a href={link.href} className={linkClass(link.href)}>
+                  {link.label}
+                </a>
+              ) : (
+                <Link href={link.href} className={linkClass(link.href)}>
+                  {link.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

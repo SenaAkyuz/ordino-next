@@ -104,9 +104,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://i.vimeocdn.com" />
         <link rel="preconnect" href="https://f.vimeocdn.com" />
         <link rel="dns-prefetch" href="https://player.vimeo.com" />
-        <SchemaMarkup />
       </head>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col" suppressHydrationWarning>
+        <SchemaMarkup />
         <Navbar />
         <SideFixed />
         <main className="flex-1">{children}</main>

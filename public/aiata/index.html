@@ -2,7 +2,6 @@
 <html lang="tr" class="loading">
 <head>
 <base href="/aiata/">
-<script src="auth-guard.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AIATA — Moodboard · Sunfinder 38 & 50</title>
@@ -212,9 +211,110 @@
     .cat-head{flex-direction:column;align-items:flex-start;gap:8px}
     .cat-head .cap{text-align:left}
   }
+
+  /* ----- ORDINO GLOBAL NAV ----- */
+  .o-nav{position:fixed;inset:0 0 auto 0;z-index:9000;display:flex;align-items:center;justify-content:space-between;padding:18px 60px;transition:padding .3s ease,background-color .3s ease,box-shadow .3s ease;color:#fff}
+  .o-nav.scrolled{padding:12px 60px;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);color:#1B2738;box-shadow:0 1px 0 rgba(27,39,56,.06)}
+  .o-nav .o-logo{position:relative;display:block;height:28px;aspect-ratio:2922 / 637}
+  .o-nav .o-logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .3s ease}
+  .o-nav .o-logo .o-logo-dark{opacity:0}
+  .o-nav.scrolled .o-logo .o-logo-light{opacity:0}
+  .o-nav.scrolled .o-logo .o-logo-dark{opacity:1}
+  .o-nav .o-links{display:flex;align-items:center;gap:44px;list-style:none;margin:0;padding:0;font-family:"Inter",sans-serif;font-size:15px;font-weight:400;letter-spacing:.01em}
+  .o-nav .o-links a{color:inherit;text-decoration:none;transition:opacity .3s ease}
+  .o-nav .o-links a:hover{opacity:.6}
+  .o-nav .o-links a.is-current{position:relative}
+  .o-nav .o-links a.is-current::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:currentColor}
+  .o-nav .o-right{display:flex;align-items:center;gap:20px}
+  .o-nav .o-cta{display:inline-block;padding:12px 30px;border:1px solid currentColor;border-radius:10em;font-family:"Inter",sans-serif;font-size:15px;text-decoration:none;color:inherit;transition:background .3s ease,color .3s ease,border-color .3s ease}
+  .o-nav .o-cta:hover{background:#fff;color:#1B2738}
+  .o-nav.scrolled .o-cta:hover{background:#1B2738;color:#fff}
+  .o-nav .o-social{display:inline-flex;align-items:center;color:inherit;transition:opacity .3s ease}
+  .o-nav .o-social:hover{opacity:.6}
+  .o-nav .o-social svg{width:20px;height:20px;display:block}
+  .o-burger{display:none;flex-direction:column;gap:6px;background:none;border:0;padding:0;cursor:pointer}
+  .o-burger span{display:block;width:28px;height:1.5px;background:currentColor;transition:transform .3s ease,opacity .3s ease}
+  .o-burger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+  .o-burger.open span:nth-child(2){opacity:0}
+  .o-burger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+  .o-mobile{display:none;position:fixed;inset:0;z-index:8999;background:#fff;color:#1B2738;flex-direction:column;justify-content:center;align-items:center;gap:30px;font-size:18px}
+  .o-mobile.open{display:flex}
+  .o-mobile a{color:inherit;text-decoration:none}
+  @media (max-width: 900px){
+    .o-nav{padding:14px 24px}
+    .o-nav.scrolled{padding:10px 24px}
+    .o-nav .o-links,.o-nav .o-right{display:none}
+    .o-burger{display:flex}
+  }
 </style>
 </head>
 <body>
+
+<!-- ORDINO GLOBAL NAV -->
+<nav class="o-nav" id="o-nav">
+  <a href="/" class="o-logo" aria-label="Ordino">
+    <img class="o-logo-light" src="/ordino-logo-white.png" alt="">
+    <img class="o-logo-dark" src="/ordino-logo-black.png" alt="Ordino">
+  </a>
+  <ul class="o-links">
+    <li><a href="/hizmetler">Hizmetler</a></li>
+    <li><a href="/aiata" class="is-current">Prodüksiyon</a></li>
+    <li><a href="/calisma">Çalışmalar</a></li>
+    <li><a href="/referanslar">Referanslar</a></li>
+    <li><a href="/platform">Platform</a></li>
+    <li><a href="/hakkimizda">Hakkımızda</a></li>
+    <li><a href="/iletisim">İletişim</a></li>
+  </ul>
+  <div class="o-right">
+    <a href="/iletisim#contact-form" class="o-cta">Toplantı Planla</a>
+    <a href="https://www.instagram.com/ordino.tr/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="o-social">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="5"/>
+        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+      </svg>
+    </a>
+    <a href="https://www.linkedin.com/company/ordinocompany/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="o-social">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+        <rect x="2" y="9" width="4" height="12"/>
+        <circle cx="4" cy="4" r="2"/>
+      </svg>
+    </a>
+  </div>
+  <button class="o-burger" id="o-burger" aria-label="Menü" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="o-mobile" id="o-mobile">
+  <a href="/hizmetler">Hizmetler</a>
+  <a href="/aiata">Prodüksiyon</a>
+  <a href="/calisma">Çalışmalar</a>
+  <a href="/referanslar">Referanslar</a>
+  <a href="/platform">Platform</a>
+  <a href="/hakkimizda">Hakkımızda</a>
+  <a href="/iletisim">İletişim</a>
+  <a href="/iletisim#contact-form" class="o-cta">Toplantı Planla</a>
+</div>
+<script>
+  (function(){
+    var nav = document.getElementById('o-nav');
+    var burger = document.getElementById('o-burger');
+    var mobile = document.getElementById('o-mobile');
+    function onScroll(){
+      if (window.scrollY > 60) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    burger.addEventListener('click', function(){
+      var open = mobile.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+  })();
+</script>
 
 <!-- PRELOADER -->
 <div class="preloader" id="preloader" aria-hidden="true">
