@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -83,12 +84,33 @@ export function Navbar({ forceDark = false }: NavbarProps) {
     >
       <Link
         href="/"
-        className={cn(
-          "relative z-[1001] text-[1.6rem] font-semibold uppercase tracking-[8px] transition-colors duration-300 ease-in-out",
-          textColor,
-        )}
+        aria-label="Ordino"
+        className="relative z-[1001] block h-6 md:h-7"
       >
-        ORDINO
+        <span className="relative block h-full" style={{ aspectRatio: "2922 / 637" }}>
+          <Image
+            src="/ordino-logo-white.png"
+            alt=""
+            fill
+            sizes="160px"
+            priority
+            className={cn(
+              "object-contain transition-opacity duration-300 ease-in-out",
+              isDark ? "opacity-100" : "opacity-0",
+            )}
+          />
+          <Image
+            src="/ordino-logo-black.png"
+            alt="Ordino"
+            fill
+            sizes="160px"
+            priority
+            className={cn(
+              "object-contain transition-opacity duration-300 ease-in-out",
+              isDark ? "opacity-0" : "opacity-100",
+            )}
+          />
+        </span>
       </Link>
 
       <ul className="hidden md:flex items-center gap-11 list-none">
