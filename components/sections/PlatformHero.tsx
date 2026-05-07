@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Reveal } from "@/components/ui/Reveal";
+import { site } from "@/lib/data/site";
 
 const channels = ["TikTok", "Meta", "Google", "LinkedIn"];
 
@@ -83,12 +83,14 @@ export function PlatformHero() {
         </Reveal>
         <Reveal>
           <div className="mb-[60px] flex flex-wrap justify-center gap-[14px]">
-            <Link
-              href="/iletisim#contact-form"
+            <a
+              href={site.meetingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-[10px] rounded-[10em] border border-white bg-white px-9 py-[15px] font-body text-[0.88rem] font-normal text-black transition-all duration-[400ms] hover:-translate-y-[1px] hover:border-accent hover:bg-accent hover:text-white"
             >
               Ücretsiz Deneme Başlat
-            </Link>
+            </a>
             <button
               type="button"
               onClick={() => setVideoOpen(true)}

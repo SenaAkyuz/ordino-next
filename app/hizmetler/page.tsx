@@ -47,8 +47,6 @@ export default function HizmetlerPage() {
       <Cta
         title="Büyüme yolculuğunuza hız katmak için"
         emphasis="toplantıyı şimdi planlayın."
-        buttonLabel="Toplantı Planla"
-        href="/iletisim#contact-form"
       />
     </>
   );

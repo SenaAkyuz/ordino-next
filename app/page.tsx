@@ -5,9 +5,8 @@ import { HowWeWork } from "@/components/sections/HowWeWork";
 import { PartnerMarquee } from "@/components/sections/PartnerMarquee";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { LatestWorks } from "@/components/sections/LatestWorks";
-import { ScheduleMeeting } from "@/components/sections/ScheduleMeeting";
+import { MeetingCta } from "@/components/sections/MeetingCta";
 import { Cta } from "@/components/sections/Cta";
-import { site } from "@/lib/data/site";
 
 export const metadata: Metadata = {
   title: "Ordino — Strateji. Yaratıcılık. Büyüme.",
@@ -27,7 +26,7 @@ export default function Home() {
       <PartnerMarquee />
       <ServicesGrid />
       <LatestWorks />
-      <ScheduleMeeting calendlyUrl={site.meetingUrl} />
+      <MeetingCta />
       <Cta
         title="Markanızın büyüme yolculuğunda büyük bir adım atmak için"
         emphasis="şimdi tanışalım."

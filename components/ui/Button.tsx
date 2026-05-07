@@ -49,7 +49,12 @@ export function Button(props: ButtonProps) {
       );
     }
     return (
-      <a href={props.href} className={classes}>
+      <a
+        href={props.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={classes}
+      >
         {props.children}
       </a>
     );

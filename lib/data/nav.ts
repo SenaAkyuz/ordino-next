@@ -1,3 +1,5 @@
+import { site } from "./site";
+
 export type NavLink = {
   label: string;
   href: string;
@@ -16,5 +18,5 @@ export const navLinks: NavLink[] = [
 
 export const navCta: NavLink = {
   label: "Toplantı Planla",
-  href: "/iletisim#contact-form",
+  href: site.meetingUrl,
 };

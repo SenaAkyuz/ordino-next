@@ -52,8 +52,6 @@ export default function HakkimizdaPage() {
       <Cta
         title="Birlikte büyümeye"
         emphasis="hazır mısınız?"
-        buttonLabel="Toplantı Planla"
-        href="/iletisim#contact-form"
       />
     </>
   );

@@ -36,8 +36,6 @@ export default function CalismaPage() {
       <Cta
         title="Bir sonraki başarı hikayesi"
         emphasis="sizin olsun."
-        buttonLabel="Toplantı Planla"
-        href="/iletisim#contact-form"
       />
     </>
   );

@@ -63,18 +63,48 @@ export function ContactForm() {
     };
   }, []);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (status !== "idle") return;
 
-    const data = Object.fromEntries(new FormData(e.currentTarget).entries());
-    // eslint-disable-next-line no-console
-    console.log("[contact-form] submitted:", data);
+    const formData = new FormData(e.currentTarget);
+
+    const payload = {
+      firstName: (formData.get("firstName") as string)?.trim(),
+      lastName: (formData.get("lastName") as string)?.trim(),
+      email: (formData.get("email") as string)?.trim(),
+      phone: (formData.get("phone") as string)?.trim(),
+      company: (formData.get("company") as string)?.trim() || undefined,
+      sector: (formData.get("sector") as string) || undefined,
+      services: formData.getAll("services") as string[],
+      timing: (formData.get("timing") as string) || undefined,
+      budget: (formData.get("budget") as string) || undefined,
+      message: (formData.get("message") as string)?.trim() || undefined,
+    };
 
     setStatus("pending");
-    window.setTimeout(() => {
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error(`Submit failed (${res.status})`);
+      }
+
       router.push("/iletisim/tesekkurler");
-    }, 600);
+    } catch (error) {
+      console.error("[contact-form] error:", error);
+      setStatus("idle");
+      if (typeof window !== "undefined") {
+        window.alert(
+          "Form gönderilirken bir hata oluştu. Lütfen birkaç saniye sonra tekrar deneyin.",
+        );
+      }
+    }
   };
 
   return (
@@ -221,7 +251,7 @@ export function ContactForm() {
                     <input type="text" id="company" name="company" className={inputClass} />
                   </Field>
                   <Field id="industry" label="Sektör (opsiyonel)">
-                    <select id="industry" name="industry" defaultValue="" className={inputClass}>
+                    <select id="industry" name="sector" defaultValue="" className={inputClass}>
                       <option value="">Sektör seçin…</option>
                       {industries.map((r) => (
                         <option key={r}>{r}</option>

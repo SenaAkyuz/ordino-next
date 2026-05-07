@@ -48,8 +48,6 @@ export default async function CaseStudyDetailPage({
       <Cta
         title="Bir sonraki başarı"
         emphasis="hikayesi sizin olsun."
-        buttonLabel="Toplantı Planla"
-        href="/iletisim#contact-form"
       />
     </>
   );

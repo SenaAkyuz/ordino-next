@@ -9,8 +9,9 @@ export const site = {
   tagline: "Strateji. Yaratıcılık. Büyüme.",
   copyrightYear: 2026,
 
-  // Calendly veya takvim URL'i — gelince burayı değiştirin, tüm site bu URL'i kullanır
-  meetingUrl: "/iletisim#contact-form",
+  // HubSpot Meetings booking URL — tek kaynak (single source of truth)
+  // Tüm "Toplantı Planla" butonları ve /iletisim sayfasındaki ScheduleMeeting embed buradan beslenir
+  meetingUrl: "https://meetings.hubspot.com/ordino",
 
   email: "theordino.com",
   careersEmail: "careers@theordino.com",

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
+import { site } from "@/lib/data/site";
 
 type CtaProps = {
   title?: string;
@@ -16,7 +17,7 @@ export function Cta({
   title = "Birlikte neler",
   emphasis = "yaratacağız.",
   buttonLabel = "Toplantı Planla",
-  href = "/iletisim#contact-form",
+  href = site.meetingUrl,
   id = "contact",
 }: CtaProps) {
   const linkClass =
@@ -40,7 +41,12 @@ export function Cta({
             {buttonLabel}
           </Link>
         ) : (
-          <a href={href} className={linkClass}>
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClass}
+          >
             {buttonLabel}
           </a>
         )}

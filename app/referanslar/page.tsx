@@ -73,8 +73,6 @@ export default function ReferanslarPage() {
       <Cta
         title="Sıradaki başarı hikayesi"
         emphasis="sizin olsun."
-        buttonLabel="Toplantı Planla"
-        href="/iletisim#contact-form"
       />
     </>
   );
