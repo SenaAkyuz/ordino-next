@@ -20,5 +20,5 @@ export const clients: Client[] = [
   { slug: "marie-claire", name: "Marie Claire", alt: "Marie Claire — Medya / Yayıncılık", logoExt: "png", hasLogo: true, scale: 1.0 },
   { slug: "fortune", name: "Fortune", alt: "Fortune — Medya / Yayıncılık", logoExt: "png", hasLogo: true, scale: 1.0 },
   { slug: "instyle", name: "InStyle", alt: "InStyle Türkiye — Medya / Yayıncılık", logoExt: "webp", hasLogo: true, scale: 1.0 },
-  { slug: "inspera", name: "Inspera", alt: "Inspera Bodrum — Kültür & Sanat", logoExt: "svg", hasLogo: true, scale: 1.2 },
+  { slug: "inspera", name: "Inspera", alt: "Inspera Bodrum — Kültür & Sanat", logoExt: "png", hasLogo: true, scale: 1.0 },
 ];
