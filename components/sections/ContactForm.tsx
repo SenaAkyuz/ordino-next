@@ -4,15 +4,6 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { Reveal } from "@/components/ui/Reveal";
 
-const roles = [
-  "Kurucu / CEO",
-  "CMO / Pazarlama Direktörü",
-  "Büyüme / Performans Lideri",
-  "Marka / Yaratıcı Direktör",
-  "Ajans Ortağı",
-  "Diğer",
-];
-
 const industries = [
   "E-Ticaret / DTC",
   "SaaS / Yazılım",
@@ -208,11 +199,11 @@ export function ContactForm() {
                 </p>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <Field id="name" label="Adınız">
-                    <input type="text" id="name" name="name" required className={inputClass} />
+                  <Field id="firstName" label="Adınız">
+                    <input type="text" id="firstName" name="firstName" required className={inputClass} />
                   </Field>
-                  <Field id="company" label="Şirket">
-                    <input type="text" id="company" name="company" required className={inputClass} />
+                  <Field id="lastName" label="Soyadınız">
+                    <input type="text" id="lastName" name="lastName" required className={inputClass} />
                   </Field>
                 </div>
 
@@ -220,21 +211,16 @@ export function ContactForm() {
                   <Field id="email" label="E-posta">
                     <input type="email" id="email" name="email" required className={inputClass} />
                   </Field>
-                  <Field id="phone" label="Telefon (opsiyonel)">
-                    <input type="tel" id="phone" name="phone" className={inputClass} />
+                  <Field id="phone" label="Telefon">
+                    <input type="tel" id="phone" name="phone" required className={inputClass} />
                   </Field>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <Field id="role" label="Pozisyonunuz">
-                    <select id="role" name="role" defaultValue="" className={inputClass}>
-                      <option value="">Pozisyon seçin…</option>
-                      {roles.map((r) => (
-                        <option key={r}>{r}</option>
-                      ))}
-                    </select>
+                  <Field id="company" label="Şirket (opsiyonel)">
+                    <input type="text" id="company" name="company" className={inputClass} />
                   </Field>
-                  <Field id="industry" label="Sektör">
+                  <Field id="industry" label="Sektör (opsiyonel)">
                     <select id="industry" name="industry" defaultValue="" className={inputClass}>
                       <option value="">Sektör seçin…</option>
                       {industries.map((r) => (
@@ -269,7 +255,7 @@ export function ContactForm() {
                 </div>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <Field id="timing" label="Zamanlama">
+                  <Field id="timing" label="Zamanlama (opsiyonel)">
                     <select id="timing" name="timing" defaultValue="" className={inputClass}>
                       <option value="">Zamanlama seçin…</option>
                       {timings.map((t) => (
@@ -277,7 +263,7 @@ export function ContactForm() {
                       ))}
                     </select>
                   </Field>
-                  <Field id="budget" label="Aylık Reklam Bütçesi">
+                  <Field id="budget" label="Aylık Reklam Bütçesi (opsiyonel)">
                     <select id="budget" name="budget" defaultValue="" className={inputClass}>
                       <option value="">Aralık seçin…</option>
                       {budgets.map((b) => (
@@ -287,11 +273,10 @@ export function ContactForm() {
                   </Field>
                 </div>
 
-                <Field id="message" label="Projeniz hakkında bize bilgi verin">
+                <Field id="message" label="Projeniz hakkında bize bilgi verin (opsiyonel)">
                   <textarea
                     id="message"
                     name="message"
-                    required
                     placeholder="Hedefler, zamanlama, mevcut araçlar, en büyük zorluk…"
                     className={`${inputClass} min-h-[120px] resize-y`}
                   />

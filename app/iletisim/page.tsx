@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ContactHeroImage } from "@/components/sections/ContactHeroImage";
 import { WhereWeWork } from "@/components/sections/WhereWeWork";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { ScheduleMeeting } from "@/components/sections/ScheduleMeeting";
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
 export default function IletisimPage() {
   return (
     <>
-      <ContactHeroImage />
+      <ContactForm />
       <WhereWeWork
         title="11 yıl önce Istanbul'da kuruldu. Bugün Şişli iş bölgesinde, "
         emphasis="büyüme aşamasındaki ve önde gelen"
@@ -36,7 +35,6 @@ export default function IletisimPage() {
           },
         ]}
       />
-      <ContactForm />
       <ScheduleMeeting calendlyUrl={site.meetingUrl} />
       <PowerSection
         label="Bir Yanıt Uzakta"
