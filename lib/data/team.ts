@@ -37,11 +37,11 @@ export const leadership: Leader[] = [
   },
   {
     name: "İlayda Özcan",
-    role: "Head of Marketing & Communications",
+    role: "Managing Director & Creative Lead",
     initials: "İÖ",
     gradient: "linear-gradient(135deg, #4a0e2e 0%, #6b1a3a 50%, #8b3a5a 100%)",
     photo: "/team/ilaydaozcan.jpg",
-    bio: "Pazarlama ve iletişim direktörü. Marka tonu, kreatif içerik stratejisi ve halkla ilişkiler süreçlerinin tek elden yönetiminden sorumlu. Ordino'nun ve müşterilerinin hikayesini sahaya taşır.",
+    bio: "Yönetici Direktör ve Kreatif Lider. Marka vizyonu, yaratıcı strateji geliştirme ve iletişim süreçlerinin bütünsel yönetiminden sorumlu. Ordino'nun kimliğini ve müşterilerinin hikayelerini yaratıcı bir bakış açısıyla stratejik düzleme taşır.",
     linkedin: "https://www.linkedin.com/in/ilayda-%C3%B6zcan-3980231b5/",
   },
   {
