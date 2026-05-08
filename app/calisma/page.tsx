@@ -28,7 +28,7 @@ export default function CalismaPage() {
         description="Aktif müşteri hesapları üzerinden son on iki ayın ortalama değerleri. Seçilmiş başarı hikayeleri değil — gerçek rakamlar."
         items={[
           "50'den fazla marka büyüme hikayesi",
-          "₺200M+ · $1M+ · £2M+ Yönetilen Reklam Bütçesi",
+          "£2M+ Yönetilen Reklam Bütçesi",
           "AI Optimizasyonları ile güncel başarı",
         ]}
         showPartners={false}

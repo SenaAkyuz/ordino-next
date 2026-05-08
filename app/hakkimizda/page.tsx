@@ -34,7 +34,7 @@ export default function HakkimizdaPage() {
         stats={[
           { value: "11", label: "Yıllık Tecrübe" },
           { value: "50+", label: "Marka ile Çalışıldı" },
-          { value: "₺200M+ · $1M+ · £2M+", label: "Yönetilen Reklam Bütçesi" },
+          { value: "£2M+", label: "Yönetilen Reklam Bütçesi" },
           { value: "Binlerce", label: "Yönetilen Kampanya" },
         ]}
       />
