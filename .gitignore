@@ -46,3 +46,6 @@ next-env.d.ts
 
 # Tur prompt notlari
 TUR-*.txt
+
+# Optimize edilmemis orijinaller
+**/_backup/
