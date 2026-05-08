@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
     return [
       { source: "/aiata", destination: "/aiata/index.html" },
       { source: "/aiata/", destination: "/aiata/index.html" },
+      { source: "/sunum", destination: "/sunum/index.html" },
+      { source: "/sunum/", destination: "/sunum/index.html" },
     ];
   },
 };
