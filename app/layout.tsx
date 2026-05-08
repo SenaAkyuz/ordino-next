@@ -99,12 +99,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" className={`${cormorant.variable} ${jost.variable}`}>
-      <head>
-        <link rel="preconnect" href="https://player.vimeo.com" />
-        <link rel="preconnect" href="https://i.vimeocdn.com" />
-        <link rel="preconnect" href="https://f.vimeocdn.com" />
-        <link rel="dns-prefetch" href="https://player.vimeo.com" />
-      </head>
       <body className="min-h-screen flex flex-col" suppressHydrationWarning>
         <SchemaMarkup />
         <Navbar />

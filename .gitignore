@@ -49,3 +49,18 @@ TUR-*.txt
 
 # Optimize edilmemis orijinaller
 **/_backup/
+**/_backup-original/
+
+# Playwright
+/playwright-report/
+/test-results/
+
+# Yedek dosyalar
+*.bak
+
+# Yerel task / inceleme notlari
+*-task.md
+*-incele.md
+
+# Cursor / Claude komut yardimcilari
+/cursor-claude-commands/

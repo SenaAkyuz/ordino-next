@@ -12,10 +12,10 @@ type PartnerMarqueeProps = {
 };
 
 const defaultPartners: Partner[] = [
-  { name: "Google Partner", logo: "/partners/googlePartner.png" },
-  { name: "Meta Business Partner", logo: "/partners/metaBusinessPartner.png" },
-  { name: "Google Analytics Partner", logo: "/partners/googleAnalyticsPartner.png" },
-  { name: "TikTok Marketing Partner", logo: "/partners/tiktokBusinessPartner.png" },
+  { name: "Google Partner", logo: "/partners/googlePartner.webp" },
+  { name: "Meta Business Partner", logo: "/partners/metaBusinessPartner.webp" },
+  { name: "Google Analytics Partner", logo: "/partners/googleAnalyticsPartner.webp" },
+  { name: "TikTok Marketing Partner", logo: "/partners/tiktokBusinessPartner.webp" },
 ];
 
 export function PartnerMarquee({

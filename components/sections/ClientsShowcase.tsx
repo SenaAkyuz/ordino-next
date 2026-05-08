@@ -30,7 +30,7 @@ export function ClientsShowcase() {
               >
                 {c.hasLogo ? (
                   <Image
-                    src={`/clients/${c.slug}.${c.logoExt ?? "png"}`}
+                    src={`/clients/${c.slug}.${c.logoExt ?? "webp"}`}
                     alt={c.alt}
                     width={240}
                     height={120}

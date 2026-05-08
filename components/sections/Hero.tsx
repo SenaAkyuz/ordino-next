@@ -1,8 +1,5 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
-
-const PHONE_VIDEO_SRC =
-  "https://player.vimeo.com/video/1189048954?background=1&autoplay=1&loop=1&muted=1&dnt=1&playsinline=1";
 
 export function Hero() {
   return (
@@ -96,7 +93,7 @@ export function Hero() {
         </Reveal>
       </div>
 
-      {/* Scroll gostergesi — section'in dogrudan cocugu, viewport sag kenarina
+      {/* Scroll gostergesi â€” section'in dogrudan cocugu, viewport sag kenarina
           sabit. Onceden max-w-[1400px] container icindeydi ve telefonla
           cakisiyordu. */}
       <div className="pointer-events-none absolute bottom-10 right-4 z-[3] hidden flex-col items-center gap-[14px] text-[0.65rem] uppercase tracking-[3px] text-dark-bg/45 md:flex lg:right-6">
@@ -116,12 +113,14 @@ function PhoneMockup({ className = "" }: { className?: string }) {
       className={`relative aspect-[9/19.5] rounded-[44px] bg-black shadow-[0_40px_70px_-20px_rgba(0,0,0,0.35)] ring-1 ring-black/10 ${className}`}
     >
       <div className="absolute inset-[10px] overflow-hidden rounded-[36px] bg-black">
-        <iframe
-          src={PHONE_VIDEO_SRC}
-          title="Ordino showreel"
-          allow="autoplay; fullscreen; picture-in-picture"
-          className="absolute inset-0 h-full w-full"
-          style={{ border: 0 }}
+        <video
+          src="/hero/phone.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 h-full w-full object-contain"
         />
         <div
           className="pointer-events-none absolute left-1/2 top-2 z-[2] h-[22px] w-[110px] -translate-x-1/2 rounded-full bg-black"

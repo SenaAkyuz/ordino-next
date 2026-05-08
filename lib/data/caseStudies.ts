@@ -94,7 +94,7 @@ export const caseStudies: CaseStudy[] = [
       "Görsel Tasarım",
       "Dönüşüm Optimizasyonu",
     ],
-    image: "/case-studies/gobritanya.jpg",
+    image: "/case-studies/gobritanya.webp",
     gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
     stats: [
       { value: "1.000+", label: "Aylık Müşteri Dönüşümü" },
@@ -140,7 +140,7 @@ export const caseStudies: CaseStudy[] = [
       "YouTube Kampanyaları",
       "Medya Optimizasyonu",
     ],
-    image: "/case-studies/yuvamaya.jpg",
+    image: "/case-studies/yuvamaya.webp",
     gradient: "linear-gradient(135deg, #b28f6c 0%, #8b6f50 50%, #6e553d 100%)",
     stats: [
       { value: "20.8M+", label: "Toplam Erişim" },
@@ -184,7 +184,7 @@ export const caseStudies: CaseStudy[] = [
       "YouTube Kampanyaları",
       "Fuar İletişimi & Etkinlik Reklamcılığı",
     ],
-    image: "/case-studies/turkish-technic.jpg",
+    image: "/case-studies/turkish-technic.webp",
     gradient: "linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #4a2080 100%)",
     stats: [
       { value: "100+", label: "Reklam Kampanyası" },
@@ -487,7 +487,7 @@ export const caseStudies: CaseStudy[] = [
       "Platform Yönetimi",
       "Marka Sesi & Editoryal Uyum",
     ],
-    image: "/case-studies/instyle.jpg",
+    image: "/case-studies/instyle.webp",
     gradient: "linear-gradient(135deg, #1a1a1a 0%, #333333 50%, #4d4d4d 100%)",
     stats: [
       { value: "Global", label: "Estetik" },
@@ -530,7 +530,7 @@ export const caseStudies: CaseStudy[] = [
       "Hedef Kitle Stratejisi",
       "Etkinlik & Kültür İletişimi",
     ],
-    image: "/case-studies/inspera.jpg",
+    image: "/case-studies/inspera.webp",
     gradient: "linear-gradient(135deg, #1e3a5f 0%, #2c5282 50%, #4299e1 100%)",
     stats: [
       { value: "4 Mekan", label: "Sahne · Akademi · Bar · Mağaza" },
