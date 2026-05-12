@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
-      { source: "/aiata", destination: "/aiata/index.html" },
-      { source: "/aiata/", destination: "/aiata/index.html" },
+      { source: "/produksiyon", destination: "/produksiyon/index.html" },
+      { source: "/produksiyon/", destination: "/produksiyon/index.html" },
     ];
   },
 };
