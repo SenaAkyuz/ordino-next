@@ -1,16 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { Link, usePathname } from "@/i18n/navigation";
 import { navLinks, navCta } from "@/lib/data/nav";
 import { site } from "@/lib/data/site";
 import { cn } from "@/lib/utils";
 import { useAdaptiveNav } from "@/components/layout/AdaptiveNavLogic";
-
-const isInternal = (href: string) =>
-  href.startsWith("/") || href.startsWith("#");
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -133,28 +130,20 @@ export function Navbar({ forceDark = false }: NavbarProps) {
       </ul>
 
       <div className="hidden md:flex items-center gap-[20px]">
-        {(() => {
-          const ctaClass = cn(
+        <LanguageSwitcher className={textColor} />
+        <a
+          href={navCta.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(
             "rounded-[10em] border px-[30px] py-3 text-[0.95rem] transition-[background-color,color,border-color] duration-300 ease-in-out",
             textColor,
             borderColor,
             ctaHover,
-          );
-          return isInternal(navCta.href) ? (
-            <Link href={navCta.href} className={ctaClass}>
-              {navCta.label}
-            </Link>
-          ) : (
-            <a
-              href={navCta.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={ctaClass}
-            >
-              {navCta.label}
-            </a>
-          );
-        })()}
+          )}
+        >
+          {navCta.label}
+        </a>
         {instagram && (
           <a
             href={instagram.href}
@@ -235,6 +224,9 @@ export function Navbar({ forceDark = false }: NavbarProps) {
               )}
             </li>
           ))}
+          <li className="pt-4">
+            <LanguageSwitcher className={textColor} />
+          </li>
         </ul>
       )}
     </nav>

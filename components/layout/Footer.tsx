@@ -1,5 +1,6 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { site } from "@/lib/data/site";
+import type { Pathname } from "@/lib/data/nav";
 
 function FooterInstagramIcon() {
   return (
@@ -36,31 +37,37 @@ function FooterLinkedInIcon() {
   );
 }
 
-const services = [
-  { label: "Medya & Reklam", href: "/hizmetler#medya-reklam" },
-  { label: "Sosyal Medya Yönetimi", href: "/hizmetler#sosyal-medya-yonetimi" },
-  { label: "İçerik Üretimi", href: "/hizmetler#icerik-uretimi" },
-  { label: "SEO & Organik Büyüme", href: "/hizmetler#seo-organik-buyume" },
-  { label: "Görsel Tasarım", href: "/hizmetler#gorsel-tasarim" },
-  { label: "Web Sitesi Geliştirme & Optimizasyon", href: "/hizmetler#web-gelistirme" },
-  { label: "E-ticaret Çözümleri", href: "/hizmetler#e-ticaret" },
-  { label: "Mailing & CRM", href: "/hizmetler#mailing-crm" },
-  { label: "AI & Otomasyon", href: "/hizmetler#ai-otomasyon" },
+type ServiceLink = { label: string; pathname: Pathname; hash: string };
+type CompanyLink =
+  | { label: string; pathname: Pathname; external?: false }
+  | { label: string; href: string; external: true };
+type LegalLink = { label: string; pathname: Pathname };
+
+const services: ServiceLink[] = [
+  { label: "Medya & Reklam", pathname: "/hizmetler", hash: "medya-reklam" },
+  { label: "Sosyal Medya Yönetimi", pathname: "/hizmetler", hash: "sosyal-medya-yonetimi" },
+  { label: "İçerik Üretimi", pathname: "/hizmetler", hash: "icerik-uretimi" },
+  { label: "SEO & Organik Büyüme", pathname: "/hizmetler", hash: "seo-organik-buyume" },
+  { label: "Görsel Tasarım", pathname: "/hizmetler", hash: "gorsel-tasarim" },
+  { label: "Web Sitesi Geliştirme & Optimizasyon", pathname: "/hizmetler", hash: "web-gelistirme" },
+  { label: "E-ticaret Çözümleri", pathname: "/hizmetler", hash: "e-ticaret" },
+  { label: "Mailing & CRM", pathname: "/hizmetler", hash: "mailing-crm" },
+  { label: "AI & Otomasyon", pathname: "/hizmetler", hash: "ai-otomasyon" },
 ];
 
-const company = [
-  { label: "Hakkımızda", href: "/hakkimizda" },
-  { label: "Çalışmalar", href: "/calisma" },
-  { label: "Referanslar", href: "/referanslar" },
-  { label: "Platform", href: "/platform" },
-  { label: "Blog", href: "/blog" },
-  { label: "Kariyer", href: `mailto:${site.careersEmail}` },
+const company: CompanyLink[] = [
+  { label: "Hakkımızda", pathname: "/hakkimizda" },
+  { label: "Çalışmalar", pathname: "/calisma" },
+  { label: "Referanslar", pathname: "/referanslar" },
+  { label: "Platform", pathname: "/platform" },
+  { label: "Blog", pathname: "/blog" },
+  { label: "Kariyer", href: `mailto:${site.careersEmail}`, external: true },
 ];
 
-const legal = [
-  { label: "Gizlilik Politikası", href: "/gizlilik-politikasi" },
-  { label: "KVKK", href: "/kvkk" },
-  { label: "Çerez Politikası", href: "/cerez-politikasi" },
+const legal: LegalLink[] = [
+  { label: "Gizlilik Politikası", pathname: "/gizlilik-politikasi" },
+  { label: "KVKK", pathname: "/kvkk" },
+  { label: "Çerez Politikası", pathname: "/cerez-politikasi" },
 ];
 
 export function Footer() {
@@ -94,7 +101,7 @@ export function Footer() {
               {services.map((s) => (
                 <li key={s.label}>
                   <Link
-                    href={s.href}
+                    href={{ pathname: s.pathname, hash: s.hash }}
                     className="font-body text-[0.85rem] font-light text-gray transition-colors duration-300 hover:text-white"
                   >
                     {s.label}
@@ -111,12 +118,21 @@ export function Footer() {
             <ul className="flex flex-col gap-3">
               {company.map((c) => (
                 <li key={c.label}>
-                  <Link
-                    href={c.href}
-                    className="font-body text-[0.85rem] font-light text-gray transition-colors duration-300 hover:text-white"
-                  >
-                    {c.label}
-                  </Link>
+                  {c.external ? (
+                    <a
+                      href={c.href}
+                      className="font-body text-[0.85rem] font-light text-gray transition-colors duration-300 hover:text-white"
+                    >
+                      {c.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={c.pathname}
+                      className="font-body text-[0.85rem] font-light text-gray transition-colors duration-300 hover:text-white"
+                    >
+                      {c.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -172,7 +188,7 @@ export function Footer() {
             {legal.map((l) => (
               <Link
                 key={l.label}
-                href={l.href}
+                href={l.pathname}
                 className="font-body text-[0.78rem] font-light text-gray transition-colors duration-300 hover:text-white"
               >
                 {l.label}

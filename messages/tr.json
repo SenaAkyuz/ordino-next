@@ -1,0 +1,1423 @@
+{
+  "common": {
+    "tagline": "Strateji. Yaratıcılık. Büyüme.",
+    "copyright": "© 2026 Ordino. Tüm hakları saklıdır.",
+    "careersBlurb": "Birlikte çalışalım!",
+    "address": "Ferko Signature Plaza, A Blok, Büyükdere Caddesi No:175, Esentepe, 34394 Şişli / İstanbul, Türkiye",
+    "londonAddress": "20-22 Wenlock Road, London, N1 7GU, United Kingdom",
+    "footerAbout": "Ordino, London ve Istanbul merkezli full-service reklam ajansıdır. Strateji, yaratıcılık ve büyüme odaklı yaklaşımımız ile global markalara hizmet veriyoruz. Google, Meta, TikTok ve X'te resmi reklam partnerliği ile faaliyet gösteriyoruz."
+  },
+  "metadata": {
+    "siteTitle": "Ordino — Strateji. Yaratıcılık. Büyüme.",
+    "titleTemplate": "%s | Ordino",
+    "description": "London ve Istanbul merkezli full-service reklam ajansı. Google, Meta, TikTok ve X resmi reklam partnerliği. 11 yıllık tecrübe ile 50+ markaya hizmet veren AI destekli pazarlama ekosistemi.",
+    "ogLocale": "tr_TR",
+    "lang": "tr"
+  },
+  "nav": {
+    "services": "Hizmetler",
+    "production": "Prodüksiyon",
+    "work": "Çalışmalar",
+    "caseStudies": "Referanslar",
+    "platform": "Platform",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "ctaLabel": "Toplantı Planla"
+  },
+  "footer": {
+    "sections": {
+      "services": "Hizmetler",
+      "company": "Şirket",
+      "contact": "İletişim",
+      "istanbulOffice": "İstanbul Ofisi",
+      "londonOffice": "Londra Ofisi"
+    },
+    "company": {
+      "about": "Hakkımızda",
+      "work": "Çalışmalar",
+      "caseStudies": "Referanslar",
+      "platform": "Platform",
+      "blog": "Blog",
+      "careers": "Kariyer"
+    },
+    "legal": {
+      "privacyPolicy": "Gizlilik Politikası",
+      "kvkk": "KVKK",
+      "cookiePolicy": "Çerez Politikası"
+    }
+  },
+  "contact": {
+    "headline": {
+      "lead": "Görüşmeyi",
+      "highlight": "başlatalım."
+    },
+    "intro": "Kısa bir brief gönderin — bir iş günü içinde dönüş yapacağız.",
+    "sideInfo": {
+      "newBusiness": "Yeni İş",
+      "careers": "Kariyer",
+      "phone": "Telefon",
+      "studio": "Stüdyo",
+      "officeHours": "Çalışma Saatleri",
+      "follow": "Takip Et",
+      "weekdays": "Pazartesi — Cuma",
+      "hours": "09:00 — 19:00 (GMT+3)"
+    },
+    "fields": {
+      "firstName": "Adınız",
+      "lastName": "Soyadınız",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "company": "Şirket (opsiyonel)",
+      "industry": "Sektör (opsiyonel)",
+      "services": "İstenen Hizmetler",
+      "servicesHint": "(uygun olanları seçin)",
+      "timing": "Zamanlama (opsiyonel)",
+      "budget": "Aylık Reklam Bütçesi (opsiyonel)",
+      "message": "Projeniz hakkında bize bilgi verin (opsiyonel)"
+    },
+    "placeholders": {
+      "industry": "Sektör seçin…",
+      "timing": "Zamanlama seçin…",
+      "budget": "Aralık seçin…",
+      "message": "Hedefler, zamanlama, mevcut araçlar, en büyük zorluk…"
+    },
+    "industryOptions": {
+      "ecommerce": "E-Ticaret / DTC",
+      "saas": "SaaS / Yazılım",
+      "travel": "Seyahat / Konaklama",
+      "education": "Eğitim",
+      "realEstate": "Gayrimenkul",
+      "finance": "Finans / Fintech",
+      "healthcare": "Sağlık",
+      "b2b": "B2B / Endüstriyel",
+      "publicSector": "Kamu Sektörü",
+      "other": "Diğer"
+    },
+    "serviceOptions": {
+      "strategy": "Strateji & Denetim",
+      "performance": "Performans Medya",
+      "creative": "Yaratıcı & Prodüksiyon",
+      "analytics": "Analitik & Atribüsyon",
+      "growth": "Büyüme & Ortaklıklar",
+      "cro": "CRO / Landing Page",
+      "fullService": "Tam Servis Ortaklığı"
+    },
+    "timingOptions": {
+      "immediate": "Hemen başlamamız gerek",
+      "withinMonth": "Önümüzdeki ay içinde",
+      "threePlus": "3+ ay sonra",
+      "exploring": "Sadece keşfediyoruz"
+    },
+    "budgetOptions": {
+      "tier1": "10.000 TL altı",
+      "tier2": "10.000 — 50.000 TL",
+      "tier3": "50.000 — 250.000 TL",
+      "tier4": "250.000 — 1M TL",
+      "tier5": "1M TL üzeri"
+    },
+    "buttons": {
+      "submit": "Mesaj Gönder",
+      "submitting": "Gönderiliyor…",
+      "successTitle": "Mesajınız alındı.",
+      "successBody": "Teşekkürler — kısa süre içinde dönüş yapacağız."
+    },
+    "privacy": {
+      "prefix": "Göndererek",
+      "linkText": "Gizlilik Politikamızı",
+      "suffix": "kabul etmiş olursunuz. Spam yok — sadece samimi bir yanıt."
+    },
+    "errors": {
+      "generic": "Form gönderilirken bir hata oluştu. Lütfen tekrar deneyin.",
+      "missingRequired": "Zorunlu alanlar eksik.",
+      "invalidEmail": "Geçersiz e-posta adresi."
+    },
+    "whereWeWork": {
+      "titleLead": "11 yıl önce Istanbul'da kuruldu. Bugün Şişli iş bölgesinde,",
+      "titleHighlight": "büyüme aşamasındaki ve önde gelen",
+      "titleTail": "markalara seyahat, gayrimenkul, kamu sektörü ve B2B alanlarında hizmet veriyoruz.",
+      "cards": {
+        "global": {
+          "title": "Global",
+          "text": "Istanbul merkezli sıkı bir ekibiz. Avrupa, Körfez ve Kuzey Amerika'da iş ortaklarımız ve iş birlikçilerimiz var. Kampanyaları global olarak yönetiyoruz."
+        },
+        "becomeClient": {
+          "title": "Müşterimiz Olun",
+          "text": "Yeni bir projeniz mi var? Duymayı çok isteriz. Her büyük iş ortaklığı, daha büyük bir brief ile başlar — sizinkini incelemekten mutluluk duyacağız."
+        },
+        "joinTeam": {
+          "title": "Ekibimize Katılın",
+          "text": "Yalnızca olağanüstü uzmanları işe alıyoruz. Kendi işinizi gördüğünüzde 'çok iyi' diyebiliyorsanız, burada bize aitsiniz."
+        }
+      }
+    },
+    "powerSection": {
+      "label": "Bir Yanıt Uzakta",
+      "title": "Bize ulaşın",
+      "emphasis": "hemen dönüş yapalım."
+    },
+    "bottomCta": {
+      "title": "Birlikte",
+      "emphasis": "harekete geçelim.",
+      "button": "theordino.com"
+    }
+  },
+  "thankYou": {
+    "title": "Mesajınız Alındı",
+    "headline": {
+      "lead": "Teşekkürler —",
+      "highlight": "en kısa sürede",
+      "tail": "dönüş yapacağız."
+    },
+    "body": "Mesajınızı başarıyla aldık. Ekibimiz brief'inizi inceleyecek ve bir iş günü içinde size dönüş yapacaktır. Acil durumlarda 0212 996 71 47 numaramızı arayabilirsiniz.",
+    "ctas": {
+      "home": "Anasayfaya Dön",
+      "work": "Çalışmalarımızı İncele"
+    },
+    "metadata": {
+      "title": "Teşekkürler",
+      "description": "Mesajınızı aldık. En kısa sürede dönüş yapacağız."
+    }
+  },
+  "schedule": {
+    "eyebrow": "Bir Sonraki Adım",
+    "headline": {
+      "lead": "Bir Toplantı",
+      "highlight": "Planlayalım."
+    },
+    "body": "Markanızın hedeflerini ve ihtiyaçlarını birlikte değerlendirelim. 30 dakikalık ücretsiz keşif görüşmemiz için takvimden uygun bir zaman seçebilirsiniz."
+  },
+  "cookies": {
+    "title": "Çerezleri Yönetin",
+    "body": {
+      "prefix": "Web sitemizde deneyiminizi iyileştirmek, performansı analiz etmek ve içerikleri kişiselleştirmek için çerezler kullanıyoruz. Detaylı bilgi için",
+      "linkText": "Çerez Politikamızı",
+      "suffix": "inceleyebilirsiniz."
+    },
+    "decline": "Reddet",
+    "accept": "Kabul Et"
+  },
+  "home": {
+    "metadata": {
+      "title": "Ordino — Strateji. Yaratıcılık. Büyüme.",
+      "description": "London ve Istanbul merkezli full-service reklam ajansı. Google, Meta, TikTok ve X resmi reklam partnerliği ile Türk ve uluslararası markalara hizmet veriyoruz."
+    },
+    "hero": {
+      "headline": {
+        "lead": "Strateji.",
+        "highlight": "Yaratıcılık.",
+        "tail": "Büyüme."
+      },
+      "subhead": "AI destekli reklam zekası ile daha akıllı kampanyalar, hedefli iletişim ve ölçülebilir büyüme.",
+      "cta1": "Hizmetleri Keşfet",
+      "cta2": "İletişime Geç",
+      "scrollLabel": "Scroll"
+    },
+    "clientsShowcase": {
+      "eyebrow": "Çalıştığımız Markalar",
+      "sub": "Stratejik ortaklıklarla büyüyen markalara hizmet veriyoruz."
+    },
+    "howWeWork": {
+      "eyebrow": "Nasıl Çalışıyoruz",
+      "title": "Yaratıcı +",
+      "emphasis": "Analitik",
+      "description": "Veriye dayalı yaratıcılarız. Veri bilimi ile pazarlama uzmanlığını birleştirip ölçülebilir büyüme sağlarız. Markanızın hikayesini stratejik analiz, AI optimizasyonu ve yaratıcı prodüksiyonla anlamlı sonuçlara dönüştürüyoruz.",
+      "stats": {
+        "yearsExperience": "Yıllık Tecrübe",
+        "brandsServed": "Marka ile Çalışıldı",
+        "adSpendManaged": "Yönetilen Reklam Bütçesi",
+        "thousands": "Binlerce",
+        "campaignsDelivered": "Yönetilen Kampanya"
+      }
+    },
+    "partnerMarquee": {
+      "label": "Resmi Reklam Ortaklıkları"
+    },
+    "servicesGrid": {
+      "title": "Hizmet",
+      "emphasis": "Kategorilerimiz",
+      "items": {
+        "01": {
+          "title": "Medya & Reklam",
+          "items": [
+            "Medya planlama ve satın alma",
+            "Programatik reklam yönetimi",
+            "TV, radyo ve geleneksel medya",
+            "Outdoor (DOOH)",
+            "TVC ve dijital film prodüksiyonu"
+          ]
+        },
+        "02": {
+          "title": "Sosyal Medya Yönetimi",
+          "items": [
+            "İçerik takvimi ve strateji",
+            "Instagram, TikTok, LinkedIn",
+            "Topluluk yönetimi",
+            "Influencer iş birlikleri",
+            "Sosyal dinleme"
+          ]
+        },
+        "03": {
+          "title": "İçerik Üretimi",
+          "items": [
+            "Video prodüksiyon",
+            "Fotoğraf çekim",
+            "Copywriting",
+            "Grafik ve motion tasarım",
+            "Marka hikayesi"
+          ]
+        },
+        "04": {
+          "title": "SEO & Organik Büyüme",
+          "items": [
+            "Teknik SEO denetimi",
+            "Anahtar kelime stratejisi",
+            "On-page optimizasyon",
+            "Lokal SEO",
+            "Schema markup"
+          ]
+        },
+        "05": {
+          "title": "Görsel Tasarım",
+          "items": [
+            "Logo ve marka kimliği",
+            "Marka rehberi",
+            "Tipografi ve renk",
+            "Ambalaj tasarımı",
+            "Kampanya görselleri"
+          ]
+        },
+        "06": {
+          "title": "Web Sitesi Geliştirme & Optimizasyon",
+          "items": [
+            "Next.js ve React geliştirme",
+            "Kurumsal site ve landing page",
+            "Core Web Vitals optimizasyonu",
+            "CMS entegrasyonu",
+            "API entegrasyonları"
+          ]
+        },
+        "07": {
+          "title": "E-ticaret Çözümleri",
+          "items": [
+            "Shopify mağaza geliştirme",
+            "WooCommerce ve özel platform",
+            "Ödeme ve kargo entegrasyonu",
+            "Sepet terk optimizasyonu",
+            "E-ticaret SEO"
+          ]
+        },
+        "08": {
+          "title": "Mailing & CRM",
+          "items": [
+            "E-posta pazarlama strateji",
+            "Otomasyon flow'ları",
+            "Müşteri segmentasyonu",
+            "CRM entegrasyonu",
+            "Newsletter tasarım"
+          ]
+        },
+        "09": {
+          "title": "AI & Otomasyon",
+          "items": [
+            "AI destekli içerik üretimi",
+            "Müşteri davranışı tahminleme",
+            "Kampanya AI otomasyonu",
+            "Chatbot çözümleri",
+            "İş akışı otomasyonu"
+          ]
+        }
+      }
+    },
+    "latestWorks": {
+      "eyebrow": "Seçili Çalışmalar",
+      "title": "Sektöre Göre",
+      "emphasis": "Sağladığımız Hizmetler",
+      "hoverLabel": "Detayları Gör →"
+    },
+    "meetingCta": {
+      "eyebrow": "Bir Sonraki Adım",
+      "headline": {
+        "lead": "Bir Toplantı",
+        "highlight": "Planlayalım."
+      },
+      "body": "Markanızın hedeflerini ve ihtiyaçlarını birlikte değerlendirelim. Kısa bir brief paylaşın, ekibimiz bir iş günü içinde size dönüş yapsın.",
+      "subHeader": "Brief'inizi paylaşın",
+      "subBody": "Formu doldurun, projenizi birlikte değerlendirelim.",
+      "button": "İletişim Formuna Git"
+    },
+    "cta": {
+      "title": "Markanızın büyüme yolculuğunda büyük bir adım atmak için",
+      "emphasis": "şimdi tanışalım.",
+      "button": "İletişime Geç"
+    }
+  },
+  "about": {
+    "metadata": {
+      "title": "Hakkımızda",
+      "description": "Ordino, London ve Istanbul merkezli full-service reklam ajansıdır. Google, Meta, TikTok ve X'te resmi reklam partnerliği ile Türk ve uluslararası markalara hizmet verir."
+    },
+    "editorialHero": {
+      "eyebrow": "Hakkımızda",
+      "title": "London ve Istanbul bazlı",
+      "emphasis": "full-service ajans.",
+      "prose1": "Google, Meta, TikTok ve X'te resmi reklam partnerliği.",
+      "prose2": "Türk ve uluslararası markalara hizmet."
+    },
+    "howWeWork": {
+      "eyebrow": "Rakamlarla Ordino",
+      "title": "11 yılda",
+      "emphasis": "ölçeklenen büyüme.",
+      "description": "2015'ten bu yana 50'den fazla markaya hizmet veriyoruz. UK, USA ve Türkiye'de yönetilen reklam bütçelerimiz toplamda yüz milyonlarca dolar; binlerce kampanya teslim ettik. Ekibimiz, deneyimli stratejistler, performans uzmanları ve yaratıcı yönetmenlerden oluşur.",
+      "stats": [
+        { "value": "11", "label": "Yıllık Tecrübe" },
+        { "value": "50+", "label": "Marka ile Çalışıldı" },
+        { "value": "£2M+", "label": "Yönetilen Reklam Bütçesi" },
+        { "value": "Binlerce", "label": "Yönetilen Kampanya" }
+      ]
+    },
+    "showreel": {
+      "eyebrow": "Studio Reel · 2026",
+      "title": "11 yılın",
+      "emphasis": "hikayesi."
+    },
+    "leadership": {
+      "eyebrow": "Yönetim Kadrosu",
+      "lead": "Ordino'nun yönetim kadrosu — strateji, performans, tasarım ve operasyondan sorumlu altı kişilik üst kadro.",
+      "linkLabel": "LinkedIn →"
+    },
+    "partnerLogos": {
+      "eyebrow": "Resmi Reklam Ortaklıklarımız",
+      "title": "Sektörün lider platformlarıyla",
+      "emphasis": "doğrulanmış partnerlikler.",
+      "description": "Google, Meta, Google Analytics ve TikTok'un resmi reklam programlarındaki partner statümüz, kampanyalarınızda en güncel araçlara, beta özelliklere ve uzman desteğe doğrudan erişim sağlar.",
+      "partnerTypes": {
+        "advertising": "Resmi Reklam Partneri",
+        "business": "Resmi Business Partner",
+        "analytics": "Resmi Analytics Partner",
+        "marketing": "Resmi Marketing Partner"
+      }
+    },
+    "cta": {
+      "title": "Birlikte büyümeye",
+      "emphasis": "hazır mısınız?"
+    }
+  },
+  "services": {
+    "metadata": {
+      "title": "Hizmetler",
+      "description": "Tam servis ve çok disiplinli reklam ajansı. Strateji, yaratıcılık, performans, analitik, büyüme ve dijital deneyim."
+    },
+    "pageHero": {
+      "label": "Hizmetlerimiz",
+      "title": "Tam servis.",
+      "emphasis": "Çok disiplinli.",
+      "sub": "Strateji, yaratıcılık, performans medya, analitik, büyüme ve dijital deneyim — tek elden, ölçülebilir sonuçlarla."
+    },
+    "whatWeDo": {
+      "eyebrow": "Neler Yapıyoruz?",
+      "titleHtml": "Veriyi <em>yaratıcılıkla</em> bütünleştiriyor,<br><em>çok disiplinli</em> yapımızla yenilikçi çözümler üretiyoruz."
+    },
+    "heroGrid": {
+      "01": {
+        "title": "Medya &",
+        "titleEm": "Reklam",
+        "description": "Programatik reklamcılık, TV-dijital entegrasyonu, yaratıcı kampanyalar ve medya satın alma — bütünleşik medya & reklam yaklaşımı."
+      },
+      "02": {
+        "title": "Sosyal Medya",
+        "titleEm": "Yönetimi",
+        "description": "Platform-spesifik içerik üretiminden topluluk yönetimine, organik büyümeden influencer iş birliklerine kadar."
+      },
+      "03": {
+        "title": "İçerik",
+        "titleEm": "Üretimi",
+        "description": "Video, fotoğraf, metin ve grafik üretimi. Marka tonuna uygun, platform-uyumlu yaratıcı içerikler."
+      },
+      "04": {
+        "title": "SEO & Organik",
+        "titleEm": "Büyüme",
+        "description": "Uzun vadeli organik büyümenin temeli. Teknik SEO'dan içerik stratejisine kalıcı görünürlük inşa ediyoruz."
+      },
+      "05": {
+        "title": "Görsel",
+        "titleEm": "Tasarım",
+        "description": "Logo, kurumsal kimlik, kampanya görselleri, ambalaj tasarımı — markanızın görsel dilini şekillendiriyoruz."
+      },
+      "06": {
+        "title": "Web Sitesi Geliştirme &",
+        "titleEm": "Optimizasyon",
+        "description": "Modern, hızlı, SEO uyumlu web siteleri. Next.js, React ve performans odaklı geliştirme yaklaşımı."
+      },
+      "07": {
+        "title": "E-ticaret",
+        "titleEm": "Çözümleri",
+        "description": "Shopify, WooCommerce ve özel e-ticaret platformları. Dönüşüm odaklı tasarım ve ödeme entegrasyonları."
+      },
+      "08": {
+        "title": "Mailing &",
+        "titleEm": "CRM",
+        "description": "E-posta pazarlama, otomasyon, müşteri segmentasyonu ve CRM entegrasyonları ile sürdürülebilir ilişkiler."
+      },
+      "09": {
+        "title": "AI &",
+        "titleEm": "Otomasyon",
+        "description": "Yapay zeka, stratejik bir araç. Veri analitiği, segmentasyon, kreatif süreçler ve kampanya optimizasyonu."
+      }
+    },
+    "accordion": {
+      "01": {
+        "num": "01 — Medya & Reklam",
+        "title": "Bütünleşik medya &",
+        "titleHead": "yaratıcı",
+        "titleEm": "reklam.",
+        "lead": "Doğru mesajın doğru zamanda doğru kişiye ulaşması için medya ve reklam yatırımını stratejik bir yetenek haline getiriyoruz. Programatik reklamcılıktan TV-dijital entegrasyonuna, yaratıcı kampanya konseptinden prodüksiyona kadar bütünleşik bir yaklaşım sunuyoruz.",
+        "items": [
+          "Medya planlama ve satın alma",
+          "Programatik reklam yönetimi",
+          "TV, radyo ve geleneksel medya",
+          "Outdoor ve dijital outdoor (DOOH)",
+          "Reklam kampanyası konsepti ve strateji",
+          "TVC ve dijital film prodüksiyonu",
+          "Performans pazarlama (Google Ads, Meta, TikTok)",
+          "ROAS odaklı bütçe yönetimi"
+        ]
+      },
+      "02": {
+        "num": "02 — Sosyal Medya Yönetimi",
+        "title": "Markanın insanlarla",
+        "titleHead": "buluştuğu",
+        "titleEm": "yer.",
+        "lead": "Sosyal medya, markanızın insanlarla buluştuğu yerdir. Platform-spesifik içerik üretiminden topluluk yönetimine, organik büyümeden influencer iş birliklerine kadar tüm sürecin sahibi oluyoruz. Sayılara değil, gerçek bağlantılara odaklanıyoruz.",
+        "items": [
+          "Sosyal medya strateji ve içerik takvimi",
+          "Instagram, TikTok, LinkedIn içerik üretimi",
+          "Topluluk yönetimi ve etkileşim",
+          "Influencer ve içerik üretici iş birlikleri",
+          "Sosyal dinleme ve trend analizi",
+          "Sosyal medya performans raporlama"
+        ]
+      },
+      "03": {
+        "num": "03 — İçerik Üretimi",
+        "title": "Hikaye anlatan",
+        "titleHead": "yaratıcı",
+        "titleEm": "içerikler.",
+        "lead": "İçerik, markanızla hedef kitleniz arasında köprü kurar. Video, fotoğraf, metin ve grafik üretiminde marka tonunuza uygun, platform-uyumlu yaratıcı çalışmalar üretiyoruz. Story-telling, copywriting ve kreatif yönetim tek elden.",
+        "items": [
+          "Video prodüksiyon (kısa ve uzun format)",
+          "Fotoğraf çekim ve sanat yönetimi",
+          "Copywriting ve metin yazarlığı",
+          "Grafik ve motion tasarım",
+          "Podcast ve ses içerik üretimi",
+          "Marka hikayesi ve story-telling"
+        ]
+      },
+      "04": {
+        "num": "04 — SEO & Organik Büyüme",
+        "title": "Uzun vadeli",
+        "titleHead": "organik",
+        "titleEm": "büyüme.",
+        "lead": "Arama motoru optimizasyonu, uzun vadeli organik büyümenin temelidir. Teknik SEO'dan içerik stratejisine, link otoriteden lokal aramaya kadar markanızın doğru kelimelerde doğru kişilerin karşısına çıkmasını sağlıyoruz. Kalıcı görünürlük inşa ediyoruz.",
+        "items": [
+          "Teknik SEO denetimi ve düzeltme",
+          "Anahtar kelime stratejisi ve içerik planlaması",
+          "On-page ve off-page optimizasyon",
+          "Lokal SEO ve Google Business yönetimi",
+          "Schema markup ve yapısal veri",
+          "Aylık performans takibi ve raporlama"
+        ]
+      },
+      "05": {
+        "num": "05 — Görsel Tasarım",
+        "title": "Karakteri olan",
+        "titleHead": "markalar",
+        "titleEm": "yaratıyoruz.",
+        "lead": "Marka kimliği, görsel tutarlılıktan çok daha fazlasıdır — bir markanın ruhudur. Logodan tipografiye, renk paletinden kullanım kılavuzuna kadar markanızı tanımlayan tüm görsel sistemleri tasarlıyoruz. Kampanya görselleri, ambalaj ve sunum tasarımları dahil.",
+        "items": [
+          "Logo ve marka kimliği tasarımı",
+          "Marka rehberi ve kullanım kılavuzu",
+          "Tipografi ve renk sistemi",
+          "Ambalaj ve ürün tasarımı",
+          "Kampanya görselleri ve key visual",
+          "Sunum, broşür ve katalog tasarımı"
+        ]
+      },
+      "06": {
+        "num": "06 — Web Sitesi Geliştirme & Optimizasyon",
+        "title": "Modern, hızlı,",
+        "titleHead": "SEO",
+        "titleEm": "uyumlu.",
+        "lead": "Web siteniz markanızın dijital vitrini. Modern stack (Next.js, React) ile hızlı, SEO uyumlu, ölçeklenebilir siteler geliştiriyoruz. Tasarımdan kodlamaya, performans optimizasyonundan sürekli bakıma kadar tüm süreç tek elden.",
+        "items": [
+          "Web sitesi tasarımı ve geliştirme (Next.js, React)",
+          "Kurumsal web sitesi ve landing page",
+          "Performans ve Core Web Vitals optimizasyonu",
+          "İçerik yönetim sistemi (CMS) entegrasyonu",
+          "API entegrasyonları",
+          "SEO uyumlu altyapı ve schema markup",
+          "Sürekli bakım ve iyileştirme"
+        ]
+      },
+      "07": {
+        "num": "07 — E-ticaret Çözümleri",
+        "title": "Dönüşüm odaklı",
+        "titleHead": "e-ticaret",
+        "titleEm": "deneyimi.",
+        "lead": "E-ticaret, sadece bir mağaza değil — uçtan uca bir kullanıcı deneyimidir. Shopify, WooCommerce ve özel platform geliştirmelerle dönüşüm odaklı, ödeme entegrasyonlu, mobil-uyumlu e-ticaret çözümleri sunuyoruz.",
+        "items": [
+          "Shopify mağaza geliştirme ve özelleştirme",
+          "WooCommerce ve özel e-ticaret platformları",
+          "Ödeme sistemleri ve kargo entegrasyonu",
+          "Ürün katalog yönetimi",
+          "Sepet terk optimizasyonu",
+          "E-ticaret SEO ve performans pazarlama",
+          "Mobil uygulama (iOS / Android) entegrasyonu"
+        ]
+      },
+      "08": {
+        "num": "08 — Mailing & CRM",
+        "title": "Sürdürülebilir",
+        "titleHead": "müşteri",
+        "titleEm": "ilişkileri.",
+        "lead": "Müşteri ilişkisi tek seferlik bir satış değil, uzun vadeli bir bağ. E-posta pazarlama, otomasyon ve CRM entegrasyonları ile müşterilerinizle sürdürülebilir, kişiselleştirilmiş bir iletişim kuruyoruz. Veriden değer üretiyoruz.",
+        "items": [
+          "E-posta pazarlama strateji ve kampanya",
+          "E-posta otomasyon flow'ları",
+          "Müşteri segmentasyonu ve kişiselleştirme",
+          "CRM entegrasyonu (HubSpot, Salesforce, vb.)",
+          "Newsletter tasarım ve içerik",
+          "A/B test ve performans optimizasyonu"
+        ]
+      },
+      "09": {
+        "num": "09 — AI & Otomasyon",
+        "title": "Yapay zeka,",
+        "titleHead": "stratejik bir",
+        "titleEm": "araç.",
+        "lead": "Yapay zeka artık bir lüks değil, rekabet zorunluluğu. Veri analitiğinden müşteri segmentasyonuna, yaratıcı süreçlerden kampanya optimizasyonuna kadar AI'yı stratejik bir araç olarak kullanıyoruz. Daha hızlı, daha akıllı, daha verimli.",
+        "items": [
+          "AI destekli içerik ve görsel üretimi",
+          "Müşteri davranışı tahminleme ve segmentasyon",
+          "Reklam kampanyası AI otomasyonu",
+          "Chatbot ve müşteri hizmetleri otomasyonu",
+          "Pazarlama iş akışı otomasyonu",
+          "AI tabanlı performans optimizasyonu"
+        ]
+      }
+    },
+    "powerSection": {
+      "label": "Yapay Zekanın Gücü",
+      "title": "En iyi kampanyalarınız için",
+      "emphasis": "yeterince akıllı."
+    },
+    "analyticsBlock": {
+      "title": "Tek partner.",
+      "emphasis": "Tüm platformlar.",
+      "description": "Ekibimiz tüm büyük reklam platformlarında doğal olarak çalışır — ve onları birbirine bağlayan analitik altyapılar üzerinde. Bu, ölçeklendikçe stratejinizin bütünleşik kalması demek.",
+      "platforms": [
+        "Google Ads — Search, Shopping, Performance Max",
+        "Meta Ads — Facebook, Instagram, Threads",
+        "LinkedIn Ads — B2B & ABM",
+        "TikTok Ads — Spark & Creator",
+        "X (Twitter) Ads",
+        "Programatik — DV360, TTD",
+        "GA4, Looker Studio, BigQuery"
+      ]
+    },
+    "marqueeLabel": "Resmi Reklam Ortaklıkları",
+    "cta": {
+      "title": "Büyüme yolculuğunuza hız katmak için",
+      "emphasis": "toplantıyı şimdi planlayın."
+    }
+  },
+  "work": {
+    "metadata": {
+      "title": "Çalışmalar",
+      "description": "Türk ve uluslararası markalara hizmet veren Ordino'nun seçili çalışmaları. Strateji, yaratıcılık ve büyüme odaklı projeler."
+    },
+    "hero": {
+      "eyebrow": "Çalışmalarımız",
+      "title": "Markaları",
+      "emphasis": "büyütüyoruz.",
+      "sub": "AI destekli zeka, gelişmiş otomasyon ve güçlü medya ağı ile uluslararası markalara hizmet veriyoruz."
+    },
+    "filter": {
+      "all": "Tümü",
+      "empty": "Bu sektörde henüz çalışma yok.",
+      "hoverLabel": "Detayları Gör →",
+      "altText": "{brand} çalışması"
+    },
+    "analyticsBlock": {
+      "title": "Birikerek artan",
+      "emphasis": "sonuçlar.",
+      "description": "Aktif müşteri hesapları üzerinden son on iki ayın ortalama değerleri. Seçilmiş başarı hikayeleri değil — gerçek rakamlar.",
+      "items": [
+        "50'den fazla marka büyüme hikayesi",
+        "£2M+ Yönetilen Reklam Bütçesi",
+        "AI Optimizasyonları ile güncel başarı"
+      ]
+    },
+    "cta": {
+      "title": "Bir sonraki başarı hikayesi",
+      "emphasis": "sizin olsun."
+    }
+  },
+  "caseStudies": {
+    "metadata": {
+      "title": "Referanslar",
+      "description": "Gerçek markalar. Gerçek sonuçlar. Veri odaklı strateji, AI destekli optimizasyon ve dönüşüme odaklı yaratıcılık ile elde ettiğimiz başarı hikayeleri."
+    },
+    "hero": {
+      "label": "Referanslar",
+      "title": "Gerçek markalar.",
+      "emphasis": "Gerçek sonuçlar.",
+      "sub": "On iki kampanya, on iki sektör. Veri odaklı strateji, AI destekli optimizasyon ve dönüşüme odaklı yaratıcılık ile elde edilen ölçülebilir sonuçlar."
+    },
+    "hoverLabel": "Detayları Gör →",
+    "cta": {
+      "title": "Sıradaki başarı hikayesi",
+      "emphasis": "sizin olsun."
+    },
+    "block": {
+      "challenge": "Zorluk",
+      "solution": "Çözüm"
+    },
+    "prevNext": {
+      "prev": "← Önceki Referans",
+      "next": "Sonraki Referans →"
+    }
+  },
+  "platform": {
+    "metadata": {
+      "title": "Platform",
+      "description": "Tüm Reklamlarınız. ORDINO.AI. TikTok, Meta, Google ve daha fazlasında kampanyalarınızı tek bir AI destekli komuta merkezinden oluşturun, yönetin ve optimize edin."
+    },
+    "hero": {
+      "pillBadge": "Şimdi Erken Erişim'de",
+      "headlineLine1": "Tüm Reklamlarınız.",
+      "headlineLine2": "ORDINO.AI",
+      "subtitle": "Tek bir AI destekli komuta merkezinden TikTok, Meta, Google ve daha fazlasında kampanyalarınızı oluşturun, yönetin ve optimize edin.",
+      "cta1": "Ücretsiz Deneme Başlat",
+      "cta2": "Demo İzle",
+      "channels": ["TikTok", "Meta", "Google", "LinkedIn"],
+      "videoAriaLabel": "Demo video",
+      "videoClose": "Kapat",
+      "videoPlaceholder": "Demo videosu yakında eklenecek."
+    },
+    "product": {
+      "eyebrow": "Ürün",
+      "title": "Her ücretli kanal için",
+      "emphasis": "tek komuta merkezi.",
+      "description": "Ordino AI, çalıştırdığınız tüm reklam hesaplarını — TikTok, Meta, Google, LinkedIn — tek bir operasyon yüzeyinde birleştirir. Tek yerden plan yapın, başlatın ve optimize edin; performansı 7/24 izleyen AI katmanı, sizin müdahale etmenize gerek kalmadan aksiyon alır."
+    },
+    "features": {
+      "header": {
+        "eyebrow": "Özellikler",
+        "title": "Paid medyayı bir",
+        "emphasis": "çekirdek ürün yüzeyi",
+        "tail": "olarak gören ekipler için."
+      },
+      "items": {
+        "01": {
+          "title": "Birleşik Kampanyalar",
+          "text": "Bir kampanyayı bir kez kurun, her kanalda yayına alın. Kreatif varyantlar, hedef kitleler ve bütçeler otomatik senkron — sekmeler arasında dolaşmadan."
+        },
+        "02": {
+          "title": "AI Optimizasyonu",
+          "text": "Motorumuz performansı her on beş dakikada bir okur; bütçeyi kaydırır, kaybedenleri durdurur, kazananları ölçeklendirir — şeffaf bir şekilde, her karar loglanır."
+        },
+        "03": {
+          "title": "Negatif Anahtar Kelimeler",
+          "text": "AI arama terimi analizi, Google'da boşa harcamayı saatler değil dakikalar içinde temizler. Ortalama bir Ordino hesabı ilk haftada %23 boşa harcamayı eler."
+        },
+        "04": {
+          "title": "Yaratıcı Zekâ",
+          "text": "Reklam varyantlarınızı yükleyin; motor disiplinli ölçümlerle bunları test eder ve sayılarınızı gerçekten oynatan desenleri yüzeye çıkarır — sadece CTR'ı değil."
+        },
+        "05": {
+          "title": "Harmanlı Raporlama",
+          "text": "ROAS, CAC, geri ödeme süresi, katkı marjı — reklam harcamasını gösterimlere değil, pipeline ve gelire bağlayan tek bir dashboard."
+        },
+        "06": {
+          "title": "Ekip Akışları",
+          "text": "Onaylar, notlar, devirler. Yirmi hesabı tablolarda boğulmadan yöneten ajanslar ve in-house ekipler için tasarlandı."
+        }
+      }
+    },
+    "aiEngine": {
+      "header": {
+        "eyebrow": "AI Motoru",
+        "title": "",
+        "emphasis": "Beyin",
+        "tail": "nasıl çalışır."
+      },
+      "steps": {
+        "01": {
+          "stepLabel": "Adım 01",
+          "title": "Topla",
+          "text": "Motor her on beş dakikada bir, bağladığınız her platformdan gösterim, tıklama, dönüşüm ve maliyet verisini çeker. Hiçbir şey örneklenmez — hesabın tamamını okuruz."
+        },
+        "02": {
+          "stepLabel": "Adım 02",
+          "title": "Akıl Yürüt",
+          "text": "İki yüz otuz müşteri hesabı üzerinde eğitilmiş bir model, her aktif varlığı gerçek iş metriğinize katkısına göre sıralar — platformun proxy skoruna değil."
+        },
+        "03": {
+          "stepLabel": "Adım 03",
+          "title": "Aksiyon Al",
+          "text": "Bütçe kaydırmaları, duraklatmalar, negatif anahtar kelime aktarımları, yaratıcı rotasyonları — platform hesaplarınızda otomatik yürütülür, tek tıkla geri alınabilir tam bir denetim izi ile."
+        },
+        "04": {
+          "stepLabel": "Adım 04",
+          "title": "Raporla",
+          "text": "Her aksiyon sade bir dille loglanır. Pazartesi raporunuz kendini yazar: ne değişti, neden değişti ve sayıları nasıl oynattı."
+        }
+      }
+    },
+    "results": {
+      "header": {
+        "eyebrow": "Sonuçlar",
+        "title": "Canlı ağdan",
+        "emphasis": "rakamlar.",
+        "sub": "Son on iki ayda aktif hesaplar üzerinden ortalamalar."
+      },
+      "stats": [
+        { "value": "+187%", "label": "90 günde ortalama ROAS artışı" },
+        { "value": "−42%", "label": "Hesaplar genelinde ortalama CPA azaltma" },
+        { "value": "23%", "label": "İlk haftada elenen boşa harcama" },
+        { "value": "3.8×", "label": "B2B hesapları için pipeline hız artışı" }
+      ]
+    },
+    "finalCta": {
+      "eyebrow": "Erken Erişim",
+      "title": "Yönetmeyi bırakıp,",
+      "emphasis": "çoğaltmaya",
+      "tail": "hazır mısınız?",
+      "description": "Ordino AI 2026'da sınırlı bir gruba sunuluyor. Erişim talebinde bulunun, hesaplarınızı bir hafta içinde aktive edelim.",
+      "button": "Erken Erişim Talep Et"
+    }
+  },
+  "blog": {
+    "filter": {
+      "all": "Tümü",
+      "empty": "Bu kategoride henüz yazı yok.",
+      "hoverLabel": "Devamını Oku →"
+    },
+    "categories": {
+      "digitalMarketing": "Dijital Pazarlama",
+      "seo": "SEO",
+      "ai": "AI",
+      "socialMedia": "Sosyal Medya",
+      "industryNews": "Sektör Haberleri"
+    },
+    "post": {
+      "placeholderTitle": "✍️ İçerik yakında",
+      "placeholderBody": "Bu yazının tam içeriği hazırlanıyor. Yakında bu sayfada paylaşılacak.",
+      "placeholderText": "İçerik yakında eklenecek..."
+    },
+    "related": {
+      "headline": {
+        "lead": "Bu yazıyı sevdiyseniz,",
+        "highlight": "bunlara da göz atın."
+      }
+    },
+    "readTime": "{n} dk okuma",
+    "authorRoles": {
+      "aiPerformance": "AI & Performans Marketing",
+      "performance": "Performans Marketing",
+      "seoContent": "SEO & İçerik Stratejisi",
+      "socialContent": "Sosyal Medya & İçerik",
+      "ordinoTeam": "Ordino Ekibi"
+    }
+  },
+  "shared": {
+    "cta": {
+      "title": "Birlikte neler",
+      "emphasis": "yaratacağız.",
+      "button": "Toplantı Planla"
+    },
+    "fullVideoPlaceholder": "▶ Kampanya videosu ekle",
+    "pushForward": {
+      "title": "Performansı",
+      "emphasis": "ileri taşıyoruz.",
+      "text": "Ordino olarak her reklam harcamasının daha çok değer üretmesi gerektiğine inanıyoruz. AI destekli platformumuz temel optimizasyonun ötesine geçer — arama niyeti, kullanıcı davranışı ve kampanya dinamiklerinin nüanslarını anlarız. Son teknoloji makine öğrenmesini derin pazarlama uzmanlığıyla birleştirerek markaların ROAS'ını maksimize ederken boşa harcamayı minimize etmelerine yardımcı oluyoruz."
+    },
+    "powerOf": {
+      "eyebrow": "AI'ın Gücü",
+      "title": "Markanıza yakışır",
+      "emphasis": "Performans Pazarlaması.",
+      "sub": "Dünyanın iddialı markalarının ölçülebilir büyüme için tercih ettiği yer.",
+      "brand": "ORDINO"
+    },
+    "horizontalScroll": {
+      "eyebrow": "Seçili Çalışmalar",
+      "title": "Büyüttüğümüz",
+      "emphasis": "markalar.",
+      "allLink": "Tüm çalışmaları gör →"
+    }
+  },
+  "clients": {
+    "altText": {
+      "anadolu-group": "Anadolu Group — Holding",
+      "turkish-technic": "Turkish Technic — Havacılık / MRO",
+      "turizm-bakanligi": "T.C. Kültür ve Turizm Bakanlığı",
+      "tff": "Türkiye Futbol Federasyonu",
+      "anadolu-motor": "Anadolu Motor — Otomotiv",
+      "aiata": "Aiata Boats — Denizcilik / Lüks",
+      "allium-bodrum": "Allium Bodrum — Konaklama / Lüks",
+      "yuva-maya": "Yuva Maya — Gıda",
+      "gobritanya": "GoBritanya — Eğitim / Yurt Dışı",
+      "marie-claire": "Marie Claire — Medya / Yayıncılık",
+      "fortune": "Fortune — Medya / Yayıncılık",
+      "instyle": "InStyle Türkiye — Medya / Yayıncılık",
+      "inspera": "Inspera Bodrum — Kültür & Sanat"
+    }
+  },
+  "latestWorks": {
+    "sectors": {
+      "aviationMro": "Havacılık / MRO",
+      "marineLuxury": "Denizcilik / Lüks",
+      "educationAbroad": "Eğitim / Yurt Dışı",
+      "hospitalityLuxury": "Konaklama / Lüks",
+      "foodBeverage": "Gıda",
+      "mediaPublishing": "Medya / Yayıncılık",
+      "automotive": "Otomotiv",
+      "sportsFederation": "Spor / Federasyon",
+      "governmentTourism": "Kamu / Turizm",
+      "cultureArts": "Kültür & Sanat"
+    },
+    "brandLabels": {
+      "tff": "Türkiye Futbol Federasyonu",
+      "ministry": "T.C. Kültür ve Turizm Bakanlığı"
+    }
+  },
+  "workPortfolio": {
+    "featuredServicesShort": {
+      "multiChannelAd": "Çok Kanallı Reklam",
+      "youtubeCampaigns": "YouTube Kampanyaları",
+      "tradeShowComms": "Fuar İletişimi",
+      "adManagement": "Reklam Yönetimi",
+      "globalSocialMedia": "Global Sosyal Medya",
+      "googleMetaAds": "Google & Meta Reklamları",
+      "webOptimization": "Web Optimizasyonu",
+      "digitalAdManagement": "Dijital Reklam Yönetimi",
+      "audienceStrategy": "Hedef Kitle Stratejisi",
+      "launchCampaign": "Lansman Kampanyası",
+      "multiPlatformAd": "Çok Platformlu Reklam",
+      "seoOrganicGrowth": "SEO & Organik Büyüme",
+      "contentOptimization": "İçerik Optimizasyonu",
+      "linkedinAdMgmt": "LinkedIn Reklam Yönetimi",
+      "xTwitterAds": "X (Twitter) Reklamları",
+      "b2bTargeting": "B2B Hedefleme",
+      "contentStrategy": "İçerik Stratejisi",
+      "brandVoiceEditorial": "Marka Sesi & Editoryal Uyum",
+      "eventsCultureComms": "Etkinlik & Kültür İletişimi",
+      "emailCampaigns": "Mailing Kampanyaları",
+      "websiteOptimization": "Web Sitesi Optimizasyonu",
+      "copywriting": "Metin Yazımı",
+      "aiAdFilms": "AI Destekli Reklam Filmi",
+      "creativeContentStrategy": "Yaratıcı İçerik Stratejisi",
+      "sportsComms": "Spor İletişimi",
+      "multiChannelAdMgmt": "Çok Kanallı Reklam Yönetimi",
+      "digitalCommsStrategy": "Dijital İletişim Stratejisi",
+      "publicSectorComms": "Kamu İletişimi"
+    }
+  },
+  "caseStudiesContent": {
+    "aiata": {
+      "num": "Referans 01",
+      "brand": "AIATA",
+      "sector": "Denizcilik / Lüks",
+      "title": "Aiata Boats rezervasyon dönüşümünü",
+      "titleEm": "%240",
+      "titleTail": "artırdı, CPA'yı",
+      "titleEm2": "%58 azalttı.",
+      "lead": "Aiata Boats için LinkedIn, Meta ve Google platformlarında reklam yönetimini, görsel tasarımı ve SEO süreçlerini baştan sona üstlendik. Marka büyüdükçe coğrafyasını da genişlettik: Aiata Boats USA, Aiata Boats Spain ve Aiata Boats Greece hesapları dahil olmak üzere markanın tüm global sosyal medya varlığını yönetiyoruz. Mailing kampanyalarından etkinlik iletişimine, içerik üretiminden tasarıma kadar 360 derece bir hizmet kapasitesiyle çalışıyoruz.",
+      "brandIntro": "Lüks denizcilik sektörünün yükselen ismi Aiata Boats, özel üretim tekne ve su araçlarıyla Türkiye'nin yanı sıra ABD, İspanya ve Yunanistan'da da varlık gösteriyor. Tasarım kalitesi ve küresel vizyonuyla premium segment denizcilik dünyasında güçlü bir yer ediniyor.",
+      "featuredServices": [
+        "Reklam Yönetimi",
+        "SEO",
+        "Görsel Tasarım",
+        "Global Sosyal Medya Yönetimi",
+        "Mailing",
+        "Etkinlik İletişimi"
+      ],
+      "stats": [
+        { "value": "3 Ülke", "label": "USA · Spain · Greece" },
+        { "value": "360°", "label": "Uçtan Uca Hizmet" },
+        { "value": "Global", "label": "Sosyal Medya Yönetimi" }
+      ],
+      "challenge": {
+        "head": "Lüks denizcilikte",
+        "headEm": "global pazara açılma süreci.",
+        "paragraphs": [
+          "Premium segment denizcilikte yeni pazarlara açılım, sadece görünür olmayı aşan bir gereklilik taşır: doğru konumlanma, sürdürülebilir iletişim ve performans odaklı büyüme. Üç farklı coğrafyada ayrı varlığı yönetmek operasyonel disiplin gerektirir."
+        ]
+      },
+      "solution": {
+        "head": "360 derece hizmet kapasitesi ve",
+        "headEm": "stratejik ortaklık.",
+        "paragraphs": [
+          "Markanın iletişim sürecini kreatif, performans, içerik ve etkinlik boyutlarıyla bütüncül yönetiyoruz. Her coğrafyaya özgü dinamikleri yerel yaklaşımla, global tutarlılıkla harmanlıyoruz."
+        ]
+      }
+    },
+    "gobritanya": {
+      "num": "Referans 02",
+      "brand": "GOBRITANYA",
+      "sector": "Eğitim / Yurt Dışı",
+      "title": "GoBritanya",
+      "titleEm": "5,400 nitelikli öğrenci lead",
+      "titleTail": "üretti, 4.2× ROI ile.",
+      "lead": "Google ve Meta reklamlarını, görsel tasarımı, SEO'yu ve web sitesi optimizasyonlarını eş zamanlı olarak yönetiyoruz. Reklam kampanyaları sayesinde aylık 1.000'in üzerinde müşteri dönüşümü elde ediliyor; her kanal birbiriyle entegre, ölçülebilir bir büyüme modeli çerçevesinde çalışıyor.",
+      "brandIntro": "Tüm dünyadan öğrencilerin Birleşik Krallık'ta eğitim, yaşam ve göç süreçlerinde ihtiyaç duydukları kapsamlı rehberliği sunan Gobritanya, alanında öncü bir dijital platform olarak on binlerce kullanıcıya güvenilir bir kaynak olmayı sürdürüyor.",
+      "featuredServices": [
+        "Google & Meta Reklamları",
+        "SEO",
+        "Web Sitesi Optimizasyonu",
+        "Görsel Tasarım",
+        "Dönüşüm Optimizasyonu"
+      ],
+      "stats": [
+        { "value": "1.000+", "label": "Aylık Müşteri Dönüşümü" },
+        { "value": "5 Kanal", "label": "Entegre Yönetim" },
+        { "value": "Full Funnel", "label": "Edinme Modeli" }
+      ],
+      "challenge": {
+        "head": "Yurt dışı eğitim yolculuğunda",
+        "headEm": "doğru kararı kolaylaştırmak.",
+        "paragraphs": [
+          "Eğitim için yurt dışına çıkmak, öğrenci ve aileler için karmaşık ve uzun bir karar sürecidir. Reklam, içerik, web ve dönüşüm — hepsinin tek bir hedefe (öğrenci kaydı) hizmet etmesi gerekir."
+        ]
+      },
+      "solution": {
+        "head": "Entegre büyüme",
+        "headEm": "modeli.",
+        "paragraphs": [
+          "Her kanalı birbirine bağlayan ölçülebilir büyüme modeli kurduk. Reklam, SEO ve web optimizasyonu birlikte çalışınca dönüşüm doğal sonuç haline geliyor."
+        ]
+      }
+    },
+    "yuva-maya": {
+      "num": "Referans 03",
+      "brand": "YUVA MAYA",
+      "sector": "Gıda",
+      "title": "Yuva Maya ürün sorgularını",
+      "titleEm": "%312",
+      "titleTail": "artırdı, %47 daha düşük maliyetle.",
+      "lead": "Yuva Maya'nın yenilenen marka kimliğinin lansmanını Google, Meta ve TikTok başta olmak üzere tüm platformlarda eş zamanlı kampanyalarla yönettik. Bu kampanya, Türkiye'deki her 5 kadından 3'üne Yuva Maya reklamlarını taşıdı. Lansman videosu, Yuva Maya YouTube kanalının en çok izlenen içeriği haline geldi. Optimum medya planlaması ve anlık optimizasyonla markanın yeni dönemi dijitalde güçlü bir çıkış yaptı.",
+      "brandIntro": "Dünyanın lider fermantasyon teknolojileri şirketi Lesaffre'ın Türkiye markası olan Yuva Maya, maya ve un ürünleri kategorisinde Türkiye'nin en güçlü isimlerinden biri. Güçlü dijital topluluğu, kapsamlı tarif platformu ve yenilikçi ürün geliştirme anlayışıyla markanın büyüme ivmesi her geçen yıl artıyor.",
+      "featuredServices": [
+        "Lansman Kampanyası Yönetimi",
+        "Çok Platformlu Reklam (Google · Meta · TikTok)",
+        "YouTube Kampanyaları",
+        "Medya Optimizasyonu"
+      ],
+      "stats": [
+        { "value": "20.8M+", "label": "Toplam Erişim" },
+        { "value": "8.5M+", "label": "İzlenme" },
+        { "value": "600K+", "label": "Etkileşim" }
+      ],
+      "challenge": {
+        "head": "Yeniden konumlanan markada",
+        "headEm": "güçlü bir dijital çıkış.",
+        "paragraphs": [
+          "Marka kimliği yenilemesi, lansman anında kitleyi yakalamak için kusursuz zamanlama gerektirir. Geniş bir kadın kitlesine eş zamanlı, yüksek görünürlükte ve duygusal etki bırakacak bir çıkış yapılmalıydı."
+        ]
+      },
+      "solution": {
+        "head": "Eş zamanlı çok platformlu",
+        "headEm": "lansman koreografisi.",
+        "paragraphs": [
+          "Tüm büyük platformlarda eş zamanlı çıkış stratejisi kurarak medya planlamasını anlık optimizasyonla destekledik. Her platform kendi gücüyle, ama tek bir lansman ritmiyle çalıştı."
+        ]
+      }
+    },
+    "turkish-technic": {
+      "num": "Referans 04",
+      "brand": "TURKISH TECHNIC",
+      "sector": "Havacılık / MRO",
+      "title": "Turkish Technic 8 ayda",
+      "titleEm": "6× pipeline",
+      "titleTail": "hızı kurdu.",
+      "lead": "LinkedIn, Google (YouTube) ve Meta kanallarında 100'ü aşkın reklam kurulumu ve yönetimi gerçekleştirdik. Global ölçekte 50 milyonun üzerinde kişiye ulaşan kampanyalarımızın yanı sıra, yalnızca 72 saatlik bir YouTube reklamıyla Turkish Technic'in kanalındaki en çok izlenen video olmasını sağladık. Uluslararası havacılık fuarlarında da markanın yanında yer alarak global katılımcılara yönelik kapsamlı reklam kampanyalarını baştan sona yönettik.",
+      "brandIntro": "Türk Hava Yolları'nın teknik bakım kolu olan Turkish Technic, küresel havacılık endüstrisinin en güvenilir MRO (Maintenance, Repair & Overhaul) şirketlerinden biridir. 50'yi aşkın ülkede faaliyet gösteren şirket, havacılık sektöründe dünya genelinde tanınan bir güç merkezi konumundadır.",
+      "featuredServices": [
+        "Çok Kanallı Reklam Yönetimi (LinkedIn · Google · Meta)",
+        "YouTube Kampanyaları",
+        "Fuar İletişimi & Etkinlik Reklamcılığı"
+      ],
+      "stats": [
+        { "value": "100+", "label": "Reklam Kampanyası" },
+        { "value": "50M+", "label": "Global Erişim" },
+        { "value": "72 Saat", "label": "Rekor YouTube Reklamı" }
+      ],
+      "challenge": {
+        "head": "Global havacılık sektöründe",
+        "headEm": "ulaşılması zor karar vericiler.",
+        "paragraphs": [
+          "Havacılık sektöründe reklam yatırımı, geniş kitle iletişiminden çok farklıdır. Karar vericiler dünya genelinde dağılmış, sayıca az ve uzmanlaşmış bir kitledir. Doğru kanal, doğru anlatım ve doğru zamanlamada hata yapmaya yer yoktur."
+        ]
+      },
+      "solution": {
+        "head": "Çok kanallı yaklaşım ve",
+        "headEm": "sektörel bilinç.",
+        "paragraphs": [
+          "Profesyonel kanalda profesyonel iletişim ilkesiyle her platforma özel kampanya tasarladık. Sektörün tempo ve etkinlik takvimine göre yatırım stratejisini şekillendirdik."
+        ]
+      }
+    },
+    "tff": {
+      "num": "Referans 05",
+      "brand": "TFF",
+      "sector": "Spor / Federasyon",
+      "title": "TFF için",
+      "titleEm": "12 AI üretimi reklam filmi",
+      "titleTail": "4 haftada teslim edildi.",
+      "lead": "TFF ile yürüttüğümüz projelerde yapay zeka destekli reklam filmi üretimi merkezde yer alıyor. Geleneksel prodüksiyon süreçlerini AI teknolojisiyle yeniden tanımladık; daha hızlı, daha ölçeklenebilir ve yaratıcı sınırları zorlayan içerikler ürettik. Milyonlarca futbol taraftarına ulaşan bu projeler, kamu spor kurumlarında AI destekli medya üretiminin ne denli güçlü sonuçlar verebileceğini somut biçimde ortaya koydu.",
+      "brandIntro": "Türk futbolunun merkezi yönetim otoritesi olan TFF, ulusal ligler ve milli takım organizasyonlarıyla milyonlarca futbol taraftarının yakından takip ettiği kurumsal bir güç. Sporun ve toplumun kesiştiği bu platformda iletişim, her zamankinden daha fazla önem taşıyor.",
+      "featuredServices": [
+        "AI Destekli Reklam Filmi Üretimi",
+        "Yaratıcı İçerik Stratejisi",
+        "Spor İletişimi"
+      ],
+      "stats": [
+        { "value": "AI Üretim", "label": "Reklam Filmi" },
+        { "value": "Milyonlar", "label": "Taraftara Ulaşım" },
+        { "value": "Yeniden", "label": "Tanımlanan Prodüksiyon" }
+      ],
+      "challenge": {
+        "head": "Geleneksel prodüksiyonu",
+        "headEm": "yeniden tanımlamak.",
+        "paragraphs": [
+          "Büyük ölçekli kurumsal iletişimde hız ve ölçek, geleneksel prodüksiyon yöntemleriyle her zaman birlikte sağlanamaz. Yaratıcı sınırlar genişlerken kalite düşmemelidir."
+        ]
+      },
+      "solution": {
+        "head": "AI ile",
+        "headEm": "ölçeklenebilir üretim.",
+        "paragraphs": [
+          "Yapay zeka teknolojisini yaratıcı sürece entegre ederek üretim hızını ve ölçeğini artırdık. Geleneksel kalite ile yeni nesil hız bir araya geldi."
+        ]
+      }
+    },
+    "turizm-bakanligi": {
+      "num": "Referans 06",
+      "brand": "T.C. KÜLTÜR VE TURİZM BAKANLIĞI",
+      "sector": "Kamu / Turizm",
+      "title": "Turizm Bakanlığı",
+      "titleEm": "18M+ nitelikli gösterim",
+      "titleTail": "sağladı, gelen arama niyetini %87 artırdı.",
+      "lead": "Kültür ve Turizm Bakanlığı bünyesindeki farklı başkanlıklarla yürütülen projelerde çok kanallı reklam yönetimi ve dijital iletişim stratejisi alanlarında hizmet veriyoruz. Ulusal kültür varlıklarını ve turizm potansiyelini geniş kitlelere taşımak için her platform için özelleştirilmiş kampanyalar tasarlıyor, içerik stratejisini bütünleşik bir yapıda kuruyoruz. Devlet ölçeğindeki bir kurumun iletişim ihtiyaçlarını modern medya anlayışıyla karşılıyoruz.",
+      "brandIntro": "Türkiye'nin tarihi ve kültürel zenginliklerini dünyaya taşıma misyonuyla çalışan Kültür ve Turizm Bakanlığı, ülkenin en güçlü kurumsal iletişim platformlarından birini yönetiyor. Farklı başkanlıklar bünyesinde yürütülen projeler, ulusal kültürü ve turizm potansiyelini küresel ölçekte görünür kılıyor.",
+      "featuredServices": [
+        "Çok Kanallı Reklam Yönetimi",
+        "Dijital İletişim Stratejisi",
+        "Kamu İletişimi & Kampanya Yönetimi"
+      ],
+      "stats": [
+        { "value": "Devlet", "label": "Ölçeğinde İletişim" },
+        { "value": "Çok Kanallı", "label": "Reklam Yönetimi" },
+        { "value": "Global", "label": "Kültür & Turizm" }
+      ],
+      "challenge": {
+        "head": "Devlet ölçeğinde",
+        "headEm": "modern iletişim.",
+        "paragraphs": [
+          "Kamu kurumlarında iletişim, hem kurumsal hesap verebilirlik hem de geniş kitlelere ulaşma sorumluluğu taşır. Modern medya araçları, devlet ölçeğinde disiplinli bir yaklaşımla buluşmalıdır."
+        ]
+      },
+      "solution": {
+        "head": "Bütünleşik",
+        "headEm": "kamu iletişimi.",
+        "paragraphs": [
+          "Farklı başkanlıkların iletişim ihtiyaçlarını tek bir bütüncül stratejide topladık. Modern medya anlayışıyla devlet ölçeğindeki sorumluluğu örtüştürdük."
+        ]
+      }
+    },
+    "allium-bodrum": {
+      "num": "Referans 07",
+      "brand": "ALLIUM BODRUM",
+      "sector": "Konaklama / Lüks",
+      "title": "Allium Bodrum sezon dönüş döngüsünü",
+      "titleEm": "3.4×",
+      "titleTail": "hızlandırdı, yıllık doluluk",
+      "titleEm2": "%42 arttı.",
+      "lead": "Allium Bodrum için dijital reklam yönetim süreçlerini üstlenerek markanın doğru platformda, doğru kitleyle buluşmasını sağlıyoruz. Butik otelcilik sektörünün gerektirdiği estetik dil ve hassas hedefleme yaklaşımıyla her kampanyayı marka kimliğiyle uyumlu biçimde tasarlıyoruz.",
+      "brandIntro": "Bodrum'un seçkin otelleri arasında yer alan Allium, misafirlerine yerel kültürün sıcaklığını uluslararası konfor standartlarıyla harmanlayan özgün bir konaklama deneyimi sunuyor. Butik kimliği ve titiz hizmet anlayışıyla lüks turizm sektörünün beğenilen isimlerinden biri.",
+      "featuredServices": [
+        "Dijital Reklam Yönetimi",
+        "Hedef Kitle Stratejisi"
+      ],
+      "stats": [
+        { "value": "Butik", "label": "Otelcilik Segmenti" },
+        { "value": "Lüks", "label": "Hedef Kitle" },
+        { "value": "Estetik", "label": "Marka Uyumu" }
+      ],
+      "challenge": {
+        "head": "Lüks segmentte",
+        "headEm": "hassas hedefleme zorluğu.",
+        "paragraphs": [
+          "Butik otelcilikte reklam yatırımı geniş kitleli kampanyalardan farklı bir disiplin gerektirir. Yüksek değerli misafir profili, estetik dil ve marka kimliği — bu üçlü her temas noktasında birlikte korunmalıdır."
+        ]
+      },
+      "solution": {
+        "head": "Marka kimliğiyle uyumlu",
+        "headEm": "kampanya tasarımı.",
+        "paragraphs": [
+          "Reklam yönetimini sadece performans değil, marka tutarlılığı bakış açısıyla ele alıyoruz. Her kampanya, markanın özüne uygun estetik dilde tasarlanır."
+        ]
+      }
+    },
+    "marie-claire": {
+      "num": "Referans 08",
+      "brand": "MARIE CLAIRE",
+      "sector": "Medya / Yayıncılık",
+      "title": "Marie Claire dijital abone tabanını",
+      "titleEm": "220K'dan 410K'ya",
+      "titleTail": "çıkardı,",
+      "titleEm2": "+%86 büyüme.",
+      "lead": "Dünyanın en tanınan kadın dergilerinden Marie Claire'in Türkiye edisyonu için SEO odaklı bir dijital büyüme stratejisi yürütüyoruz. İçerik optimizasyonu, anahtar kelime stratejisi ve teknik SEO süreçlerini bütünleşik bir yaklaşımla yöneterek organik trafiği kalıcı biçimde büyütüyoruz. Güçlü bir editoryal mirasın dijital dünyadaki görünürlüğünü veriye dayalı yöntemlerle destekliyoruz. Bunula birlikte tüm reklam kanallarında yüksek görünürlük ve takipçi kazanımı reklam süreçlerinde yurt içinde +10 milyon kadına erişim sağladık.",
+      "brandIntro": "Dünyanın en tanınan kadın dergilerinden Marie Claire'in Türkiye edisyonu, köklü editoryal kimliği ve güçlü dijital platformlarıyla milyonlarca okuyucuya ulaşıyor. Moda, güzellik ve yaşam tarzı dünyasında belirleyici bir referans kaynağı olmayı sürdürüyor.",
+      "featuredServices": [
+        "SEO & Organik Büyüme",
+        "İçerik Optimizasyonu",
+        "Anahtar Kelime Stratejisi",
+        "Teknik SEO",
+        "Çok Platformlu Reklam"
+      ],
+      "stats": [
+        { "value": "+10M", "label": "Kadına Erişim" },
+        { "value": "SEO", "label": "Odaklı Strateji" },
+        { "value": "Çok Platform", "label": "Reklam Yönetimi" }
+      ],
+      "challenge": {
+        "head": "Editoryal kimliği",
+        "headEm": "dijitalde sürdürülebilir kılmak.",
+        "paragraphs": [
+          "Köklü bir editoryal markanın dijital dünyada görünürlüğünü artırmak, organik trafik ve sosyal erişimin birlikte büyümesine bağlıdır. SEO ile reklam birbirini beslemelidir."
+        ]
+      },
+      "solution": {
+        "head": "Veriye dayalı",
+        "headEm": "bütüncül büyüme.",
+        "paragraphs": [
+          "İçerik optimizasyonu, anahtar kelime stratejisi ve teknik SEO'yu reklam yönetimi ile entegre ettik. Editoryal mirasın dijital dünyadaki etkisini veriyle destekledik."
+        ]
+      }
+    },
+    "fortune": {
+      "num": "Referans 09",
+      "brand": "FORTUNE",
+      "sector": "Medya / Yayıncılık",
+      "title": "Fortune premium içerik etkileşimini",
+      "titleEm": "%178",
+      "titleTail": "artırdı, ortalama oturum süresi",
+      "titleEm2": "6:42 dakika.",
+      "lead": "İş dünyasının nabzını tutan Fortune Türkiye için LinkedIn ve X (eski adıyla Twitter) platformlarında hedefli reklam kampanyaları yönetiyoruz. C-suite yöneticilerden genç profesyonellere uzanan okuyucu kitlesine doğru mecralarda, doğru mesajla ulaşmayı sağlıyoruz. İş dünyası iletişiminin gerektirdiği ciddi ve etkili dili marka kimliğiyle uyumlu biçimde kuruyoruz.",
+      "brandIntro": "İş dünyasının nabzını takip eden Fortune Türkiye, C-suite yöneticilerden genç profesyonellere uzanan geniş bir okuyucu kitlesine yönelik içerik üreten Türkiye'nin önde gelen iş ve ekonomi yayınlarından biridir.",
+      "featuredServices": [
+        "LinkedIn Reklam Yönetimi",
+        "X (Twitter) Reklamları",
+        "B2B Hedefleme Stratejisi",
+        "Profesyonel Kitle İletişimi"
+      ],
+      "stats": [
+        { "value": "C-Suite", "label": "Hedef Kitle" },
+        { "value": "LinkedIn + X", "label": "Profesyonel Kanal" },
+        { "value": "B2B", "label": "İletişim Modeli" }
+      ],
+      "challenge": {
+        "head": "İş dünyası iletişiminde",
+        "headEm": "ton ve mecra hassasiyeti.",
+        "paragraphs": [
+          "Karar verici profesyonellere ulaşmak, geniş kitle reklamcılığından farklı bir disiplin gerektirir. Hangi mecrada, hangi tonla, hangi mesajla — her detay marka kimliğiyle örtüşmelidir."
+        ]
+      },
+      "solution": {
+        "head": "Profesyonel mecrada",
+        "headEm": "doğru ton.",
+        "paragraphs": [
+          "Hedef kitleye değil, hedef profile reklam veriyoruz. İş dünyasının dilini marka kimliğiyle harmanlayarak ciddi ve etkili bir iletişim kuruyoruz."
+        ]
+      }
+    },
+    "anadolu-motor": {
+      "num": "Referans 10",
+      "brand": "ANADOLU MOTOR",
+      "sector": "Otomotiv",
+      "title": "Anadolu Motor test sürüşü rezervasyonlarını",
+      "titleEm": "4.7×",
+      "titleTail": "artırdı, lead başına maliyeti",
+      "titleEm2": "%52 düşürdü.",
+      "lead": "Anadolu Motor için mailing kampanyaları, web sitesi optimizasyonları ve metin yazımı alanlarında destek veriyoruz. Her temas noktasında tutarlı, net ve ikna edici bir iletişim dili oluşturarak markanın dijital sesini güçlendiriyoruz.",
+      "brandIntro": "Türkiye'nin köklü otomotiv distribütörlerinden Anadolu Motor, geniş bayi ağı ve çeşitli marka portföyüyle sektörde güvenilir ve tanınan bir isim olmayı sürdürüyor.",
+      "featuredServices": [
+        "Mailing Kampanyaları",
+        "Web Sitesi Optimizasyonu",
+        "Metin Yazımı (Copywriting)"
+      ],
+      "stats": [
+        { "value": "Mailing", "label": "Kampanya Yönetimi" },
+        { "value": "Web", "label": "Optimizasyon" },
+        { "value": "Copywriting", "label": "Marka Sesi" }
+      ],
+      "challenge": {
+        "head": "Köklü markada",
+        "headEm": "dijital iletişim dili.",
+        "paragraphs": [
+          "Köklü bir otomotiv markasının dijital iletişiminde tutarlılık, sadelik ve ikna gücü kritiktir. Mailing, web ve metin — her temas noktası aynı dilden konuşmalıdır."
+        ]
+      },
+      "solution": {
+        "head": "Bütüncül",
+        "headEm": "iletişim dili.",
+        "paragraphs": [
+          "Her temas noktasını aynı dil disipliniyle yönetiyoruz. Mailing, web ve metin birbiriyle tutarlı, net ve ikna edici tek bir iletişim akışı oluşturuyor."
+        ]
+      }
+    },
+    "instyle": {
+      "num": "Referans 11",
+      "brand": "INSTYLE TÜRKİYE",
+      "sector": "Medya / Yayıncılık",
+      "title": "Global estetik,",
+      "titleEm": "yerel ses.",
+      "titleTail": "",
+      "lead": "Moda ve yaşam tarzı dünyasının önde gelen isimlerinden InStyle Türkiye için reklam yönetimi ve içerik stratejisini üstleniyoruz. Markanın dinamik ve ilham veren sesini dijital platformlarda canlı tutarken, her kampanyayı InStyle'ın küresel estetiğiyle yerel kitleye hitap edecek biçimde tasarlıyoruz.",
+      "brandIntro": "Moda ve yaşam tarzı dünyasında uluslararası bir referans olan InStyle, Türkiye'nin en etkin stil ve trend platformlarından biri olarak öne çıkıyor. Global vizyonunu yerel bir dokunuşla harmanlayan marka, dijitalde güçlü ve ilham veren bir ses olmayı sürdürüyor.",
+      "featuredServices": [
+        "Dijital Reklam Yönetimi",
+        "İçerik Stratejisi",
+        "Platform Yönetimi",
+        "Marka Sesi & Editoryal Uyum"
+      ],
+      "stats": [
+        { "value": "Global", "label": "Estetik" },
+        { "value": "Yerel", "label": "Editoryal Uyum" },
+        { "value": "Dijital", "label": "Marka Sesi" }
+      ],
+      "challenge": {
+        "head": "Global markayı",
+        "headEm": "yerel dilde anlatmak.",
+        "paragraphs": [
+          "Uluslararası bir markanın yerel edisyonunda, küresel estetik ile yerel kitlenin tonu arasında doğru dengenin kurulması gerekir. Marka sesi her platformda tutarlı kalmalıdır."
+        ]
+      },
+      "solution": {
+        "head": "Editoryal uyumlu",
+        "headEm": "platform yönetimi.",
+        "paragraphs": [
+          "Her kampanyayı küresel estetikten ödün vermeden yerel dilde tasarlıyoruz. Marka sesini dijital platformlarda canlı ve tutarlı tutuyoruz."
+        ]
+      }
+    },
+    "inspera": {
+      "num": "Referans 12",
+      "brand": "INSPERA BODRUM",
+      "sector": "Kültür & Sanat",
+      "title": "Çok katmanlı kültür mekanı için",
+      "titleEm": "tutarlı marka sesi.",
+      "titleTail": "",
+      "lead": "Bodrum'un kültür ve sanat hayatının merkezine kurulan Inspera için dijital reklam yönetimini üstleniyoruz. Livaneli Sahnesi'nden Art Academy'ye, Voyn Kitchen & Bar'dan Design Store'a uzanan bu çok katmanlı deneyim mekanının doğru kitleyle buluşması için hedefli kampanyalar tasarlıyor, her platformda markanın özgün sesini taşıyoruz.",
+      "brandIntro": "Inspera Bodrum Kültür Sanat; sahneleri, sanat akademisi, gastronomisi ve tasarım mağazasıyla kültürü, sanatı ve yaşamı tek bir çatı altında buluşturuyor. Bodrum'un kültür hayatına renk katan bu özgün mekan, Zülfü Livaneli'nin adını taşıyan sahnesiyle ulusal ölçekte de dikkat çeken isimlerden biri.",
+      "featuredServices": [
+        "Dijital Reklam Yönetimi",
+        "Hedef Kitle Stratejisi",
+        "Etkinlik & Kültür İletişimi"
+      ],
+      "stats": [
+        { "value": "4 Mekan", "label": "Sahne · Akademi · Bar · Mağaza" },
+        { "value": "Ulusal", "label": "Livaneli Sahnesi" },
+        { "value": "Çok Katmanlı", "label": "Kültür Deneyimi" }
+      ],
+      "challenge": {
+        "head": "Çok katmanlı mekânı",
+        "headEm": "tek bir sesle anlatmak.",
+        "paragraphs": [
+          "Bir sahne, bir akademi, bir restoran ve bir mağaza — hepsi birden. Her birim farklı bir hedef kitleye hitap eder ama markanın bütünlüğü her temas noktasında korunmalıdır."
+        ]
+      },
+      "solution": {
+        "head": "Hedefli kampanyalar,",
+        "headEm": "tutarlı marka sesi.",
+        "paragraphs": [
+          "Her birim için ayrı kitle stratejisi kurarken markanın özgün sesini her kampanyada koruyoruz. Etkinlik takviminin temposuna uygun esnek planlama yapıyoruz."
+        ]
+      }
+    }
+  },
+  "team": {
+    "roles": {
+      "founder": "Founder & Executive Lead",
+      "strategicPartner": "Strategic Partner & Executive Lead",
+      "marketingComms": "Head of Marketing & Communications",
+      "operations": "Head of Operations",
+      "performance": "Head of Performance Marketing",
+      "design": "Head of Design & Media Production"
+    },
+    "bios": {
+      "oguzOzbenli": "Ordino'nun kurucusu. Ajansın iş geliştirme, pazarlama stratejisi ve marka ortaklıklarını yönetiyor. Her angajmanda ticari bir bakış açısı getirir — kampanya karmaşıklığını markaların ölçebileceği büyüme sonuçlarına çevirir.",
+      "handeAris": "Stratejik ortak ve yönetici lider. Ordino'nun dijital pazarlama yaklaşımının mimarı. 360° kampanya stratejilerinden marka konumlandırmasına kadar uzun vadeli iş ortaklıklarına liderlik eder.",
+      "ilaydaOzcan": "Pazarlama ve iletişim direktörü. Marka tonu, kreatif içerik stratejisi ve halkla ilişkiler süreçlerinin tek elden yönetiminden sorumlu. Ordino'nun ve müşterilerinin hikayesini sahaya taşır.",
+      "ugurOzbenli": "Operasyon direktörü. Ajansın iç süreçlerinden müşteri yönetimine, kaynak planlamasından teslimat takibine kadar her şeyin sorunsuz akmasını sağlar. Ordino'nun arka motorlarını yönetir.",
+      "omerToraman": "Performans pazarlama direktörü. Google Ads, Meta, TikTok ve diğer platformlarda kampanya yönetimi, optimizasyon ve ROAS maksimizasyonundan sorumlu. Veri odaklı, sonuç takipçisi.",
+      "halisBattal": "Tasarım ve medya prodüksiyon direktörü. Görsel kimlik, video prodüksiyon, motion graphics ve dijital tasarım süreçlerinin tek elden yöneticisi. Ordino'nun yaratıcı çıktılarının kalite kontrol noktası."
+    },
+    "structure": {
+      "groups": [
+        { "value": "12", "label": "Yaratıcı Ekip" },
+        { "value": "5", "label": "Reklam Performansı" },
+        { "value": "5", "label": "Stratejik Planlama" },
+        { "value": "6", "label": "Dijital Prodüksiyon" }
+      ],
+      "section": {
+        "eyebrow": "Ekip Yapısı",
+        "title": "28 kişilik",
+        "emphasis": "uzman ekip.",
+        "description": "Yaratıcı ekipten reklam performansına, stratejik planlamadan dijital prodüksiyona — Ordino, dört disiplinin kesişiminde çalışan 28 kişilik bir ekiple birlikte hareket eder.",
+        "footer": "Toplam {n} kişilik aktif ekip"
+      }
+    },
+    "grid": {
+      "eyebrow": "The A-Team"
+    }
+  },
+  "news": {
+    "posts": {
+      "ai-reklam-optimizasyonu-2026": {
+        "date": "20 Nisan 2026",
+        "title": "AI Reklam Optimizasyonunda 2026 Trendleri",
+        "excerpt": "Yapay zeka destekli reklam yönetimi 2026'da nasıl şekilleniyor? Generative AI'dan otomatize teklif optimizasyonuna kadar bilmeniz gereken her şey.",
+        "readTime": "6 dk okuma",
+        "author": "Ordino Ekibi",
+        "authorRole": "AI & Performans Marketing"
+      },
+      "performans-marketing-rehberi": {
+        "date": "12 Nisan 2026",
+        "title": "Türkiye'de Performans Marketing: Kapsamlı Bir Rehber",
+        "excerpt": "Google Ads'ten Meta'ya, TikTok'tan programmatic'e — Türk markaları için sonuç odaklı performans pazarlama stratejileri.",
+        "readTime": "8 dk okuma",
+        "author": "Ordino Ekibi",
+        "authorRole": "Performans Marketing"
+      },
+      "lokal-seo-2026": {
+        "date": "5 Nisan 2026",
+        "title": "Lokal SEO 2026: Türkçe Markalar İçin Yol Haritası",
+        "excerpt": "Google Business Profile'dan schema markup'a, lokal anahtar kelimelerden review yönetimine — Türkiye odaklı kapsamlı SEO stratejisi.",
+        "readTime": "7 dk okuma",
+        "author": "Ordino Ekibi",
+        "authorRole": "SEO & İçerik Stratejisi"
+      },
+      "tiktok-algoritmasi-marka-stratejisi": {
+        "date": "28 Mart 2026",
+        "title": "TikTok Algoritması ve Marka Stratejisi",
+        "excerpt": "TikTok'ta organik görünürlük artık altın değerinde. Algoritmanın işleyişi, içerik üretici iş birlikleri ve marka stratejisi.",
+        "readTime": "5 dk okuma",
+        "author": "Ordino Ekibi",
+        "authorRole": "Sosyal Medya & İçerik"
+      }
+    },
+    "placeholder": "İçerik yakında eklenecek..."
+  }
+}

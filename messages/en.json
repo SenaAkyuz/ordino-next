@@ -1,0 +1,1423 @@
+{
+  "common": {
+    "tagline": "Strategy. Creativity. Growth.",
+    "copyright": "© 2026 Ordino. All rights reserved.",
+    "careersBlurb": "Let's work together!",
+    "address": "Ferko Signature Plaza, Block A, Büyükdere Avenue No:175, Esentepe, 34394 Şişli / Istanbul, Türkiye",
+    "londonAddress": "20-22 Wenlock Road, London, N1 7GU, United Kingdom",
+    "footerAbout": "Ordino is a full-service advertising agency based in London and Istanbul. With a strategy-first, creative, growth-focused approach, we serve global brands. We operate as an official advertising partner of Google, Meta, TikTok, and X."
+  },
+  "metadata": {
+    "siteTitle": "Ordino — Strategy. Creativity. Growth.",
+    "titleTemplate": "%s | Ordino",
+    "description": "A full-service advertising agency based in London and Istanbul. Official advertising partner of Google, Meta, TikTok, and X. AI-powered marketing ecosystem serving 50+ brands across 11 years.",
+    "ogLocale": "en_US",
+    "lang": "en"
+  },
+  "nav": {
+    "services": "Services",
+    "production": "Production",
+    "work": "Work",
+    "caseStudies": "Case Studies",
+    "platform": "Platform",
+    "about": "About",
+    "contact": "Contact",
+    "ctaLabel": "Book a Meeting"
+  },
+  "footer": {
+    "sections": {
+      "services": "Services",
+      "company": "Company",
+      "contact": "Contact",
+      "istanbulOffice": "Istanbul Office",
+      "londonOffice": "London Office"
+    },
+    "company": {
+      "about": "About",
+      "work": "Work",
+      "caseStudies": "Case Studies",
+      "platform": "Platform",
+      "blog": "Blog",
+      "careers": "Careers"
+    },
+    "legal": {
+      "privacyPolicy": "Privacy Policy",
+      "kvkk": "KVKK",
+      "cookiePolicy": "Cookie Policy"
+    }
+  },
+  "contact": {
+    "headline": {
+      "lead": "Let's",
+      "highlight": "start the conversation."
+    },
+    "intro": "Send us a quick brief — we'll get back within one business day.",
+    "sideInfo": {
+      "newBusiness": "New Business",
+      "careers": "Careers",
+      "phone": "Phone",
+      "studio": "Studio",
+      "officeHours": "Office Hours",
+      "follow": "Follow",
+      "weekdays": "Monday — Friday",
+      "hours": "09:00 — 19:00 (GMT+3)"
+    },
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company (optional)",
+      "industry": "Industry (optional)",
+      "services": "Requested Services",
+      "servicesHint": "(select all that apply)",
+      "timing": "Timeline (optional)",
+      "budget": "Monthly Ad Budget (optional)",
+      "message": "Tell us about your project (optional)"
+    },
+    "placeholders": {
+      "industry": "Select an industry…",
+      "timing": "Select a timeline…",
+      "budget": "Select a range…",
+      "message": "Goals, timeline, current tools, biggest challenge…"
+    },
+    "industryOptions": {
+      "ecommerce": "eCommerce / DTC",
+      "saas": "SaaS / Software",
+      "travel": "Travel / Hospitality",
+      "education": "Education",
+      "realEstate": "Real Estate",
+      "finance": "Finance / Fintech",
+      "healthcare": "Healthcare",
+      "b2b": "B2B / Industrial",
+      "publicSector": "Public Sector",
+      "other": "Other"
+    },
+    "serviceOptions": {
+      "strategy": "Strategy & Audit",
+      "performance": "Performance Media",
+      "creative": "Creative & Production",
+      "analytics": "Analytics & Attribution",
+      "growth": "Growth & Partnerships",
+      "cro": "CRO / Landing Page",
+      "fullService": "Full-Service Partnership"
+    },
+    "timingOptions": {
+      "immediate": "We need to start immediately",
+      "withinMonth": "Within the next month",
+      "threePlus": "3+ months out",
+      "exploring": "Just exploring"
+    },
+    "budgetOptions": {
+      "tier1": "Under £500",
+      "tier2": "£500 — £2,500",
+      "tier3": "£2,500 — £10,000",
+      "tier4": "£10,000 — £40,000",
+      "tier5": "£40,000+"
+    },
+    "buttons": {
+      "submit": "Send Message",
+      "submitting": "Sending…",
+      "successTitle": "Your message has been received.",
+      "successBody": "Thank you — we'll be in touch shortly."
+    },
+    "privacy": {
+      "prefix": "By submitting, you agree to our",
+      "linkText": "Privacy Policy",
+      "suffix": ". No spam — just a genuine response."
+    },
+    "errors": {
+      "generic": "Something went wrong. Please try again.",
+      "missingRequired": "Required fields are missing.",
+      "invalidEmail": "Invalid email address."
+    },
+    "whereWeWork": {
+      "titleLead": "Founded in Istanbul 11 years ago. Today, from Şişli's business district, we serve",
+      "titleHighlight": "growth-stage and leading",
+      "titleTail": "brands across travel, real estate, the public sector, and B2B.",
+      "cards": {
+        "global": {
+          "title": "Global",
+          "text": "A tight-knit team based in Istanbul. With partners and collaborators across Europe, the Gulf, and North America, we manage campaigns globally."
+        },
+        "becomeClient": {
+          "title": "Become a Client",
+          "text": "New project on your mind? We'd love to hear it. Every great partnership starts with a great brief — we'd be happy to look at yours."
+        },
+        "joinTeam": {
+          "title": "Join Our Team",
+          "text": "We hire only exceptional talent. If you can look at your own work and say 'this is great', you belong here."
+        }
+      }
+    },
+    "powerSection": {
+      "label": "One Reply Away",
+      "title": "Reach out",
+      "emphasis": "we'll get back fast."
+    },
+    "bottomCta": {
+      "title": "Let's",
+      "emphasis": "take action.",
+      "button": "theordino.com"
+    }
+  },
+  "thankYou": {
+    "title": "Message Received",
+    "headline": {
+      "lead": "Thank you —",
+      "highlight": "we'll get back to you",
+      "tail": "shortly."
+    },
+    "body": "We've received your message. Our team will review your brief and respond within one business day. For urgent matters, please call us at +90 212 996 71 47.",
+    "ctas": {
+      "home": "Back to Home",
+      "work": "Explore Our Work"
+    },
+    "metadata": {
+      "title": "Thank You",
+      "description": "We've received your message. We'll get back to you shortly."
+    }
+  },
+  "schedule": {
+    "eyebrow": "What's Next",
+    "headline": {
+      "lead": "Let's",
+      "highlight": "Schedule a Meeting."
+    },
+    "body": "Let's discuss your brand's goals and needs together. Pick a time on the calendar for a free 30-minute discovery call."
+  },
+  "cookies": {
+    "title": "Manage Cookies",
+    "body": {
+      "prefix": "We use cookies to enhance your experience, analyze performance, and personalize content. See our",
+      "linkText": "Cookie Policy",
+      "suffix": "for details."
+    },
+    "decline": "Decline",
+    "accept": "Accept"
+  },
+  "home": {
+    "metadata": {
+      "title": "Ordino — Strategy. Creativity. Growth.",
+      "description": "A full-service advertising agency based in London and Istanbul. Official advertising partner of Google, Meta, TikTok, and X, serving brands locally and globally."
+    },
+    "hero": {
+      "headline": {
+        "lead": "Strategy.",
+        "highlight": "Creativity.",
+        "tail": "Growth."
+      },
+      "subhead": "Smarter campaigns, targeted messaging, and measurable growth — powered by AI advertising intelligence.",
+      "cta1": "Explore Services",
+      "cta2": "Get in Touch",
+      "scrollLabel": "Scroll"
+    },
+    "clientsShowcase": {
+      "eyebrow": "Brands We Work With",
+      "sub": "We serve brands that grow through strategic partnerships."
+    },
+    "howWeWork": {
+      "eyebrow": "How We Work",
+      "title": "Creative +",
+      "emphasis": "Analytical",
+      "description": "We're data-driven creatives. By combining data science with marketing expertise, we deliver measurable growth — turning your brand story into meaningful outcomes through strategic analysis, AI optimization, and creative production.",
+      "stats": {
+        "yearsExperience": "Years of Experience",
+        "brandsServed": "Brands Served",
+        "adSpendManaged": "Ad Spend Managed",
+        "thousands": "Thousands",
+        "campaignsDelivered": "Campaigns Delivered"
+      }
+    },
+    "partnerMarquee": {
+      "label": "Official Advertising Partners"
+    },
+    "servicesGrid": {
+      "title": "Service",
+      "emphasis": "Categories",
+      "items": {
+        "01": {
+          "title": "Media & Advertising",
+          "items": [
+            "Media planning & buying",
+            "Programmatic ad management",
+            "TV, radio & traditional media",
+            "Outdoor (DOOH)",
+            "TVC & digital film production"
+          ]
+        },
+        "02": {
+          "title": "Social Media Management",
+          "items": [
+            "Content calendar & strategy",
+            "Instagram, TikTok, LinkedIn",
+            "Community management",
+            "Influencer partnerships",
+            "Social listening"
+          ]
+        },
+        "03": {
+          "title": "Content Production",
+          "items": [
+            "Video production",
+            "Photography",
+            "Copywriting",
+            "Graphic & motion design",
+            "Brand storytelling"
+          ]
+        },
+        "04": {
+          "title": "SEO & Organic Growth",
+          "items": [
+            "Technical SEO audit",
+            "Keyword strategy",
+            "On-page optimization",
+            "Local SEO",
+            "Schema markup"
+          ]
+        },
+        "05": {
+          "title": "Visual Design",
+          "items": [
+            "Logo & brand identity",
+            "Brand guidelines",
+            "Typography & color",
+            "Packaging design",
+            "Campaign creative"
+          ]
+        },
+        "06": {
+          "title": "Web Development & Optimization",
+          "items": [
+            "Next.js & React development",
+            "Corporate sites & landing pages",
+            "Core Web Vitals optimization",
+            "CMS integration",
+            "API integrations"
+          ]
+        },
+        "07": {
+          "title": "eCommerce Solutions",
+          "items": [
+            "Shopify store development",
+            "WooCommerce & custom platforms",
+            "Payment & shipping integration",
+            "Cart abandonment optimization",
+            "eCommerce SEO"
+          ]
+        },
+        "08": {
+          "title": "Email & CRM",
+          "items": [
+            "Email marketing strategy",
+            "Automation flows",
+            "Customer segmentation",
+            "CRM integration",
+            "Newsletter design"
+          ]
+        },
+        "09": {
+          "title": "AI & Automation",
+          "items": [
+            "AI-powered content creation",
+            "Customer behavior prediction",
+            "Campaign AI automation",
+            "Chatbot solutions",
+            "Workflow automation"
+          ]
+        }
+      }
+    },
+    "latestWorks": {
+      "eyebrow": "Selected Work",
+      "title": "Services by",
+      "emphasis": "Industry",
+      "hoverLabel": "View Details →"
+    },
+    "meetingCta": {
+      "eyebrow": "What's Next",
+      "headline": {
+        "lead": "Let's",
+        "highlight": "Schedule a Meeting."
+      },
+      "body": "Let's discuss your brand's goals and needs together. Share a short brief — our team will get back to you within one business day.",
+      "subHeader": "Share Your Brief",
+      "subBody": "Fill out the form, and we'll review your project together.",
+      "button": "Go to Contact Form"
+    },
+    "cta": {
+      "title": "To take a major step in your brand's growth journey,",
+      "emphasis": "let's talk now.",
+      "button": "Get in Touch"
+    }
+  },
+  "about": {
+    "metadata": {
+      "title": "About",
+      "description": "Ordino is a full-service advertising agency based in London and Istanbul. As an official advertising partner of Google, Meta, TikTok, and X, we serve brands locally and globally."
+    },
+    "editorialHero": {
+      "eyebrow": "About",
+      "title": "London and Istanbul-based",
+      "emphasis": "full-service agency.",
+      "prose1": "Official advertising partner of Google, Meta, TikTok, and X.",
+      "prose2": "Serving brands locally and globally."
+    },
+    "howWeWork": {
+      "eyebrow": "Ordino in Numbers",
+      "title": "11 years of",
+      "emphasis": "scaled growth.",
+      "description": "Since 2015, we've served over 50 brands. We've managed hundreds of millions in ad spend across the UK, USA, and Türkiye, delivering thousands of campaigns. Our team brings together experienced strategists, performance specialists, and creative directors.",
+      "stats": [
+        { "value": "11", "label": "Years of Experience" },
+        { "value": "50+", "label": "Brands Served" },
+        { "value": "£2M+", "label": "Ad Spend Managed" },
+        { "value": "Thousands", "label": "Campaigns Delivered" }
+      ]
+    },
+    "showreel": {
+      "eyebrow": "Studio Reel · 2026",
+      "title": "11 years of",
+      "emphasis": "storytelling."
+    },
+    "leadership": {
+      "eyebrow": "Leadership",
+      "lead": "Ordino's leadership team — six executives leading strategy, performance, design, and operations.",
+      "linkLabel": "LinkedIn →"
+    },
+    "partnerLogos": {
+      "eyebrow": "Our Official Ad Partnerships",
+      "title": "Verified partnerships",
+      "emphasis": "with the industry's leading platforms.",
+      "description": "Our certified partner status with Google, Meta, Google Analytics, and TikTok gives your campaigns direct access to the latest tools, beta features, and expert support.",
+      "partnerTypes": {
+        "advertising": "Official Advertising Partner",
+        "business": "Official Business Partner",
+        "analytics": "Official Analytics Partner",
+        "marketing": "Official Marketing Partner"
+      }
+    },
+    "cta": {
+      "title": "Ready to grow",
+      "emphasis": "together?"
+    }
+  },
+  "services": {
+    "metadata": {
+      "title": "Services",
+      "description": "Full-service, multidisciplinary advertising agency. Strategy, creativity, performance, analytics, growth, and digital experience."
+    },
+    "pageHero": {
+      "label": "Our Services",
+      "title": "Full-service.",
+      "emphasis": "Multidisciplinary.",
+      "sub": "Strategy, creativity, performance media, analytics, growth, and digital experience — under one roof, with measurable results."
+    },
+    "whatWeDo": {
+      "eyebrow": "What We Do",
+      "titleHtml": "We integrate data with <em>creativity</em>, building innovative solutions through <em>multidisciplinary</em> craft."
+    },
+    "heroGrid": {
+      "01": {
+        "title": "Media &",
+        "titleEm": "Advertising",
+        "description": "Programmatic advertising, TV-digital integration, creative campaigns, and media buying — an integrated media & advertising approach."
+      },
+      "02": {
+        "title": "Social Media",
+        "titleEm": "Management",
+        "description": "From platform-specific content production to community management, from organic growth to influencer partnerships."
+      },
+      "03": {
+        "title": "Content",
+        "titleEm": "Production",
+        "description": "Video, photo, copy, and graphic production. Creative content that fits your brand voice and each platform."
+      },
+      "04": {
+        "title": "SEO & Organic",
+        "titleEm": "Growth",
+        "description": "The foundation of long-term organic growth. From technical SEO to content strategy — we build lasting visibility."
+      },
+      "05": {
+        "title": "Visual",
+        "titleEm": "Design",
+        "description": "Logo, corporate identity, campaign creative, packaging — we shape your brand's visual language."
+      },
+      "06": {
+        "title": "Web Development &",
+        "titleEm": "Optimization",
+        "description": "Modern, fast, SEO-friendly websites. Built with Next.js, React, and a performance-first mindset."
+      },
+      "07": {
+        "title": "eCommerce",
+        "titleEm": "Solutions",
+        "description": "Shopify, WooCommerce, and custom eCommerce platforms. Conversion-focused design and payment integrations."
+      },
+      "08": {
+        "title": "Email &",
+        "titleEm": "CRM",
+        "description": "Email marketing, automation, customer segmentation, and CRM integrations for sustainable customer relationships."
+      },
+      "09": {
+        "title": "AI &",
+        "titleEm": "Automation",
+        "description": "AI as a strategic tool. Data analytics, segmentation, creative processes, and campaign optimization."
+      }
+    },
+    "accordion": {
+      "01": {
+        "num": "01 — Media & Advertising",
+        "title": "Integrated media &",
+        "titleHead": "creative",
+        "titleEm": "advertising.",
+        "lead": "We turn media and ad investment into a strategic capability — making sure the right message reaches the right person at the right time. From programmatic advertising and TV-digital integration to creative campaign concepts and production, we deliver an integrated approach.",
+        "items": [
+          "Media planning & buying",
+          "Programmatic ad management",
+          "TV, radio & traditional media",
+          "Outdoor & digital outdoor (DOOH)",
+          "Ad campaign concept & strategy",
+          "TVC & digital film production",
+          "Performance marketing (Google Ads, Meta, TikTok)",
+          "ROAS-focused budget management"
+        ]
+      },
+      "02": {
+        "num": "02 — Social Media Management",
+        "title": "Where your brand",
+        "titleHead": "meets",
+        "titleEm": "people.",
+        "lead": "Social media is where your brand meets people. We own the entire process — from platform-specific content production to community management, organic growth to influencer partnerships. We focus on real connection, not vanity metrics.",
+        "items": [
+          "Social media strategy & content calendar",
+          "Instagram, TikTok, LinkedIn content production",
+          "Community management & engagement",
+          "Influencer & creator partnerships",
+          "Social listening & trend analysis",
+          "Social media performance reporting"
+        ]
+      },
+      "03": {
+        "num": "03 — Content Production",
+        "title": "Creative content",
+        "titleHead": "that",
+        "titleEm": "tells a story.",
+        "lead": "Content bridges your brand and your audience. We produce video, photography, copy, and graphic work that fits your brand voice and works on every platform. Story-telling, copywriting, and creative direction — all under one roof.",
+        "items": [
+          "Video production (short & long form)",
+          "Photography & art direction",
+          "Copywriting & editorial",
+          "Graphic & motion design",
+          "Podcast & audio production",
+          "Brand storytelling"
+        ]
+      },
+      "04": {
+        "num": "04 — SEO & Organic Growth",
+        "title": "Long-term",
+        "titleHead": "organic",
+        "titleEm": "growth.",
+        "lead": "SEO is the foundation of long-term organic growth. From technical SEO and content strategy to link authority and local search, we make sure your brand shows up for the right people on the right terms. We build lasting visibility.",
+        "items": [
+          "Technical SEO audit & fixes",
+          "Keyword strategy & content planning",
+          "On-page & off-page optimization",
+          "Local SEO & Google Business management",
+          "Schema markup & structured data",
+          "Monthly performance tracking & reporting"
+        ]
+      },
+      "05": {
+        "num": "05 — Visual Design",
+        "title": "We create brands",
+        "titleHead": "with",
+        "titleEm": "character.",
+        "lead": "Brand identity is more than visual consistency — it's a brand's soul. We design the full visual system that defines you — from logo and typography to color palette and brand guidelines, plus campaign creative, packaging, and presentations.",
+        "items": [
+          "Logo & brand identity design",
+          "Brand guidelines & usage manuals",
+          "Typography & color systems",
+          "Packaging & product design",
+          "Campaign creative & key visuals",
+          "Presentation, brochure & catalog design"
+        ]
+      },
+      "06": {
+        "num": "06 — Web Development & Optimization",
+        "title": "Modern, fast,",
+        "titleHead": "SEO-friendly",
+        "titleEm": "by design.",
+        "lead": "Your website is your brand's digital storefront. We build fast, SEO-friendly, scalable sites using a modern stack (Next.js, React). Design, development, performance optimization, and ongoing maintenance — all in one place.",
+        "items": [
+          "Website design & development (Next.js, React)",
+          "Corporate websites & landing pages",
+          "Performance & Core Web Vitals optimization",
+          "Content management system (CMS) integration",
+          "API integrations",
+          "SEO-friendly architecture & schema markup",
+          "Ongoing maintenance & iteration"
+        ]
+      },
+      "07": {
+        "num": "07 — eCommerce Solutions",
+        "title": "A conversion-focused",
+        "titleHead": "eCommerce",
+        "titleEm": "experience.",
+        "lead": "eCommerce isn't just a store — it's an end-to-end user experience. We deliver conversion-focused, payment-integrated, mobile-friendly eCommerce solutions on Shopify, WooCommerce, and custom platforms.",
+        "items": [
+          "Shopify store development & customization",
+          "WooCommerce & custom eCommerce platforms",
+          "Payment & shipping integrations",
+          "Product catalog management",
+          "Cart abandonment optimization",
+          "eCommerce SEO & performance marketing",
+          "Mobile app (iOS / Android) integration"
+        ]
+      },
+      "08": {
+        "num": "08 — Email & CRM",
+        "title": "Sustainable",
+        "titleHead": "customer",
+        "titleEm": "relationships.",
+        "lead": "A customer relationship isn't a one-off sale — it's a long-term bond. Through email marketing, automation, and CRM integrations, we build sustainable, personalized communication. We turn data into value.",
+        "items": [
+          "Email marketing strategy & campaigns",
+          "Email automation flows",
+          "Customer segmentation & personalization",
+          "CRM integration (HubSpot, Salesforce, etc.)",
+          "Newsletter design & content",
+          "A/B testing & performance optimization"
+        ]
+      },
+      "09": {
+        "num": "09 — AI & Automation",
+        "title": "AI as",
+        "titleHead": "a strategic",
+        "titleEm": "tool.",
+        "lead": "AI is no longer a luxury — it's a competitive necessity. We use AI as a strategic tool across data analytics, customer segmentation, creative processes, and campaign optimization. Faster, smarter, more efficient.",
+        "items": [
+          "AI-powered content & creative generation",
+          "Customer behavior prediction & segmentation",
+          "Ad campaign AI automation",
+          "Chatbot & customer service automation",
+          "Marketing workflow automation",
+          "AI-based performance optimization"
+        ]
+      }
+    },
+    "powerSection": {
+      "label": "The Power of AI",
+      "title": "Smart enough for",
+      "emphasis": "your best campaigns."
+    },
+    "analyticsBlock": {
+      "title": "One partner.",
+      "emphasis": "Every platform.",
+      "description": "Our team works natively across every major ad platform — and the analytics infrastructure that connects them. That means your strategy stays integrated as you scale.",
+      "platforms": [
+        "Google Ads — Search, Shopping, Performance Max",
+        "Meta Ads — Facebook, Instagram, Threads",
+        "LinkedIn Ads — B2B & ABM",
+        "TikTok Ads — Spark & Creator",
+        "X (Twitter) Ads",
+        "Programmatic — DV360, TTD",
+        "GA4, Looker Studio, BigQuery"
+      ]
+    },
+    "marqueeLabel": "Official Advertising Partners",
+    "cta": {
+      "title": "To accelerate your growth,",
+      "emphasis": "schedule a meeting now."
+    }
+  },
+  "work": {
+    "metadata": {
+      "title": "Our Work",
+      "description": "Selected work from Ordino, serving brands locally and globally. Strategy-, creativity-, and growth-focused projects."
+    },
+    "hero": {
+      "eyebrow": "Our Work",
+      "title": "We grow",
+      "emphasis": "brands.",
+      "sub": "We serve international brands with AI-powered intelligence, advanced automation, and a strong media network."
+    },
+    "filter": {
+      "all": "All",
+      "empty": "No work in this industry yet.",
+      "hoverLabel": "View Details →",
+      "altText": "{brand} case study"
+    },
+    "analyticsBlock": {
+      "title": "Compounding",
+      "emphasis": "results.",
+      "description": "Trailing 12-month averages across active client accounts. Not cherry-picked success stories — real numbers.",
+      "items": [
+        "50+ brand growth stories",
+        "£2M+ in managed ad spend",
+        "Current success powered by AI optimization"
+      ]
+    },
+    "cta": {
+      "title": "Let the next success story",
+      "emphasis": "be yours."
+    }
+  },
+  "caseStudies": {
+    "metadata": {
+      "title": "Case Studies",
+      "description": "Real brands. Real results. Success stories from data-driven strategy, AI-powered optimization, and conversion-focused creativity."
+    },
+    "hero": {
+      "label": "Case Studies",
+      "title": "Real brands.",
+      "emphasis": "Real results.",
+      "sub": "Twelve campaigns, twelve industries. Measurable outcomes from data-driven strategy, AI-powered optimization, and conversion-focused creativity."
+    },
+    "hoverLabel": "View Details →",
+    "cta": {
+      "title": "Let the next success story",
+      "emphasis": "be yours."
+    },
+    "block": {
+      "challenge": "The Challenge",
+      "solution": "The Solution"
+    },
+    "prevNext": {
+      "prev": "← Previous Case",
+      "next": "Next Case →"
+    }
+  },
+  "platform": {
+    "metadata": {
+      "title": "Platform",
+      "description": "All Your Ads. ORDINO.AI. Build, manage, and optimize campaigns on TikTok, Meta, Google, and more — from a single AI-powered command center."
+    },
+    "hero": {
+      "pillBadge": "Now in Early Access",
+      "headlineLine1": "All Your Ads.",
+      "headlineLine2": "ORDINO.AI",
+      "subtitle": "Build, manage, and optimize campaigns on TikTok, Meta, Google, and more — from a single AI-powered command center.",
+      "cta1": "Start Free Trial",
+      "cta2": "Watch Demo",
+      "channels": ["TikTok", "Meta", "Google", "LinkedIn"],
+      "videoAriaLabel": "Demo video",
+      "videoClose": "Close",
+      "videoPlaceholder": "Demo video coming soon."
+    },
+    "product": {
+      "eyebrow": "Product",
+      "title": "One command center for",
+      "emphasis": "every paid channel.",
+      "description": "Ordino AI unifies every ad account you run — TikTok, Meta, Google, LinkedIn — into a single operations surface. Plan, launch, and optimize from one place. The AI layer monitors performance 24/7 and takes action without your manual intervention."
+    },
+    "features": {
+      "header": {
+        "eyebrow": "Features",
+        "title": "For teams who treat",
+        "emphasis": "paid media as a",
+        "tail": "core product surface."
+      },
+      "items": {
+        "01": {
+          "title": "Unified Campaigns",
+          "text": "Build a campaign once, launch it across every channel. Creative variants, audiences, and budgets sync automatically — no tab-hopping."
+        },
+        "02": {
+          "title": "AI Optimization",
+          "text": "Our engine reads performance every 15 minutes — shifting budget, pausing losers, scaling winners — transparently, with every decision logged."
+        },
+        "03": {
+          "title": "Negative Keywords",
+          "text": "AI search-term analysis clears wasted Google spend in minutes, not hours. The average Ordino account eliminates 23% of wasted spend in the first week."
+        },
+        "04": {
+          "title": "Creative Intelligence",
+          "text": "Upload your ad variants — the engine tests them with disciplined measurement and surfaces the patterns that actually move your numbers, not just CTR."
+        },
+        "05": {
+          "title": "Blended Reporting",
+          "text": "ROAS, CAC, payback period, contribution margin — a single dashboard that ties ad spend to pipeline and revenue, not impressions."
+        },
+        "06": {
+          "title": "Team Workflows",
+          "text": "Approvals, notes, handoffs. Built for agencies and in-house teams running 20+ accounts without drowning in spreadsheets."
+        }
+      }
+    },
+    "aiEngine": {
+      "header": {
+        "eyebrow": "The AI Engine",
+        "title": "How",
+        "emphasis": "the brain",
+        "tail": "works."
+      },
+      "steps": {
+        "01": {
+          "stepLabel": "Step 01",
+          "title": "Ingest",
+          "text": "Every 15 minutes, the engine pulls impression, click, conversion, and cost data from every platform you've connected. Nothing is sampled — we read the full account."
+        },
+        "02": {
+          "stepLabel": "Step 02",
+          "title": "Reason",
+          "text": "A model trained on 230 client accounts ranks every active asset by its contribution to your real business metric — not the platform's proxy score."
+        },
+        "03": {
+          "stepLabel": "Step 03",
+          "title": "Act",
+          "text": "Budget shifts, pauses, negative keyword pushes, creative rotations — executed automatically in your platform accounts, with a one-click reversible audit trail."
+        },
+        "04": {
+          "stepLabel": "Step 04",
+          "title": "Report",
+          "text": "Every action is logged in plain language. Your Monday report writes itself: what changed, why it changed, and how it moved the numbers."
+        }
+      }
+    },
+    "results": {
+      "header": {
+        "eyebrow": "Results",
+        "title": "Numbers from",
+        "emphasis": "the live network.",
+        "sub": "Trailing 12-month averages across active accounts."
+      },
+      "stats": [
+        { "value": "+187%", "label": "Average ROAS lift in 90 days" },
+        { "value": "−42%", "label": "Average CPA reduction across accounts" },
+        { "value": "23%", "label": "Wasted spend eliminated in week one" },
+        { "value": "3.8×", "label": "Pipeline velocity boost for B2B accounts" }
+      ]
+    },
+    "finalCta": {
+      "eyebrow": "Early Access",
+      "title": "Ready to stop managing and start",
+      "emphasis": "scaling?",
+      "tail": "",
+      "description": "Ordino AI is rolling out to a limited group in 2026. Request access — we'll activate your accounts within a week.",
+      "button": "Request Early Access"
+    }
+  },
+  "blog": {
+    "filter": {
+      "all": "All",
+      "empty": "No posts in this category yet.",
+      "hoverLabel": "Read More →"
+    },
+    "categories": {
+      "digitalMarketing": "Digital Marketing",
+      "seo": "SEO",
+      "ai": "AI",
+      "socialMedia": "Social Media",
+      "industryNews": "Industry News"
+    },
+    "post": {
+      "placeholderTitle": "✍️ Content coming soon",
+      "placeholderBody": "The full content of this post is being prepared. It will be shared here soon.",
+      "placeholderText": "Content coming soon..."
+    },
+    "related": {
+      "headline": {
+        "lead": "Liked this post?",
+        "highlight": "You might also enjoy these."
+      }
+    },
+    "readTime": "{n} min read",
+    "authorRoles": {
+      "aiPerformance": "AI & Performance Marketing",
+      "performance": "Performance Marketing",
+      "seoContent": "SEO & Content Strategy",
+      "socialContent": "Social Media & Content",
+      "ordinoTeam": "Ordino Team"
+    }
+  },
+  "shared": {
+    "cta": {
+      "title": "What we'll",
+      "emphasis": "create together.",
+      "button": "Book a Meeting"
+    },
+    "fullVideoPlaceholder": "▶ Add campaign video",
+    "pushForward": {
+      "title": "We push",
+      "emphasis": "performance forward.",
+      "text": "At Ordino, we believe that every pound of ad spend should work harder. Our AI-powered platform goes beyond basic optimization — we understand the nuances of search intent, user behavior, and campaign dynamics. By combining cutting-edge machine learning with deep marketing expertise, we help brands maximize their ROAS while minimizing wasted spend."
+    },
+    "powerOf": {
+      "eyebrow": "The Power of AI",
+      "title": "Performance Marketing",
+      "emphasis": "Worthy of Your Brand.",
+      "sub": "Where the world's ambitious brands come for measurable growth.",
+      "brand": "ORDINO"
+    },
+    "horizontalScroll": {
+      "eyebrow": "Selected Work",
+      "title": "Brands we've",
+      "emphasis": "elevated.",
+      "allLink": "View all work →"
+    }
+  },
+  "clients": {
+    "altText": {
+      "anadolu-group": "Anadolu Group — Holding",
+      "turkish-technic": "Turkish Technic — Aviation / MRO",
+      "turizm-bakanligi": "Republic of Türkiye Ministry of Culture and Tourism",
+      "tff": "Turkish Football Federation",
+      "anadolu-motor": "Anadolu Motor — Automotive",
+      "aiata": "Aiata Boats — Marine / Luxury",
+      "allium-bodrum": "Allium Bodrum — Hospitality / Luxury",
+      "yuva-maya": "Yuva Maya — Food & Beverage",
+      "gobritanya": "GoBritanya — Education / Study Abroad",
+      "marie-claire": "Marie Claire — Media / Publishing",
+      "fortune": "Fortune — Media / Publishing",
+      "instyle": "InStyle Türkiye — Media / Publishing",
+      "inspera": "Inspera Bodrum — Culture & Arts"
+    }
+  },
+  "latestWorks": {
+    "sectors": {
+      "aviationMro": "Aviation / MRO",
+      "marineLuxury": "Marine / Luxury",
+      "educationAbroad": "Education / Study Abroad",
+      "hospitalityLuxury": "Hospitality / Luxury",
+      "foodBeverage": "Food & Beverage",
+      "mediaPublishing": "Media / Publishing",
+      "automotive": "Automotive",
+      "sportsFederation": "Sports / Federation",
+      "governmentTourism": "Government / Tourism",
+      "cultureArts": "Culture & Arts"
+    },
+    "brandLabels": {
+      "tff": "Turkish Football Federation",
+      "ministry": "Ministry of Culture and Tourism"
+    }
+  },
+  "workPortfolio": {
+    "featuredServicesShort": {
+      "multiChannelAd": "Multi-Channel Advertising",
+      "youtubeCampaigns": "YouTube Campaigns",
+      "tradeShowComms": "Trade Show Communications",
+      "adManagement": "Ad Management",
+      "globalSocialMedia": "Global Social Media",
+      "googleMetaAds": "Google & Meta Ads",
+      "webOptimization": "Web Optimization",
+      "digitalAdManagement": "Digital Ad Management",
+      "audienceStrategy": "Audience Strategy",
+      "launchCampaign": "Launch Campaign",
+      "multiPlatformAd": "Multi-Platform Advertising",
+      "seoOrganicGrowth": "SEO & Organic Growth",
+      "contentOptimization": "Content Optimization",
+      "linkedinAdMgmt": "LinkedIn Ad Management",
+      "xTwitterAds": "X (Twitter) Ads",
+      "b2bTargeting": "B2B Targeting",
+      "contentStrategy": "Content Strategy",
+      "brandVoiceEditorial": "Brand Voice & Editorial Alignment",
+      "eventsCultureComms": "Events & Cultural Communications",
+      "emailCampaigns": "Email Campaigns",
+      "websiteOptimization": "Website Optimization",
+      "copywriting": "Copywriting",
+      "aiAdFilms": "AI-Powered Ad Films",
+      "creativeContentStrategy": "Creative Content Strategy",
+      "sportsComms": "Sports Communications",
+      "multiChannelAdMgmt": "Multi-Channel Ad Management",
+      "digitalCommsStrategy": "Digital Communications Strategy",
+      "publicSectorComms": "Public Sector Communications"
+    }
+  },
+  "caseStudiesContent": {
+    "aiata": {
+      "num": "Case 01",
+      "brand": "AIATA",
+      "sector": "Marine / Luxury",
+      "title": "Aiata Boats lifted booking conversion by",
+      "titleEm": "240%",
+      "titleTail": "and cut CPA by",
+      "titleEm2": "58%.",
+      "lead": "For Aiata Boats, we own ad management across LinkedIn, Meta, and Google, plus visual design and SEO end-to-end. As the brand expanded geographically, we expanded with it — managing global social presence across Aiata Boats USA, Spain, and Greece. From email campaigns to event communications, content production to design, we deliver 360-degree service.",
+      "brandIntro": "A rising name in luxury marine, Aiata Boats produces custom yachts and watercraft with a presence in Türkiye, the USA, Spain, and Greece. Through design quality and global vision, the brand has built a strong position in the premium marine segment.",
+      "featuredServices": [
+        "Ad Management",
+        "SEO",
+        "Visual Design",
+        "Global Social Media Management",
+        "Email Marketing",
+        "Event Communications"
+      ],
+      "stats": [
+        { "value": "3 Countries", "label": "USA · Spain · Greece" },
+        { "value": "360°", "label": "End-to-End Service" },
+        { "value": "Global", "label": "Social Media Management" }
+      ],
+      "challenge": {
+        "head": "Going global in",
+        "headEm": "luxury marine.",
+        "paragraphs": [
+          "Expanding into new markets in premium marine requires more than visibility — proper positioning, sustainable communication, and performance-focused growth. Managing distinct presences across three geographies demands operational discipline."
+        ]
+      },
+      "solution": {
+        "head": "360° service capacity and",
+        "headEm": "strategic partnership.",
+        "paragraphs": [
+          "We manage the brand's communication holistically — across creative, performance, content, and events. We balance the unique dynamics of each region with a local approach and global consistency."
+        ]
+      }
+    },
+    "gobritanya": {
+      "num": "Case 02",
+      "brand": "GOBRITANYA",
+      "sector": "Education / Study Abroad",
+      "title": "GoBritanya delivered",
+      "titleEm": "5,400 qualified student leads",
+      "titleTail": "at 4.2× ROI.",
+      "lead": "We manage Google and Meta ads, visual design, SEO, and website optimization in parallel. The ad campaigns drive over 1,000 customer conversions per month; every channel works within an integrated, measurable growth model.",
+      "brandIntro": "GoBritanya offers comprehensive guidance to students worldwide on UK education, life, and immigration — a leading digital platform serving tens of thousands of users as a trusted resource.",
+      "featuredServices": [
+        "Google & Meta Ads",
+        "SEO",
+        "Website Optimization",
+        "Visual Design",
+        "Conversion Optimization"
+      ],
+      "stats": [
+        { "value": "1,000+", "label": "Monthly Customer Conversions" },
+        { "value": "5 Channels", "label": "Integrated Management" },
+        { "value": "Full Funnel", "label": "Acquisition Model" }
+      ],
+      "challenge": {
+        "head": "Making the right decision easier",
+        "headEm": "in studying abroad.",
+        "paragraphs": [
+          "Going abroad for education is a complex, long decision process for students and families. Ads, content, web, and conversion all need to serve one goal — enrollment."
+        ]
+      },
+      "solution": {
+        "head": "An integrated",
+        "headEm": "growth model.",
+        "paragraphs": [
+          "We built a measurable growth model that connects every channel. When ads, SEO, and web optimization work together, conversion becomes the natural outcome."
+        ]
+      }
+    },
+    "yuva-maya": {
+      "num": "Case 03",
+      "brand": "YUVA MAYA",
+      "sector": "Food & Beverage",
+      "title": "Yuva Maya lifted product searches by",
+      "titleEm": "312%",
+      "titleTail": "at 47% lower cost.",
+      "lead": "We led the launch of Yuva Maya's refreshed brand identity with synchronized campaigns across Google, Meta, TikTok, and more. The campaign reached 3 out of every 5 women in Türkiye. The launch film became the most-watched piece of content on the brand's YouTube channel. Through optimal media planning and real-time optimization, the brand's new era launched powerfully into digital.",
+      "brandIntro": "As the Türkiye brand of Lesaffre — the world's leading fermentation technology company — Yuva Maya is one of the strongest names in the yeast and flour category. With a vibrant digital community, an extensive recipe platform, and an innovation-first approach, the brand's growth accelerates year after year.",
+      "featuredServices": [
+        "Launch Campaign Management",
+        "Multi-Platform Advertising (Google · Meta · TikTok)",
+        "YouTube Campaigns",
+        "Media Optimization"
+      ],
+      "stats": [
+        { "value": "20.8M+", "label": "Total Reach" },
+        { "value": "8.5M+", "label": "Views" },
+        { "value": "600K+", "label": "Engagements" }
+      ],
+      "challenge": {
+        "head": "A strong digital launch",
+        "headEm": "for a repositioned brand.",
+        "paragraphs": [
+          "A brand identity refresh demands perfect timing to capture audience at launch. The brand needed a synchronized, high-visibility, emotionally resonant launch across a broad female audience."
+        ]
+      },
+      "solution": {
+        "head": "A synchronized, multi-platform",
+        "headEm": "launch choreography.",
+        "paragraphs": [
+          "We built a synchronized cross-platform launch strategy backed by real-time media optimization. Each platform played to its strengths — all working to a single launch rhythm."
+        ]
+      }
+    },
+    "turkish-technic": {
+      "num": "Case 04",
+      "brand": "TURKISH TECHNIC",
+      "sector": "Aviation / MRO",
+      "title": "Turkish Technic built",
+      "titleEm": "6× pipeline",
+      "titleTail": "velocity in 8 months.",
+      "lead": "We launched and managed 100+ campaigns across LinkedIn, Google (YouTube), and Meta. Our campaigns reached over 50 million people globally — and a 72-hour YouTube ad became the most-watched video on Turkish Technic's channel. At international aviation trade shows, we ran end-to-end campaigns aimed at global attendees.",
+      "brandIntro": "The technical maintenance arm of Turkish Airlines, Turkish Technic is one of the most trusted MRO (Maintenance, Repair & Overhaul) companies in global aviation. Operating in 50+ countries, the company is a recognized force in the global aviation industry.",
+      "featuredServices": [
+        "Multi-Channel Ad Management (LinkedIn · Google · Meta)",
+        "YouTube Campaigns",
+        "Trade Show & Event Advertising"
+      ],
+      "stats": [
+        { "value": "100+", "label": "Ad Campaigns" },
+        { "value": "50M+", "label": "Global Reach" },
+        { "value": "72 Hours", "label": "Record YouTube Ad" }
+      ],
+      "challenge": {
+        "head": "Hard-to-reach decision-makers",
+        "headEm": "in global aviation.",
+        "paragraphs": [
+          "Ad investment in aviation looks nothing like mass marketing. Decision-makers are distributed globally, few in number, and highly specialized. The right channel, the right narrative, the right timing — there's no room for error."
+        ]
+      },
+      "solution": {
+        "head": "A multi-channel approach with",
+        "headEm": "industry fluency.",
+        "paragraphs": [
+          "With the principle of professional messaging on professional channels, we designed platform-specific campaigns. We shaped investment strategy around the industry's tempo and trade show calendar."
+        ]
+      }
+    },
+    "tff": {
+      "num": "Case 05",
+      "brand": "TFF",
+      "sector": "Sports / Federation",
+      "title": "TFF launched",
+      "titleEm": "12 AI-generated ad films",
+      "titleTail": "delivered in 4 weeks.",
+      "lead": "AI-powered ad film production sits at the center of our work with TFF. We redefined traditional production with AI — producing faster, more scalable content that pushes creative boundaries. These projects, which reached millions of football fans, demonstrate concretely how powerful AI-assisted media production can be for public sports institutions.",
+      "brandIntro": "TFF is the central governing authority of Turkish football, an institutional force followed closely by millions of fans through its national leagues and team organizations. At this intersection of sport and society, communication matters more than ever.",
+      "featuredServices": [
+        "AI-Powered Ad Film Production",
+        "Creative Content Strategy",
+        "Sports Communications"
+      ],
+      "stats": [
+        { "value": "AI-Generated", "label": "Ad Films" },
+        { "value": "Millions", "label": "Fans Reached" },
+        { "value": "Redefined", "label": "Production" }
+      ],
+      "challenge": {
+        "head": "Redefining traditional",
+        "headEm": "production.",
+        "paragraphs": [
+          "In large-scale institutional communication, speed and scale don't always come together with traditional production methods. Creative boundaries must expand without quality dropping."
+        ]
+      },
+      "solution": {
+        "head": "Scalable production",
+        "headEm": "with AI.",
+        "paragraphs": [
+          "By integrating AI into the creative process, we expanded production speed and scale. Traditional quality met next-generation velocity."
+        ]
+      }
+    },
+    "turizm-bakanligi": {
+      "num": "Case 06",
+      "brand": "MINISTRY OF CULTURE AND TOURISM",
+      "sector": "Government / Tourism",
+      "title": "The Ministry of Tourism delivered",
+      "titleEm": "18M+ qualified impressions",
+      "titleTail": "and lifted inbound search intent by 87%.",
+      "lead": "Across projects with different directorates of the Ministry of Culture and Tourism, we deliver multi-channel ad management and digital communications strategy. To bring Türkiye's cultural heritage and tourism potential to broader audiences, we design platform-specific campaigns and build content strategy in an integrated framework. We meet the communication needs of a state-scale institution with a modern media approach.",
+      "brandIntro": "Charged with carrying Türkiye's historic and cultural wealth to the world, the Ministry of Culture and Tourism runs one of the country's most powerful institutional communication platforms. Projects across its various directorates make national culture and tourism potential visible on a global scale.",
+      "featuredServices": [
+        "Multi-Channel Ad Management",
+        "Digital Communications Strategy",
+        "Public Sector Communications & Campaign Management"
+      ],
+      "stats": [
+        { "value": "Government-Scale", "label": "Communications" },
+        { "value": "Multi-Channel", "label": "Ad Management" },
+        { "value": "Global", "label": "Culture & Tourism" }
+      ],
+      "challenge": {
+        "head": "Modern communication",
+        "headEm": "at state scale.",
+        "paragraphs": [
+          "Communication for public institutions carries both the duty of institutional accountability and the responsibility of reaching broad audiences. Modern media tools must meet a disciplined approach at state scale."
+        ]
+      },
+      "solution": {
+        "head": "Integrated",
+        "headEm": "public communications.",
+        "paragraphs": [
+          "We brought the communications needs of different directorates into a single holistic strategy — aligning modern media practice with the responsibility of state-scale work."
+        ]
+      }
+    },
+    "allium-bodrum": {
+      "num": "Case 07",
+      "brand": "ALLIUM BODRUM",
+      "sector": "Hospitality / Luxury",
+      "title": "Allium Bodrum accelerated season turnaround by",
+      "titleEm": "3.4×",
+      "titleTail": "and lifted annual occupancy by",
+      "titleEm2": "42%.",
+      "lead": "For Allium Bodrum, we own digital ad management — ensuring the brand meets the right audience on the right platforms. With the aesthetic sensibility and precise targeting that boutique hospitality demands, we design every campaign in tune with the brand's identity.",
+      "brandIntro": "One of Bodrum's most distinguished hotels, Allium offers a unique stay that blends the warmth of local culture with international comfort standards. With a boutique identity and meticulous service, it's one of the most respected names in luxury tourism.",
+      "featuredServices": [
+        "Digital Ad Management",
+        "Audience Strategy"
+      ],
+      "stats": [
+        { "value": "Boutique", "label": "Hotel Segment" },
+        { "value": "Luxury", "label": "Target Audience" },
+        { "value": "Aesthetic", "label": "Brand Alignment" }
+      ],
+      "challenge": {
+        "head": "Precision targeting",
+        "headEm": "in luxury.",
+        "paragraphs": [
+          "Ad investment in boutique hospitality demands a different discipline than mass campaigns. The high-value guest profile, aesthetic voice, and brand identity — all three must be preserved at every touchpoint."
+        ]
+      },
+      "solution": {
+        "head": "Campaigns designed in",
+        "headEm": "brand harmony.",
+        "paragraphs": [
+          "We approach ad management not just as performance but as brand consistency. Every campaign is designed in an aesthetic language true to the brand's essence."
+        ]
+      }
+    },
+    "marie-claire": {
+      "num": "Case 08",
+      "brand": "MARIE CLAIRE",
+      "sector": "Media / Publishing",
+      "title": "Marie Claire grew its digital subscriber base from",
+      "titleEm": "220K to 410K —",
+      "titleTail": "a",
+      "titleEm2": "+86% lift.",
+      "lead": "For the Türkiye edition of Marie Claire — one of the world's most recognized women's magazines — we run an SEO-focused digital growth strategy. Through integrated content optimization, keyword strategy, and technical SEO, we grow organic traffic sustainably. We support the digital visibility of a strong editorial legacy with data-driven methods. Alongside this, our high-visibility advertising and follower-acquisition campaigns have reached 10M+ women domestically.",
+      "brandIntro": "The Türkiye edition of Marie Claire reaches millions of readers through its established editorial identity and strong digital platforms. It remains a defining reference in fashion, beauty, and lifestyle.",
+      "featuredServices": [
+        "SEO & Organic Growth",
+        "Content Optimization",
+        "Keyword Strategy",
+        "Technical SEO",
+        "Multi-Platform Advertising"
+      ],
+      "stats": [
+        { "value": "+10M", "label": "Women Reached" },
+        { "value": "SEO", "label": "Focused Strategy" },
+        { "value": "Multi-Platform", "label": "Ad Management" }
+      ],
+      "challenge": {
+        "head": "Sustaining editorial identity",
+        "headEm": "in the digital era.",
+        "paragraphs": [
+          "Growing a heritage editorial brand in digital depends on organic traffic and social reach scaling together. SEO and advertising must feed each other."
+        ]
+      },
+      "solution": {
+        "head": "Data-driven,",
+        "headEm": "holistic growth.",
+        "paragraphs": [
+          "We integrated content optimization, keyword strategy, and technical SEO with ad management — backing the editorial legacy's digital impact with data."
+        ]
+      }
+    },
+    "fortune": {
+      "num": "Case 09",
+      "brand": "FORTUNE",
+      "sector": "Media / Publishing",
+      "title": "Fortune lifted premium content engagement by",
+      "titleEm": "178%",
+      "titleTail": "with an average session of",
+      "titleEm2": "6:42 minutes.",
+      "lead": "For Fortune Türkiye — the pulse of the business world — we manage targeted ad campaigns on LinkedIn and X (formerly Twitter). We reach the readership, spanning C-suite executives to young professionals, on the right channels with the right message. We build the serious, effective voice that business communication demands — in harmony with the brand's identity.",
+      "brandIntro": "Following the pulse of business, Fortune Türkiye is one of the country's leading business and economy publications — producing content for a broad readership that spans C-suite executives to young professionals.",
+      "featuredServices": [
+        "LinkedIn Ad Management",
+        "X (Twitter) Ads",
+        "B2B Targeting Strategy",
+        "Professional Audience Communications"
+      ],
+      "stats": [
+        { "value": "C-Suite", "label": "Target Audience" },
+        { "value": "LinkedIn + X", "label": "Professional Channels" },
+        { "value": "B2B", "label": "Communication Model" }
+      ],
+      "challenge": {
+        "head": "Tone and channel precision",
+        "headEm": "in business communication.",
+        "paragraphs": [
+          "Reaching decision-maker professionals takes a different discipline than mass advertising. Which channel, what tone, which message — every detail must align with brand identity."
+        ]
+      },
+      "solution": {
+        "head": "The right tone",
+        "headEm": "on professional channels.",
+        "paragraphs": [
+          "We advertise to target profiles, not just target audiences. By blending business language with brand identity, we build communication that's both serious and effective."
+        ]
+      }
+    },
+    "anadolu-motor": {
+      "num": "Case 10",
+      "brand": "ANADOLU MOTOR",
+      "sector": "Automotive",
+      "title": "Anadolu Motor lifted test-drive bookings by",
+      "titleEm": "4.7×",
+      "titleTail": "and cut cost per lead by",
+      "titleEm2": "52%.",
+      "lead": "For Anadolu Motor, we support email campaigns, website optimization, and copywriting. At every touchpoint, we build a consistent, clear, persuasive voice — strengthening the brand's digital presence.",
+      "brandIntro": "One of Türkiye's most established automotive distributors, Anadolu Motor remains a trusted, recognized name in the industry — backed by a broad dealer network and a diverse brand portfolio.",
+      "featuredServices": [
+        "Email Campaigns",
+        "Website Optimization",
+        "Copywriting"
+      ],
+      "stats": [
+        { "value": "Email", "label": "Campaign Management" },
+        { "value": "Web", "label": "Optimization" },
+        { "value": "Copywriting", "label": "Brand Voice" }
+      ],
+      "challenge": {
+        "head": "A digital voice for",
+        "headEm": "a heritage brand.",
+        "paragraphs": [
+          "For a heritage automotive brand, consistency, simplicity, and persuasive power matter most in digital communication. Email, web, copy — every touchpoint must speak the same language."
+        ]
+      },
+      "solution": {
+        "head": "A unified",
+        "headEm": "communication voice.",
+        "paragraphs": [
+          "We manage every touchpoint with the same linguistic discipline. Email, web, and copy form a single, coherent, persuasive flow."
+        ]
+      }
+    },
+    "instyle": {
+      "num": "Case 11",
+      "brand": "INSTYLE TÜRKİYE",
+      "sector": "Media / Publishing",
+      "title": "Global aesthetic,",
+      "titleEm": "local voice.",
+      "titleTail": "",
+      "lead": "For InStyle Türkiye — one of the leading names in fashion and lifestyle — we own ad management and content strategy. We keep the brand's dynamic, inspiring voice alive on digital platforms, designing every campaign to speak to local audiences while preserving InStyle's global aesthetic.",
+      "brandIntro": "An international reference in fashion and lifestyle, InStyle stands out as one of Türkiye's most active style and trend platforms. Blending global vision with a local touch, the brand remains a powerful, inspiring voice in digital.",
+      "featuredServices": [
+        "Digital Ad Management",
+        "Content Strategy",
+        "Platform Management",
+        "Brand Voice & Editorial Alignment"
+      ],
+      "stats": [
+        { "value": "Global", "label": "Aesthetic" },
+        { "value": "Local", "label": "Editorial Alignment" },
+        { "value": "Digital", "label": "Brand Voice" }
+      ],
+      "challenge": {
+        "head": "Telling a global brand's story",
+        "headEm": "in a local voice.",
+        "paragraphs": [
+          "For the local edition of an international brand, the right balance between global aesthetic and local tone must be struck. Brand voice must stay consistent across every platform."
+        ]
+      },
+      "solution": {
+        "head": "Platform management",
+        "headEm": "in editorial harmony.",
+        "paragraphs": [
+          "We design every campaign in a local voice without compromising the global aesthetic, keeping the brand's voice alive and consistent across digital platforms."
+        ]
+      }
+    },
+    "inspera": {
+      "num": "Case 12",
+      "brand": "INSPERA BODRUM",
+      "sector": "Culture & Arts",
+      "title": "A consistent brand voice for a",
+      "titleEm": "multi-layered cultural venue.",
+      "titleTail": "",
+      "lead": "For Inspera — built at the heart of Bodrum's culture and arts scene — we own digital ad management. From Livaneli Stage to the Art Academy, from Voyn Kitchen & Bar to the Design Store, we design targeted campaigns that connect this multi-layered experience with the right audience, carrying the brand's distinct voice across every platform.",
+      "brandIntro": "Inspera Bodrum Culture & Arts brings culture, art, and life under one roof — with its stages, art academy, gastronomy, and design store. Adding color to Bodrum's cultural scene, this distinct venue gains national attention through the stage that bears Zülfü Livaneli's name.",
+      "featuredServices": [
+        "Digital Ad Management",
+        "Audience Strategy",
+        "Events & Cultural Communications"
+      ],
+      "stats": [
+        { "value": "4 Venues", "label": "Stage · Academy · Bar · Store" },
+        { "value": "National", "label": "Livaneli Stage" },
+        { "value": "Multi-Layered", "label": "Culture Experience" }
+      ],
+      "challenge": {
+        "head": "Telling a multi-layered venue",
+        "headEm": "in a single voice.",
+        "paragraphs": [
+          "A stage, an academy, a restaurant, and a store — all at once. Each unit addresses a different audience, but the brand's unity must hold at every touchpoint."
+        ]
+      },
+      "solution": {
+        "head": "Targeted campaigns,",
+        "headEm": "consistent brand voice.",
+        "paragraphs": [
+          "While we set separate audience strategies for each unit, we preserve the brand's distinct voice in every campaign — with flexible planning that matches the event calendar's tempo."
+        ]
+      }
+    }
+  },
+  "team": {
+    "roles": {
+      "founder": "Founder & Executive Lead",
+      "strategicPartner": "Strategic Partner & Executive Lead",
+      "marketingComms": "Head of Marketing & Communications",
+      "operations": "Head of Operations",
+      "performance": "Head of Performance Marketing",
+      "design": "Head of Design & Media Production"
+    },
+    "bios": {
+      "oguzOzbenli": "Founder of Ordino. Leads business development, marketing strategy, and brand partnerships across the agency. Brings a commercial lens to every engagement — translating campaign complexity into growth outcomes brands can measure.",
+      "handeAris": "Strategic partner and executive lead. Architect of Ordino's digital marketing approach. Leads long-term partnerships from 360° campaign strategy to brand positioning.",
+      "ilaydaOzcan": "Head of marketing and communications. Owns brand voice, creative content strategy, and PR end-to-end. Carries Ordino's story — and its clients' — into the world.",
+      "ugurOzbenli": "Head of operations. Keeps everything flowing — from agency processes and client management to resource planning and delivery tracking. Runs the engines behind Ordino.",
+      "omerToraman": "Head of performance marketing. Owns campaign management, optimization, and ROAS maximization across Google Ads, Meta, TikTok, and beyond. Data-driven, results-obsessed.",
+      "halisBattal": "Head of design and media production. Leads visual identity, video production, motion graphics, and digital design end-to-end. The quality bar for Ordino's creative output."
+    },
+    "structure": {
+      "groups": [
+        { "value": "12", "label": "Creative Team" },
+        { "value": "5", "label": "Ad Performance" },
+        { "value": "5", "label": "Strategic Planning" },
+        { "value": "6", "label": "Digital Production" }
+      ],
+      "section": {
+        "eyebrow": "Team Structure",
+        "title": "A 28-person",
+        "emphasis": "specialist team.",
+        "description": "From creative to ad performance, strategic planning to digital production — Ordino operates as a 28-person team working at the intersection of four disciplines.",
+        "footer": "An active team of {n} people"
+      }
+    },
+    "grid": {
+      "eyebrow": "The A-Team"
+    }
+  },
+  "news": {
+    "posts": {
+      "ai-reklam-optimizasyonu-2026": {
+        "date": "April 20, 2026",
+        "title": "2026 Trends in AI Ad Optimization",
+        "excerpt": "How is AI-powered ad management shaping up in 2026? From generative AI to automated bid optimization — everything you need to know.",
+        "readTime": "6 min read",
+        "author": "Ordino Team",
+        "authorRole": "AI & Performance Marketing"
+      },
+      "performans-marketing-rehberi": {
+        "date": "April 12, 2026",
+        "title": "Performance Marketing in Türkiye: A Comprehensive Guide",
+        "excerpt": "From Google Ads to Meta, TikTok to programmatic — results-focused performance marketing strategies for Turkish brands.",
+        "readTime": "8 min read",
+        "author": "Ordino Team",
+        "authorRole": "Performance Marketing"
+      },
+      "lokal-seo-2026": {
+        "date": "April 5, 2026",
+        "title": "Local SEO 2026: A Roadmap for Turkish Brands",
+        "excerpt": "From Google Business Profile to schema markup, local keywords to review management — a comprehensive SEO strategy for Türkiye.",
+        "readTime": "7 min read",
+        "author": "Ordino Team",
+        "authorRole": "SEO & Content Strategy"
+      },
+      "tiktok-algoritmasi-marka-stratejisi": {
+        "date": "March 28, 2026",
+        "title": "The TikTok Algorithm and Brand Strategy",
+        "excerpt": "Organic visibility on TikTok is now worth its weight in gold. How the algorithm works, creator partnerships, and brand strategy.",
+        "readTime": "5 min read",
+        "author": "Ordino Team",
+        "authorRole": "Social Media & Content"
+      }
+    },
+    "placeholder": "Content coming soon..."
+  }
+}

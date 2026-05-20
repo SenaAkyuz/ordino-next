@@ -1,10 +1,23 @@
 import { site } from "./site";
+import type { routing } from "@/i18n/routing";
 
-export type NavLink = {
+type AllPathnames = keyof typeof routing.pathnames;
+// Dynamic path'leri ([slug] içerenleri) hariç tut — statik Link href olarak kullanılabilir olanlar.
+export type Pathname = Exclude<AllPathnames, `${string}[${string}]${string}`>;
+
+export type InternalNavLink = {
+  label: string;
+  href: Pathname;
+  external?: false;
+};
+
+export type ExternalNavLink = {
   label: string;
   href: string;
-  external?: boolean;
+  external: true;
 };
+
+export type NavLink = InternalNavLink | ExternalNavLink;
 
 export const navLinks: NavLink[] = [
   { label: "Hizmetler", href: "/hizmetler" },
@@ -16,7 +29,8 @@ export const navLinks: NavLink[] = [
   { label: "İletişim", href: "/iletisim" },
 ];
 
-export const navCta: NavLink = {
+export const navCta: ExternalNavLink = {
   label: "Toplantı Planla",
   href: site.meetingUrl,
+  external: true,
 };

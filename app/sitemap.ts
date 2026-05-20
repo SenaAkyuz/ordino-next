@@ -1,50 +1,86 @@
 import type { MetadataRoute } from "next";
 import { caseStudies } from "@/lib/data/caseStudies";
 import { news } from "@/lib/data/news";
+import { routing } from "@/i18n/routing";
+import { getPathname } from "@/i18n/navigation";
+
+const host = "https://theordino.com";
+
+type Href = Parameters<typeof getPathname>[0]["href"];
+type ChangeFreq = NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
+
+function entry(
+  href: Href,
+  priority: number,
+  changeFrequency: ChangeFreq,
+): MetadataRoute.Sitemap[number] {
+  const url = host + getPathname({ locale: routing.defaultLocale, href });
+  const languages = Object.fromEntries(
+    routing.locales.map((locale) => [
+      locale,
+      host + getPathname({ locale, href }),
+    ]),
+  );
+  return {
+    url,
+    lastModified: new Date(),
+    changeFrequency,
+    priority,
+    alternates: { languages },
+  };
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://theordino.com";
-  const now = new Date();
-
-  // Ana statik sayfalar
-  const staticRoutes = [
-    { path: "", priority: 1.0, changeFrequency: "weekly" as const },
-    { path: "/hizmetler", priority: 0.9, changeFrequency: "monthly" as const },
-    { path: "/calisma", priority: 0.9, changeFrequency: "monthly" as const },
-    { path: "/referanslar", priority: 0.9, changeFrequency: "monthly" as const },
-    { path: "/platform", priority: 0.85, changeFrequency: "monthly" as const },
-    { path: "/hakkimizda", priority: 0.85, changeFrequency: "monthly" as const },
-    { path: "/iletisim", priority: 0.85, changeFrequency: "monthly" as const },
-    { path: "/blog", priority: 0.8, changeFrequency: "weekly" as const },
-    { path: "/iletisim/tesekkurler", priority: 0.3, changeFrequency: "yearly" as const },
-    // Yasal sayfalar
-    { path: "/gizlilik-politikasi", priority: 0.4, changeFrequency: "yearly" as const },
-    { path: "/kvkk", priority: 0.4, changeFrequency: "yearly" as const },
-    { path: "/cerez-politikasi", priority: 0.4, changeFrequency: "yearly" as const },
+  const staticRoutes: Array<{
+    href: Href;
+    priority: number;
+    changeFrequency: ChangeFreq;
+  }> = [
+    { href: "/", priority: 1.0, changeFrequency: "weekly" },
+    { href: "/hizmetler", priority: 0.9, changeFrequency: "monthly" },
+    { href: "/calisma", priority: 0.9, changeFrequency: "monthly" },
+    { href: "/referanslar", priority: 0.9, changeFrequency: "monthly" },
+    { href: "/platform", priority: 0.85, changeFrequency: "monthly" },
+    { href: "/hakkimizda", priority: 0.85, changeFrequency: "monthly" },
+    { href: "/iletisim", priority: 0.85, changeFrequency: "monthly" },
+    { href: "/blog", priority: 0.8, changeFrequency: "weekly" },
+    {
+      href: "/iletisim/tesekkurler",
+      priority: 0.3,
+      changeFrequency: "yearly",
+    },
+    {
+      href: "/gizlilik-politikasi",
+      priority: 0.4,
+      changeFrequency: "yearly",
+    },
+    { href: "/kvkk", priority: 0.4, changeFrequency: "yearly" },
+    {
+      href: "/cerez-politikasi",
+      priority: 0.4,
+      changeFrequency: "yearly",
+    },
   ];
 
-  const staticEntries = staticRoutes.map((route) => ({
-    url: `${base}${route.path}`,
-    lastModified: now,
-    changeFrequency: route.changeFrequency,
-    priority: route.priority,
-  }));
+  const staticEntries = staticRoutes.map((r) =>
+    entry(r.href, r.priority, r.changeFrequency),
+  );
 
-  // Dynamic case study sayfalari
-  const caseStudyEntries = caseStudies.map((cs) => ({
-    url: `${base}/referanslar/${cs.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
+  const caseStudyEntries = caseStudies.map((cs) =>
+    entry(
+      { pathname: "/referanslar/[slug]", params: { slug: cs.slug } },
+      0.7,
+      "monthly",
+    ),
+  );
 
-  // Dynamic blog yazilari
-  const blogEntries = news.map((post) => ({
-    url: `${base}/blog/${post.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
+  const blogEntries = news.map((post) =>
+    entry(
+      { pathname: "/blog/[slug]", params: { slug: post.slug } },
+      0.6,
+      "monthly",
+    ),
+  );
 
   return [...staticEntries, ...caseStudyEntries, ...blogEntries];
 }
