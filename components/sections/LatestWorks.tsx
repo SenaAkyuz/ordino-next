@@ -1,9 +1,21 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { latestWorks } from "@/lib/data/latestWorks";
+import {
+  latestWorksConfig,
+  type LatestWork,
+} from "@/lib/data/latestWorks";
 
 export async function LatestWorks() {
   const t = await getTranslations("home.latestWorks");
+  const tSectors = await getTranslations("latestWorks.sectors");
+  const tBrandLabels = await getTranslations("latestWorks.brandLabels");
+
+  const items: LatestWork[] = latestWorksConfig.map((cfg) => ({
+    slug: cfg.slug,
+    label: cfg.labelKey ? tBrandLabels(cfg.labelKey) : (cfg.label ?? cfg.slug),
+    sector: tSectors(cfg.sectorKey),
+    gradient: cfg.gradient,
+  }));
 
   return (
     <section data-theme="dark" className="w-full bg-dark-bg">
@@ -18,7 +30,7 @@ export async function LatestWorks() {
           </h2>
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {latestWorks.map((item) => (
+          {items.map((item) => (
             <Link
               key={item.slug}
               href={{

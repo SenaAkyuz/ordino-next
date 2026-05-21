@@ -33,7 +33,12 @@ export function WorkHero({
         <Reveal>
           <h1 className="mx-auto mb-14 max-w-[1200px] font-display text-[clamp(3rem,7vw,6.5rem)] font-light leading-[1.08] tracking-[-1.5px] text-black md:mb-20 [&_em]:italic [&_em]:font-normal">
             {title}
-            {emphasis && <em>{emphasis}</em>}
+            {emphasis && (
+              <>
+                {" "}
+                <em>{emphasis}</em>
+              </>
+            )}
           </h1>
         </Reveal>
         {sub && (

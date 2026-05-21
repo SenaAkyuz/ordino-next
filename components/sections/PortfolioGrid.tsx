@@ -1,8 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/ui/Reveal";
 import type { WorkPortfolioItem } from "@/lib/data/workPortfolio";
 
@@ -11,17 +12,19 @@ type PortfolioGridProps = {
 };
 
 export function PortfolioGrid({ items }: PortfolioGridProps) {
-  const [activeSector, setActiveSector] = useState<string>("Tümü");
+  const t = useTranslations("work.filter");
+  const allLabel = t("all");
+  const [activeSector, setActiveSector] = useState<string>(allLabel);
 
   const sectors = useMemo(() => {
     const uniqueSectors = Array.from(new Set(items.map((i) => i.sector)));
-    return ["Tümü", ...uniqueSectors];
-  }, [items]);
+    return [allLabel, ...uniqueSectors];
+  }, [items, allLabel]);
 
   const filteredItems = useMemo(() => {
-    if (activeSector === "Tümü") return items;
+    if (activeSector === allLabel) return items;
     return items.filter((i) => i.sector === activeSector);
-  }, [items, activeSector]);
+  }, [items, activeSector, allLabel]);
 
   return (
     <section
@@ -53,14 +56,17 @@ export function PortfolioGrid({ items }: PortfolioGridProps) {
           {filteredItems.map((item) => (
             <Reveal key={item.slug}>
               <Link
-                href={`/referanslar/${item.slug}`}
+                href={{
+                  pathname: "/referanslar/[slug]",
+                  params: { slug: item.slug },
+                }}
                 className="group block overflow-hidden"
               >
                 <div className="relative mb-6 aspect-[16/9] w-full overflow-hidden">
                   {item.image ? (
                     <Image
                       src={item.image}
-                      alt={`${item.brand} çalışması`}
+                      alt={t("altText", { brand: item.brand })}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.04]"
@@ -85,7 +91,7 @@ export function PortfolioGrid({ items }: PortfolioGridProps) {
                   {item.featuredServicesShort.join(" · ")}
                 </p>
                 <span className="inline-flex items-center gap-2 font-body text-[0.75rem] uppercase tracking-[1.5px] text-black transition-transform duration-300 group-hover:translate-x-1">
-                  Detayları Gör →
+                  {t("hoverLabel")}
                 </span>
               </Link>
             </Reveal>
@@ -94,7 +100,7 @@ export function PortfolioGrid({ items }: PortfolioGridProps) {
 
         {filteredItems.length === 0 && (
           <p className="mt-12 text-center font-body text-base text-gray">
-            Bu sektörde henüz çalışma yok.
+            {t("empty")}
           </p>
         )}
       </div>

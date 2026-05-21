@@ -1,49 +1,78 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
-import type { Locale } from "@/i18n/routing";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import { routing, type Locale } from "@/i18n/routing";
+import { site } from "@/lib/data/site";
+import {
+  workPortfolioConfig,
+  type WorkPortfolioItem,
+} from "@/lib/data/workPortfolio";
+
 import { WorkHero } from "@/components/sections/WorkHero";
 import { PortfolioGrid } from "@/components/sections/PortfolioGrid";
 import { AnalyticsBlock } from "@/components/sections/AnalyticsBlock";
 import { Cta } from "@/components/sections/Cta";
-import { workPortfolio } from "@/lib/data/workPortfolio";
 
-export const metadata: Metadata = {
-  title: "Çalışmalar",
-  description:
-    "Türk ve uluslararası markalara hizmet veren Ordino'nun seçili çalışmaları. Strateji, yaratıcılık ve büyüme odaklı projeler.",
+type Props = {
+  params: Promise<{ locale: Locale }>;
 };
 
-export default async function CalismaPage({
-  params,
-}: {
-  params: Promise<{ locale: Locale }>;
-}) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({
+    locale: locale as (typeof routing.locales)[number],
+    namespace: "work.metadata",
+  });
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
+
+export default async function CalismaPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const t = await getTranslations("work");
+  const tNav = await getTranslations("nav");
+  const tSectors = await getTranslations("latestWorks.sectors");
+  const tServices = await getTranslations("workPortfolio.featuredServicesShort");
+
+  const items: WorkPortfolioItem[] = workPortfolioConfig.map((cfg) => ({
+    slug: cfg.slug,
+    brand: cfg.brand,
+    sector: tSectors(cfg.sectorKey),
+    featuredServicesShort: cfg.featuredServicesShortKeys.map((k) => tServices(k)),
+    image: cfg.image,
+    gradient: cfg.gradient,
+    hasDetail: cfg.hasDetail,
+  }));
+
+  const analyticsItems = (t.raw as (key: string) => unknown)(
+    "analyticsBlock.items",
+  ) as string[];
+
   return (
     <>
       <WorkHero
-        eyebrow="Çalışmalarımız"
-        title="Markaları "
-        emphasis="büyütüyoruz."
-        sub="AI destekli zeka, gelişmiş otomasyon ve güçlü medya ağı ile uluslararası markalara hizmet veriyoruz."
+        eyebrow={t("hero.eyebrow")}
+        title={t("hero.title")}
+        emphasis={t("hero.emphasis")}
+        sub={t("hero.sub")}
         scrollTo="#portfolio"
       />
-      <PortfolioGrid items={workPortfolio} />
+      <PortfolioGrid items={items} />
       <AnalyticsBlock
-        title="Birikerek artan"
-        emphasis="sonuçlar."
-        description="Aktif müşteri hesapları üzerinden son on iki ayın ortalama değerleri. Seçilmiş başarı hikayeleri değil — gerçek rakamlar."
-        items={[
-          "50'den fazla marka büyüme hikayesi",
-          "£2M+ Yönetilen Reklam Bütçesi",
-          "AI Optimizasyonları ile güncel başarı",
-        ]}
+        title={t("analyticsBlock.title")}
+        emphasis={t("analyticsBlock.emphasis")}
+        description={t("analyticsBlock.description")}
+        items={analyticsItems}
         showPartners={false}
       />
       <Cta
-        title="Bir sonraki başarı hikayesi"
-        emphasis="sizin olsun."
+        title={t("cta.title")}
+        emphasis={t("cta.emphasis")}
+        buttonLabel={tNav("ctaLabel")}
+        href={site.meetingUrl}
       />
     </>
   );
