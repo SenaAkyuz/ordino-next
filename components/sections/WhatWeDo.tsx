@@ -1,11 +1,11 @@
 import { Reveal } from "@/components/ui/Reveal";
 
 type WhatWeDoProps = {
-  eyebrow?: string;
+  eyebrow: string;
   title: string;
 };
 
-export function WhatWeDo({ eyebrow = "Yaptıklarımız", title }: WhatWeDoProps) {
+export function WhatWeDo({ eyebrow, title }: WhatWeDoProps) {
   return (
     <section
       data-theme="dark"

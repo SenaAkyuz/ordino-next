@@ -20,7 +20,12 @@ export function ServicesHeroGrid({ cards }: ServicesHeroGridProps) {
               </p>
               <h4 className="mb-4 font-display text-[1.6rem] font-normal leading-[1.2] tracking-[-0.3px] [&_em]:italic [&_em]:font-normal">
                 {card.title}
-                {card.titleEm && <em>{card.titleEm}</em>}
+                {card.titleEm && (
+                  <>
+                    {" "}
+                    <em>{card.titleEm}</em>
+                  </>
+                )}
               </h4>
               <p className="font-body text-[0.9rem] font-light leading-[1.7] text-[#666]">
                 {card.description}

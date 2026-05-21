@@ -475,6 +475,11 @@
         "description": "AI as a strategic tool. Data analytics, segmentation, creative processes, and campaign optimization."
       }
     },
+    "accordionHeader": {
+      "eyebrow": "Service Categories",
+      "title": "Expert across <em>9 disciplines.</em> Managed under <em>one roof.</em>"
+    },
+    "accordionCtaLabel": "Learn More →",
     "accordion": {
       "01": {
         "num": "01 — Media & Advertising",

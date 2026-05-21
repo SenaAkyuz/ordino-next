@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/ui/Reveal";
 import type { ServiceDetail as ServiceDetailData } from "@/lib/data/services";
 
@@ -10,6 +11,7 @@ type ServicesAccordionProps = {
 };
 
 export function ServicesAccordion({ details }: ServicesAccordionProps) {
+  const t = useTranslations("services");
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
   useEffect(() => {
@@ -42,10 +44,12 @@ export function ServicesAccordion({ details }: ServicesAccordionProps) {
         <Reveal>
           <div className="mb-16 text-center md:mb-20">
             <p className="mb-4 font-body text-[0.75rem] uppercase tracking-[3px] text-accent">
-              Hizmet Kategorileri
+              {t("accordionHeader.eyebrow")}
             </p>
             <h2 className="font-display text-[clamp(2.4rem,4vw,3.6rem)] font-light leading-[1.2] tracking-[-0.5px] text-black [&_em]:italic [&_em]:font-normal">
-              9 alanda <em>uzman.</em> Tek elden <em>yönetim.</em>
+              {t.rich("accordionHeader.title", {
+                em: (chunks) => <em>{chunks}</em>,
+              })}
             </h2>
           </div>
         </Reveal>
@@ -53,6 +57,8 @@ export function ServicesAccordion({ details }: ServicesAccordionProps) {
         <div className="border-t border-[#e5e5e5]">
           {details.map((detail, index) => {
             const isActive = activeIndex === index;
+            const [numPart, titlePart] = detail.num.split(" — ");
+
             return (
               <Reveal key={detail.slug}>
                 <div
@@ -63,7 +69,6 @@ export function ServicesAccordion({ details }: ServicesAccordionProps) {
                       : "border-b border-[#e5e5e5] bg-white transition-colors duration-300 hover:bg-light-bg/50"
                   }
                 >
-                  {/* Accordion Header (clickable) */}
                   <button
                     type="button"
                     onClick={() => toggle(index)}
@@ -79,7 +84,7 @@ export function ServicesAccordion({ details }: ServicesAccordionProps) {
                             : "font-display text-[1.4rem] font-light text-gray transition-colors duration-300 md:text-[1.8rem]"
                         }
                       >
-                        {detail.num.split(" — ")[0]}
+                        {numPart}
                       </span>
                       <h3
                         className={
@@ -88,11 +93,10 @@ export function ServicesAccordion({ details }: ServicesAccordionProps) {
                             : "font-display text-[1.4rem] font-light leading-[1.2] text-black transition-colors duration-300 md:text-[2rem]"
                         }
                       >
-                        {detail.num.split(" — ")[1]}
+                        {titlePart}
                       </h3>
                     </div>
 
-                    {/* Plus/Minus Icon */}
                     <span
                       className="relative flex h-8 w-8 shrink-0 items-center justify-center md:h-10 md:w-10"
                       aria-hidden="true"
@@ -108,7 +112,6 @@ export function ServicesAccordion({ details }: ServicesAccordionProps) {
                     </span>
                   </button>
 
-                  {/* Accordion Content (collapsible) */}
                   <div
                     id={`accordion-content-${detail.slug}`}
                     role="region"
@@ -120,20 +123,17 @@ export function ServicesAccordion({ details }: ServicesAccordionProps) {
                   >
                     <div className="overflow-hidden">
                       <div className="grid grid-cols-1 gap-8 px-5 pb-10 md:grid-cols-[1fr_1.4fr] md:gap-12 md:px-8 md:pb-12 lg:gap-16">
-                        {/* Sol: Baslik + Lead */}
                         <div>
                           <h4 className="mb-5 font-display text-[clamp(1.6rem,2.4vw,2rem)] font-light leading-[1.25] text-black [&_em]:italic [&_em]:font-normal">
                             {detail.title}
                             <br />
-                            {detail.titleHead}
-                            <em>{detail.titleEm}</em>
+                            {detail.titleHead} <em>{detail.titleEm}</em>
                           </h4>
                           <p className="font-body text-[0.95rem] font-light leading-[1.8] text-[#555]">
                             {detail.lead}
                           </p>
                         </div>
 
-                        {/* Sag: Items + CTA */}
                         <div>
                           <ul className="grid list-none grid-cols-1 gap-x-[30px] gap-y-[12px] sm:grid-cols-2">
                             {detail.items.map((item) => (
@@ -149,7 +149,7 @@ export function ServicesAccordion({ details }: ServicesAccordionProps) {
                             href="/iletisim"
                             className="mt-8 inline-block rounded-[10em] border border-black bg-black px-7 py-3 font-body text-[0.85rem] text-white transition-[background,color] duration-300 hover:bg-transparent hover:text-black"
                           >
-                            Detaylı Bilgi Al →
+                            {t("accordionCtaLabel")}
                           </Link>
                         </div>
                       </div>

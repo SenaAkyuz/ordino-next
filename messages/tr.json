@@ -475,6 +475,11 @@
         "description": "Yapay zeka, stratejik bir araç. Veri analitiği, segmentasyon, kreatif süreçler ve kampanya optimizasyonu."
       }
     },
+    "accordionHeader": {
+      "eyebrow": "Hizmet Kategorileri",
+      "title": "9 alanda <em>uzman.</em> Tek elden <em>yönetim.</em>"
+    },
+    "accordionCtaLabel": "Detaylı Bilgi Al →",
     "accordion": {
       "01": {
         "num": "01 — Medya & Reklam",

@@ -13,6 +13,7 @@ type AnalyticsBlockProps = {
   items: string[];
   partners?: Partner[];
   showPartners?: boolean;
+  marqueeLabel?: string;
 };
 
 const defaultPartners: Partner[] = [
@@ -29,6 +30,7 @@ export function AnalyticsBlock({
   items,
   partners = defaultPartners,
   showPartners = true,
+  marqueeLabel = "Resmi Reklam Ortaklıkları",
 }: AnalyticsBlockProps) {
   // Marquee icin 8x duplicate (mobilde dar viewport icin ekstra guvenlik)
   const marqueeItems = [
@@ -82,7 +84,7 @@ export function AnalyticsBlock({
       <Reveal>
         <div className="mt-16 md:mt-24">
           <p className="mb-8 px-5 text-center font-body text-[0.72rem] uppercase tracking-[3px] text-black/50 md:px-10 lg:px-20">
-            Resmi Reklam Ortaklıkları
+            {marqueeLabel}
           </p>
           <div className="marquee-pause relative w-full overflow-hidden py-6 md:py-12">
             {/* Sol/sag yatay fade-out (beyazdan saydama) — mobilde cok dar */}
