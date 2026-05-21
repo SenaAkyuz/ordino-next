@@ -1,8 +1,11 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/Reveal";
 import { clients } from "@/lib/data/clients";
 
-export function ClientsShowcase() {
+export async function ClientsShowcase() {
+  const t = await getTranslations("home.clientsShowcase");
+
   return (
     <section
       data-theme="light"
@@ -12,11 +15,11 @@ export function ClientsShowcase() {
         <Reveal>
           <div className="mb-12 text-center md:mb-20">
             <h2 className="mb-6 font-display text-[clamp(2rem,4vw,3.6rem)] font-light tracking-[-0.8px] text-black">
-              Çalıştığımız Markalar
+              {t("eyebrow")}
             </h2>
             <div className="mx-auto mb-6 h-px w-20 bg-accent" aria-hidden="true" />
             <p className="mx-auto max-w-[520px] font-body text-[0.95rem] font-light leading-[1.6] text-gray md:text-[1rem]">
-              Stratejik ortaklıklarla büyüyen markalara hizmet veriyoruz.
+              {t("sub")}
             </p>
           </div>
         </Reveal>

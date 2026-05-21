@@ -1,6 +1,7 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/ui/Reveal";
 import { site } from "@/lib/data/site";
+import type { Pathname } from "@/lib/data/nav";
 
 type CtaProps = {
   title?: string;
@@ -37,7 +38,7 @@ export function Cta({
       </Reveal>
       <Reveal>
         {isInternal(href) ? (
-          <Link href={href} className={linkClass}>
+          <Link href={href as Pathname} className={linkClass}>
             {buttonLabel}
           </Link>
         ) : (

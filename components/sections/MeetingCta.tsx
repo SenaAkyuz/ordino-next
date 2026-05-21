@@ -1,7 +1,10 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/ui/Reveal";
 
-export function MeetingCta() {
+export async function MeetingCta() {
+  const t = await getTranslations("home.meetingCta");
+
   return (
     <section
       id="meeting-cta"
@@ -11,15 +14,13 @@ export function MeetingCta() {
       <div className="mx-auto max-w-[1100px] grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-20">
         <Reveal>
           <p className="mb-5 font-body text-[0.75rem] uppercase tracking-[3px] text-accent">
-            Bir Sonraki Adım
+            {t("eyebrow")}
           </p>
           <h2 className="mb-6 font-display text-[clamp(2.2rem,3.8vw,3.4rem)] font-light leading-[1.2] tracking-[-0.5px] [&_em]:italic [&_em]:font-normal">
-            Bir Toplantı <em>Planlayalım.</em>
+            {t("headline.lead")} <em>{t("headline.highlight")}</em>
           </h2>
           <p className="font-body text-base font-light leading-[1.8] text-[#555]">
-            Markanızın hedeflerini ve ihtiyaçlarını birlikte değerlendirelim.
-            Kısa bir brief paylaşın, ekibimiz bir iş günü içinde size dönüş
-            yapsın.
+            {t("body")}
           </p>
         </Reveal>
         <Reveal delay={0.15}>
@@ -40,16 +41,16 @@ export function MeetingCta() {
               </svg>
             </div>
             <h3 className="mb-3 font-display text-[1.6rem] font-normal text-black">
-              Brief&apos;inizi paylaşın
+              {t("subHeader")}
             </h3>
             <p className="mb-8 font-body text-[0.95rem] font-light leading-[1.6] text-[#666]">
-              Formu doldurun, projenizi birlikte değerlendirelim.
+              {t("subBody")}
             </p>
             <Link
-              href="/iletisim#contact-form"
+              href={{ pathname: "/iletisim", hash: "contact-form" }}
               className="inline-block rounded-[10em] bg-accent px-10 py-4 font-body text-[0.95rem] text-white transition-[opacity] duration-300 hover:opacity-85"
             >
-              İletişim Formuna Git
+              {t("button")}
             </Link>
           </div>
         </Reveal>

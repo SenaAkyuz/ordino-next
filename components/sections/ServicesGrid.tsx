@@ -5,110 +5,17 @@ export type ServiceBlock = {
   items: string[];
 };
 
-const defaultServices: ServiceBlock[] = [
-  {
-    title: "01 — Medya & Reklam",
-    items: [
-      "Medya planlama ve satın alma",
-      "Programatik reklam yönetimi",
-      "TV, radyo ve geleneksel medya",
-      "Outdoor (DOOH)",
-      "TVC ve dijital film prodüksiyonu",
-    ],
-  },
-  {
-    title: "02 — Sosyal Medya Yönetimi",
-    items: [
-      "İçerik takvimi ve strateji",
-      "Instagram, TikTok, LinkedIn",
-      "Topluluk yönetimi",
-      "Influencer iş birlikleri",
-      "Sosyal dinleme",
-    ],
-  },
-  {
-    title: "03 — İçerik Üretimi",
-    items: [
-      "Video prodüksiyon",
-      "Fotoğraf çekim",
-      "Copywriting",
-      "Grafik ve motion tasarım",
-      "Marka hikayesi",
-    ],
-  },
-  {
-    title: "04 — SEO & Organik Büyüme",
-    items: [
-      "Teknik SEO denetimi",
-      "Anahtar kelime stratejisi",
-      "On-page optimizasyon",
-      "Lokal SEO",
-      "Schema markup",
-    ],
-  },
-  {
-    title: "05 — Görsel Tasarım",
-    items: [
-      "Logo ve marka kimliği",
-      "Marka rehberi",
-      "Tipografi ve renk",
-      "Ambalaj tasarımı",
-      "Kampanya görselleri",
-    ],
-  },
-  {
-    title: "06 — Web Sitesi Geliştirme & Optimizasyon",
-    items: [
-      "Next.js ve React geliştirme",
-      "Kurumsal site ve landing page",
-      "Core Web Vitals optimizasyonu",
-      "CMS entegrasyonu",
-      "API entegrasyonları",
-    ],
-  },
-  {
-    title: "07 — E-ticaret Çözümleri",
-    items: [
-      "Shopify mağaza geliştirme",
-      "WooCommerce ve özel platform",
-      "Ödeme ve kargo entegrasyonu",
-      "Sepet terk optimizasyonu",
-      "E-ticaret SEO",
-    ],
-  },
-  {
-    title: "08 — Mailing & CRM",
-    items: [
-      "E-posta pazarlama strateji",
-      "Otomasyon flow'ları",
-      "Müşteri segmentasyonu",
-      "CRM entegrasyonu",
-      "Newsletter tasarım",
-    ],
-  },
-  {
-    title: "09 — AI & Otomasyon",
-    items: [
-      "AI destekli içerik üretimi",
-      "Müşteri davranışı tahminleme",
-      "Kampanya AI otomasyonu",
-      "Chatbot çözümleri",
-      "İş akışı otomasyonu",
-    ],
-  },
-];
-
 type ServicesGridProps = {
-  title?: string;
-  emphasis?: string;
-  services?: ServiceBlock[];
+  title: string;
+  emphasis: string;
+  services: ServiceBlock[];
   id?: string;
 };
 
 export function ServicesGrid({
-  title = "Hizmet ",
-  emphasis = "Kategorilerimiz",
-  services = defaultServices,
+  title,
+  emphasis,
+  services,
   id = "services",
 }: ServicesGridProps) {
   return (

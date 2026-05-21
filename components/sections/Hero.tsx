@@ -1,7 +1,10 @@
-﻿import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/ui/Reveal";
 
-export function Hero() {
+export async function Hero() {
+  const t = await getTranslations("home.hero");
+
   return (
     <section
       id="home"
@@ -21,13 +24,14 @@ export function Hero() {
       <div className="relative z-[2] flex min-h-screen w-full flex-col items-center justify-center gap-9 px-6 pt-[120px] pb-16 text-center md:hidden">
         <Reveal>
           <h1 className="font-display text-[clamp(2.4rem,9vw,3.6rem)] font-light leading-[1.08] tracking-[-1px] text-dark-bg [&_em]:font-normal [&_em]:italic">
-            Strateji. <em>Yaratıcılık.</em> Büyüme.
+            {t("headline.lead")} <em>{t("headline.highlight")}</em>{" "}
+            {t("headline.tail")}
           </h1>
         </Reveal>
 
         <Reveal delay={0.15}>
           <p className="mx-auto max-w-[420px] font-body text-[0.95rem] leading-[1.6] tracking-[0.3px] text-dark-bg/70">
-            AI destekli reklam zekası ile daha akıllı kampanyalar, hedefli iletişim ve ölçülebilir büyüme.
+            {t("subhead")}
           </p>
         </Reveal>
 
@@ -41,13 +45,13 @@ export function Hero() {
               href="/hizmetler"
               className="inline-block w-full max-w-[300px] rounded-[10em] border border-dark-bg bg-dark-bg px-7 py-3 text-center text-[0.92rem] text-white"
             >
-              Hizmetleri Keşfet
+              {t("cta1")}
             </Link>
             <Link
               href="/iletisim"
               className="inline-block w-full max-w-[300px] rounded-[10em] border border-dark-bg px-7 py-3 text-center text-[0.92rem] text-dark-bg"
             >
-              İletişime Geç
+              {t("cta2")}
             </Link>
           </div>
         </Reveal>
@@ -58,13 +62,14 @@ export function Hero() {
         <div className="flex max-w-[640px] flex-1 flex-col items-start text-left">
           <Reveal>
             <h1 className="font-display text-[clamp(2.8rem,5.6vw,5.4rem)] font-light leading-[1.04] tracking-[-1.5px] text-dark-bg [&_em]:font-normal [&_em]:italic">
-              Strateji. <em>Yaratıcılık.</em> Büyüme.
+              {t("headline.lead")} <em>{t("headline.highlight")}</em>{" "}
+              {t("headline.tail")}
             </h1>
           </Reveal>
 
           <Reveal delay={0.15}>
             <p className="mt-7 max-w-[560px] font-body text-[1.05rem] font-light leading-[1.65] tracking-[0.3px] text-dark-bg/70">
-              AI destekli reklam zekası ile daha akıllı kampanyalar, hedefli iletişim ve ölçülebilir büyüme.
+              {t("subhead")}
             </p>
           </Reveal>
 
@@ -74,13 +79,13 @@ export function Hero() {
                 href="/hizmetler"
                 className="inline-block rounded-[10em] border border-dark-bg bg-dark-bg px-9 py-[14px] text-[0.92rem] text-white transition-[background,color] duration-[400ms] hover:bg-transparent hover:text-dark-bg"
               >
-                Hizmetleri Keşfet
+                {t("cta1")}
               </Link>
               <Link
                 href="/iletisim"
                 className="inline-block rounded-[10em] border border-dark-bg px-9 py-[14px] text-[0.92rem] text-dark-bg transition-[background,color] duration-[400ms] hover:bg-dark-bg hover:text-white"
               >
-                İletişime Geç
+                {t("cta2")}
               </Link>
             </div>
           </Reveal>
@@ -93,11 +98,8 @@ export function Hero() {
         </Reveal>
       </div>
 
-      {/* Scroll gostergesi â€” section'in dogrudan cocugu, viewport sag kenarina
-          sabit. Onceden max-w-[1400px] container icindeydi ve telefonla
-          cakisiyordu. */}
       <div className="pointer-events-none absolute bottom-10 right-4 z-[3] hidden flex-col items-center gap-[14px] text-[0.65rem] uppercase tracking-[3px] text-dark-bg/45 md:flex lg:right-6">
-        Scroll
+        {t("scrollLabel")}
         <span
           className="h-10 w-px bg-gradient-to-b from-transparent to-dark-bg/35"
           aria-hidden="true"

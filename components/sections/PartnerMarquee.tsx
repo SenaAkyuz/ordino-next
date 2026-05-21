@@ -7,7 +7,7 @@ type Partner = {
 };
 
 type PartnerMarqueeProps = {
-  eyebrow?: string;
+  eyebrow: string;
   partners?: Partner[];
 };
 
@@ -19,7 +19,7 @@ const defaultPartners: Partner[] = [
 ];
 
 export function PartnerMarquee({
-  eyebrow = "Resmi Reklam Ortaklıkları",
+  eyebrow,
   partners = defaultPartners,
 }: PartnerMarqueeProps) {
   // Marquee icin 8x duplicate (mobilde dar viewport icin ekstra guvenlik)

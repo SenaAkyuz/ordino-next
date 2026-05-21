@@ -3,28 +3,21 @@ import { AnimatedNumber } from "@/components/ui/AnimatedNumber";
 
 type Stat = { value: string; label: string };
 
-const defaultStats: Stat[] = [
-  { value: "11", label: "Yıllık Tecrübe" },
-  { value: "50+", label: "Marka ile Çalışıldı" },
-  { value: "£2M+", label: "Yönetilen Reklam Bütçesi" },
-  { value: "Binlerce", label: "Yönetilen Kampanya" },
-];
-
 type HowWeWorkProps = {
-  eyebrow?: string;
-  title?: string;
-  emphasis?: string;
-  description?: string;
-  stats?: Stat[];
+  eyebrow: string;
+  title: string;
+  emphasis: string;
+  description: string;
+  stats: Stat[];
   id?: string;
 };
 
 export function HowWeWork({
-  eyebrow = "Nasıl Çalışıyoruz",
-  title = "Yaratıcı +",
-  emphasis = "Analitik",
-  description = "Veriye dayalı yaratıcılarız. Veri bilimi ile pazarlama uzmanlığını birleştirip ölçülebilir büyüme sağlarız. Markanızın hikayesini stratejik analiz, AI optimizasyonu ve yaratıcı prodüksiyonla anlamlı sonuçlara dönüştürüyoruz.",
-  stats = defaultStats,
+  eyebrow,
+  title,
+  emphasis,
+  description,
+  stats,
   id = "about",
 }: HowWeWorkProps) {
   return (
