@@ -2,45 +2,40 @@
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
 import { Reveal } from "@/components/ui/Reveal";
 
-const industries = [
-  "E-Ticaret / DTC",
-  "SaaS / Yazılım",
-  "Seyahat / Konaklama",
-  "Eğitim",
-  "Gayrimenkul",
-  "Finans / Fintech",
-  "Sağlık",
-  "B2B / Endüstriyel",
-  "Kamu Sektörü",
-  "Diğer",
-];
+const INDUSTRY_KEYS = [
+  "ecommerce",
+  "saas",
+  "travel",
+  "education",
+  "realEstate",
+  "finance",
+  "healthcare",
+  "b2b",
+  "publicSector",
+  "other",
+] as const;
 
-const services = [
-  "Strateji & Denetim",
-  "Performans Medya",
-  "Yaratıcı & Prodüksiyon",
-  "Analitik & Atribüsyon",
-  "Büyüme & Ortaklıklar",
-  "CRO / Landing Page",
-  "Tam Servis Ortaklığı",
-];
+const SERVICE_KEYS = [
+  "strategy",
+  "performance",
+  "creative",
+  "analytics",
+  "growth",
+  "cro",
+  "fullService",
+] as const;
 
-const timings = [
-  "Hemen başlamamız gerek",
-  "Önümüzdeki ay içinde",
-  "3+ ay sonra",
-  "Sadece keşfediyoruz",
-];
+const TIMING_KEYS = [
+  "immediate",
+  "withinMonth",
+  "threePlus",
+  "exploring",
+] as const;
 
-const budgets = [
-  "10.000 TL altı",
-  "10.000 — 50.000 TL",
-  "50.000 — 250.000 TL",
-  "250.000 — 1M TL",
-  "1M TL üzeri",
-];
+const BUDGET_KEYS = ["tier1", "tier2", "tier3", "tier4", "tier5"] as const;
 
 const inputClass =
   "w-full border-0 border-b border-[#ddd] bg-transparent py-[14px] font-body text-base font-light text-black outline-none transition-colors duration-300 focus:border-b-accent disabled:opacity-60";
@@ -51,6 +46,8 @@ type Status = "idle" | "pending" | "success";
 
 export function ContactForm() {
   const router = useRouter();
+  const locale = useLocale();
+  const t = useTranslations("contact");
   const [status, setStatus] = useState<Status>("idle");
   const formRef = useRef<HTMLFormElement>(null);
   const dismissRef = useRef<number | null>(null);
@@ -95,14 +92,14 @@ export function ContactForm() {
         throw new Error(`Submit failed (${res.status})`);
       }
 
-      router.push("/iletisim/tesekkurler");
+      const thanksPath =
+        locale === "en" ? "/en/contact/thank-you" : "/iletisim/tesekkurler";
+      router.push(thanksPath);
     } catch (error) {
       console.error("[contact-form] error:", error);
       setStatus("idle");
       if (typeof window !== "undefined") {
-        window.alert(
-          "Form gönderilirken bir hata oluştu. Lütfen birkaç saniye sonra tekrar deneyin.",
-        );
+        window.alert(t("errors.generic"));
       }
     }
   };
@@ -117,9 +114,9 @@ export function ContactForm() {
         <Reveal>
           <div>
             <h3 className="mb-[30px] font-display text-[1.8rem] font-normal [&_em]:italic [&_em]:font-normal">
-              Görüşmeyi <em>başlatalım.</em>
+              {t("headline.lead")} <em>{t("headline.highlight")}</em>
             </h3>
-            <InfoBlock label="Yeni İş">
+            <InfoBlock label={t("sideInfo.newBusiness")}>
               <a
                 href="mailto:theordino.com"
                 className="block font-body text-base font-light leading-[1.6] text-black transition-colors hover:text-accent"
@@ -127,7 +124,7 @@ export function ContactForm() {
                 theordino.com
               </a>
             </InfoBlock>
-            <InfoBlock label="Kariyer">
+            <InfoBlock label={t("sideInfo.careers")}>
               <a
                 href="mailto:info@theordino.com"
                 className="block font-body text-base font-light leading-[1.6] text-black transition-colors hover:text-accent"
@@ -135,7 +132,7 @@ export function ContactForm() {
                 info@theordino.com
               </a>
             </InfoBlock>
-            <InfoBlock label="Telefon">
+            <InfoBlock label={t("sideInfo.phone")}>
               <a
                 href="tel:+902129967147"
                 className="block font-body text-base font-light leading-[1.6] text-black transition-colors hover:text-accent"
@@ -143,7 +140,7 @@ export function ContactForm() {
                 0212 996 71 47
               </a>
             </InfoBlock>
-            <InfoBlock label="Stüdyo">
+            <InfoBlock label={t("sideInfo.studio")}>
               <p className="block font-body text-base font-light leading-[1.6] text-black">
                 Ferko Signature Plaza, A Blok
                 <br />
@@ -152,14 +149,14 @@ export function ContactForm() {
                 34394 Şişli / Istanbul — Türkiye
               </p>
             </InfoBlock>
-            <InfoBlock label="Çalışma Saatleri">
+            <InfoBlock label={t("sideInfo.officeHours")}>
               <p className="block font-body text-base font-light leading-[1.6] text-black">
-                Pazartesi — Cuma
+                {t("sideInfo.weekdays")}
                 <br />
-                09:00 — 19:00 (GMT+3)
+                {t("sideInfo.hours")}
               </p>
             </InfoBlock>
-            <InfoBlock label="Takip Et">
+            <InfoBlock label={t("sideInfo.follow")}>
               {["Instagram", "LinkedIn"].map((label) => (
                 <a
                   key={label}
@@ -204,11 +201,11 @@ export function ContactForm() {
                   </svg>
                 </span>
                 <h4 className="font-display text-[1.5rem] font-normal text-black">
-                  Mesajınız alındı.
+                  {t("buttons.successTitle")}
                 </h4>
               </div>
               <p className="font-body text-[0.95rem] font-light leading-[1.6] text-[#3b5e42]">
-                Teşekkürler — kısa süre içinde dönüş yapacağız.
+                {t("buttons.successBody")}
               </p>
             </div>
 
@@ -220,41 +217,74 @@ export function ContactForm() {
               }`}
               aria-hidden={status === "success"}
             >
-              <fieldset
-                disabled={status !== "idle"}
-                className="contents"
-              >
+              <fieldset disabled={status !== "idle"} className="contents">
                 <p className="mb-[10px] font-body text-[0.95rem] font-light leading-[1.6] text-[#666]">
-                  Kısa bir brief gönderin — bir iş günü içinde dönüş yapacağız.
+                  {t("intro")}
                 </p>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <Field id="firstName" label="Adınız">
-                    <input type="text" id="firstName" name="firstName" required className={inputClass} />
+                  <Field id="firstName" label={t("fields.firstName")}>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      required
+                      className={inputClass}
+                    />
                   </Field>
-                  <Field id="lastName" label="Soyadınız">
-                    <input type="text" id="lastName" name="lastName" required className={inputClass} />
+                  <Field id="lastName" label={t("fields.lastName")}>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      required
+                      className={inputClass}
+                    />
                   </Field>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <Field id="email" label="E-posta">
-                    <input type="email" id="email" name="email" required className={inputClass} />
+                  <Field id="email" label={t("fields.email")}>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      className={inputClass}
+                    />
                   </Field>
-                  <Field id="phone" label="Telefon">
-                    <input type="tel" id="phone" name="phone" required className={inputClass} />
+                  <Field id="phone" label={t("fields.phone")}>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      className={inputClass}
+                    />
                   </Field>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <Field id="company" label="Şirket (opsiyonel)">
-                    <input type="text" id="company" name="company" className={inputClass} />
+                  <Field id="company" label={t("fields.company")}>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      className={inputClass}
+                    />
                   </Field>
-                  <Field id="industry" label="Sektör (opsiyonel)">
-                    <select id="industry" name="sector" defaultValue="" className={inputClass}>
-                      <option value="">Sektör seçin…</option>
-                      {industries.map((r) => (
-                        <option key={r}>{r}</option>
+                  <Field id="industry" label={t("fields.industry")}>
+                    <select
+                      id="industry"
+                      name="sector"
+                      defaultValue=""
+                      className={inputClass}
+                    >
+                      <option value="">{t("placeholders.industry")}</option>
+                      {INDUSTRY_KEYS.map((key) => (
+                        <option key={key} value={key}>
+                          {t(`industryOptions.${key}`)}
+                        </option>
                       ))}
                     </select>
                   </Field>
@@ -262,22 +292,25 @@ export function ContactForm() {
 
                 <div>
                   <label className={labelClass}>
-                    İstenen Hizmetler{" "}
+                    {t("fields.services")}{" "}
                     <span className="ml-[6px] text-[0.65rem] font-light tracking-[1px] normal-case text-gray">
-                      (uygun olanları seçin)
+                      {t("fields.servicesHint")}
                     </span>
                   </label>
                   <div className="mt-1 flex flex-wrap gap-[10px]">
-                    {services.map((s) => (
-                      <label key={s} className="relative cursor-pointer select-none">
+                    {SERVICE_KEYS.map((key) => (
+                      <label
+                        key={key}
+                        className="relative cursor-pointer select-none"
+                      >
                         <input
                           type="checkbox"
                           name="services"
-                          value={s}
+                          value={key}
                           className="peer pointer-events-none absolute opacity-0"
                         />
                         <span className="inline-block rounded-[10em] border border-[#ddd] bg-transparent px-5 py-[10px] font-body text-[0.85rem] text-black transition-[background,color,border-color] duration-300 hover:border-black peer-checked:border-black peer-checked:bg-black peer-checked:text-white">
-                          {s}
+                          {t(`serviceOptions.${key}`)}
                         </span>
                       </label>
                     ))}
@@ -285,29 +318,43 @@ export function ContactForm() {
                 </div>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <Field id="timing" label="Zamanlama (opsiyonel)">
-                    <select id="timing" name="timing" defaultValue="" className={inputClass}>
-                      <option value="">Zamanlama seçin…</option>
-                      {timings.map((t) => (
-                        <option key={t}>{t}</option>
+                  <Field id="timing" label={t("fields.timing")}>
+                    <select
+                      id="timing"
+                      name="timing"
+                      defaultValue=""
+                      className={inputClass}
+                    >
+                      <option value="">{t("placeholders.timing")}</option>
+                      {TIMING_KEYS.map((key) => (
+                        <option key={key} value={key}>
+                          {t(`timingOptions.${key}`)}
+                        </option>
                       ))}
                     </select>
                   </Field>
-                  <Field id="budget" label="Aylık Reklam Bütçesi (opsiyonel)">
-                    <select id="budget" name="budget" defaultValue="" className={inputClass}>
-                      <option value="">Aralık seçin…</option>
-                      {budgets.map((b) => (
-                        <option key={b}>{b}</option>
+                  <Field id="budget" label={t("fields.budget")}>
+                    <select
+                      id="budget"
+                      name="budget"
+                      defaultValue=""
+                      className={inputClass}
+                    >
+                      <option value="">{t("placeholders.budget")}</option>
+                      {BUDGET_KEYS.map((key) => (
+                        <option key={key} value={key}>
+                          {t(`budgetOptions.${key}`)}
+                        </option>
                       ))}
                     </select>
                   </Field>
                 </div>
 
-                <Field id="message" label="Projeniz hakkında bize bilgi verin (opsiyonel)">
+                <Field id="message" label={t("fields.message")}>
                   <textarea
                     id="message"
                     name="message"
-                    placeholder="Hedefler, zamanlama, mevcut araçlar, en büyük zorluk…"
+                    placeholder={t("placeholders.message")}
                     className={`${inputClass} min-h-[120px] resize-y`}
                   />
                 </Field>
@@ -318,17 +365,19 @@ export function ContactForm() {
                     disabled={status !== "idle"}
                     className="self-start cursor-pointer rounded-[10em] border border-black bg-white px-12 py-4 font-body text-[0.95rem] font-normal text-black transition-[background,color] duration-[400ms] hover:bg-black hover:text-white disabled:cursor-wait disabled:opacity-70 disabled:hover:bg-white disabled:hover:text-black"
                   >
-                    {status === "pending" ? "Gönderiliyor…" : "Mesaj Gönder"}
+                    {status === "pending"
+                      ? t("buttons.submitting")
+                      : t("buttons.submit")}
                   </button>
                   <p className="m-0 max-w-[280px] font-body text-[0.78rem] font-light leading-[1.5] text-gray">
-                    Göndererek{" "}
+                    {t("privacy.prefix")}{" "}
                     <a
                       href="/gizlilik-politikasi"
                       className="border-b border-[#ccc] text-black transition-colors hover:border-black"
                     >
-                      Gizlilik Politikamızı
-                    </a>{" "}
-                    kabul etmiş olursunuz. Spam yok — sadece samimi bir yanıt.
+                      {t("privacy.linkText")}
+                    </a>
+                    {t("privacy.suffix")}
                   </p>
                 </div>
               </fieldset>

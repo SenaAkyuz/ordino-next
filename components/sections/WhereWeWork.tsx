@@ -1,25 +1,13 @@
+import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/Reveal";
 
-export type WhereCard = {
-  title: string;
-  text: string;
-};
+const CARD_KEYS = ["global", "becomeClient", "joinTeam"] as const;
 
-type WhereWeWorkProps = {
-  eyebrow?: string;
-  title: string;
-  emphasis?: string;
-  titleTail?: string;
-  cards: WhereCard[];
-};
+type WhereCard = { title: string; text: string };
 
-export function WhereWeWork({
-  eyebrow = "Çalıştığımız Yer",
-  title,
-  emphasis,
-  titleTail,
-  cards,
-}: WhereWeWorkProps) {
+export async function WhereWeWork() {
+  const t = await getTranslations("contact.whereWeWork");
+
   return (
     <section
       data-theme="dark"
@@ -27,29 +15,28 @@ export function WhereWeWork({
     >
       <div className="mx-auto max-w-[1300px]">
         <Reveal>
-          <p className="mb-6 font-body text-[0.72rem] font-medium uppercase tracking-[4px] text-white/60 md:mb-8">
-            {eyebrow}
-          </p>
-        </Reveal>
-        <Reveal>
           <h1 className="mb-12 max-w-[960px] font-display text-[clamp(1.8rem,3.2vw,3rem)] font-light leading-[1.25] tracking-[-0.3px] [&_em]:italic [&_em]:font-normal md:mb-20">
-            {title}
-            {emphasis && <em>{emphasis}</em>}
-            {titleTail}
+            {t("titleLead")} <em>{t("titleHighlight")}</em>{" "}
+            {t("titleTail")}
           </h1>
         </Reveal>
 
         <div className="grid grid-cols-1 gap-10 border-t border-white/10 pt-10 md:grid-cols-3 md:gap-[60px] md:pt-14">
-          {cards.map((card) => (
-            <Reveal key={card.title}>
-              <h4 className="mb-[18px] font-body text-[0.85rem] font-medium tracking-[0.5px] text-white">
-                {card.title}
-              </h4>
-              <p className="font-body text-[0.82rem] font-light leading-[1.8] text-white/65">
-                {card.text}
-              </p>
-            </Reveal>
-          ))}
+          {CARD_KEYS.map((key) => {
+            const card = (t.raw as (k: string) => unknown)(
+              `cards.${key}`,
+            ) as WhereCard;
+            return (
+              <Reveal key={key}>
+                <h4 className="mb-[18px] font-body text-[0.85rem] font-medium tracking-[0.5px] text-white">
+                  {card.title}
+                </h4>
+                <p className="font-body text-[0.82rem] font-light leading-[1.8] text-white/65">
+                  {card.text}
+                </p>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

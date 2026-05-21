@@ -1,20 +1,18 @@
 "use client";
 
 import Script from "next/script";
+import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/ui/Reveal";
+import { site } from "@/lib/data/site";
 
 type ScheduleMeetingProps = {
-  /**
-   * HubSpot Meetings booking URL.
-   * Örnek: https://meetings.hubspot.com/ordino
-   * Prop adı geçmiş uyumluluk için "calendlyUrl" — siteyi değiştirmek istemiyoruz.
-   */
   calendlyUrl?: string;
 };
 
 export function ScheduleMeeting({
-  calendlyUrl = "https://meetings.hubspot.com/ordino",
+  calendlyUrl = site.meetingUrl,
 }: ScheduleMeetingProps) {
+  const t = useTranslations("contact.scheduleMeeting");
   const embedSrc = calendlyUrl.includes("?")
     ? `${calendlyUrl}&embed=true`
     : `${calendlyUrl}?embed=true`;
@@ -28,15 +26,13 @@ export function ScheduleMeeting({
       <div className="mx-auto max-w-[1200px] grid grid-cols-1 items-start gap-12 md:grid-cols-[1fr_1.4fr] md:gap-16">
         <Reveal>
           <p className="mb-5 font-body text-[0.75rem] uppercase tracking-[3px] text-accent">
-            Bir Sonraki Adım
+            {t("eyebrow")}
           </p>
           <h2 className="mb-6 font-display text-[clamp(2.2rem,3.8vw,3.4rem)] font-light leading-[1.2] tracking-[-0.5px] [&_em]:italic [&_em]:font-normal">
-            Bir Toplantı <em>Planlayalım.</em>
+            {t("title")} <em>{t("emphasis")}</em>
           </h2>
           <p className="font-body text-base font-light leading-[1.8] text-[#555]">
-            Markanızın hedeflerini ve ihtiyaçlarını birlikte değerlendirelim.
-            30 dakikalık ücretsiz keşif görüşmemiz için takvimden uygun bir
-            zaman seçebilirsiniz.
+            {t("description")}
           </p>
         </Reveal>
 

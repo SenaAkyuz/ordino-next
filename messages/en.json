@@ -170,6 +170,16 @@
       "title": "Let's",
       "emphasis": "take action.",
       "button": "theordino.com"
+    },
+    "metadata": {
+      "title": "Contact",
+      "description": "Reach out. Tell us about your brand — we'll get back within one business day."
+    },
+    "scheduleMeeting": {
+      "eyebrow": "Next Step",
+      "title": "Let's",
+      "emphasis": "schedule a meeting.",
+      "description": "Let's review your brand's goals and needs together. Pick a time on the calendar for a 30-minute discovery call."
     }
   },
   "thankYou": {

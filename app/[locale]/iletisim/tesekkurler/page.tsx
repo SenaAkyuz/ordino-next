@@ -1,20 +1,30 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
-import type { Locale } from "@/i18n/routing";
-import Link from "next/link";
+import { setRequestLocale, getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { routing, type Locale } from "@/i18n/routing";
 
-export const metadata: Metadata = {
-  title: "Teşekkürler",
-  description: "Mesajınızı aldık. En kısa sürede dönüş yapacağız.",
+type Props = {
+  params: Promise<{ locale: Locale }>;
 };
 
-export default async function TesekkurlerPage({
-  params,
-}: {
-  params: Promise<{ locale: Locale }>;
-}) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({
+    locale: locale as (typeof routing.locales)[number],
+    namespace: "thankYou.metadata",
+  });
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
+
+export default async function TesekkurlerPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const t = await getTranslations("thankYou");
+
   return (
     <main
       data-theme="light"
@@ -38,33 +48,27 @@ export default async function TesekkurlerPage({
           </svg>
         </div>
         <p className="mb-4 font-body text-[0.75rem] uppercase tracking-[3px] text-accent">
-          Mesajınız Alındı
+          {t("title")}
         </p>
         <h1 className="mb-8 font-display text-[clamp(2.4rem,4vw,3.6rem)] font-light leading-[1.2] tracking-[-0.5px] text-black [&_em]:italic [&_em]:font-normal">
-          Teşekkürler — <em>en kısa sürede</em> dönüş yapacağız.
+          {t("headline.lead")} <em>{t("headline.highlight")}</em>{" "}
+          {t("headline.tail")}
         </h1>
         <p className="mb-12 font-body text-base font-light leading-[1.7] text-[#666]">
-          Mesajınızı başarıyla aldık. Ekibimiz brief&apos;inizi inceleyecek ve bir iş günü içinde size dönüş yapacaktır. Acil durumlarda{" "}
-          <a
-            href="tel:+902129967147"
-            className="text-black underline transition-colors hover:text-accent"
-          >
-            0212 996 71 47
-          </a>{" "}
-          numaramızı arayabilirsiniz.
+          {t("body")}
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             href="/"
             className="inline-block rounded-[10em] border border-black bg-black px-8 py-3 font-body text-[0.85rem] text-white transition-[background,color] duration-300 hover:bg-transparent hover:text-black"
           >
-            Anasayfaya Dön
+            {t("ctas.home")}
           </Link>
           <Link
             href="/calisma"
             className="inline-block rounded-[10em] border border-black bg-transparent px-8 py-3 font-body text-[0.85rem] text-black transition-[background,color] duration-300 hover:bg-black hover:text-white"
           >
-            Çalışmalarımızı İncele
+            {t("ctas.work")}
           </Link>
         </div>
       </div>

@@ -135,7 +135,7 @@
     "privacy": {
       "prefix": "Göndererek",
       "linkText": "Gizlilik Politikamızı",
-      "suffix": "kabul etmiş olursunuz. Spam yok — sadece samimi bir yanıt."
+      "suffix": " kabul etmiş olursunuz. Spam yok — sadece samimi bir yanıt."
     },
     "errors": {
       "generic": "Form gönderilirken bir hata oluştu. Lütfen tekrar deneyin.",
@@ -170,6 +170,16 @@
       "title": "Birlikte",
       "emphasis": "harekete geçelim.",
       "button": "theordino.com"
+    },
+    "metadata": {
+      "title": "İletişim",
+      "description": "Bize ulaşın. Markanız hakkında bilgi verin, bir iş günü içinde dönüş yapacağız."
+    },
+    "scheduleMeeting": {
+      "eyebrow": "Bir Sonraki Adım",
+      "title": "Bir Toplantı",
+      "emphasis": "Planlayalım.",
+      "description": "Markanızın hedeflerini ve ihtiyaçlarını birlikte değerlendirelim. 30 dakikalık ücretsiz keşif görüşmemiz için takvimden uygun bir zaman seçebilirsiniz."
     }
   },
   "thankYou": {
