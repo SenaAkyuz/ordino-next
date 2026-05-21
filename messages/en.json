@@ -701,7 +701,8 @@
     "prevNext": {
       "prev": "← Previous Case",
       "next": "Next Case →"
-    }
+    },
+    "detailTitleTemplate": "{brand} — Case Study"
   },
   "platform": {
     "metadata": {

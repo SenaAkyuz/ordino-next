@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { caseStudies } from "@/lib/data/caseStudies";
+import { caseStudiesConfig } from "@/lib/data/caseStudies";
 import { news } from "@/lib/data/news";
 import { routing } from "@/i18n/routing";
 import { getPathname } from "@/i18n/navigation";
@@ -66,7 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry(r.href, r.priority, r.changeFrequency),
   );
 
-  const caseStudyEntries = caseStudies.map((cs) =>
+  const caseStudyEntries = caseStudiesConfig.map((cs) =>
     entry(
       { pathname: "/referanslar/[slug]", params: { slug: cs.slug } },
       0.7,

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 import type { CaseStudy } from "@/lib/data/caseStudies";
@@ -16,7 +17,8 @@ const serviceColors = [
   "bg-[#8b0000]",
 ] as const;
 
-export function CaseBlock({ data, alt = false }: CaseBlockProps) {
+export async function CaseBlock({ data, alt = false }: CaseBlockProps) {
+  const t = await getTranslations("caseStudies.block");
   const stripeBg = alt ? "bg-light-bg" : "bg-white";
 
   return (
@@ -47,10 +49,20 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
             </Reveal>
             <Reveal>
               <h2 className="mb-[30px] font-display text-[clamp(2.2rem,4vw,3.4rem)] font-light leading-[1.2] tracking-[-1px] [&_em]:italic [&_em]:font-normal">
-                {data.title}
+                {data.title}{" "}
                 <em>{data.titleEm}</em>
-                {data.titleTail}
-                {data.titleEm2 && <em>{data.titleEm2}</em>}
+                {data.titleTail && (
+                  <>
+                    {" "}
+                    {data.titleTail}
+                  </>
+                )}
+                {data.titleEm2 && (
+                  <>
+                    {" "}
+                    <em>{data.titleEm2}</em>
+                  </>
+                )}
               </h2>
             </Reveal>
             <Reveal>
@@ -134,10 +146,10 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
         <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-12 md:grid-cols-2 md:gap-[100px]">
           <Reveal>
             <h4 className="mb-5 font-body text-[0.75rem] font-medium uppercase tracking-[3px] text-accent">
-              Zorluk
+              {t("challenge")}
             </h4>
             <h3 className="mb-6 font-display text-[clamp(1.8rem,2.8vw,2.4rem)] font-light leading-[1.3] [&_em]:italic [&_em]:font-normal">
-              {data.challenge.head}
+              {data.challenge.head}{" "}
               <em>{data.challenge.headEm}</em>
             </h3>
             {data.challenge.paragraphs.map((p, i) => (
@@ -152,10 +164,10 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
 
           <Reveal>
             <h4 className="mb-5 font-body text-[0.75rem] font-medium uppercase tracking-[3px] text-accent">
-              Çözüm
+              {t("solution")}
             </h4>
             <h3 className="mb-6 font-display text-[clamp(1.8rem,2.8vw,2.4rem)] font-light leading-[1.3] [&_em]:italic [&_em]:font-normal">
-              {data.solution.head}
+              {data.solution.head}{" "}
               <em>{data.solution.headEm}</em>
             </h3>
             {data.solution.paragraphs.map((p, i) => (
@@ -167,7 +179,7 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
               </p>
             ))}
             <ul className="mt-6 flex list-none flex-col gap-[14px]">
-              {data.solution.items.map((item) => (
+              {data.featuredServices.map((item) => (
                 <li
                   key={item}
                   className="relative pl-[22px] font-body text-[0.95rem] font-light leading-[1.6] text-[#444] before:absolute before:left-0 before:top-3 before:h-px before:w-[10px] before:bg-accent"
@@ -179,7 +191,6 @@ export function CaseBlock({ data, alt = false }: CaseBlockProps) {
           </Reveal>
         </div>
       </section>
-
     </article>
   );
 }

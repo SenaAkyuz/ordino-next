@@ -701,7 +701,8 @@
     "prevNext": {
       "prev": "← Önceki Referans",
       "next": "Sonraki Referans →"
-    }
+    },
+    "detailTitleTemplate": "{brand} — Referans"
   },
   "platform": {
     "metadata": {

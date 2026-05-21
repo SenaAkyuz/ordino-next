@@ -1,13 +1,21 @@
-import Link from "next/link";
-import type { CaseStudy } from "@/lib/data/caseStudies";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+
+type PrevNextStudy = {
+  slug: string;
+  brand: string;
+  sector: string;
+} | null;
 
 type PrevNextCaseProps = {
-  prev: CaseStudy | null;
-  next: CaseStudy | null;
+  prev: PrevNextStudy;
+  next: PrevNextStudy;
 };
 
-export function PrevNextCase({ prev, next }: PrevNextCaseProps) {
+export async function PrevNextCase({ prev, next }: PrevNextCaseProps) {
   if (!prev && !next) return null;
+
+  const t = await getTranslations("caseStudies.prevNext");
 
   return (
     <section
@@ -17,11 +25,14 @@ export function PrevNextCase({ prev, next }: PrevNextCaseProps) {
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-8 md:grid-cols-2">
         {prev ? (
           <Link
-            href={`/referanslar/${prev.slug}`}
+            href={{
+              pathname: "/referanslar/[slug]",
+              params: { slug: prev.slug },
+            }}
             className="group flex flex-col items-start gap-3 transition-opacity duration-300 hover:opacity-70"
           >
             <span className="font-body text-[0.7rem] uppercase tracking-[2px] text-accent">
-              ← Önceki Referans
+              {t("prev")}
             </span>
             <p className="font-body text-[0.7rem] uppercase tracking-[2px] text-gray">
               {prev.sector}
@@ -35,11 +46,14 @@ export function PrevNextCase({ prev, next }: PrevNextCaseProps) {
         )}
         {next ? (
           <Link
-            href={`/referanslar/${next.slug}`}
+            href={{
+              pathname: "/referanslar/[slug]",
+              params: { slug: next.slug },
+            }}
             className="group flex flex-col items-end gap-3 text-right transition-opacity duration-300 hover:opacity-70"
           >
             <span className="font-body text-[0.7rem] uppercase tracking-[2px] text-accent">
-              Sonraki Referans →
+              {t("next")}
             </span>
             <p className="font-body text-[0.7rem] uppercase tracking-[2px] text-gray">
               {next.sector}

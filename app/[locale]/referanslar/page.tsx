@@ -1,33 +1,63 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
-import type { Locale } from "@/i18n/routing";
-import Link from "next/link";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
+import { routing, type Locale } from "@/i18n/routing";
+import { site } from "@/lib/data/site";
 import { PageHero } from "@/components/sections/PageHero";
 import { Cta } from "@/components/sections/Cta";
 import { Reveal } from "@/components/ui/Reveal";
-import { caseStudies } from "@/lib/data/caseStudies";
+import { caseStudiesConfig } from "@/lib/data/caseStudies";
 
-export const metadata: Metadata = {
-  title: "Referanslar",
-  description:
-    "Gerçek markalar. Gerçek sonuçlar. Veri odaklı strateji, AI destekli optimizasyon ve dönüşüme odaklı yaratıcılık ile elde ettiğimiz başarı hikayeleri.",
+type Props = {
+  params: Promise<{ locale: Locale }>;
 };
 
-export default async function ReferanslarPage({
-  params,
-}: {
-  params: Promise<{ locale: Locale }>;
-}) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({
+    locale: locale as (typeof routing.locales)[number],
+    namespace: "caseStudies.metadata",
+  });
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
+
+export default async function ReferanslarPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const t = await getTranslations("caseStudies");
+  const tContent = await getTranslations("caseStudiesContent");
+  const tNav = await getTranslations("nav");
+
+  type ListCard = {
+    slug: string;
+    brand: string;
+    sector: string;
+    brandIntro: string;
+    image?: string;
+    gradient: string;
+  };
+
+  const cards: ListCard[] = caseStudiesConfig.map((cfg) => ({
+    slug: cfg.slug,
+    brand: tContent(`${cfg.slug}.brand`),
+    sector: tContent(`${cfg.slug}.sector`),
+    brandIntro: tContent(`${cfg.slug}.brandIntro`),
+    image: cfg.image,
+    gradient: cfg.gradient,
+  }));
+
   return (
     <>
       <PageHero
-        label="Referanslar"
-        title="Gerçek markalar."
-        emphasis="Gerçek sonuçlar."
-        sub="Altı kampanya, altı sektör. Veri odaklı strateji, AI destekli optimizasyon ve dönüşüme odaklı yaratıcılık ile elde edilen ölçülebilir sonuçlar."
+        label={t("hero.label")}
+        title={t("hero.title")}
+        emphasis={t("hero.emphasis")}
+        sub={t("hero.sub")}
       />
       <section
         data-theme="light"
@@ -35,10 +65,13 @@ export default async function ReferanslarPage({
       >
         <div className="mx-auto max-w-[1300px]">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {caseStudies.map((c) => (
+            {cards.map((c) => (
               <Reveal key={c.slug} className="h-full">
                 <Link
-                  href={`/referanslar/${c.slug}`}
+                  href={{
+                    pathname: "/referanslar/[slug]",
+                    params: { slug: c.slug },
+                  }}
                   className="group flex h-full flex-col overflow-hidden"
                 >
                   <div className="relative mb-6 aspect-[16/9] w-full overflow-hidden">
@@ -70,7 +103,7 @@ export default async function ReferanslarPage({
                     {c.brandIntro}
                   </p>
                   <span className="mt-auto inline-flex items-center gap-2 font-body text-[0.75rem] uppercase tracking-[1.5px] text-black transition-transform duration-300 group-hover:translate-x-1">
-                    Detayları Gör →
+                    {t("hoverLabel")}
                   </span>
                 </Link>
               </Reveal>
@@ -79,8 +112,10 @@ export default async function ReferanslarPage({
         </div>
       </section>
       <Cta
-        title="Sıradaki başarı hikayesi"
-        emphasis="sizin olsun."
+        title={t("cta.title")}
+        emphasis={t("cta.emphasis")}
+        buttonLabel={tNav("ctaLabel")}
+        href={site.meetingUrl}
       />
     </>
   );
