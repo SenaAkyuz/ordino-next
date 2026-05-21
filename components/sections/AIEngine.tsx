@@ -1,29 +1,15 @@
+import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/Reveal";
 
-const steps = [
-  {
-    num: "Adım 01",
-    title: "Topla",
-    text: "Motor her on beş dakikada bir, bağladığınız her platformdan gösterim, tıklama, dönüşüm ve maliyet verisini çeker. Hiçbir şey örneklenmez — hesabın tamamını okuruz.",
-  },
-  {
-    num: "Adım 02",
-    title: "Akıl Yürüt",
-    text: "İki yüz otuz müşteri hesabı üzerinde eğitilmiş bir model, her aktif varlığı gerçek iş metriğinize katkısına göre sıralar — platformun proxy skoruna değil.",
-  },
-  {
-    num: "Adım 03",
-    title: "Aksiyon Al",
-    text: "Bütçe kaydırmaları, duraklatmalar, negatif anahtar kelime aktarımları, yaratıcı rotasyonları — platform hesaplarınızda otomatik yürütülür, tek tıkla geri alınabilir tam bir denetim izi ile.",
-  },
-  {
-    num: "Adım 04",
-    title: "Raporla",
-    text: "Her aksiyon sade bir dille loglanır. Pazartesi raporunuz kendini yazar: ne değişti, neden değişti ve sayıları nasıl oynattı.",
-  },
-];
+const STEP_NUMS = ["01", "02", "03", "04"] as const;
 
-export function AIEngine() {
+type EngineStep = { stepLabel: string; title: string; text: string };
+
+export async function AIEngine() {
+  const t = await getTranslations("platform.aiEngine");
+  const headerTitle = t("header.title");
+  const headerTail = t("header.tail");
+
   return (
     <section
       id="ai-engine"
@@ -38,32 +24,48 @@ export function AIEngine() {
         <div className="mb-20 text-center md:mb-[100px]">
           <Reveal>
             <p className="mb-5 font-body text-[0.72rem] font-medium uppercase tracking-[4px] text-white/50">
-              AI Motoru
+              {t("header.eyebrow")}
             </p>
           </Reveal>
           <Reveal>
             <h2 className="font-display text-[clamp(2.2rem,4.5vw,4rem)] font-light leading-[1.08] tracking-[-1px] text-white [&_em]:italic [&_em]:font-normal [&_em]:text-accent">
-              <em>Beyin</em> nasıl çalışır.
+              {headerTitle && (
+                <>
+                  {headerTitle}{" "}
+                </>
+              )}
+              <em>{t("header.emphasis")}</em>
+              {headerTail && (
+                <>
+                  {" "}
+                  {headerTail}
+                </>
+              )}
             </h2>
           </Reveal>
         </div>
 
         <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
-          {steps.map((s) => (
-            <Reveal key={s.num}>
-              <div className="border-t border-white/15 pt-10">
-                <p className="mb-5 font-body text-[0.7rem] font-medium uppercase tracking-[3px] text-accent">
-                  {s.num}
-                </p>
-                <h4 className="mb-[18px] font-display text-[1.75rem] font-normal tracking-[-0.3px] text-white">
-                  {s.title}
-                </h4>
-                <p className="font-body text-[0.88rem] font-light leading-[1.75] text-white/55">
-                  {s.text}
-                </p>
-              </div>
-            </Reveal>
-          ))}
+          {STEP_NUMS.map((num) => {
+            const step = (t.raw as (key: string) => unknown)(
+              `steps.${num}`,
+            ) as EngineStep;
+            return (
+              <Reveal key={num}>
+                <div className="border-t border-white/15 pt-10">
+                  <p className="mb-5 font-body text-[0.7rem] font-medium uppercase tracking-[3px] text-accent">
+                    {step.stepLabel}
+                  </p>
+                  <h4 className="mb-[18px] font-display text-[1.75rem] font-normal tracking-[-0.3px] text-white">
+                    {step.title}
+                  </h4>
+                  <p className="font-body text-[0.88rem] font-light leading-[1.75] text-white/55">
+                    {step.text}
+                  </p>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,15 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/ui/Reveal";
 import { site } from "@/lib/data/site";
 
-const channels = ["TikTok", "Meta", "Google", "LinkedIn"];
-
-// TODO: video eklenecek (örn. "/video/platform-demo.mp4")
 const DEMO_VIDEO_SRC = "";
 
 export function PlatformHero() {
+  const t = useTranslations("platform.hero");
+  const channels = t.raw("channels") as string[];
   const [videoOpen, setVideoOpen] = useState(false);
 
   useEffect(() => {
@@ -64,21 +64,21 @@ export function PlatformHero() {
               className="h-[7px] w-[7px] rounded-full bg-accent [box-shadow:0_0_10px_rgba(178,143,108,0.8)] motion-safe:animate-[chipPulse_2.2s_ease-in-out_infinite]"
               aria-hidden="true"
             />
-            <span>Şimdi Erken Erişim&apos;de</span>
+            <span>{t("pillBadge")}</span>
           </div>
         </Reveal>
         <Reveal>
           <h1 className="mb-10 font-display text-[clamp(3rem,8vw,7rem)] font-light leading-none tracking-[-2.5px] text-white">
-            Tüm Reklamlarınız.
+            {t("headlineLine1")}
             <br />
             <em className="bg-gradient-to-br from-[#d4a574] via-[#b28f6c] to-[#9b7a5a] bg-clip-text font-normal italic text-transparent">
-              ORDINO.AI
+              {t("headlineLine2")}
             </em>
           </h1>
         </Reveal>
         <Reveal>
           <p className="mx-auto mb-[50px] max-w-[620px] font-body text-[clamp(1rem,1.3vw,1.15rem)] font-light leading-[1.65] text-white/65">
-            Tek bir AI destekli komuta merkezinden TikTok, Meta, Google ve daha fazlasında kampanyalarınızı oluşturun, yönetin ve optimize edin.
+            {t("subtitle")}
           </p>
         </Reveal>
         <Reveal>
@@ -89,7 +89,7 @@ export function PlatformHero() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-[10px] rounded-[10em] border border-white bg-white px-9 py-[15px] font-body text-[0.88rem] font-normal text-black transition-all duration-[400ms] hover:-translate-y-[1px] hover:border-accent hover:bg-accent hover:text-white"
             >
-              Ücretsiz Deneme Başlat
+              {t("cta1")}
             </a>
             <button
               type="button"
@@ -100,7 +100,7 @@ export function PlatformHero() {
                 className="mr-[2px] inline-block h-0 w-0 border-y-[5px] border-l-[7px] border-y-transparent border-l-current"
                 aria-hidden="true"
               />
-              Demo İzle
+              {t("cta2")}
             </button>
           </div>
         </Reveal>
@@ -122,14 +122,14 @@ export function PlatformHero() {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Demo video"
+          aria-label={t("videoAriaLabel")}
           onClick={() => setVideoOpen(false)}
           className="fixed inset-0 z-[1500] flex items-center justify-center bg-black/85 px-5 backdrop-blur-sm md:px-10"
         >
           <button
             type="button"
             onClick={() => setVideoOpen(false)}
-            aria-label="Kapat"
+            aria-label={t("videoClose")}
             className="absolute right-5 top-5 z-[10] flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/[0.06] text-white transition-colors duration-200 hover:border-white/40 hover:bg-white/[0.12] md:right-8 md:top-8"
           >
             <span className="text-[1.4rem] leading-none">×</span>
@@ -148,7 +148,7 @@ export function PlatformHero() {
             ) : (
               <div className="flex aspect-video w-full items-center justify-center rounded-[8px] border border-white/10 bg-dark-bg-2 text-center">
                 <p className="px-6 font-body text-[0.95rem] font-light text-white/55">
-                  Demo videosu yakında eklenecek.
+                  {t("videoPlaceholder")}
                 </p>
               </div>
             )}
