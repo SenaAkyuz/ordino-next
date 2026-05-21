@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/ui/Reveal";
 import type { NewsPost } from "@/lib/data/news";
 
@@ -6,7 +7,10 @@ type NewsGridProps = {
   posts: NewsPost[];
 };
 
-export function NewsGrid({ posts }: NewsGridProps) {
+export async function NewsGrid({ posts }: NewsGridProps) {
+  const t = await getTranslations("blog.filter");
+  const hoverLabel = t("hoverLabel");
+
   return (
     <section
       data-theme="light"
@@ -16,7 +20,13 @@ export function NewsGrid({ posts }: NewsGridProps) {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:gap-x-10 md:gap-y-[50px] lg:grid-cols-3">
           {posts.map((post) => (
             <Reveal key={post.slug}>
-              <Link href={`/blog/${post.slug}`} className="group block">
+              <Link
+                href={{
+                  pathname: "/blog/[slug]",
+                  params: { slug: post.slug },
+                }}
+                className="group block"
+              >
                 <div className="relative mb-6 aspect-[4/3] w-full overflow-hidden">
                   <div
                     className="h-full w-full transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.04]"
@@ -44,7 +54,7 @@ export function NewsGrid({ posts }: NewsGridProps) {
                   {post.excerpt}
                 </p>
                 <span className="inline-flex items-center gap-2 font-body text-[0.75rem] uppercase tracking-[1.5px] text-black transition-transform duration-300 group-hover:translate-x-1">
-                  Devamını Oku →
+                  {hoverLabel}
                 </span>
               </Link>
             </Reveal>

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { caseStudiesConfig } from "@/lib/data/caseStudies";
-import { news } from "@/lib/data/news";
+import { newsConfig } from "@/lib/data/news";
 import { routing } from "@/i18n/routing";
 import { getPathname } from "@/i18n/navigation";
 
@@ -74,7 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ),
   );
 
-  const blogEntries = news.map((post) =>
+  const blogEntries = newsConfig.map((post) =>
     entry(
       { pathname: "/blog/[slug]", params: { slug: post.slug } },
       0.6,

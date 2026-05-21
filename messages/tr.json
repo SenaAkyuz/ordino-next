@@ -825,6 +825,17 @@
     }
   },
   "blog": {
+    "metadata": {
+      "title": "Blog & İçgörüler",
+      "description": "Dijital pazarlama, SEO, AI, sosyal medya ve sektör haberleri üzerine Ordino ekibinden içgörüler."
+    },
+    "detailTitleTemplate": "{title} — Blog",
+    "hero": {
+      "label": "Blog & İçgörüler",
+      "title": "Üzerinde",
+      "emphasis": "düşündüklerimiz.",
+      "sub": "Kampanya analizleri, platform güncellemeleri, yaratıcı denemeler ve Ordino ekibinden samimi görüşler."
+    },
     "filter": {
       "all": "Tümü",
       "empty": "Bu kategoride henüz yazı yok.",

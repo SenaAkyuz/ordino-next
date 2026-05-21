@@ -1,25 +1,32 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/ui/Reveal";
-import { newsCategories, type NewsPost } from "@/lib/data/news";
+import { NEWS_CATEGORY_KEYS, type NewsPost } from "@/lib/data/news";
 
 type BlogFilterProps = {
   posts: NewsPost[];
 };
 
 export function BlogFilter({ posts }: BlogFilterProps) {
-  const [activeCategory, setActiveCategory] = useState<string>("Tümü");
+  const t = useTranslations("blog");
+  const allLabel = t("filter.all");
+  const emptyMessage = t("filter.empty");
+  const hoverLabel = t("filter.hoverLabel");
 
-  const allCategories = useMemo(() => {
-    return ["Tümü", ...newsCategories];
-  }, []);
+  const categoryButtons = useMemo(() => {
+    const items = NEWS_CATEGORY_KEYS.map((key) => t(`categories.${key}`));
+    return [allLabel, ...items];
+  }, [t, allLabel]);
+
+  const [activeCategory, setActiveCategory] = useState<string>(allLabel);
 
   const filteredPosts = useMemo(() => {
-    if (activeCategory === "Tümü") return posts;
+    if (activeCategory === allLabel) return posts;
     return posts.filter((p) => p.category === activeCategory);
-  }, [posts, activeCategory]);
+  }, [posts, activeCategory, allLabel]);
 
   return (
     <section
@@ -29,7 +36,7 @@ export function BlogFilter({ posts }: BlogFilterProps) {
       <div className="mx-auto max-w-[1200px]">
         <Reveal>
           <div className="mb-12 flex flex-wrap justify-center gap-2 md:mb-16 md:gap-3">
-            {allCategories.map((cat) => (
+            {categoryButtons.map((cat) => (
               <button
                 key={cat}
                 type="button"
@@ -49,7 +56,13 @@ export function BlogFilter({ posts }: BlogFilterProps) {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:gap-x-10 md:gap-y-[50px] lg:grid-cols-3">
           {filteredPosts.map((post) => (
             <Reveal key={post.slug}>
-              <Link href={`/blog/${post.slug}`} className="group block">
+              <Link
+                href={{
+                  pathname: "/blog/[slug]",
+                  params: { slug: post.slug },
+                }}
+                className="group block"
+              >
                 <div className="relative mb-6 aspect-[4/3] w-full overflow-hidden">
                   <div
                     className="h-full w-full transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.04]"
@@ -77,7 +90,7 @@ export function BlogFilter({ posts }: BlogFilterProps) {
                   {post.excerpt}
                 </p>
                 <span className="inline-flex items-center gap-2 font-body text-[0.75rem] uppercase tracking-[1.5px] text-black transition-transform duration-300 group-hover:translate-x-1">
-                  Devamını Oku →
+                  {hoverLabel}
                 </span>
               </Link>
             </Reveal>
@@ -86,7 +99,7 @@ export function BlogFilter({ posts }: BlogFilterProps) {
 
         {filteredPosts.length === 0 && (
           <p className="mt-12 text-center font-body text-base text-gray">
-            Bu kategoride henüz yazı yok.
+            {emptyMessage}
           </p>
         )}
       </div>

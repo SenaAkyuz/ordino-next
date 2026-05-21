@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/Reveal";
 import type { NewsPost } from "@/lib/data/news";
 
@@ -5,9 +6,11 @@ type BlogPostProps = {
   post: NewsPost;
 };
 
-const PLACEHOLDER_CONTENT = "İçerik yakında eklenecek...";
+export async function BlogPost({ post }: BlogPostProps) {
+  const t = await getTranslations("blog.post");
+  const placeholderText = t("placeholderText");
+  const isPlaceholder = !post.content || post.content === placeholderText;
 
-export function BlogPost({ post }: BlogPostProps) {
   return (
     <article
       data-theme="light"
@@ -70,19 +73,18 @@ export function BlogPost({ post }: BlogPostProps) {
 
         <Reveal>
           <div className="font-body text-base font-light leading-[1.9] text-[#333]">
-            {!post.content || post.content === PLACEHOLDER_CONTENT ? (
+            {isPlaceholder ? (
               <div className="my-12 rounded-[8px] border border-dashed border-[#ddd] bg-light-bg p-10 text-center">
                 <p className="mb-3 font-display text-[1.2rem] text-black">
-                  ✍️ İçerik yakında
+                  {t("placeholderTitle")}
                 </p>
                 <p className="font-body text-[0.9rem] font-light text-gray">
-                  Bu yazının tam içeriği hazırlanıyor. Yakında bu sayfada
-                  paylaşılacak.
+                  {t("placeholderBody")}
                 </p>
               </div>
             ) : (
               <div className="space-y-6">
-                {post.content.split("\n\n").map((para, i) => (
+                {post.content!.split("\n\n").map((para, i) => (
                   <p key={i}>{para}</p>
                 ))}
               </div>

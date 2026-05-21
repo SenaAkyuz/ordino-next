@@ -825,6 +825,17 @@
     }
   },
   "blog": {
+    "metadata": {
+      "title": "Blog & Insights",
+      "description": "Insights from Ordino on digital marketing, SEO, AI, social media, and industry news."
+    },
+    "detailTitleTemplate": "{title} — Blog",
+    "hero": {
+      "label": "Blog & Insights",
+      "title": "What we're",
+      "emphasis": "thinking about.",
+      "sub": "Campaign breakdowns, platform updates, creative experiments, and candid takes from the Ordino team."
+    },
     "filter": {
       "all": "All",
       "empty": "No posts in this category yet.",

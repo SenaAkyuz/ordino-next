@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/ui/Reveal";
 import type { NewsPost } from "@/lib/data/news";
 
@@ -6,7 +7,9 @@ type RelatedPostsProps = {
   posts: NewsPost[];
 };
 
-export function RelatedPosts({ posts }: RelatedPostsProps) {
+export async function RelatedPosts({ posts }: RelatedPostsProps) {
+  const t = await getTranslations("blog.related");
+
   return (
     <section
       data-theme="light"
@@ -15,14 +18,20 @@ export function RelatedPosts({ posts }: RelatedPostsProps) {
       <div className="mx-auto max-w-[1200px]">
         <Reveal>
           <h2 className="mb-12 font-display text-[clamp(1.8rem,2.8vw,2.6rem)] font-light leading-[1.2] [&_em]:italic [&_em]:font-normal">
-            Bu yazıyı sevdiyseniz, <em>bunlara da göz atın.</em>
+            {t("headline.lead")} <em>{t("headline.highlight")}</em>
           </h2>
         </Reveal>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-10">
           {posts.map((post) => (
             <Reveal key={post.slug}>
-              <Link href={`/blog/${post.slug}`} className="group block">
+              <Link
+                href={{
+                  pathname: "/blog/[slug]",
+                  params: { slug: post.slug },
+                }}
+                className="group block"
+              >
                 <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden rounded-[4px]">
                   <div
                     className="h-full w-full transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.04]"
