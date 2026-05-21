@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SideFixed } from "@/components/layout/SideFixed";
@@ -29,72 +29,83 @@ const jost = Jost({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://theordino.com"),
-  title: {
-    default: "Ordino — Strateji. Yaratıcılık. Büyüme.",
-    template: "%s | Ordino",
-  },
-  description:
-    "London ve Istanbul merkezli full-service reklam ajansı. Google, Meta, TikTok ve X resmi reklam partnerliği. 11 yıllık tecrübe ile 50+ markaya hizmet veren AI destekli pazarlama ekosistemi.",
-  keywords: [
-    "reklam ajansı",
-    "dijital pazarlama",
-    "performans marketing",
-    "Google Ads",
-    "Meta Ads",
-    "TikTok Ads",
-    "SEO",
-    "AI pazarlama",
-    "Istanbul reklam ajansı",
-    "London advertising agency",
-  ],
-  authors: [{ name: "Ordino" }],
-  creator: "Ordino",
-  publisher: "Ordino",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  openGraph: {
-    title: "Ordino — Strateji. Yaratıcılık. Büyüme.",
-    description:
-      "London ve Istanbul merkezli full-service reklam ajansı. Türk ve uluslararası markalara AI destekli pazarlama hizmeti.",
-    url: "https://theordino.com",
-    siteName: "Ordino",
-    locale: "tr_TR",
-    type: "website",
-    images: [
-      {
-        url: site.ogImage,
-        width: 1200,
-        height: 630,
-        alt: "Ordino — Strateji. Yaratıcılık. Büyüme.",
-      },
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({
+    locale: locale as (typeof routing.locales)[number],
+    namespace: "metadata",
+  });
+  const siteTitle = t("siteTitle");
+  const description = t("description");
+
+  return {
+    metadataBase: new URL("https://theordino.com"),
+    title: {
+      default: siteTitle,
+      template: t("titleTemplate"),
+    },
+    description,
+    keywords: [
+      "reklam ajansı",
+      "dijital pazarlama",
+      "performans marketing",
+      "Google Ads",
+      "Meta Ads",
+      "TikTok Ads",
+      "SEO",
+      "AI pazarlama",
+      "Istanbul reklam ajansı",
+      "London advertising agency",
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ordino — Strateji. Yaratıcılık. Büyüme.",
-    description:
-      "London ve Istanbul merkezli full-service reklam ajansı. AI destekli pazarlama ekosistemi.",
-    images: [site.ogImage],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    authors: [{ name: "Ordino" }],
+    creator: "Ordino",
+    publisher: "Ordino",
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    openGraph: {
+      title: siteTitle,
+      description,
+      url: "https://theordino.com",
+      siteName: "Ordino",
+      locale: t("ogLocale"),
+      type: "website",
+      images: [
+        {
+          url: site.ogImage,
+          width: 1200,
+          height: 630,
+          alt: siteTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: siteTitle,
+      description,
+      images: [site.ogImage],
+    },
+    robots: {
       index: true,
       follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
-  },
-  verification: {
-    google: site.searchConsoleVerification || undefined,
-  },
-};
+    verification: {
+      google: site.searchConsoleVerification || undefined,
+    },
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));

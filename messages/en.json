@@ -44,6 +44,17 @@
       "privacyPolicy": "Privacy Policy",
       "kvkk": "KVKK",
       "cookiePolicy": "Cookie Policy"
+    },
+    "serviceItems": {
+      "mediaAdvertising": "Media & Advertising",
+      "socialMedia": "Social Media Management",
+      "contentProduction": "Content Production",
+      "seo": "SEO & Organic Growth",
+      "visualDesign": "Visual Design",
+      "webDevelopment": "Web Development & Optimization",
+      "ecommerce": "eCommerce Solutions",
+      "emailCrm": "Email & CRM",
+      "aiAutomation": "AI & Automation"
     }
   },
   "contact": {

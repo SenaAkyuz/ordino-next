@@ -44,6 +44,17 @@
       "privacyPolicy": "Gizlilik Politikası",
       "kvkk": "KVKK",
       "cookiePolicy": "Çerez Politikası"
+    },
+    "serviceItems": {
+      "mediaAdvertising": "Medya & Reklam",
+      "socialMedia": "Sosyal Medya Yönetimi",
+      "contentProduction": "İçerik Üretimi",
+      "seo": "SEO & Organik Büyüme",
+      "visualDesign": "Görsel Tasarım",
+      "webDevelopment": "Web Sitesi Geliştirme & Optimizasyon",
+      "ecommerce": "E-ticaret Çözümleri",
+      "emailCrm": "Mailing & CRM",
+      "aiAutomation": "AI & Otomasyon"
     }
   },
   "contact": {

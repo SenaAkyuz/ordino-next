@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { navLinks, navCta } from "@/lib/data/nav";
 import { site } from "@/lib/data/site";
@@ -47,6 +48,7 @@ type NavbarProps = { forceDark?: boolean };
 
 export function Navbar({ forceDark = false }: NavbarProps) {
   const pathname = usePathname();
+  const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const { isDark, isScrolled } = useAdaptiveNav({ navRef, forceDark });
@@ -115,14 +117,14 @@ export function Navbar({ forceDark = false }: NavbarProps) {
 
       <ul className="hidden md:flex items-center gap-11 list-none">
         {navLinks.map((link) => (
-          <li key={link.href}>
+          <li key={link.key}>
             {link.external ? (
               <a href={link.href} className={linkClass(link.href)}>
-                {link.label}
+                {t(link.key)}
               </a>
             ) : (
               <Link href={link.href} className={linkClass(link.href)}>
-                {link.label}
+                {t(link.key)}
               </Link>
             )}
           </li>
@@ -142,7 +144,7 @@ export function Navbar({ forceDark = false }: NavbarProps) {
             ctaHover,
           )}
         >
-          {navCta.label}
+          {t(navCta.key)}
         </a>
         {instagram && (
           <a
@@ -212,14 +214,14 @@ export function Navbar({ forceDark = false }: NavbarProps) {
           )}
         >
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li key={link.key}>
               {link.external ? (
                 <a href={link.href} className={linkClass(link.href)}>
-                  {link.label}
+                  {t(link.key)}
                 </a>
               ) : (
                 <Link href={link.href} className={linkClass(link.href)}>
-                  {link.label}
+                  {t(link.key)}
                 </Link>
               )}
             </li>
