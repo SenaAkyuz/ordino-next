@@ -1,14 +1,14 @@
 import { Reveal } from "@/components/ui/Reveal";
 
 type ShowreelProps = {
-  eyebrow?: string;
+  eyebrow: string;
   title: string;
   emphasis?: string;
   videoSrc?: string;
 };
 
 export function Showreel({
-  eyebrow = "Studio Reel · 2026",
+  eyebrow,
   title,
   emphasis,
   videoSrc,

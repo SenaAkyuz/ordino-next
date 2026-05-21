@@ -1,19 +1,23 @@
 import Image from "next/image";
-import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/Reveal";
 import type { Leader } from "@/lib/data/team";
 
 type LeadershipProps = {
-  eyebrow?: string;
+  eyebrow: string;
   lead?: string;
+  linkLabel: string;
   leaders: Leader[];
 };
 
-export function Leadership({
-  eyebrow = "Yönetim Kadrosu",
+export async function Leadership({
+  eyebrow,
   lead,
+  linkLabel,
   leaders,
 }: LeadershipProps) {
+  const t = await getTranslations("team");
+
   return (
     <section
       data-theme="light"
@@ -62,22 +66,20 @@ export function Leadership({
                   {leader.name}
                 </h3>
                 <p className="mb-4 font-body text-[0.78rem] uppercase tracking-[1.5px] text-gray">
-                  {leader.role}
+                  {t(`roles.${leader.roleKey}`)}
                 </p>
-                {leader.bio && (
-                  <p className="mb-5 font-body text-[0.85rem] font-light leading-[1.7] text-[#555]">
-                    {leader.bio}
-                  </p>
-                )}
+                <p className="mb-5 font-body text-[0.85rem] font-light leading-[1.7] text-[#555]">
+                  {t(`bios.${leader.bioKey}`)}
+                </p>
                 {leader.linkedin && (
-                  <Link
+                  <a
                     href={leader.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center font-body text-[0.78rem] uppercase tracking-[1.5px] text-black transition-opacity duration-300 hover:opacity-70"
                   >
-                    LinkedIn →
-                  </Link>
+                    {linkLabel}
+                  </a>
                 )}
               </div>
             </Reveal>

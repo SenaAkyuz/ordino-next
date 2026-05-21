@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
 import { EditorialHero } from "@/components/sections/EditorialHero";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { Showreel } from "@/components/sections/Showreel";
@@ -8,58 +9,103 @@ import { Leadership } from "@/components/sections/Leadership";
 import { TeamStructure } from "@/components/sections/TeamStructure";
 import { PartnerLogos } from "@/components/sections/PartnerLogos";
 import { Cta } from "@/components/sections/Cta";
-import { leadership, teamStructure } from "@/lib/data/team";
+import { leadership } from "@/lib/data/team";
+import { site } from "@/lib/data/site";
 
-export const metadata: Metadata = {
-  title: "Hakkımızda",
-  description:
-    "Ordino, London ve Istanbul merkezli full-service reklam ajansıdır. Google, Meta, TikTok ve X'te resmi reklam partnerliği ile Türk ve uluslararası markalara hizmet verir.",
+type Props = {
+  params: Promise<{ locale: Locale }>;
 };
 
-export default async function HakkimizdaPage({
-  params,
-}: {
-  params: Promise<{ locale: Locale }>;
-}) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({
+    locale: locale as (typeof routing.locales)[number],
+    namespace: "about.metadata",
+  });
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
+
+export default async function HakkimizdaPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const t = await getTranslations("about");
+  const tNav = await getTranslations("nav");
+
+  const stats = t.raw("howWeWork.stats") as Array<{
+    value: string;
+    label: string;
+  }>;
+
+  const partners = [
+    {
+      name: "Google Partner",
+      description: t("partnerLogos.partnerTypes.advertising"),
+      logo: "/partners/googlePartner.png",
+      showLogo: true,
+    },
+    {
+      name: "Meta Business Partner",
+      description: t("partnerLogos.partnerTypes.business"),
+      logo: "/partners/metaBusinessPartner.png",
+      showLogo: true,
+    },
+    {
+      name: "Google Analytics Partner",
+      description: t("partnerLogos.partnerTypes.analytics"),
+      logo: "/partners/googleAnalyticsPartner.png",
+      showLogo: true,
+    },
+    {
+      name: "TikTok Marketing Partner",
+      description: t("partnerLogos.partnerTypes.marketing"),
+      logo: "/partners/tiktokBusinessPartner.png",
+      showLogo: true,
+    },
+  ];
+
   return (
     <>
       <EditorialHero
-        eyebrow="Hakkımızda"
-        title="London ve Istanbul bazlı"
-        emphasis="full-service ajans."
-        prose={[
-          "Google, Meta, TikTok ve X'te resmi reklam partnerliği.",
-          "Türk ve uluslararası markalara hizmet.",
-        ]}
+        eyebrow={t("editorialHero.eyebrow")}
+        title={t("editorialHero.title")}
+        emphasis={t("editorialHero.emphasis")}
+        prose={[t("editorialHero.prose1"), t("editorialHero.prose2")]}
       />
       <HowWeWork
-        eyebrow="Rakamlarla Ordino"
-        title="11 yılda"
-        emphasis="ölçeklenen büyüme."
-        description="2015'ten bu yana 50'den fazla markaya hizmet veriyoruz. UK, USA ve Türkiye'de yönetilen reklam bütçelerimiz toplamda yüz milyonlarca dolar; binlerce kampanya teslim ettik. Ekibimiz, deneyimli stratejistler, performans uzmanları ve yaratıcı yönetmenlerden oluşur."
-        stats={[
-          { value: "11", label: "Yıllık Tecrübe" },
-          { value: "50+", label: "Marka ile Çalışıldı" },
-          { value: "£2M+", label: "Yönetilen Reklam Bütçesi" },
-          { value: "Binlerce", label: "Yönetilen Kampanya" },
-        ]}
+        eyebrow={t("howWeWork.eyebrow")}
+        title={t("howWeWork.title")}
+        emphasis={t("howWeWork.emphasis")}
+        description={t("howWeWork.description")}
+        stats={stats}
       />
       <Showreel
-        eyebrow="Studio Reel · 2026"
-        title="11 yılın "
-        emphasis="hikayesi."
+        eyebrow={t("showreel.eyebrow")}
+        title={`${t("showreel.title")} `}
+        emphasis={t("showreel.emphasis")}
       />
       <Leadership
-        lead="Ordino'nun yönetim kadrosu — strateji, performans, tasarım ve operasyondan sorumlu altı kişilik üst kadro."
+        eyebrow={t("leadership.eyebrow")}
+        lead={t("leadership.lead")}
+        linkLabel={t("leadership.linkLabel")}
         leaders={leadership}
       />
-      <TeamStructure groups={teamStructure} />
-      <PartnerLogos />
+      <TeamStructure />
+      <PartnerLogos
+        eyebrow={t("partnerLogos.eyebrow")}
+        title={t("partnerLogos.title")}
+        emphasis={t("partnerLogos.emphasis")}
+        description={t("partnerLogos.description")}
+        partners={partners}
+      />
       <Cta
-        title="Birlikte büyümeye"
-        emphasis="hazır mısınız?"
+        title={t("cta.title")}
+        emphasis={t("cta.emphasis")}
+        buttonLabel={tNav("ctaLabel")}
+        href={site.meetingUrl}
       />
     </>
   );

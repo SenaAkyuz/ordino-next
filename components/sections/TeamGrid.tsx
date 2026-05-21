@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/Reveal";
 import type { TeamMember } from "@/lib/data/team";
 
@@ -8,12 +9,14 @@ type TeamGridProps = {
   members: TeamMember[];
 };
 
-export function TeamGrid({
+export async function TeamGrid({
   eyebrow = "The A-Team",
   lead,
   leadEm,
   members,
 }: TeamGridProps) {
+  const t = await getTranslations("team");
+
   return (
     <section
       data-theme="light"
@@ -54,7 +57,7 @@ export function TeamGrid({
                   {member.name}
                 </h4>
                 <p className="font-body text-[0.85rem] font-light tracking-[0.5px] text-gray">
-                  {member.role}
+                  {t(`roles.${member.roleKey}`)}
                 </p>
               </div>
             </Reveal>

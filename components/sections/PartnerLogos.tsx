@@ -8,51 +8,20 @@ type Partner = {
   showLogo?: boolean;
 };
 
-// Sirket gercek partner logolarini verince:
-// 1. PNG dosyalarini /public/partners/ klasorune koy (uzerine yaz)
-// 2. Asagidaki showLogo: true yap
-// 3. Site otomatik olarak Image render eder
-const defaultPartners: Partner[] = [
-  {
-    name: "Google Partner",
-    description: "Resmi Reklam Partneri",
-    logo: "/partners/googlePartner.png",
-    showLogo: true,
-  },
-  {
-    name: "Meta Business Partner",
-    description: "Resmi Business Partner",
-    logo: "/partners/metaBusinessPartner.png",
-    showLogo: true,
-  },
-  {
-    name: "Google Analytics Partner",
-    description: "Resmi Analytics Partner",
-    logo: "/partners/googleAnalyticsPartner.png",
-    showLogo: true,
-  },
-  {
-    name: "TikTok Marketing Partner",
-    description: "Resmi Marketing Partner",
-    logo: "/partners/tiktokBusinessPartner.png",
-    showLogo: true,
-  },
-];
-
 type PartnerLogosProps = {
-  eyebrow?: string;
-  title?: string;
-  emphasis?: string;
-  description?: string;
-  partners?: Partner[];
+  eyebrow: string;
+  title: string;
+  emphasis: string;
+  description: string;
+  partners: Partner[];
 };
 
 export function PartnerLogos({
-  eyebrow = "Resmi Reklam Ortaklıklarımız",
-  title = "Sektörün lider platformlarıyla",
-  emphasis = "doğrulanmış partnerlikler.",
-  description = "Google, Meta, Google Analytics ve TikTok'un resmi reklam programlarındaki partner statümüz, kampanyalarınızda en güncel araçlara, beta özelliklere ve uzman desteğe doğrudan erişim sağlar.",
-  partners = defaultPartners,
+  eyebrow,
+  title,
+  emphasis,
+  description,
+  partners,
 }: PartnerLogosProps) {
   return (
     <section
