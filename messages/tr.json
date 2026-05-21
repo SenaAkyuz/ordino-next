@@ -1457,5 +1457,10 @@
       }
     },
     "placeholder": "İçerik yakında eklenecek..."
+  },
+  "notFound": {
+    "title": "Sayfa Bulunamadı",
+    "description": "Aradığınız sayfa taşınmış veya silinmiş olabilir. Anasayfadan devam edebilirsiniz.",
+    "backHome": "Anasayfaya Dön"
   }
 }

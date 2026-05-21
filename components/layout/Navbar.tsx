@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { navLinks, navCta } from "@/lib/data/nav";
 import { site } from "@/lib/data/site";
@@ -48,8 +48,16 @@ type NavbarProps = { forceDark?: boolean };
 
 export function Navbar({ forceDark = false }: NavbarProps) {
   const pathname = usePathname();
+  const locale = useLocale();
   const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
+
+  // Static-site external link'ler icin locale prefix ekle
+  // (next-intl Link kullanmiyoruz cunku statik HTML routing'i ayri)
+  const resolveExternal = (href: string) =>
+    locale === "en" && href.startsWith("/") && !href.startsWith("/en/")
+      ? `/en${href}`
+      : href;
   const navRef = useRef<HTMLElement>(null);
   const { isDark, isScrolled } = useAdaptiveNav({ navRef, forceDark });
   const instagram = site.social.find((s) => s.name === "Instagram");
@@ -119,7 +127,10 @@ export function Navbar({ forceDark = false }: NavbarProps) {
         {navLinks.map((link) => (
           <li key={link.key}>
             {link.external ? (
-              <a href={link.href} className={linkClass(link.href)}>
+              <a
+                href={resolveExternal(link.href)}
+                className={linkClass(link.href)}
+              >
                 {t(link.key)}
               </a>
             ) : (

@@ -13,6 +13,8 @@ const nextConfig: NextConfig = {
     return [
       { source: "/produksiyon", destination: "/produksiyon/index.html" },
       { source: "/produksiyon/", destination: "/produksiyon/index.html" },
+      { source: "/en/produksiyon", destination: "/en/produksiyon/index.html" },
+      { source: "/en/produksiyon/", destination: "/en/produksiyon/index.html" },
     ];
   },
 };

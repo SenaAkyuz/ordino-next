@@ -75,7 +75,9 @@ export default async function HizmetlerPage({ params }: Props) {
       />
       <WhatWeDo
         eyebrow={t("whatWeDo.eyebrow")}
-        title={t("whatWeDo.titleHtml")}
+        title={
+          (t.raw as (key: string) => unknown)("whatWeDo.titleHtml") as string
+        }
       />
       <ServicesHeroGrid cards={cards} />
       <ServicesAccordion details={details} />

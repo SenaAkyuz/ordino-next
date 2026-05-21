@@ -1457,5 +1457,10 @@
       }
     },
     "placeholder": "Content coming soon..."
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for may have moved or been removed. You can continue from the homepage.",
+    "backHome": "Back to Home"
   }
 }
