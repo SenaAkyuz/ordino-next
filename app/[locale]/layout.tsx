@@ -172,6 +172,15 @@ export default async function LocaleLayout({
             `}
           </Script>
         )}
+
+        {/* Contentsquare UXA — site.ts'te contentsquareId doldurulunca aktif olur */}
+        {site.contentsquareId && (
+          <Script
+            id="contentsquare-uxa"
+            src={`https://t.contentsquare.net/uxa/${site.contentsquareId}.js`}
+            strategy="afterInteractive"
+          />
+        )}
       </body>
     </html>
   );

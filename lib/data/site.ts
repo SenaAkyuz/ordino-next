@@ -37,6 +37,10 @@ export const site = {
   // Google Tag Manager container ID (GTM-XXXXXXX) — opsiyonel, GA4 yerine veya yaninda
   gtmId: "" as string,
 
+  // Contentsquare UXA tag ID — kullanici davranis analizi (heatmap, session replay)
+  // Script: https://t.contentsquare.net/uxa/<id>.js
+  contentsquareId: "bd0bff506467d" as string,
+
   // Google Search Console verification kodu (genelde "google-site-verification: <kod>" formatinda)
   // Search Console'da "HTML tag" yontemini secip <meta> tag icindeki content degerini buraya yapistir
   searchConsoleVerification: "" as string,
