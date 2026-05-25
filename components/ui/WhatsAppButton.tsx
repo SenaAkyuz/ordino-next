@@ -59,7 +59,10 @@ export function WhatsAppButton({ variant = "fab", className }: WhatsAppButtonPro
           "shadow-lg transition-all duration-300",
           "hover:scale-110 hover:shadow-xl",
           "focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2",
-          "md:bottom-8 md:right-8 md:h-16 md:w-16",
+          // Desktop: SideFixed (sosyal linkler + dikey çizgi, right-[35px] bottom-0 z-[999])
+          // ile çakışmamak için FAB'i o kolonun üstüne kaldır. Mobilde SideFixed
+          // gizli (hidden md:flex) olduğu için mobil konum (bottom-6) değişmedi.
+          "md:bottom-32 md:right-8 md:h-16 md:w-16",
           className,
         ]
           .filter(Boolean)
