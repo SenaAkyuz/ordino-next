@@ -1462,5 +1462,12 @@
     "title": "Page Not Found",
     "description": "The page you're looking for may have moved or been removed. You can continue from the homepage.",
     "backHome": "Back to Home"
+  },
+  "whatsapp": {
+    "ariaLabel": "Contact us via WhatsApp",
+    "preFilledMessage": "Hi, I'd like to learn more about Ordino Medya.",
+    "ctaTitle": "Message Us on WhatsApp",
+    "ctaDescription": "For quick questions and quote requests, you can reach us directly via WhatsApp.",
+    "ctaButton": "Open WhatsApp"
   }
 }

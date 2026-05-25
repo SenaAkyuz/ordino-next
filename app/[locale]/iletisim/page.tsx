@@ -7,6 +7,7 @@ import { ContactForm } from "@/components/sections/ContactForm";
 import { ScheduleMeeting } from "@/components/sections/ScheduleMeeting";
 import { PowerSection } from "@/components/sections/PowerSection";
 import { Cta } from "@/components/sections/Cta";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -34,6 +35,11 @@ export default async function IletisimPage({ params }: Props) {
   return (
     <>
       <ContactForm />
+      <section className="bg-white px-5 py-16 md:px-10 md:py-20 lg:px-20">
+        <div className="mx-auto max-w-[1200px]">
+          <WhatsAppButton variant="inline" />
+        </div>
+      </section>
       <WhereWeWork />
       <ScheduleMeeting calendlyUrl={site.meetingUrl} />
       <PowerSection

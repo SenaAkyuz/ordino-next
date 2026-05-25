@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 import { SideFixed } from "@/components/layout/SideFixed";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { CookieBanner } from "@/components/ui/CookieBanner";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
 import { PageViewTracker } from "@/components/analytics/PageViewTracker";
 import Script from "next/script";
@@ -185,6 +186,7 @@ export default async function LocaleLayout({
           <Footer />
           <CustomCursor />
           <CookieBanner />
+          <WhatsAppButton variant="fab" />
         </NextIntlClientProvider>
 
         {/* GA4 - Brief 15.5 — site.ts'te ga4Id doldurulunca aktif olur */}

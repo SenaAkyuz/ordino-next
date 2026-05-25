@@ -1462,5 +1462,12 @@
     "title": "Sayfa Bulunamadı",
     "description": "Aradığınız sayfa taşınmış veya silinmiş olabilir. Anasayfadan devam edebilirsiniz.",
     "backHome": "Anasayfaya Dön"
+  },
+  "whatsapp": {
+    "ariaLabel": "WhatsApp ile iletişime geçin",
+    "preFilledMessage": "Merhaba, Ordino Medya hakkında bilgi almak istiyorum.",
+    "ctaTitle": "WhatsApp'tan Yazın",
+    "ctaDescription": "Hızlı sorularınız ve teklif talepleriniz için doğrudan WhatsApp üzerinden bize ulaşabilirsiniz.",
+    "ctaButton": "WhatsApp'ı Aç"
   }
 }

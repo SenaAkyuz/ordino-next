@@ -48,4 +48,12 @@ export const site = {
   // Open Graph default image (1200x630 JPG) — sirket tasarimci hazirlayacak
   // Dosya geldiginde /public/og.jpg olarak koy, asagidaki path otomatik calisir
   ogImage: "/og.jpg" as string,
+
+  // WhatsApp Business contact
+  // Format: ulke kodu + numara, + ve bosluk OLMADAN, sifirsiz
+  // Ornek: +90 535 294 65 40 -> "905352946540"
+  whatsapp: {
+    number: "905352946540" as string,
+    enabled: true,
+  },
 } as const;
