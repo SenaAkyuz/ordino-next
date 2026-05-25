@@ -9,6 +9,7 @@ import { SideFixed } from "@/components/layout/SideFixed";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { CookieBanner } from "@/components/ui/CookieBanner";
 import { SchemaMarkup } from "@/components/seo/SchemaMarkup";
+import { PageViewTracker } from "@/components/analytics/PageViewTracker";
 import Script from "next/script";
 import { site } from "@/lib/data/site";
 import { routing } from "@/i18n/routing";
@@ -130,6 +131,38 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${cormorant.variable} ${jost.variable}`}>
       <body className="min-h-screen flex flex-col" suppressHydrationWarning>
+        {/* Consent Mode v2 default state — GTM/GA4'ten ÖNCE çalışmalı.
+            next/script beforeInteractive bu (nested) layout'ta afterInteractive'e
+            düşeceği için raw inline <script> kullanıyoruz: SSR HTML'inde parse
+            sırasında, afterInteractive olan GTM/GA4/Contentsquare'den önce çalışır.
+            Tüm consent KVKK uyumlu 'denied' başlar; localStorage'da önceki onay varsa restore eder. */}
+        {site.gtmId && (
+          <script
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                window.gtag = gtag;
+                var consent = 'denied';
+                try {
+                  if (localStorage.getItem('ordino-cookie-consent') === 'accepted') consent = 'granted';
+                } catch (e) {}
+                gtag('consent', 'default', {
+                  ad_storage: consent,
+                  ad_user_data: consent,
+                  ad_personalization: consent,
+                  analytics_storage: consent,
+                  functionality_storage: 'granted',
+                  security_storage: 'granted',
+                  wait_for_update: 500
+                });
+                gtag('set', { cookie_domain: 'auto' });
+              `,
+            }}
+          />
+        )}
+
         {/* Google Tag Manager (noscript) — body'nin en başında, JS kapalı kullanıcılar için fallback */}
         {site.gtmId && (
           <noscript>
@@ -144,6 +177,7 @@ export default async function LocaleLayout({
         )}
 
         <NextIntlClientProvider messages={messages}>
+          {site.gtmId && <PageViewTracker />}
           <SchemaMarkup />
           <Navbar />
           <SideFixed />

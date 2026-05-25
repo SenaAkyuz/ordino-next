@@ -19,13 +19,37 @@ export function CookieBanner() {
     }
   }, []);
 
+  // GTM Consent Mode v2 update + localStorage persist.
+  // Sonraki ziyarette layout.tsx'teki consent default script bu key'i okuyup
+  // 'accepted' ise default'u 'granted' olarak restore eder.
+  const updateConsent = (granted: boolean) => {
+    if (typeof window === "undefined") return;
+    const value = granted ? "granted" : "denied";
+
+    try {
+      localStorage.setItem(COOKIE_KEY, granted ? "accepted" : "rejected");
+    } catch {
+      // privacy mode vb. — localStorage erişimi yoksa sessiz geç
+    }
+
+    if (typeof window.gtag === "function") {
+      window.gtag("consent", "update", {
+        ad_storage: value,
+        ad_user_data: value,
+        ad_personalization: value,
+        analytics_storage: value,
+        // functionality_storage / security_storage default'ta zaten 'granted'
+      });
+    }
+  };
+
   const handleAccept = () => {
-    localStorage.setItem(COOKIE_KEY, "accepted");
+    updateConsent(true);
     setShow(false);
   };
 
   const handleReject = () => {
-    localStorage.setItem(COOKIE_KEY, "rejected");
+    updateConsent(false);
     setShow(false);
   };
 
