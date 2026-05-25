@@ -130,6 +130,19 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${cormorant.variable} ${jost.variable}`}>
       <body className="min-h-screen flex flex-col" suppressHydrationWarning>
+        {/* Google Tag Manager (noscript) — body'nin en başında, JS kapalı kullanıcılar için fallback */}
+        {site.gtmId && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${site.gtmId}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+              title="Google Tag Manager (noscript)"
+            />
+          </noscript>
+        )}
+
         <NextIntlClientProvider messages={messages}>
           <SchemaMarkup />
           <Navbar />

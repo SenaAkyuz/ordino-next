@@ -35,7 +35,7 @@ export const site = {
   ga4Id: "G-WH6CEQ9GSZ" as string,
 
   // Google Tag Manager container ID (GTM-XXXXXXX) — opsiyonel, GA4 yerine veya yaninda
-  gtmId: "" as string,
+  gtmId: "GTM-P97LMP2F" as string,
 
   // Contentsquare UXA tag ID — kullanici davranis analizi (heatmap, session replay)
   // Script: https://t.contentsquare.net/uxa/<id>.js
