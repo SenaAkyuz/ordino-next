@@ -59,6 +59,9 @@ TUR-*.txt
 /playwright-report/
 /test-results/
 
+# Yerel script log/ciktilari
+/scripts/*.log
+
 # Yedek dosyalar
 *.bak
 

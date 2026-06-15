@@ -251,6 +251,21 @@
     .o-nav .o-links,.o-nav .o-right{display:none}
     .o-burger{display:flex}
   }
+
+  /* ----- PRODUCTION REEL CAROUSEL ----- */
+  .pcar{position:relative}
+  .pcar-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none;-ms-overflow-style:none}
+  .pcar-track::-webkit-scrollbar{display:none}
+  .pcar-card{position:relative;flex:0 0 auto;width:260px;aspect-ratio:9/16;background:#0d0e10;overflow:hidden;scroll-snap-align:start;cursor:pointer}
+  .pcar-card video{width:100%;height:100%;object-fit:cover;display:block}
+  .pcar-card .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;opacity:0;transition:opacity .25s ease;background:rgba(8,12,20,.35)}
+  .pcar-card:hover .play{opacity:1}
+  .pcar-card .play::before{content:"";display:block;width:0;height:0;border-style:solid;border-width:16px 0 16px 26px;border-color:transparent transparent transparent #fff;margin-left:6px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
+  .pcar-nav{display:flex;gap:10px;margin-top:18px;justify-content:flex-end}
+  .pcar-btn{width:46px;height:46px;border:1px solid var(--line);background:transparent;color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;line-height:1;border-radius:50%;font-family:inherit;transition:border-color .25s ease,color .25s ease}
+  .pcar-btn:hover{border-color:var(--gold);color:var(--gold)}
+  .pcar-btn:disabled{opacity:.3;cursor:not-allowed}
+  @media (max-width:900px){.pcar-card{width:62vw}}
 </style>
 </head>
 <body>
@@ -428,10 +443,46 @@
   </div>
 </section>
 
+<!-- PRODUCTION — REEL CAROUSEL -->
+<section>
+  <div class="cat-head">
+    <h3><span class="n">04 —</span>Production</h3>
+    <div class="cap">Vertical content and reel examples we produce for our brands.</div>
+  </div>
+  <div class="pcar">
+    <div class="pcar-track" id="pcarTrack">
+      <div class="pcar-card" data-src="/videos/influencers/bliss-hd.mp4">
+        <video src="/videos/influencers/bliss.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <div class="play"></div>
+      </div>
+      <div class="pcar-card" data-src="/videos/influencers/audi-turkiye.mp4">
+        <video src="/videos/influencers/audi-turkiye.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <div class="play"></div>
+      </div>
+      <div class="pcar-card" data-src="/videos/influencers/avek-audi.mp4">
+        <video src="/videos/influencers/avek-audi.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <div class="play"></div>
+      </div>
+      <div class="pcar-card" data-src="/videos/influencers/reel-1.mp4">
+        <video src="/videos/influencers/reel-1.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <div class="play"></div>
+      </div>
+      <div class="pcar-card" data-src="/videos/influencers/reel-2.mp4">
+        <video src="/videos/influencers/reel-2.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <div class="play"></div>
+      </div>
+    </div>
+    <div class="pcar-nav">
+      <button class="pcar-btn" id="pcarPrev" aria-label="Previous">‹</button>
+      <button class="pcar-btn" id="pcarNext" aria-label="Next">›</button>
+    </div>
+  </div>
+</section>
+
 <!-- CATEGORY 1 — DRONE HERO -->
 <section>
   <div class="cat-head">
-    <h3><span class="n">04 —</span>Drone Frames</h3>
+    <h3><span class="n">05 —</span>Drone Frames</h3>
     <div class="cap">Aerial frames showing the subject with its scale: in motion, static composition, environmental texture, and top-down angles.</div>
   </div>
   <div class="grid g-mosaic">
@@ -445,7 +496,7 @@
 <!-- CATEGORY 2 — EXTERIOR BEAUTY -->
 <section>
   <div class="cat-head">
-    <h3><span class="n">05 —</span>Product Portraits</h3>
+    <h3><span class="n">06 —</span>Product Portraits</h3>
     <div class="cap">Product portraits at eye level and from varied angles. Side profiles, detail crops, and texture-focused compositions.</div>
   </div>
   <div class="grid g-3">
@@ -458,7 +509,7 @@
 <!-- CATEGORY 3 — INTERIOR / LIVING -->
 <section>
   <div class="cat-head">
-    <h3><span class="n">06 —</span>Interior &amp; Living Spaces</h3>
+    <h3><span class="n">07 —</span>Interior &amp; Living Spaces</h3>
     <div class="cap">Lounging, working, and resting spaces — life captured with the feel of a premium suite.</div>
   </div>
   <div class="grid g-mosaic">
@@ -473,7 +524,7 @@
 <!-- CATEGORY 4 — LIFESTYLE -->
 <section>
   <div class="cat-head">
-    <h3><span class="n">07 —</span>Lifestyle · Ownership Feel</h3>
+    <h3><span class="n">08 —</span>Lifestyle · Ownership Feel</h3>
     <div class="cap">Minimal cast. A silhouette, bare feet, two glasses. A lived moment — never a sales pose.</div>
   </div>
   <div class="grid g-3">
@@ -486,7 +537,7 @@
 <!-- CATEGORY 5 — ATMOSPHERE -->
 <section>
   <div class="cat-head">
-    <h3><span class="n">08 —</span>Atmosphere &amp; Texture</h3>
+    <h3><span class="n">09 —</span>Atmosphere &amp; Texture</h3>
     <div class="cap">In-between frames and textures — surface, reflection, material detail. The visuals where the edit breathes.</div>
   </div>
   <div class="grid g-3">
@@ -499,7 +550,7 @@
 <!-- CATEGORY 6 — LOCATION -->
 <section>
   <div class="cat-head">
-    <h3><span class="n">09 —</span>Location · Shooting Geography</h3>
+    <h3><span class="n">10 —</span>Location · Shooting Geography</h3>
     <div class="cap">The geography the brief calls for — each region brings its own texture and light. The frames below are illustrative.</div>
   </div>
   <div class="grid g-3">
@@ -511,7 +562,7 @@
 
 <!-- ROUTE OVERVIEW -->
 <section class="route">
-  <h2><span class="num">10 — Route</span>Shoot plan, region by region.</h2>
+  <h2><span class="num">11 — Route</span>Shoot plan, region by region.</h2>
   <p class="lede">Days and locations split per the brief — each stop brings a different light, texture, and atmosphere. The structure below is illustrative only.</p>
   <div class="route-line">
     <div class="stop">
@@ -534,7 +585,7 @@
 
 <!-- TYPOGRAPHY -->
 <section>
-  <h2><span class="num">11 — Typography</span>Quiet and confident.</h2>
+  <h2><span class="num">12 — Typography</span>Quiet and confident.</h2>
   <div class="typo">
     <div class="typo-sample">
       <div class="display">Your brand.</div>
@@ -700,6 +751,67 @@
       if(v){ v.autoplay = true; v.muted = true; v.play().catch(()=>{}); }
     });
   }
+})();
+</script>
+
+<!-- PRODUCTION REEL CAROUSEL -->
+<script>
+(function(){
+  const track = document.getElementById('pcarTrack');
+  if(!track) return;
+  const cards = Array.from(track.querySelectorAll('.pcar-card'));
+  const prev = document.getElementById('pcarPrev');
+  const next = document.getElementById('pcarNext');
+
+  /* autoplay only visible cards */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const v = e.target.querySelector('video');
+      if(!v) return;
+      if(e.isIntersecting){ v.play().catch(()=>{}); } else { v.pause(); }
+    });
+  }, { threshold: 0.3 });
+  cards.forEach(c => io.observe(c));
+
+  function scrollByCard(dir){
+    const card = cards[0];
+    if(!card) return;
+    track.scrollBy({ left: dir * (card.offsetWidth + 14), behavior: 'smooth' });
+  }
+  function updateBtns(){
+    if(prev) prev.disabled = track.scrollLeft <= 10;
+    if(next) next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 10;
+  }
+  if(prev) prev.addEventListener('click', () => scrollByCard(-1));
+  if(next) next.addEventListener('click', () => scrollByCard(1));
+  track.addEventListener('scroll', updateBtns, { passive:true });
+  window.addEventListener('resize', updateBtns);
+  updateBtns();
+
+  /* click → fullscreen (same overlay pattern as video tiles) */
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const src = card.dataset.src;
+      if(!src) return;
+      const overlay = document.createElement('div');
+      overlay.className = 'lb open';
+      overlay.style.cursor = 'zoom-out';
+      overlay.innerHTML = '<button class="lb-close" aria-label="Close">×</button><video src="' + src + '" autoplay controls playsinline webkit-playsinline style="max-width:96vw;max-height:90vh;width:auto;height:auto;box-shadow:0 60px 120px -20px rgba(0,0,0,.6)"></video>';
+      /* pause all carousel videos behind the fullscreen overlay (decode contention -> stutter) */
+      cards.forEach(c => { const cv = c.querySelector('video'); if(cv) cv.pause(); });
+      document.body.appendChild(overlay);
+      document.body.classList.add('lb-open');
+      const closeOverlay = () => {
+        overlay.remove();
+        document.body.classList.remove('lb-open');
+        /* on close, only resume cards in the viewport */
+        cards.forEach(c => { const cv = c.querySelector('video'); if(!cv) return; const r = c.getBoundingClientRect(); if(r.top < window.innerHeight && r.bottom > 0) cv.play().catch(()=>{}); });
+      };
+      overlay.querySelector('.lb-close').addEventListener('click', closeOverlay);
+      overlay.addEventListener('click', (e) => { if(e.target === overlay) closeOverlay(); });
+      document.addEventListener('keydown', function esc(e){ if(e.key === 'Escape'){ closeOverlay(); document.removeEventListener('keydown', esc); } });
+    });
+  });
 })();
 </script>
 </body>

@@ -1469,5 +1469,11 @@
     "ctaTitle": "Message Us on WhatsApp",
     "ctaDescription": "For quick questions and quote requests, you can reach us directly via WhatsApp.",
     "ctaButton": "Open WhatsApp"
+  },
+  "influencerCarousel": {
+    "title": "Influencer Collaborations",
+    "description": "We craft custom strategies tailored to each brand's goals, contributing positively to the growth of every brand we serve in a highly competitive landscape.",
+    "prevButton": "Previous",
+    "nextButton": "Next"
   }
 }

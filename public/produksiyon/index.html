@@ -251,6 +251,21 @@
     .o-nav .o-links,.o-nav .o-right{display:none}
     .o-burger{display:flex}
   }
+
+  /* ----- PRODUCTION REEL CAROUSEL ----- */
+  .pcar{position:relative}
+  .pcar-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none;-ms-overflow-style:none}
+  .pcar-track::-webkit-scrollbar{display:none}
+  .pcar-card{position:relative;flex:0 0 auto;width:260px;aspect-ratio:9/16;background:#0d0e10;overflow:hidden;scroll-snap-align:start;cursor:pointer}
+  .pcar-card video{width:100%;height:100%;object-fit:cover;display:block}
+  .pcar-card .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;opacity:0;transition:opacity .25s ease;background:rgba(8,12,20,.35)}
+  .pcar-card:hover .play{opacity:1}
+  .pcar-card .play::before{content:"";display:block;width:0;height:0;border-style:solid;border-width:16px 0 16px 26px;border-color:transparent transparent transparent #fff;margin-left:6px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
+  .pcar-nav{display:flex;gap:10px;margin-top:18px;justify-content:flex-end}
+  .pcar-btn{width:46px;height:46px;border:1px solid var(--line);background:transparent;color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;line-height:1;border-radius:50%;font-family:inherit;transition:border-color .25s ease,color .25s ease}
+  .pcar-btn:hover{border-color:var(--gold);color:var(--gold)}
+  .pcar-btn:disabled{opacity:.3;cursor:not-allowed}
+  @media (max-width:900px){.pcar-card{width:62vw}}
 </style>
 </head>
 <body>
@@ -435,10 +450,46 @@
   </div>
 </section>
 
+<!-- PRODÜKSİYON — REEL CAROUSEL -->
+<section>
+  <div class="cat-head">
+    <h3><span class="n">04 —</span>Prodüksiyon</h3>
+    <div class="cap">Markalarımız için ürettiğimiz dikey içerik ve reel örnekleri.</div>
+  </div>
+  <div class="pcar">
+    <div class="pcar-track" id="pcarTrack">
+      <div class="pcar-card" data-src="/videos/influencers/bliss-hd.mp4">
+        <video src="/videos/influencers/bliss.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <div class="play"></div>
+      </div>
+      <div class="pcar-card" data-src="/videos/influencers/audi-turkiye.mp4">
+        <video src="/videos/influencers/audi-turkiye.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <div class="play"></div>
+      </div>
+      <div class="pcar-card" data-src="/videos/influencers/avek-audi.mp4">
+        <video src="/videos/influencers/avek-audi.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <div class="play"></div>
+      </div>
+      <div class="pcar-card" data-src="/videos/influencers/reel-1.mp4">
+        <video src="/videos/influencers/reel-1.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <div class="play"></div>
+      </div>
+      <div class="pcar-card" data-src="/videos/influencers/reel-2.mp4">
+        <video src="/videos/influencers/reel-2.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
+        <div class="play"></div>
+      </div>
+    </div>
+    <div class="pcar-nav">
+      <button class="pcar-btn" id="pcarPrev" aria-label="Önceki">‹</button>
+      <button class="pcar-btn" id="pcarNext" aria-label="Sonraki">›</button>
+    </div>
+  </div>
+</section>
+
 <!-- KATEGORİ 1 — DRONE HERO -->
 <section>
   <div class="cat-head">
-    <h3><span class="n">04 —</span>Drone Kareler</h3>
+    <h3><span class="n">05 —</span>Drone Kareler</h3>
     <div class="cap">Konuyu ölçeğiyle birlikte gösteren havadan kareler: hareket halinde, statik kompozisyon, çevresel doku ve tepe açı.</div>
   </div>
   <div class="grid g-mosaic">
@@ -452,7 +503,7 @@
 <!-- KATEGORİ 2 — EXTERIOR BEAUTY -->
 <section>
   <div class="cat-head">
-    <h3><span class="n">05 —</span>Ürün Portreleri</h3>
+    <h3><span class="n">06 —</span>Ürün Portreleri</h3>
     <div class="cap">Konuyu göz hizasından ve farklı açılardan gösteren ürün portreleri. Yan profil, detay kadrajları ve doku odaklı kompozisyonlar.</div>
   </div>
   <div class="grid g-3">
@@ -465,7 +516,7 @@
 <!-- KATEGORİ 3 — INTERIOR / LIVING -->
 <section>
   <div class="cat-head">
-    <h3><span class="n">06 —</span>İç Mekan &amp; Yaşam Alanları</h3>
+    <h3><span class="n">07 —</span>İç Mekan &amp; Yaşam Alanları</h3>
     <div class="cap">Oturma, çalışma, dinlenme alanları — premium süit hissinde yaşam kareleri.</div>
   </div>
   <div class="grid g-mosaic">
@@ -480,7 +531,7 @@
 <!-- KATEGORİ 4 — LIFESTYLE -->
 <section>
   <div class="cat-head">
-    <h3><span class="n">07 —</span>Yaşam Tarzı · Sahiplik Hissi</h3>
+    <h3><span class="n">08 —</span>Yaşam Tarzı · Sahiplik Hissi</h3>
     <div class="cap">Cast minimal. Silüet, çıplak ayak, iki kadeh. Yaşanan bir an — hiçbir zaman satış pozu değil.</div>
   </div>
   <div class="grid g-3">
@@ -493,7 +544,7 @@
 <!-- KATEGORİ 5 — ATMOSPHERE -->
 <section>
   <div class="cat-head">
-    <h3><span class="n">08 —</span>Atmosfer &amp; Doku</h3>
+    <h3><span class="n">09 —</span>Atmosfer &amp; Doku</h3>
     <div class="cap">Ara kareler ve dokular — yüzey, yansıma, malzeme detayı. Kurgunun nefes aldığı görseller.</div>
   </div>
   <div class="grid g-3">
@@ -506,7 +557,7 @@
 <!-- KATEGORİ 6 — LOCATION -->
 <section>
   <div class="cat-head">
-    <h3><span class="n">09 —</span>Lokasyon · Çekim Coğrafyası</h3>
+    <h3><span class="n">10 —</span>Lokasyon · Çekim Coğrafyası</h3>
     <div class="cap">Briefin gerektirdiği coğrafya — her bölge kendi dokusunu ve ışığını getirir. Aşağıdaki kareler örnek niteliğindedir.</div>
   </div>
   <div class="grid g-3">
@@ -518,7 +569,7 @@
 
 <!-- ROUTE OVERVIEW -->
 <section class="route">
-  <h2><span class="num">10 — Rota</span>Çekim planı, bölge bölge.</h2>
+  <h2><span class="num">11 — Rota</span>Çekim planı, bölge bölge.</h2>
   <p class="lede">Briefe göre günler ve lokasyonlar bölünür — her durak farklı bir ışık, doku ve atmosfer getirir. Aşağıdaki yapı yalnızca örnek bir kurgudur.</p>
   <div class="route-line">
     <div class="stop">
@@ -541,7 +592,7 @@
 
 <!-- TYPOGRAPHY -->
 <section>
-  <h2><span class="num">11 — Tipografi</span>Sessiz ve güvenli.</h2>
+  <h2><span class="num">12 — Tipografi</span>Sessiz ve güvenli.</h2>
   <div class="typo">
     <div class="typo-sample">
       <div class="display">Markanız.</div>
@@ -713,6 +764,67 @@
       if(v){ v.autoplay = true; v.muted = true; v.play().catch(()=>{}); }
     });
   }
+})();
+</script>
+
+<!-- PRODÜKSİYON REEL CAROUSEL -->
+<script>
+(function(){
+  const track = document.getElementById('pcarTrack');
+  if(!track) return;
+  const cards = Array.from(track.querySelectorAll('.pcar-card'));
+  const prev = document.getElementById('pcarPrev');
+  const next = document.getElementById('pcarNext');
+
+  /* autoplay only visible cards */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const v = e.target.querySelector('video');
+      if(!v) return;
+      if(e.isIntersecting){ v.play().catch(()=>{}); } else { v.pause(); }
+    });
+  }, { threshold: 0.3 });
+  cards.forEach(c => io.observe(c));
+
+  function scrollByCard(dir){
+    const card = cards[0];
+    if(!card) return;
+    track.scrollBy({ left: dir * (card.offsetWidth + 14), behavior: 'smooth' });
+  }
+  function updateBtns(){
+    if(prev) prev.disabled = track.scrollLeft <= 10;
+    if(next) next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 10;
+  }
+  if(prev) prev.addEventListener('click', () => scrollByCard(-1));
+  if(next) next.addEventListener('click', () => scrollByCard(1));
+  track.addEventListener('scroll', updateBtns, { passive:true });
+  window.addEventListener('resize', updateBtns);
+  updateBtns();
+
+  /* click → fullscreen (same overlay pattern as video tiles) */
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const src = card.dataset.src;
+      if(!src) return;
+      const overlay = document.createElement('div');
+      overlay.className = 'lb open';
+      overlay.style.cursor = 'zoom-out';
+      overlay.innerHTML = '<button class="lb-close" aria-label="Kapat">×</button><video src="' + src + '" autoplay controls playsinline webkit-playsinline style="max-width:96vw;max-height:90vh;width:auto;height:auto;box-shadow:0 60px 120px -20px rgba(0,0,0,.6)"></video>';
+      /* tam ekran açılırken arkadaki tüm carousel videolarını durdur (decode contention -> kasma) */
+      cards.forEach(c => { const cv = c.querySelector('video'); if(cv) cv.pause(); });
+      document.body.appendChild(overlay);
+      document.body.classList.add('lb-open');
+      const closeOverlay = () => {
+        overlay.remove();
+        document.body.classList.remove('lb-open');
+        /* kapanınca yalnızca görünür kartları tekrar oynat */
+        cards.forEach(c => { const cv = c.querySelector('video'); if(!cv) return; const r = c.getBoundingClientRect(); if(r.top < window.innerHeight && r.bottom > 0) cv.play().catch(()=>{}); });
+      };
+      overlay.querySelector('.lb-close').addEventListener('click', closeOverlay);
+      overlay.addEventListener('click', (e) => { if(e.target === overlay) closeOverlay(); });
+      document.addEventListener('keydown', function esc(e){ if(e.key === 'Escape'){ closeOverlay(); document.removeEventListener('keydown', esc); } });
+    });
+  });
 })();
 </script>
 </body>

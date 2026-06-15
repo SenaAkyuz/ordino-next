@@ -1469,5 +1469,11 @@
     "ctaTitle": "WhatsApp'tan Yazın",
     "ctaDescription": "Hızlı sorularınız ve teklif talepleriniz için doğrudan WhatsApp üzerinden bize ulaşabilirsiniz.",
     "ctaButton": "WhatsApp'ı Aç"
+  },
+  "influencerCarousel": {
+    "title": "Influencer İş Birlikleri",
+    "description": "Markalarımızın hedeflerine göre özel stratejiler oluşturmakta ve yoğun rekabet içerisinde, hizmet verdiğimiz her markanın büyümesinde pozitif katkı sunmaktayız.",
+    "prevButton": "Önceki",
+    "nextButton": "Sonraki"
   }
 }

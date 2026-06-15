@@ -4,6 +4,7 @@ import type { Locale } from "@/i18n/routing";
 import { Hero } from "@/components/sections/Hero";
 import { ClientsShowcase } from "@/components/sections/ClientsShowcase";
 import { HowWeWork } from "@/components/sections/HowWeWork";
+import { InfluencerCarousel } from "@/components/sections/InfluencerCarousel";
 import { PartnerMarquee } from "@/components/sections/PartnerMarquee";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { LatestWorks } from "@/components/sections/LatestWorks";
@@ -59,6 +60,7 @@ export default async function Home({ params }: Props) {
     <>
       <Hero />
       <ClientsShowcase />
+      <InfluencerCarousel />
       <HowWeWork
         eyebrow={t("howWeWork.eyebrow")}
         title={t("howWeWork.title")}
