@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="loading">
+<html lang="en">
 <head>
 <base href="/produksiyon/">
 <meta charset="utf-8">
@@ -135,29 +135,7 @@
   .proposal-link:hover{background:var(--teal)}
   .proposal-link::after{content:"→";font-size:18px}
 
-  /* ----- LIGHTBOX ----- */
-  .tile{cursor:zoom-in}
-  .lb{position:fixed;inset:0;background:rgba(8,12,20,.94);display:none;align-items:center;justify-content:center;z-index:9999;padding:32px;backdrop-filter:blur(6px)}
-  .lb.open{display:flex}
-  .lb img{max-width:96vw;max-height:90vh;width:auto;height:auto;object-fit:contain;box-shadow:0 60px 120px -20px rgba(0,0,0,.6);animation:lbIn .25s ease}
-  @keyframes lbIn{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
-  .lb .lb-cap{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);color:#EAE3D6;font-size:12px;letter-spacing:.22em;text-transform:uppercase;background:rgba(0,0,0,.4);padding:8px 14px}
-  .lb .lb-close{position:absolute;top:24px;right:32px;color:#fff;font-size:32px;cursor:pointer;background:none;border:none;line-height:1;font-family:inherit}
-  .lb .lb-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:48px;cursor:pointer;background:none;border:none;padding:24px;font-family:inherit;line-height:1;opacity:.7;transition:opacity .2s}
-  .lb .lb-nav:hover{opacity:1}
-  .lb .lb-nav.prev{left:8px}
-  .lb .lb-nav.next{right:8px}
-  body.lb-open{overflow:hidden}
 
-  /* ----- PRELOADER ----- */
-  html.loading,html.loading body{overflow:hidden;height:100%}
-  .preloader{position:fixed;inset:0;background:#0d0e10;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .6s ease,visibility .6s ease;color:#EAE3D6}
-  .preloader.done{opacity:0;visibility:hidden;pointer-events:none}
-  .preloader .pl-mark{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:32px;font-weight:300;letter-spacing:.02em;opacity:.85}
-  .preloader .pl-bar{width:120px;height:1px;background:rgba(234,227,214,.18);position:relative;overflow:hidden}
-  .preloader .pl-bar::after{content:"";position:absolute;left:-40%;top:0;height:100%;width:40%;background:#B68A4E;animation:plSlide 1.4s ease-in-out infinite}
-  @keyframes plSlide{0%{left:-40%}100%{left:100%}}
-  .preloader .pl-meta{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:rgba(234,227,214,.45)}
 
   /* ----- VIDEO TILES ----- */
   .videos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:start}
@@ -252,20 +230,40 @@
     .o-burger{display:flex}
   }
 
-  /* ----- PRODUCTION REEL CAROUSEL ----- */
-  .pcar{position:relative}
-  .pcar-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none;-ms-overflow-style:none}
-  .pcar-track::-webkit-scrollbar{display:none}
-  .pcar-card{position:relative;flex:0 0 auto;width:260px;aspect-ratio:9/16;background:#0d0e10;overflow:hidden;scroll-snap-align:start;cursor:pointer}
-  .pcar-card video{width:100%;height:100%;object-fit:cover;display:block}
-  .pcar-card .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;opacity:0;transition:opacity .25s ease;background:rgba(8,12,20,.35)}
-  .pcar-card:hover .play{opacity:1}
-  .pcar-card .play::before{content:"";display:block;width:0;height:0;border-style:solid;border-width:16px 0 16px 26px;border-color:transparent transparent transparent #fff;margin-left:6px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
-  .pcar-nav{display:flex;gap:10px;margin-top:18px;justify-content:flex-end}
-  .pcar-btn{width:46px;height:46px;border:1px solid var(--line);background:transparent;color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;line-height:1;border-radius:50%;font-family:inherit;transition:border-color .25s ease,color .25s ease}
-  .pcar-btn:hover{border-color:var(--gold);color:var(--gold)}
-  .pcar-btn:disabled{opacity:.3;cursor:not-allowed}
-  @media (max-width:900px){.pcar-card{width:62vw}}
+
+  /* ----- PRODÜKSIYON KATEGORİLER ----- */
+  .cat-section{padding:80px 0;border-bottom:1px solid var(--line)}
+  .cat-section .num{font-family:"Inter",sans-serif;font-size:13px;font-weight:500;letter-spacing:.32em;color:var(--gold);display:block;margin-bottom:14px}
+  .cat-section h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;font-size:clamp(36px,4.5vw,56px);letter-spacing:-.01em;line-height:1.05;margin-bottom:12px}
+  .cat-section .lede{font-size:18px;color:var(--ink-2);max-width:760px;margin-bottom:40px}
+
+  /* Video grid — responsive 3/2/1 sütun */
+  .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:980px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.vgrid{grid-template-columns:1fr}}
+  .vtile{position:relative;overflow:hidden;background:#1B2738;border-radius:2px;aspect-ratio:9/16}
+  .vtile video{width:100%;height:100%;object-fit:cover;display:block}
+  .vtile .vplay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(13,14,16,.15);cursor:pointer;transition:background .3s ease;border:0;width:100%}
+  .vtile .vplay:hover{background:rgba(13,14,16,.05)}
+  .vtile .vplay svg{width:54px;height:54px;opacity:0;transition:opacity .3s ease}
+  .vtile:hover .vplay svg{opacity:.9}
+  .vtile.paused .vplay svg{opacity:.9}
+
+  /* Boş başlık placeholder */
+  .vempty{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:980px){.vempty{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.vempty{grid-template-columns:1fr}}
+  .vplaceholder{aspect-ratio:9/16;border-radius:2px;background:linear-gradient(135deg,var(--bg-2) 0%,#dfd6c5 100%);border:1px dashed var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;color:var(--mute)}
+  .vplaceholder .ico{width:40px;height:40px;margin-bottom:16px;opacity:.4}
+  .vplaceholder .soon{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--gold)}
+  .vplaceholder .soon-sub{font-size:13px;margin-top:8px;color:var(--mute)}
+
+  /* "Daha fazla" butonu + gizli videolar */
+  .vmore-wrap{display:flex;justify-content:center;margin-top:32px}
+  .vmore{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--ink);background:transparent;border:1px solid var(--line);padding:14px 36px;border-radius:10em;cursor:pointer;transition:all .3s ease}
+  .vmore:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .vtile.v-hidden{display:none}
+  .vgrid.expanded .vtile.v-hidden{display:block}
 </style>
 </head>
 <body>
@@ -341,12 +339,6 @@
   })();
 </script>
 
-<!-- PRELOADER -->
-<div class="preloader" id="preloader" aria-hidden="true">
-  <div class="pl-mark">moodboard sample</div>
-  <div class="pl-bar"></div>
-  <div class="pl-meta">loading</div>
-</div>
 
 <div class="wrap">
 
@@ -366,452 +358,395 @@
   </div>
 </section>
 
-<!-- VISUAL DNA / 5 Principles -->
-<section>
-  <h2><span class="num">01 — Visual Language</span>Five Principles</h2>
-  <p class="lede">We distilled the brief's essence into five words. Every frame must carry at least three of them — otherwise it doesn't make the cut.</p>
-  <div class="principles">
-    <div class="p-card"><div class="kicker">01</div><h3>Minimal composition</h3><p>The subject must read cleanly in every frame. No complex props, crowded framing, or unnecessary accessories.</p></div>
-    <div class="p-card"><div class="kicker">02</div><h3>Natural light</h3><p>80% of shots in golden hour and blue hour. Studio lighting only as interior fill.</p></div>
-    <div class="p-card"><div class="kicker">03</div><h3>Lens flare ↦ friend</h3><p>No anti-reflective filters. Natural flare is part of the composition.</p></div>
-    <div class="p-card"><div class="kicker">04</div><h3>Cast = atmosphere</h3><p>1–3 figures. Spontaneous and genuine. Faces are welcome, sales poses are not — moments, not poses.</p></div>
-    <div class="p-card"><div class="kicker">05</div><h3>Warm neutral</h3><p>A warm half-stop. Not cliché — character. The brand's signature palette always leans warm.</p></div>
-  </div>
-</section>
+<!-- KATEGORI 1 -->
+<section class="cat-section">
+  <div class="wrap">
+    <span class="num">01 — Restaurant &amp; Café</span>
+    <h2 class="serif">Restaurant &amp; Café Productions</h2>
+    <p class="lede">Menu, venue, chef and experience-focused content.</p>
 
-<!-- COLOR PALETTE -->
-<section>
-  <h2><span class="num">02 — Color Palette</span>A palette chosen to match the brand's language.</h2>
-  <p class="lede">A color palette crafted to your brief — warm/cool balance, tonal hierarchy, and accents calibrated to your brand's visual identity. The tones below are for illustration only.</p>
-  <div class="palette">
-    <div class="swatch dark" style="background:#1B2738"><div class="name">Deep Navy</div><div class="hex">#1B2738</div></div>
-    <div class="swatch dark" style="background:#2E5C66"><div class="name">Aegean Teal</div><div class="hex">#2E5C66</div></div>
-    <div class="swatch dark" style="background:#7AA0A8"><div class="name">Soft Blue</div><div class="hex">#7AA0A8</div></div>
-    <div class="swatch light" style="background:#F4EFE8"><div class="name">Warm Cream</div><div class="hex">#F4EFE8</div></div>
-    <div class="swatch dark" style="background:#B68A4E"><div class="name">Teak Gold</div><div class="hex">#B68A4E</div></div>
-    <div class="swatch dark" style="background:#7A4A2C"><div class="name">Leather Brown</div><div class="hex">#7A4A2C</div></div>
-  </div>
-  <div class="palette-notes">
-    <div><h4>Base &amp; Background</h4>Warm neutrals push the product forward; backgrounds always recede in favor of the scene's main object.</div>
-    <div><h4>Accent &amp; Detail</h4>Secondary tones carry the brand's DNA. Textures and details are built from different saturations of the same family.</div>
-    <div><h4>Depth &amp; Contrast</h4>Dark tones are used only for silhouette and shadow; never as block color.</div>
-  </div>
-</section>
-
-<!-- VIDEO SAMPLES -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">03 —</span>Sample Videos</h3>
-    <div class="cap">Motion references and inspiration clips. Hover → inline play, click → fullscreen. Auto-plays on mobile.</div>
-  </div>
-  <div class="videos">
-    <div class="vtile wide" data-src="hero.mp4">
-      <video src="hero.mp4" poster="posters/hero.jpg" muted loop playsinline webkit-playsinline preload="metadata"></video>
-      <div class="badge">Kling · Hero</div>
-      <div class="play"></div>
-    </div>
-    <div class="vtile wide" data-src="videos/extra-2.mp4">
-      <video src="videos/extra-2.mp4" poster="posters/extra-2.jpg" muted loop playsinline webkit-playsinline preload="metadata"></video>
-      <div class="badge">Extra · Cinematic</div>
-      <div class="play"></div>
-    </div>
-    <div class="vtile tall" data-src="videos/pin2-feadship-flag.mp4">
-      <video src="videos/pin2-feadship-flag.mp4" poster="posters/pin2-feadship-flag.jpg" muted loop playsinline webkit-playsinline preload="metadata"></video>
-      <div class="badge">Cinematic · Wide Shot</div>
-      <div class="play"></div>
-    </div>
-    <div class="vtile tall" data-src="videos/pin3-feadship.mp4">
-      <video src="videos/pin3-feadship.mp4" poster="posters/pin3-feadship.jpg" muted loop playsinline webkit-playsinline preload="metadata"></video>
-      <div class="badge">Cinematic · Atmosphere</div>
-      <div class="play"></div>
-    </div>
-    <div class="vtile tall" data-src="videos/pin5-yacht.mp4">
-      <video src="videos/pin5-yacht.mp4" poster="posters/pin5-yacht.jpg" muted loop playsinline webkit-playsinline preload="metadata"></video>
-      <div class="badge">Motion · Cinematic</div>
-      <div class="play"></div>
-    </div>
-    <div class="vtile tall" data-src="videos/pin6-yacht.mp4">
-      <video src="videos/pin6-yacht.mp4" poster="posters/pin6-yacht.jpg" muted loop playsinline webkit-playsinline preload="metadata"></video>
-      <div class="badge">Atmosphere · Cinematic</div>
-      <div class="play"></div>
-    </div>
-    <div class="vtile portrait" data-src="videos/pin4-yacht.mp4">
-      <video src="videos/pin4-yacht.mp4" poster="posters/pin4-yacht.jpg" muted loop playsinline webkit-playsinline preload="metadata"></video>
-      <div class="badge">Portrait · Shot</div>
-      <div class="play"></div>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCTION — REEL CAROUSEL -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">04 —</span>Production</h3>
-    <div class="cap">Vertical content and reel examples we produce for our brands.</div>
-  </div>
-  <div class="pcar">
-    <div class="pcar-track" id="pcarTrack">
-      <div class="pcar-card" data-src="/videos/influencers/bliss-hd.mp4">
-        <video src="/videos/influencers/bliss.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
-        <div class="play"></div>
+    <div class="vgrid" id="grid-restoran-kafe">
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-1.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
       </div>
-      <div class="pcar-card" data-src="/videos/influencers/audi-turkiye.mp4">
-        <video src="/videos/influencers/audi-turkiye.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
-        <div class="play"></div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-2.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
       </div>
-      <div class="pcar-card" data-src="/videos/influencers/avek-audi.mp4">
-        <video src="/videos/influencers/avek-audi.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
-        <div class="play"></div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-3.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
       </div>
-      <div class="pcar-card" data-src="/videos/influencers/reel-1.mp4">
-        <video src="/videos/influencers/reel-1.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
-        <div class="play"></div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-4.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
       </div>
-      <div class="pcar-card" data-src="/videos/influencers/reel-2.mp4">
-        <video src="/videos/influencers/reel-2.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
-        <div class="play"></div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-5.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-6.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-7.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-8.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-9.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-10.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-11.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-12.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-13.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-14.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-15.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-16.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-17.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-18.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-19.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-20.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-21.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-22.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
       </div>
     </div>
-    <div class="pcar-nav">
-      <button class="pcar-btn" id="pcarPrev" aria-label="Previous">‹</button>
-      <button class="pcar-btn" id="pcarNext" aria-label="Next">›</button>
+    <div class="vmore-wrap">
+      <button class="vmore" data-target="grid-restoran-kafe" data-more="Show more" data-less="Show less">Show more</button>
     </div>
   </div>
 </section>
 
-<!-- CATEGORY 1 — DRONE HERO -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">05 —</span>Drone Frames</h3>
-    <div class="cap">Aerial frames showing the subject with its scale: in motion, static composition, environmental texture, and top-down angles.</div>
-  </div>
-  <div class="grid g-mosaic">
-    <div class="tile span3 row2"><img src="generated/01_drone_hero/01_sunfinder50_cruise.png" alt=""><div class="badge">Motion · Wide Shot</div></div>
-    <div class="tile span3"><img src="generated/01_drone_hero/02_anchored_cliffs_38.png" alt=""><div class="badge">Anchored · Golden Hour</div></div>
-    <div class="tile span2"><img src="generated/01_drone_hero/03_topdown_symmetry.png" alt=""><div class="badge">Top-Down · Symmetry</div></div>
-    <div class="tile span1"><img src="generated/01_drone_hero/04_coastline_wide.png" alt=""><div class="badge">Coastline · Wide Shot</div></div>
-  </div>
-</section>
+<!-- KATEGORI 2 -->
+<section class="cat-section">
+  <div class="wrap">
+    <span class="num">02 — Hotel &amp; Tourism</span>
+    <h2 class="serif">Hotel &amp; Tourism Productions</h2>
+    <p class="lede">Hotel, resort, villa and destination promotions.</p>
 
-<!-- CATEGORY 2 — EXTERIOR BEAUTY -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">06 —</span>Product Portraits</h3>
-    <div class="cap">Product portraits at eye level and from varied angles. Side profiles, detail crops, and texture-focused compositions.</div>
-  </div>
-  <div class="grid g-3">
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/02_exterior_beauty/01_water_level_38.png" alt=""><div class="badge">Eye Level · Natural Light</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/02_exterior_beauty/02_bow_sunset_flare.png" alt=""><div class="badge">Detail · Sunset</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/02_exterior_beauty/03_wake_stern.png" alt=""><div class="badge">Motion · Texture</div></div>
-  </div>
-</section>
-
-<!-- CATEGORY 3 — INTERIOR / LIVING -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">07 —</span>Interior &amp; Living Spaces</h3>
-    <div class="cap">Lounging, working, and resting spaces — life captured with the feel of a premium suite.</div>
-  </div>
-  <div class="grid g-mosaic">
-    <div class="tile span4 row2"><img src="generated/03_interior_living/01_cockpit_golden_hour.png" alt=""><div class="badge">Living Area · Golden Hour</div></div>
-    <div class="tile span2"><img src="generated/03_interior_living/02_helm_detail.png" alt=""><div class="badge">Detail · Composition</div></div>
-    <div class="tile span2"><img src="generated/03_interior_living/03_bow_sunpad.png" alt=""><div class="badge">Lounging Area</div></div>
-    <div class="tile span2"><img src="generated/03_interior_living/04_cabin_interior.png" alt=""><div class="badge">Interior · Suite Feel</div></div>
-    <div class="tile span2"><img src="generated/05_atmosphere/01_teak_macro.png" alt=""><div class="badge">Texture · Detail</div></div>
-  </div>
-</section>
-
-<!-- CATEGORY 4 — LIFESTYLE -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">08 —</span>Lifestyle · Ownership Feel</h3>
-    <div class="cap">Minimal cast. A silhouette, bare feet, two glasses. A lived moment — never a sales pose.</div>
-  </div>
-  <div class="grid g-3">
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/04_lifestyle/01_captain_silhouette.png" alt=""><div class="badge">Silhouette · Character</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/04_lifestyle/02_bare_feet_teak.png" alt=""><div class="badge">Texture · Natural Moment</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/04_lifestyle/03_two_glasses_sunset.png" alt=""><div class="badge">Atmosphere · Sunset</div></div>
-  </div>
-</section>
-
-<!-- CATEGORY 5 — ATMOSPHERE -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">09 —</span>Atmosphere &amp; Texture</h3>
-    <div class="cap">In-between frames and textures — surface, reflection, material detail. The visuals where the edit breathes.</div>
-  </div>
-  <div class="grid g-3">
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/05_atmosphere/02_wake_texture.png" alt=""><div class="badge">Texture · Motion</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/05_atmosphere/03_hull_flare.png" alt=""><div class="badge">Reflection · Light</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/05_atmosphere/01_teak_macro.png" alt=""><div class="badge">Detail · Material</div></div>
-  </div>
-</section>
-
-<!-- CATEGORY 6 — LOCATION -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">10 —</span>Location · Shooting Geography</h3>
-    <div class="cap">The geography the brief calls for — each region brings its own texture and light. The frames below are illustrative.</div>
-  </div>
-  <div class="grid g-3">
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/06_locations/02_cesme_alacati.png" alt=""><div class="badge">Location · I</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/06_locations/03_bodrum_pine.png" alt=""><div class="badge">Location · II</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/06_locations/01_gocek_bay.png" alt=""><div class="badge">Location · III</div></div>
-  </div>
-</section>
-
-<!-- ROUTE OVERVIEW -->
-<section class="route">
-  <h2><span class="num">11 — Route</span>Shoot plan, region by region.</h2>
-  <p class="lede">Days and locations split per the brief — each stop brings a different light, texture, and atmosphere. The structure below is illustrative only.</p>
-  <div class="route-line">
-    <div class="stop">
-      <div class="day">Day 1–2 · Location I</div>
-      <h4 class="serif">Motion &amp; Texture</h4>
-      <p>Opening: dynamic frames showing the product in motion. Drone and wide-shot work is concentrated at this stop.</p>
+    <div class="vgrid" id="grid-otel-turizm">
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-1.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-2.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-3.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-4.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-5.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-6.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-7.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-8.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-9.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-10.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
     </div>
-    <div class="stop">
-      <div class="day">Day 3–4 · Location II</div>
-      <h4 class="serif">Portrait &amp; Profile</h4>
-      <p>Product portraits and detail frames. Cast days are typically planned here — atmosphere and authenticity come first.</p>
-    </div>
-    <div class="stop">
-      <div class="day">Day 5–6 · Location III</div>
-      <h4 class="serif">Stillness &amp; Atmosphere</h4>
-      <p>Static compositions, golden hour frames, and atmospheric in-betweens — reserved buffer days.</p>
+    <div class="vmore-wrap">
+      <button class="vmore" data-target="grid-otel-turizm" data-more="Show more" data-less="Show less">Show more</button>
     </div>
   </div>
 </section>
 
-<!-- TYPOGRAPHY -->
-<section>
-  <h2><span class="num">12 — Typography</span>Quiet and confident.</h2>
-  <div class="typo">
-    <div class="typo-sample">
-      <div class="display">Your brand.</div>
-      <div class="body">Premium · Brand · 2026</div>
-    </div>
-    <div class="desc">
-      <h4 class="serif">Cormorant Garamond + Inter</h4>
-      <p>For display, <strong>Cormorant Garamond Light</strong> — breathing in the Bvlgari/Aston Martin luxury idiom, with a light cursive italic. For body, <strong>Inter</strong> — legible, modern, restrained.</p>
-      <p>In brand use: all headlines with negative tracking (-1%), no all-caps. For CTAs and menus, all-caps Inter Medium 11px, letter-spacing +320‰.</p>
-      <small>Open-source alternative: Playfair Display + Helvetica Neue Light. This file is for pre-preview purposes.</small>
+<!-- KATEGORI 3 -->
+<section class="cat-section">
+  <div class="wrap">
+    <span class="num">03 — Yacht &amp; Boat</span>
+    <h2 class="serif">Yacht &amp; Boat Productions</h2>
+    <p class="lede">Yacht tours, marinas, charters and maritime brands.</p>
+
+    <div class="vgrid" id="grid-yat-tekne">
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-7.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-8.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-1.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-2.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-3.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-4.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-5.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-6.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SECTORS / Ordino sign-off -->
-<section class="sectors-section">
-  <div class="sectors-block">
-    <div class="sectors-label">— Sectors</div>
-    <ul class="sector-list">
-      <li>Hotel &amp; Resort Content Production</li>
-      <li>Marine &amp; Boating Content Production</li>
-      <li>Real Estate &amp; Architecture Content Production</li>
-      <li>Clinic &amp; Aesthetic Content Production</li>
-      <li>Luxury Retail &amp; Product Content Production</li>
-      <li>Social Media Content Production</li>
-    </ul>
-    <div class="sector-tag">— Platform-first content for premium brands.</div>
+<!-- KATEGORI 4 -->
+<section class="cat-section">
+  <div class="wrap">
+    <span class="num">04 — Automotive</span>
+    <h2 class="serif">Automotive Productions</h2>
+    <p class="lede">Vehicle launches, test drives and commercial films.</p>
+
+    <div class="vgrid" id="grid-otomotiv">
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-1.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-2.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-3.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-4.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-5.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-6.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-7.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-8.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-9.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-10.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-11.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+    </div>
+    <div class="vmore-wrap">
+      <button class="vmore" data-target="grid-otomotiv" data-more="Show more" data-less="Show less">Show more</button>
+    </div>
   </div>
 </section>
 
-<footer>
-  <div>
-    <div class="eyebrow" style="margin-bottom:8px">Moodboard · Sample Presentation · Prepared by Ordino</div>
-    Crafted to show the structure and language of the moodboard that will be prepared for your brand.<br>
-    The visuals shown are directional; final content is produced specifically for your brand.
+<!-- KATEGORI 5 -->
+<section class="cat-section">
+  <div class="wrap">
+    <span class="num">05 — Trade Show &amp; Event</span>
+    <h2 class="serif">Trade Show &amp; Event Productions</h2>
+    <p class="lede">Trade shows, conferences, launches and special events.</p>
+
+    <div class="vgrid" id="grid-fuar-etkinlik">
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-1.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-2.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-3.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-4.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-5.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-6.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-7.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-8.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-9.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-10.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-11.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-12.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-13.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-14.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-15.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Play/Pause"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+    </div>
+    <div class="vmore-wrap">
+      <button class="vmore" data-target="grid-fuar-etkinlik" data-more="Show more" data-less="Show less">Show more</button>
+    </div>
   </div>
-  <div class="sig">— visual narrative, tailored to your brand.</div>
-</footer>
+</section>
+
 
 </div>
 
-<!-- LIGHTBOX -->
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image preview">
-  <button class="lb-close" id="lbClose" aria-label="Close">×</button>
-  <button class="lb-nav prev" id="lbPrev" aria-label="Previous">‹</button>
-  <button class="lb-nav next" id="lbNext" aria-label="Next">›</button>
-  <img id="lbImg" src="" alt="">
-  <div class="lb-cap" id="lbCap"></div>
-</div>
 
+
+<!-- KATEGORI VIDEO PLAY/PAUSE + LAZY -->
 <script>
 (function(){
-  /* ----- PRELOADER — hide once hero video is ready ----- */
-  const html = document.documentElement;
-  const preloader = document.getElementById('preloader');
-  const heroVideo = document.querySelector('.hero video');
-  let revealed = false;
-  function reveal(){
-    if(revealed) return;
-    revealed = true;
-    preloader.classList.add('done');
-    html.classList.remove('loading');
-    setTimeout(() => { if(preloader && preloader.parentNode) preloader.parentNode.removeChild(preloader); }, 800);
-  }
-  const posterUrls = Array.from(document.querySelectorAll('video[poster]'))
-    .map(v => v.getAttribute('poster'))
-    .filter(Boolean);
-  const posterPromise = Promise.all(posterUrls.map(url => new Promise(res => {
-    const img = new Image();
-    img.onload = img.onerror = () => res();
-    img.src = url;
-  })));
-
-  if(heroVideo){
-    const tryPlay = () => { const p = heroVideo.play(); if(p && p.catch) p.catch(() => {}); };
-    const heroPromise = new Promise(res => {
-      heroVideo.addEventListener('playing', res, { once: true });
-      heroVideo.addEventListener('error', res, { once: true });
+  // 1. Play/pause toggle
+  document.querySelectorAll('.vtile').forEach(function(tile){
+    var video = tile.querySelector('video');
+    var btn = tile.querySelector('.vplay');
+    if(!video || !btn) return;
+    btn.addEventListener('click', function(){
+      if(video.paused){ video.play(); tile.classList.remove('paused'); }
+      else { video.pause(); tile.classList.add('paused'); }
     });
-    if(heroVideo.readyState >= 2){ tryPlay(); }
-    else {
-      heroVideo.addEventListener('canplay', tryPlay, { once: true });
-      heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
-    }
-    Promise.all([heroPromise, posterPromise]).then(reveal);
-    setTimeout(reveal, 10000);
-  } else {
-    posterPromise.then(reveal);
-    setTimeout(reveal, 10000);
-  }
-  window.addEventListener('pageshow', () => { if(!revealed) reveal(); });
-
-  const tiles = Array.from(document.querySelectorAll('.tile'));
-  const lb = document.getElementById('lb');
-  const lbImg = document.getElementById('lbImg');
-  const lbCap = document.getElementById('lbCap');
-  const lbClose = document.getElementById('lbClose');
-  const lbPrev = document.getElementById('lbPrev');
-  const lbNext = document.getElementById('lbNext');
-  let idx = 0;
-
-  function open(i){
-    idx = (i + tiles.length) % tiles.length;
-    const t = tiles[idx];
-    const img = t.querySelector('img');
-    if(!img) return;
-    lbImg.src = img.src;
-    lbImg.alt = img.alt || '';
-    const badge = t.querySelector('.badge');
-    lbCap.textContent = badge ? badge.textContent : '';
-    lb.classList.add('open');
-    document.body.classList.add('lb-open');
-  }
-  function close(){
-    lb.classList.remove('open');
-    document.body.classList.remove('lb-open');
-    lbImg.src = '';
-  }
-  tiles.forEach((t, i) => {
-    t.addEventListener('click', () => open(i));
-  });
-  lbClose.addEventListener('click', close);
-  lbPrev.addEventListener('click', e => { e.stopPropagation(); open(idx - 1); });
-  lbNext.addEventListener('click', e => { e.stopPropagation(); open(idx + 1); });
-  lb.addEventListener('click', e => { if(e.target === lb || e.target === lbImg) close(); });
-  document.addEventListener('keydown', e => {
-    if(!lb.classList.contains('open')) return;
-    if(e.key === 'Escape') close();
-    else if(e.key === 'ArrowLeft') open(idx - 1);
-    else if(e.key === 'ArrowRight') open(idx + 1);
   });
 
-  /* ----- VIDEO TILES — hover autoplay + click fullscreen ----- */
-  const vtiles = Array.from(document.querySelectorAll('.vtile'));
-  vtiles.forEach((tile) => {
-    const v = tile.querySelector('video');
-    if(!v) return;
-    tile.addEventListener('mouseenter', () => { v.play().catch(()=>{}); });
-    tile.addEventListener('mouseleave', () => { v.pause(); v.currentTime = 0; });
-    tile.addEventListener('click', () => {
-      const src = tile.dataset.src || v.currentSrc || v.src;
-      if(!src) return;
-      const overlay = document.createElement('div');
-      overlay.className = 'lb open';
-      overlay.style.cursor = 'zoom-out';
-      overlay.innerHTML = `
-        <button class="lb-close" aria-label="Close">×</button>
-        <video src="${src}" autoplay controls playsinline webkit-playsinline style="max-width:96vw;max-height:90vh;width:auto;height:auto;box-shadow:0 60px 120px -20px rgba(0,0,0,.6)"></video>
-      `;
-      document.body.appendChild(overlay);
-      document.body.classList.add('lb-open');
-      const closeOverlay = () => { overlay.remove(); document.body.classList.remove('lb-open'); };
-      overlay.querySelector('.lb-close').addEventListener('click', closeOverlay);
-      overlay.addEventListener('click', (e) => { if(e.target === overlay) closeOverlay(); });
-      document.addEventListener('keydown', function escHandler(e){
-        if(e.key === 'Escape'){ closeOverlay(); document.removeEventListener('keydown', escHandler); }
+  // 2. "Daha fazla goster" toggle
+  document.querySelectorAll('.vmore').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var grid = document.getElementById(btn.dataset.target);
+      if(!grid) return;
+      var expanded = grid.classList.toggle('expanded');
+      btn.textContent = expanded ? btn.dataset.less : btn.dataset.more;
+      if(expanded){
+        grid.querySelectorAll('.vtile.v-hidden').forEach(function(tile){
+          if(window._vObs) window._vObs.observe(tile);
+        });
+      }
+    });
+  });
+
+  // 3. IntersectionObserver — lazy load + sadece gorunur oynat
+  if('IntersectionObserver' in window){
+    window._vObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var v = e.target.querySelector('video');
+        if(!v) return;
+        if(e.isIntersecting){
+          if(v.preload === 'none'){ v.preload = 'auto'; v.load(); }
+          v.play().catch(function(){});
+        } else {
+          v.pause();
+        }
       });
-    });
-  });
-  if (window.matchMedia('(hover: none)').matches) {
-    vtiles.forEach(t => {
-      const v = t.querySelector('video');
-      if(v){ v.autoplay = true; v.muted = true; v.play().catch(()=>{}); }
+    }, {threshold:0.25, rootMargin:'100px'});
+
+    document.querySelectorAll('.vtile:not(.v-hidden)').forEach(function(tile){
+      window._vObs.observe(tile);
     });
   }
-})();
-</script>
-
-<!-- PRODUCTION REEL CAROUSEL -->
-<script>
-(function(){
-  const track = document.getElementById('pcarTrack');
-  if(!track) return;
-  const cards = Array.from(track.querySelectorAll('.pcar-card'));
-  const prev = document.getElementById('pcarPrev');
-  const next = document.getElementById('pcarNext');
-
-  /* autoplay only visible cards */
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      const v = e.target.querySelector('video');
-      if(!v) return;
-      if(e.isIntersecting){ v.play().catch(()=>{}); } else { v.pause(); }
-    });
-  }, { threshold: 0.3 });
-  cards.forEach(c => io.observe(c));
-
-  function scrollByCard(dir){
-    const card = cards[0];
-    if(!card) return;
-    track.scrollBy({ left: dir * (card.offsetWidth + 14), behavior: 'smooth' });
-  }
-  function updateBtns(){
-    if(prev) prev.disabled = track.scrollLeft <= 10;
-    if(next) next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 10;
-  }
-  if(prev) prev.addEventListener('click', () => scrollByCard(-1));
-  if(next) next.addEventListener('click', () => scrollByCard(1));
-  track.addEventListener('scroll', updateBtns, { passive:true });
-  window.addEventListener('resize', updateBtns);
-  updateBtns();
-
-  /* click → fullscreen (same overlay pattern as video tiles) */
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const src = card.dataset.src;
-      if(!src) return;
-      const overlay = document.createElement('div');
-      overlay.className = 'lb open';
-      overlay.style.cursor = 'zoom-out';
-      overlay.innerHTML = '<button class="lb-close" aria-label="Close">×</button><video src="' + src + '" autoplay controls playsinline webkit-playsinline style="max-width:96vw;max-height:90vh;width:auto;height:auto;box-shadow:0 60px 120px -20px rgba(0,0,0,.6)"></video>';
-      /* pause all carousel videos behind the fullscreen overlay (decode contention -> stutter) */
-      cards.forEach(c => { const cv = c.querySelector('video'); if(cv) cv.pause(); });
-      document.body.appendChild(overlay);
-      document.body.classList.add('lb-open');
-      const closeOverlay = () => {
-        overlay.remove();
-        document.body.classList.remove('lb-open');
-        /* on close, only resume cards in the viewport */
-        cards.forEach(c => { const cv = c.querySelector('video'); if(!cv) return; const r = c.getBoundingClientRect(); if(r.top < window.innerHeight && r.bottom > 0) cv.play().catch(()=>{}); });
-      };
-      overlay.querySelector('.lb-close').addEventListener('click', closeOverlay);
-      overlay.addEventListener('click', (e) => { if(e.target === overlay) closeOverlay(); });
-      document.addEventListener('keydown', function esc(e){ if(e.key === 'Escape'){ closeOverlay(); document.removeEventListener('keydown', esc); } });
-    });
-  });
 })();
 </script>
 </body>

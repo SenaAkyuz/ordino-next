@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="tr" class="loading">
+<html lang="tr">
 <head>
 <base href="/produksiyon/">
 <meta charset="utf-8">
@@ -135,29 +135,7 @@
   .proposal-link:hover{background:var(--teal)}
   .proposal-link::after{content:"→";font-size:18px}
 
-  /* ----- LIGHTBOX ----- */
-  .tile{cursor:zoom-in}
-  .lb{position:fixed;inset:0;background:rgba(8,12,20,.94);display:none;align-items:center;justify-content:center;z-index:9999;padding:32px;backdrop-filter:blur(6px)}
-  .lb.open{display:flex}
-  .lb img{max-width:96vw;max-height:90vh;width:auto;height:auto;object-fit:contain;box-shadow:0 60px 120px -20px rgba(0,0,0,.6);animation:lbIn .25s ease}
-  @keyframes lbIn{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:scale(1)}}
-  .lb .lb-cap{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);color:#EAE3D6;font-size:12px;letter-spacing:.22em;text-transform:uppercase;background:rgba(0,0,0,.4);padding:8px 14px}
-  .lb .lb-close{position:absolute;top:24px;right:32px;color:#fff;font-size:32px;cursor:pointer;background:none;border:none;line-height:1;font-family:inherit}
-  .lb .lb-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:48px;cursor:pointer;background:none;border:none;padding:24px;font-family:inherit;line-height:1;opacity:.7;transition:opacity .2s}
-  .lb .lb-nav:hover{opacity:1}
-  .lb .lb-nav.prev{left:8px}
-  .lb .lb-nav.next{right:8px}
-  body.lb-open{overflow:hidden}
 
-  /* ----- PRELOADER ----- */
-  html.loading,html.loading body{overflow:hidden;height:100%}
-  .preloader{position:fixed;inset:0;background:#0d0e10;z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;transition:opacity .6s ease,visibility .6s ease;color:#EAE3D6}
-  .preloader.done{opacity:0;visibility:hidden;pointer-events:none}
-  .preloader .pl-mark{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:32px;font-weight:300;letter-spacing:.02em;opacity:.85}
-  .preloader .pl-bar{width:120px;height:1px;background:rgba(234,227,214,.18);position:relative;overflow:hidden}
-  .preloader .pl-bar::after{content:"";position:absolute;left:-40%;top:0;height:100%;width:40%;background:#B68A4E;animation:plSlide 1.4s ease-in-out infinite}
-  @keyframes plSlide{0%{left:-40%}100%{left:100%}}
-  .preloader .pl-meta{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:rgba(234,227,214,.45)}
 
   /* ----- VIDEO TILES ----- */
   .videos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:start}
@@ -252,20 +230,40 @@
     .o-burger{display:flex}
   }
 
-  /* ----- PRODUCTION REEL CAROUSEL ----- */
-  .pcar{position:relative}
-  .pcar-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none;-ms-overflow-style:none}
-  .pcar-track::-webkit-scrollbar{display:none}
-  .pcar-card{position:relative;flex:0 0 auto;width:260px;aspect-ratio:9/16;background:#0d0e10;overflow:hidden;scroll-snap-align:start;cursor:pointer}
-  .pcar-card video{width:100%;height:100%;object-fit:cover;display:block}
-  .pcar-card .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;opacity:0;transition:opacity .25s ease;background:rgba(8,12,20,.35)}
-  .pcar-card:hover .play{opacity:1}
-  .pcar-card .play::before{content:"";display:block;width:0;height:0;border-style:solid;border-width:16px 0 16px 26px;border-color:transparent transparent transparent #fff;margin-left:6px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
-  .pcar-nav{display:flex;gap:10px;margin-top:18px;justify-content:flex-end}
-  .pcar-btn{width:46px;height:46px;border:1px solid var(--line);background:transparent;color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:22px;line-height:1;border-radius:50%;font-family:inherit;transition:border-color .25s ease,color .25s ease}
-  .pcar-btn:hover{border-color:var(--gold);color:var(--gold)}
-  .pcar-btn:disabled{opacity:.3;cursor:not-allowed}
-  @media (max-width:900px){.pcar-card{width:62vw}}
+
+  /* ----- PRODÜKSIYON KATEGORİLER ----- */
+  .cat-section{padding:80px 0;border-bottom:1px solid var(--line)}
+  .cat-section .num{font-family:"Inter",sans-serif;font-size:13px;font-weight:500;letter-spacing:.32em;color:var(--gold);display:block;margin-bottom:14px}
+  .cat-section h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:400;font-size:clamp(36px,4.5vw,56px);letter-spacing:-.01em;line-height:1.05;margin-bottom:12px}
+  .cat-section .lede{font-size:18px;color:var(--ink-2);max-width:760px;margin-bottom:40px}
+
+  /* Video grid — responsive 3/2/1 sütun */
+  .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:980px){.vgrid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.vgrid{grid-template-columns:1fr}}
+  .vtile{position:relative;overflow:hidden;background:#1B2738;border-radius:2px;aspect-ratio:9/16}
+  .vtile video{width:100%;height:100%;object-fit:cover;display:block}
+  .vtile .vplay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(13,14,16,.15);cursor:pointer;transition:background .3s ease;border:0;width:100%}
+  .vtile .vplay:hover{background:rgba(13,14,16,.05)}
+  .vtile .vplay svg{width:54px;height:54px;opacity:0;transition:opacity .3s ease}
+  .vtile:hover .vplay svg{opacity:.9}
+  .vtile.paused .vplay svg{opacity:.9}
+
+  /* Boş başlık placeholder */
+  .vempty{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:980px){.vempty{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.vempty{grid-template-columns:1fr}}
+  .vplaceholder{aspect-ratio:9/16;border-radius:2px;background:linear-gradient(135deg,var(--bg-2) 0%,#dfd6c5 100%);border:1px dashed var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;color:var(--mute)}
+  .vplaceholder .ico{width:40px;height:40px;margin-bottom:16px;opacity:.4}
+  .vplaceholder .soon{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--gold)}
+  .vplaceholder .soon-sub{font-size:13px;margin-top:8px;color:var(--mute)}
+
+  /* "Daha fazla" butonu + gizli videolar */
+  .vmore-wrap{display:flex;justify-content:center;margin-top:32px}
+  .vmore{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--ink);background:transparent;border:1px solid var(--line);padding:14px 36px;border-radius:10em;cursor:pointer;transition:all .3s ease}
+  .vmore:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .vtile.v-hidden{display:none}
+  .vgrid.expanded .vtile.v-hidden{display:block}
 </style>
 </head>
 <body>
@@ -341,12 +339,6 @@
   })();
 </script>
 
-<!-- PRELOADER -->
-<div class="preloader" id="preloader" aria-hidden="true">
-  <div class="pl-mark">moodboard örneği</div>
-  <div class="pl-bar"></div>
-  <div class="pl-meta">yükleniyor</div>
-</div>
 
 <div class="wrap">
 
@@ -366,465 +358,395 @@
   </div>
 </section>
 
-<!-- VISUAL DNA / 5 Principles -->
-<section>
-  <h2><span class="num">01 — Görsel Dil</span>Beş Prensip</h2>
-  <p class="lede">Brief'in ruhunu beş kelimeye indirdik. Her kare bu beşin en az üçünü taşımak zorunda — yoksa elenir.</p>
-  <div class="principles">
-    <div class="p-card"><div class="kicker">01</div><h3>Minimal kompozisyon</h3><p>Konu her karede temiz okunsun. Karmaşık prop, kalabalık çerçeve, gereksiz aksesuar yok.</p></div>
-    <div class="p-card"><div class="kicker">02</div><h3>Doğal ışık</h3><p>Çekimin %80'i golden hour ve mavi saatlerde. Stüdyo aydınlatma sadece iç mekan dolgusu.</p></div>
-    <div class="p-card"><div class="kicker">03</div><h3>Lens flare ↦ dost</h3><p>Anti-reflective filtre yok. Doğal flare kompozisyonun parçası.</p></div>
-    <div class="p-card"><div class="kicker">04</div><h3>Cast = atmosfer</h3><p>1–3 figür. Anlık ve sahici. Yüze izin var, satış pozuna yok — moment, poz değil.</p></div>
-    <div class="p-card"><div class="kicker">05</div><h3>Warm neutral</h3><p>Sıcak yarım stop. Klişe değil, karakter. Markaya özel imza palet her zaman sıcak tarafa yaslanır.</p></div>
-  </div>
-</section>
+<!-- KATEGORI 1 -->
+<section class="cat-section">
+  <div class="wrap">
+    <span class="num">01 — Restoran &amp; Kafe</span>
+    <h2 class="serif">Restoran &amp; Kafe Çekimleri</h2>
+    <p class="lede">Menü, mekan, şef ve deneyim odaklı içerikler.</p>
 
-<!-- COLOR PALETTE -->
-<section>
-  <h2><span class="num">02 — Renk Paleti</span>Marka diline göre seçilen palet.</h2>
-  <p class="lede">Brief'inize göre özel hazırlanan renk paleti — sıcak/soğuk dengesi, ton hiyerarşisi ve aksanlar markanızın görsel kimliğine uygun belirlenir. Aşağıdaki paletteki tonlar yalnızca örnektir.</p>
-  <div class="palette">
-    <div class="swatch dark" style="background:#1B2738"><div class="name">Deep Navy</div><div class="hex">#1B2738</div></div>
-    <div class="swatch dark" style="background:#2E5C66"><div class="name">Aegean Teal</div><div class="hex">#2E5C66</div></div>
-    <div class="swatch dark" style="background:#7AA0A8"><div class="name">Soft Blue</div><div class="hex">#7AA0A8</div></div>
-    <div class="swatch light" style="background:#F4EFE8"><div class="name">Warm Cream</div><div class="hex">#F4EFE8</div></div>
-    <div class="swatch dark" style="background:#B68A4E"><div class="name">Teak Gold</div><div class="hex">#B68A4E</div></div>
-    <div class="swatch dark" style="background:#7A4A2C"><div class="name">Leather Brown</div><div class="hex">#7A4A2C</div></div>
-  </div>
-  <div class="palette-notes">
-    <div><h4>Ana Ton &amp; Arka Plan</h4>Sıcak nötr tonlar ürünü öne çıkarır; arka planlar her zaman sahnedeki ana objenin lehine geri çekilir.</div>
-    <div><h4>Aksan &amp; Detay</h4>İkincil tonlar markanın DNA'sını taşır. Doku ve detaylar aynı ailenin farklı doygunluklarıyla kurgulanır.</div>
-    <div><h4>Derinlik &amp; Kontrast</h4>Koyu tonlar yalnızca silüet ve gölge için kullanılır; blok renk olarak yer almaz.</div>
-  </div>
-</section>
-
-<!-- VIDEO ÖRNEKLERİ -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">03 —</span>Örnek Videolar</h3>
-    <div class="cap">Hareket referansları ve ilham klipleri. Hover → inline play, tıkla → tam ekran. Mobilde otomatik oynar.</div>
-  </div>
-  <div class="videos">
-    <div class="vtile wide" data-src="hero.mp4">
-      <video src="hero.mp4" poster="posters/hero.jpg" muted loop playsinline webkit-playsinline preload="metadata"></video>
-      <div class="badge">Kling · Hero</div>
-      <div class="play"></div>
-    </div>
-    <div class="vtile wide" data-src="videos/extra-2.mp4">
-      <video src="videos/extra-2.mp4" poster="posters/extra-2.jpg" muted loop playsinline webkit-playsinline preload="metadata"></video>
-      <div class="badge">Ekstra · Sinematik</div>
-      <div class="play"></div>
-    </div>
-    <div class="vtile tall" data-src="videos/pin2-feadship-flag.mp4">
-      <video src="videos/pin2-feadship-flag.mp4" poster="posters/pin2-feadship-flag.jpg" muted loop playsinline webkit-playsinline preload="metadata"></video>
-      <div class="badge">Sinematik · Geniş Plan</div>
-      <div class="play"></div>
-    </div>
-    <div class="vtile tall" data-src="videos/pin3-feadship.mp4">
-      <video src="videos/pin3-feadship.mp4" poster="posters/pin3-feadship.jpg" muted loop playsinline webkit-playsinline preload="metadata"></video>
-      <div class="badge">Sinematik · Atmosfer</div>
-      <div class="play"></div>
-    </div>
-    <div class="vtile tall" data-src="videos/pin5-yacht.mp4">
-      <video src="videos/pin5-yacht.mp4" poster="posters/pin5-yacht.jpg" muted loop playsinline webkit-playsinline preload="metadata"></video>
-      <div class="badge">Hareket · Sinematik</div>
-      <div class="play"></div>
-    </div>
-    <div class="vtile tall" data-src="videos/pin6-yacht.mp4">
-      <video src="videos/pin6-yacht.mp4" poster="posters/pin6-yacht.jpg" muted loop playsinline webkit-playsinline preload="metadata"></video>
-      <div class="badge">Atmosfer · Sinematik</div>
-      <div class="play"></div>
-    </div>
-    <div class="vtile portrait" data-src="videos/pin4-yacht.mp4">
-      <video src="videos/pin4-yacht.mp4" poster="posters/pin4-yacht.jpg" muted loop playsinline webkit-playsinline preload="metadata"></video>
-      <div class="badge">Portrait · Çekim</div>
-      <div class="play"></div>
-    </div>
-    <!-- Yeni video eklemek için aşağıyı kopyala:
-    <div class="vtile" data-src="videos/example.mp4">
-      <video src="videos/example.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
-      <div class="badge">Başlık · Açıklama</div>
-      <div class="play"></div>
-    </div>
-    -->
-  </div>
-</section>
-
-<!-- PRODÜKSİYON — REEL CAROUSEL -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">04 —</span>Prodüksiyon</h3>
-    <div class="cap">Markalarımız için ürettiğimiz dikey içerik ve reel örnekleri.</div>
-  </div>
-  <div class="pcar">
-    <div class="pcar-track" id="pcarTrack">
-      <div class="pcar-card" data-src="/videos/influencers/bliss-hd.mp4">
-        <video src="/videos/influencers/bliss.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
-        <div class="play"></div>
+    <div class="vgrid" id="grid-restoran-kafe">
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-1.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
       </div>
-      <div class="pcar-card" data-src="/videos/influencers/audi-turkiye.mp4">
-        <video src="/videos/influencers/audi-turkiye.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
-        <div class="play"></div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-2.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
       </div>
-      <div class="pcar-card" data-src="/videos/influencers/avek-audi.mp4">
-        <video src="/videos/influencers/avek-audi.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
-        <div class="play"></div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-3.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
       </div>
-      <div class="pcar-card" data-src="/videos/influencers/reel-1.mp4">
-        <video src="/videos/influencers/reel-1.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
-        <div class="play"></div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-4.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
       </div>
-      <div class="pcar-card" data-src="/videos/influencers/reel-2.mp4">
-        <video src="/videos/influencers/reel-2.mp4" muted loop playsinline webkit-playsinline preload="metadata"></video>
-        <div class="play"></div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-5.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-6.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-7.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-8.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-9.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-10.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-11.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-12.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-13.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-14.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-15.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-16.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-17.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-18.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-19.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-20.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-21.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-22.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
       </div>
     </div>
-    <div class="pcar-nav">
-      <button class="pcar-btn" id="pcarPrev" aria-label="Önceki">‹</button>
-      <button class="pcar-btn" id="pcarNext" aria-label="Sonraki">›</button>
+    <div class="vmore-wrap">
+      <button class="vmore" data-target="grid-restoran-kafe" data-more="Daha fazla göster" data-less="Daha az göster">Daha fazla göster</button>
     </div>
   </div>
 </section>
 
-<!-- KATEGORİ 1 — DRONE HERO -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">05 —</span>Drone Kareler</h3>
-    <div class="cap">Konuyu ölçeğiyle birlikte gösteren havadan kareler: hareket halinde, statik kompozisyon, çevresel doku ve tepe açı.</div>
-  </div>
-  <div class="grid g-mosaic">
-    <div class="tile span3 row2"><img src="generated/01_drone_hero/01_sunfinder50_cruise.png" alt=""><div class="badge">Hareket · Geniş Plan</div></div>
-    <div class="tile span3"><img src="generated/01_drone_hero/02_anchored_cliffs_38.png" alt=""><div class="badge">Demirde · Golden Hour</div></div>
-    <div class="tile span2"><img src="generated/01_drone_hero/03_topdown_symmetry.png" alt=""><div class="badge">Tepe Açı · Simetri</div></div>
-    <div class="tile span1"><img src="generated/01_drone_hero/04_coastline_wide.png" alt=""><div class="badge">Sahil · Geniş Plan</div></div>
-  </div>
-</section>
+<!-- KATEGORI 2 -->
+<section class="cat-section">
+  <div class="wrap">
+    <span class="num">02 — Otel &amp; Turizm</span>
+    <h2 class="serif">Otel &amp; Turizm Çekimleri</h2>
+    <p class="lede">Otel, resort, villa ve destinasyon tanıtımları.</p>
 
-<!-- KATEGORİ 2 — EXTERIOR BEAUTY -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">06 —</span>Ürün Portreleri</h3>
-    <div class="cap">Konuyu göz hizasından ve farklı açılardan gösteren ürün portreleri. Yan profil, detay kadrajları ve doku odaklı kompozisyonlar.</div>
-  </div>
-  <div class="grid g-3">
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/02_exterior_beauty/01_water_level_38.png" alt=""><div class="badge">Göz Hizası · Doğal Işık</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/02_exterior_beauty/02_bow_sunset_flare.png" alt=""><div class="badge">Detay · Sunset</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/02_exterior_beauty/03_wake_stern.png" alt=""><div class="badge">Hareket · Doku</div></div>
-  </div>
-</section>
-
-<!-- KATEGORİ 3 — INTERIOR / LIVING -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">07 —</span>İç Mekan &amp; Yaşam Alanları</h3>
-    <div class="cap">Oturma, çalışma, dinlenme alanları — premium süit hissinde yaşam kareleri.</div>
-  </div>
-  <div class="grid g-mosaic">
-    <div class="tile span4 row2"><img src="generated/03_interior_living/01_cockpit_golden_hour.png" alt=""><div class="badge">Yaşam Alanı · Golden Hour</div></div>
-    <div class="tile span2"><img src="generated/03_interior_living/02_helm_detail.png" alt=""><div class="badge">Detay · Kompozisyon</div></div>
-    <div class="tile span2"><img src="generated/03_interior_living/03_bow_sunpad.png" alt=""><div class="badge">Dinlenme Alanı</div></div>
-    <div class="tile span2"><img src="generated/03_interior_living/04_cabin_interior.png" alt=""><div class="badge">İç Mekan · Süit Hissi</div></div>
-    <div class="tile span2"><img src="generated/05_atmosphere/01_teak_macro.png" alt=""><div class="badge">Doku · Detay</div></div>
-  </div>
-</section>
-
-<!-- KATEGORİ 4 — LIFESTYLE -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">08 —</span>Yaşam Tarzı · Sahiplik Hissi</h3>
-    <div class="cap">Cast minimal. Silüet, çıplak ayak, iki kadeh. Yaşanan bir an — hiçbir zaman satış pozu değil.</div>
-  </div>
-  <div class="grid g-3">
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/04_lifestyle/01_captain_silhouette.png" alt=""><div class="badge">Silüet · Karakter</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/04_lifestyle/02_bare_feet_teak.png" alt=""><div class="badge">Doku · Doğal An</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/04_lifestyle/03_two_glasses_sunset.png" alt=""><div class="badge">Atmosfer · Gün Batımı</div></div>
-  </div>
-</section>
-
-<!-- KATEGORİ 5 — ATMOSPHERE -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">09 —</span>Atmosfer &amp; Doku</h3>
-    <div class="cap">Ara kareler ve dokular — yüzey, yansıma, malzeme detayı. Kurgunun nefes aldığı görseller.</div>
-  </div>
-  <div class="grid g-3">
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/05_atmosphere/02_wake_texture.png" alt=""><div class="badge">Doku · Hareket</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/05_atmosphere/03_hull_flare.png" alt=""><div class="badge">Yansıma · Işık</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/05_atmosphere/01_teak_macro.png" alt=""><div class="badge">Detay · Malzeme</div></div>
-  </div>
-</section>
-
-<!-- KATEGORİ 6 — LOCATION -->
-<section>
-  <div class="cat-head">
-    <h3><span class="n">10 —</span>Lokasyon · Çekim Coğrafyası</h3>
-    <div class="cap">Briefin gerektirdiği coğrafya — her bölge kendi dokusunu ve ışığını getirir. Aşağıdaki kareler örnek niteliğindedir.</div>
-  </div>
-  <div class="grid g-3">
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/06_locations/02_cesme_alacati.png" alt=""><div class="badge">Lokasyon · I</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/06_locations/03_bodrum_pine.png" alt=""><div class="badge">Lokasyon · II</div></div>
-    <div class="tile" style="aspect-ratio:16/10"><img src="generated/06_locations/01_gocek_bay.png" alt=""><div class="badge">Lokasyon · III</div></div>
-  </div>
-</section>
-
-<!-- ROUTE OVERVIEW -->
-<section class="route">
-  <h2><span class="num">11 — Rota</span>Çekim planı, bölge bölge.</h2>
-  <p class="lede">Briefe göre günler ve lokasyonlar bölünür — her durak farklı bir ışık, doku ve atmosfer getirir. Aşağıdaki yapı yalnızca örnek bir kurgudur.</p>
-  <div class="route-line">
-    <div class="stop">
-      <div class="day">Gün 1–2 · Lokasyon I</div>
-      <h4 class="serif">Hareket &amp; Doku</h4>
-      <p>Açılış: ürünü hareket içinde gösteren dinamik kareler. Drone ve geniş plan çekimler bu durakta yoğunlaşır.</p>
+    <div class="vgrid" id="grid-otel-turizm">
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-1.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-2.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-3.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-4.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-5.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-6.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-7.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-8.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-9.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/otel-turizm/otel-turizm-10.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
     </div>
-    <div class="stop">
-      <div class="day">Gün 3–4 · Lokasyon II</div>
-      <h4 class="serif">Portre &amp; Profil</h4>
-      <p>Ürün portresi ve detay kareleri. Cast'li günler genellikle bu durakta planlanır — atmosfer ve sahicilik öncelikli.</p>
-    </div>
-    <div class="stop">
-      <div class="day">Gün 5–6 · Lokasyon III</div>
-      <h4 class="serif">Sükunet &amp; Atmosfer</h4>
-      <p>Statik kompozisyonlar, golden hour kareleri ve atmosfer ara karelerine ayrılan yedek günler.</p>
+    <div class="vmore-wrap">
+      <button class="vmore" data-target="grid-otel-turizm" data-more="Daha fazla göster" data-less="Daha az göster">Daha fazla göster</button>
     </div>
   </div>
 </section>
 
-<!-- TYPOGRAPHY -->
-<section>
-  <h2><span class="num">12 — Tipografi</span>Sessiz ve güvenli.</h2>
-  <div class="typo">
-    <div class="typo-sample">
-      <div class="display">Markanız.</div>
-      <div class="body">Premium · Brand · 2026</div>
-    </div>
-    <div class="desc">
-      <h4 class="serif">Cormorant Garamond + Inter</h4>
-      <p>Display için <strong>Cormorant Garamond Light</strong> — Bvlgari/Aston Martin lüks dilinde, hafif kursif italikle nefes alıyor. Body için <strong>Inter</strong> — okunaklı, modern, sade.</p>
-      <p>Brand kullanımında: tüm başlıklar negative tracking (-1%), büyük harf yok. CTA ve menü için all-caps Inter Medium 11px, harf aralığı +320‰.</p>
-      <small>Açık kaynak alternatif: Playfair Display + Helvetica Neue Light. Bu dosya ön örnekleme amaçlıdır.</small>
+<!-- KATEGORI 3 -->
+<section class="cat-section">
+  <div class="wrap">
+    <span class="num">03 — Yat &amp; Tekne</span>
+    <h2 class="serif">Yat &amp; Tekne Çekimleri</h2>
+    <p class="lede">Yat turları, marinalar, charter ve denizcilik markaları.</p>
+
+    <div class="vgrid" id="grid-yat-tekne">
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-7.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-8.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-1.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-2.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-3.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-4.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-5.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/yat-tekne/yat-tekne-6.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SECTORS / Ordino sign-off -->
-<section class="sectors-section">
-  <div class="sectors-block">
-    <div class="sectors-label">— Sectors</div>
-    <ul class="sector-list">
-      <li>Hotel &amp; Resort Content Production</li>
-      <li>Marine &amp; Boating Content Production</li>
-      <li>Real Estate &amp; Architecture Content Production</li>
-      <li>Clinic &amp; Aesthetic Content Production</li>
-      <li>Luxury Retail &amp; Product Content Production</li>
-      <li>Social Media Content Production</li>
-    </ul>
-    <div class="sector-tag">— Platform-first content for premium brands.</div>
+<!-- KATEGORI 4 -->
+<section class="cat-section">
+  <div class="wrap">
+    <span class="num">04 — Otomotiv</span>
+    <h2 class="serif">Otomotiv Çekimleri</h2>
+    <p class="lede">Araç lansmanları, test sürüşleri ve reklam filmleri.</p>
+
+    <div class="vgrid" id="grid-otomotiv">
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-1.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-2.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-3.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-4.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-5.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-6.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-7.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-8.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-9.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-10.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/otomotiv/otomotiv-11.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+    </div>
+    <div class="vmore-wrap">
+      <button class="vmore" data-target="grid-otomotiv" data-more="Daha fazla göster" data-less="Daha az göster">Daha fazla göster</button>
+    </div>
   </div>
 </section>
 
-<footer>
-  <div>
-    <div class="eyebrow" style="margin-bottom:8px">Moodboard · Örnek Sunum · Ordino tarafından hazırlandı</div>
-    Markanız için hazırlanacak moodboardun yapısını ve dilini göstermek üzere düzenlenmiştir.<br>
-    Sunulan görseller yönlendirme amaçlıdır; final içerik markanıza özel olarak üretilir.
+<!-- KATEGORI 5 -->
+<section class="cat-section">
+  <div class="wrap">
+    <span class="num">05 — Fuar &amp; Etkinlik</span>
+    <h2 class="serif">Fuar &amp; Etkinlik Çekimleri</h2>
+    <p class="lede">Fuarlar, konferanslar, lansmanlar ve özel organizasyonlar.</p>
+
+    <div class="vgrid" id="grid-fuar-etkinlik">
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-1.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-2.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-3.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-4.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-5.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-6.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-7.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-8.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-9.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-10.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-11.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-12.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-13.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-14.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+      <div class="vtile v-hidden">
+        <video src="/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-15.mp4" loop muted playsinline preload="none"></video>
+        <button class="vplay" aria-label="Oynat/Duraklat"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button>
+      </div>
+    </div>
+    <div class="vmore-wrap">
+      <button class="vmore" data-target="grid-fuar-etkinlik" data-more="Daha fazla göster" data-less="Daha az göster">Daha fazla göster</button>
+    </div>
   </div>
-  <div class="sig">— görsel anlatı, markanıza özel.</div>
-</footer>
+</section>
+
 
 </div>
 
-<!-- LIGHTBOX -->
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Görsel önizleme">
-  <button class="lb-close" id="lbClose" aria-label="Kapat">×</button>
-  <button class="lb-nav prev" id="lbPrev" aria-label="Önceki">‹</button>
-  <button class="lb-nav next" id="lbNext" aria-label="Sonraki">›</button>
-  <img id="lbImg" src="" alt="">
-  <div class="lb-cap" id="lbCap"></div>
-</div>
 
+
+<!-- KATEGORI VIDEO PLAY/PAUSE + LAZY -->
 <script>
 (function(){
-  /* ----- PRELOADER — hide once hero video is ready ----- */
-  const html = document.documentElement;
-  const preloader = document.getElementById('preloader');
-  const heroVideo = document.querySelector('.hero video');
-  let revealed = false;
-  function reveal(){
-    if(revealed) return;
-    revealed = true;
-    preloader.classList.add('done');
-    html.classList.remove('loading');
-    setTimeout(() => { if(preloader && preloader.parentNode) preloader.parentNode.removeChild(preloader); }, 800);
-  }
-  /* preload all video poster images (thumbnails) before reveal */
-  const posterUrls = Array.from(document.querySelectorAll('video[poster]'))
-    .map(v => v.getAttribute('poster'))
-    .filter(Boolean);
-  const posterPromise = Promise.all(posterUrls.map(url => new Promise(res => {
-    const img = new Image();
-    img.onload = img.onerror = () => res();
-    img.src = url;
-  })));
-
-  if(heroVideo){
-    /* explicit play kick — Safari/iOS often need this even with autoplay */
-    const tryPlay = () => { const p = heroVideo.play(); if(p && p.catch) p.catch(() => {}); };
-    /* hero video must be playing AND all thumbnails loaded before reveal */
-    const heroPromise = new Promise(res => {
-      heroVideo.addEventListener('playing', res, { once: true });
-      heroVideo.addEventListener('error', res, { once: true });
+  // 1. Play/pause toggle
+  document.querySelectorAll('.vtile').forEach(function(tile){
+    var video = tile.querySelector('video');
+    var btn = tile.querySelector('.vplay');
+    if(!video || !btn) return;
+    btn.addEventListener('click', function(){
+      if(video.paused){ video.play(); tile.classList.remove('paused'); }
+      else { video.pause(); tile.classList.add('paused'); }
     });
-    if(heroVideo.readyState >= 2){ tryPlay(); }
-    else {
-      heroVideo.addEventListener('canplay', tryPlay, { once: true });
-      heroVideo.addEventListener('loadeddata', tryPlay, { once: true });
-    }
-    Promise.all([heroPromise, posterPromise]).then(reveal);
-    /* safety fallback — never block longer than 10s even on slow nets */
-    setTimeout(reveal, 10000);
-  } else {
-    posterPromise.then(reveal);
-    setTimeout(reveal, 10000);
-  }
-  /* if user navigates away before reveal, also clean up */
-  window.addEventListener('pageshow', () => { if(!revealed) reveal(); });
-
-  const tiles = Array.from(document.querySelectorAll('.tile'));
-  const lb = document.getElementById('lb');
-  const lbImg = document.getElementById('lbImg');
-  const lbCap = document.getElementById('lbCap');
-  const lbClose = document.getElementById('lbClose');
-  const lbPrev = document.getElementById('lbPrev');
-  const lbNext = document.getElementById('lbNext');
-  let idx = 0;
-
-  function open(i){
-    idx = (i + tiles.length) % tiles.length;
-    const t = tiles[idx];
-    const img = t.querySelector('img');
-    if(!img) return;
-    lbImg.src = img.src;
-    lbImg.alt = img.alt || '';
-    const badge = t.querySelector('.badge');
-    lbCap.textContent = badge ? badge.textContent : '';
-    lb.classList.add('open');
-    document.body.classList.add('lb-open');
-  }
-  function close(){
-    lb.classList.remove('open');
-    document.body.classList.remove('lb-open');
-    lbImg.src = '';
-  }
-  tiles.forEach((t, i) => {
-    t.addEventListener('click', () => open(i));
-  });
-  lbClose.addEventListener('click', close);
-  lbPrev.addEventListener('click', e => { e.stopPropagation(); open(idx - 1); });
-  lbNext.addEventListener('click', e => { e.stopPropagation(); open(idx + 1); });
-  lb.addEventListener('click', e => { if(e.target === lb || e.target === lbImg) close(); });
-  document.addEventListener('keydown', e => {
-    if(!lb.classList.contains('open')) return;
-    if(e.key === 'Escape') close();
-    else if(e.key === 'ArrowLeft') open(idx - 1);
-    else if(e.key === 'ArrowRight') open(idx + 1);
   });
 
-  /* ----- VIDEO TILES — hover autoplay + click fullscreen ----- */
-  const vtiles = Array.from(document.querySelectorAll('.vtile'));
-  vtiles.forEach((tile) => {
-    const v = tile.querySelector('video');
-    if(!v) return;
-    tile.addEventListener('mouseenter', () => { v.play().catch(()=>{}); });
-    tile.addEventListener('mouseleave', () => { v.pause(); v.currentTime = 0; });
-    tile.addEventListener('click', () => {
-      const src = tile.dataset.src || v.currentSrc || v.src;
-      if(!src) return;
-      const overlay = document.createElement('div');
-      overlay.className = 'lb open';
-      overlay.style.cursor = 'zoom-out';
-      overlay.innerHTML = `
-        <button class="lb-close" aria-label="Kapat">×</button>
-        <video src="${src}" autoplay controls playsinline webkit-playsinline style="max-width:96vw;max-height:90vh;width:auto;height:auto;box-shadow:0 60px 120px -20px rgba(0,0,0,.6)"></video>
-      `;
-      document.body.appendChild(overlay);
-      document.body.classList.add('lb-open');
-      const closeOverlay = () => { overlay.remove(); document.body.classList.remove('lb-open'); };
-      overlay.querySelector('.lb-close').addEventListener('click', closeOverlay);
-      overlay.addEventListener('click', (e) => { if(e.target === overlay) closeOverlay(); });
-      document.addEventListener('keydown', function escHandler(e){
-        if(e.key === 'Escape'){ closeOverlay(); document.removeEventListener('keydown', escHandler); }
+  // 2. "Daha fazla goster" toggle
+  document.querySelectorAll('.vmore').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var grid = document.getElementById(btn.dataset.target);
+      if(!grid) return;
+      var expanded = grid.classList.toggle('expanded');
+      btn.textContent = expanded ? btn.dataset.less : btn.dataset.more;
+      if(expanded){
+        grid.querySelectorAll('.vtile.v-hidden').forEach(function(tile){
+          if(window._vObs) window._vObs.observe(tile);
+        });
+      }
+    });
+  });
+
+  // 3. IntersectionObserver — lazy load + sadece gorunur oynat
+  if('IntersectionObserver' in window){
+    window._vObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        var v = e.target.querySelector('video');
+        if(!v) return;
+        if(e.isIntersecting){
+          if(v.preload === 'none'){ v.preload = 'auto'; v.load(); }
+          v.play().catch(function(){});
+        } else {
+          v.pause();
+        }
       });
-    });
-  });
-  /* mobile: autoplay all video tiles inline (no hover) */
-  if (window.matchMedia('(hover: none)').matches) {
-    vtiles.forEach(t => {
-      const v = t.querySelector('video');
-      if(v){ v.autoplay = true; v.muted = true; v.play().catch(()=>{}); }
+    }, {threshold:0.25, rootMargin:'100px'});
+
+    document.querySelectorAll('.vtile:not(.v-hidden)').forEach(function(tile){
+      window._vObs.observe(tile);
     });
   }
-})();
-</script>
-
-<!-- PRODÜKSİYON REEL CAROUSEL -->
-<script>
-(function(){
-  const track = document.getElementById('pcarTrack');
-  if(!track) return;
-  const cards = Array.from(track.querySelectorAll('.pcar-card'));
-  const prev = document.getElementById('pcarPrev');
-  const next = document.getElementById('pcarNext');
-
-  /* autoplay only visible cards */
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      const v = e.target.querySelector('video');
-      if(!v) return;
-      if(e.isIntersecting){ v.play().catch(()=>{}); } else { v.pause(); }
-    });
-  }, { threshold: 0.3 });
-  cards.forEach(c => io.observe(c));
-
-  function scrollByCard(dir){
-    const card = cards[0];
-    if(!card) return;
-    track.scrollBy({ left: dir * (card.offsetWidth + 14), behavior: 'smooth' });
-  }
-  function updateBtns(){
-    if(prev) prev.disabled = track.scrollLeft <= 10;
-    if(next) next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 10;
-  }
-  if(prev) prev.addEventListener('click', () => scrollByCard(-1));
-  if(next) next.addEventListener('click', () => scrollByCard(1));
-  track.addEventListener('scroll', updateBtns, { passive:true });
-  window.addEventListener('resize', updateBtns);
-  updateBtns();
-
-  /* click → fullscreen (same overlay pattern as video tiles) */
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const src = card.dataset.src;
-      if(!src) return;
-      const overlay = document.createElement('div');
-      overlay.className = 'lb open';
-      overlay.style.cursor = 'zoom-out';
-      overlay.innerHTML = '<button class="lb-close" aria-label="Kapat">×</button><video src="' + src + '" autoplay controls playsinline webkit-playsinline style="max-width:96vw;max-height:90vh;width:auto;height:auto;box-shadow:0 60px 120px -20px rgba(0,0,0,.6)"></video>';
-      /* tam ekran açılırken arkadaki tüm carousel videolarını durdur (decode contention -> kasma) */
-      cards.forEach(c => { const cv = c.querySelector('video'); if(cv) cv.pause(); });
-      document.body.appendChild(overlay);
-      document.body.classList.add('lb-open');
-      const closeOverlay = () => {
-        overlay.remove();
-        document.body.classList.remove('lb-open');
-        /* kapanınca yalnızca görünür kartları tekrar oynat */
-        cards.forEach(c => { const cv = c.querySelector('video'); if(!cv) return; const r = c.getBoundingClientRect(); if(r.top < window.innerHeight && r.bottom > 0) cv.play().catch(()=>{}); });
-      };
-      overlay.querySelector('.lb-close').addEventListener('click', closeOverlay);
-      overlay.addEventListener('click', (e) => { if(e.target === overlay) closeOverlay(); });
-      document.addEventListener('keydown', function esc(e){ if(e.key === 'Escape'){ closeOverlay(); document.removeEventListener('keydown', esc); } });
-    });
-  });
 })();
 </script>
 </body>
