@@ -11,9 +11,9 @@ export type InfluencerVideo = {
 export const influencerVideos: InfluencerVideo[] = [
   { src: "/videos/produksiyon/yat-tekne/yat-tekne-8.mp4" },
   { src: "/videos/produksiyon/otel-turizm/otel-turizm-1.mp4" },
-  { src: "/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-1.mp4" },
-  { src: "/videos/produksiyon/otomotiv/otomotiv-3.mp4" },
-  { src: "/videos/produksiyon/restoran-kafe/restoran-kafe-11.mp4" },
-  { src: "/videos/produksiyon/restoran-kafe/restoran-kafe-2.mp4" },
   { src: "/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-3.mp4" },
+  { src: "/videos/produksiyon/otomotiv/otomotiv-3.mp4" },
+  { src: "/videos/produksiyon/restoran-kafe/restoran-kafe-2.mp4" },
+  { src: "/videos/produksiyon/restoran-kafe/restoran-kafe-11.mp4" },
+  { src: "/videos/produksiyon/fuar-etkinlik/fuar-etkinlik-1.mp4" },
 ];
