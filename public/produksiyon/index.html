@@ -24,16 +24,25 @@
 
   .wrap{max-width:1280px;margin:0 auto;padding:64px 40px}
 
-  /* ----- HERO (video) ----- */
-  .hero{position:relative;width:100vw;margin-left:calc(50% - 50vw);margin-top:-64px;height:100vh;min-height:640px;padding:0 32px;border-bottom:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;background:#0d0e10}
-  .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none}
-  .hero > *{position:relative;z-index:1}
-  .hero .eyebrow{color:rgba(255,255,255,.78);font-size:11px;letter-spacing:.32em;text-transform:uppercase}
-  .hero h1{color:#fff;font-size:clamp(56px,9vw,128px);line-height:.92;letter-spacing:-.02em;margin:24px 0 16px;text-shadow:0 2px 40px rgba(0,0,0,.25)}
-  .hero .sub{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-size:clamp(20px,2.4vw,28px);color:rgba(255,255,255,.88);max-width:780px;margin:0 auto;text-shadow:0 1px 20px rgba(0,0,0,.3)}
-  .hero-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:64px;border-top:1px solid rgba(255,255,255,.25);padding-top:24px;width:100%;max-width:1100px}
-  .hero-meta div{font-size:13px;color:rgba(255,255,255,.7)}
-  .hero-meta strong{display:block;color:#fff;font-size:14px;letter-spacing:.04em;margin-top:4px}
+  /* ----- HERO (4'lü video grid) ----- */
+  .phero{position:relative;width:100vw;margin-left:calc(50% - 50vw);margin-top:-64px;background:var(--bg);color:var(--ink);border-bottom:1px solid var(--line);padding:148px 40px 80px}
+  .phero-inner{max-width:1240px;margin:0 auto}
+  .phero-text{text-align:center;max-width:880px;margin:0 auto 56px}
+  .phero .eyebrow{display:inline-block;color:var(--gold);font-size:11px;letter-spacing:.32em;text-transform:uppercase;margin-bottom:20px}
+  .phero h1{color:var(--ink);font-size:clamp(38px,6vw,72px);line-height:1.04;letter-spacing:-.01em;margin:0 0 24px}
+  .phero .sub{font-family:"Inter","Helvetica Neue",Arial,sans-serif;font-size:clamp(16px,1.5vw,19px);line-height:1.72;color:var(--ink-2);max-width:780px;margin:0 auto}
+  .phero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .phero-grid .vtile{border-radius:6px;background:var(--bg-2);box-shadow:0 24px 60px -36px rgba(27,39,56,.45)}
+
+  /* HERO — full-bleed video duvarı varyantı */
+  .phero-cover{padding:120px 40px;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+  .phero-cover .phero-bg{position:absolute;inset:0;z-index:0;display:grid;grid-template-columns:repeat(4,1fr)}
+  .phero-cover .phero-bg video{width:100%;height:100%;object-fit:cover;display:block}
+  .phero-cover .phero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(13,14,16,.18) 0%,rgba(13,14,16,.30) 55%,rgba(13,14,16,.40) 100%)}
+  .phero-cover .phero-inner{position:relative;z-index:2}
+  .phero-cover .phero-text{margin:0 auto}
+  .phero-cover h1{color:#fff;text-shadow:0 2px 36px rgba(0,0,0,.5)}
+  .phero-cover .sub{color:rgba(255,255,255,.92);text-shadow:0 1px 20px rgba(0,0,0,.55)}
 
   /* ----- SECTION ----- */
   section{padding:80px 0;border-bottom:1px solid var(--line)}
@@ -171,14 +180,16 @@
     body{background:#fff}
     .wrap{padding:32px 24px}
     section{break-inside:avoid;page-break-inside:avoid}
-    .hero{padding:32px 0}
+    .phero{padding:32px 0}
     .tile:hover img{transform:none}
   }
 
   @media (max-width: 900px){
-    .hero{height:90vh;min-height:520px;padding:0 24px}
-    .hero video{display:block}
-    .hero-meta{grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
+    .phero{padding:120px 24px 56px}
+    .phero-text{margin-bottom:40px}
+    .phero-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+    .phero-cover{padding:100px 24px}
+    .phero-cover .phero-bg{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr)}
     .principles{grid-template-columns:repeat(2,1fr)}
     .palette{grid-template-columns:repeat(3,1fr)}
     .palette-notes,.dodont,.refs,.typo,.route-line,.pkgs,.deliverables{grid-template-columns:1fr}
@@ -343,18 +354,19 @@
 <div class="wrap">
 
 <!-- HERO -->
-<section class="hero">
-  <video autoplay muted loop playsinline webkit-playsinline disablepictureinpicture preload="auto" aria-hidden="true">
-    <source src="hero.mp4" type="video/mp4">
-  </video>
-  <div class="eyebrow">Moodboard · Örnek Sunum</div>
-  <h1 class="serif">Görsel Anlatı,<br>Markanıza Özel.</h1>
-  <p class="sub">Markanız için özel hazırlanmış bir prodüksiyon kurgusu — ürün konuşur, ışık yönlendirir, cast nefes alır. Yıl boyunca her platformda taşınabilecek, exclusive ve gerçek bir görsel kütüphane.</p>
-  <div class="hero-meta">
-    <div>Marka<strong>Markanızın Adı</strong></div>
-    <div>Ürün / Konu<strong>Çekilecek Ürün veya Konu</strong></div>
-    <div>Lokasyon<strong>Çekim Lokasyonu</strong></div>
-    <div>Süre<strong>Tahmini Süre</strong></div>
+<section class="phero phero-cover">
+  <div class="phero-bg" aria-hidden="true">
+    <video src="/videos/produksiyon/yat-tekne/yat-tekne-7.mp4" autoplay loop muted playsinline preload="auto"></video>
+    <video src="/videos/produksiyon/otel-turizm/otel-turizm-4.mp4" autoplay loop muted playsinline preload="auto"></video>
+    <video src="/videos/produksiyon/restoran-kafe/restoran-kafe-1.mp4" autoplay loop muted playsinline preload="auto"></video>
+    <video src="/videos/produksiyon/yat-tekne/yat-tekne-4.mp4" autoplay loop muted playsinline preload="auto"></video>
+  </div>
+  <div class="phero-scrim" aria-hidden="true"></div>
+  <div class="phero-inner">
+    <div class="phero-text">
+      <h1 class="serif">Markanıza Özel Stratejik Prodüksiyon</h1>
+      <p class="sub">Sadece içerik üretmiyoruz; markanızın konumlandırmasına hizmet eden görsel varlıklar tasarlıyoruz. Ürün çekimlerinden lifestyle prodüksiyonlara, reklam filmlerinden sosyal medya içeriklerine kadar her kareyi iletişim stratejinizin bir parçası olarak kurguluyoruz.</p>
+    </div>
   </div>
 </section>
 
