@@ -19,10 +19,21 @@
     "production": "Production",
     "work": "Work",
     "caseStudies": "Case Studies",
+    "aiShowreels": "AI Showreels",
     "platform": "Platform",
     "about": "About",
     "contact": "Contact",
     "ctaLabel": "Book a Meeting"
+  },
+  "aiShowreels": {
+    "metadata": {
+      "title": "AI Showreels | Ordino",
+      "description": "Our AI-generated cinematic film projects. Innovative and striking visual experiences crafted for brands through AI production."
+    },
+    "eyebrow": "AI Production",
+    "title": "AI Showreels",
+    "description": "Through our AI Film projects, we deliver innovative and cinematic visual experiences to brands. Explore our selected works.",
+    "playButton": "Play Video"
   },
   "footer": {
     "sections": {

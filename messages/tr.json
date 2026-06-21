@@ -19,10 +19,21 @@
     "production": "Prodüksiyon",
     "work": "Çalışmalar",
     "caseStudies": "Referanslar",
+    "aiShowreels": "AI Showreels",
     "platform": "Platform",
     "about": "Hakkımızda",
     "contact": "İletişim",
     "ctaLabel": "Toplantı Planla"
+  },
+  "aiShowreels": {
+    "metadata": {
+      "title": "AI Showreels | Ordino",
+      "description": "Yapay zeka ile üretilen sinematik film projelerimiz. Markalara yenilikçi ve etkileyici görsel deneyimler sunan AI prodüksiyon çalışmalarımız."
+    },
+    "eyebrow": "AI Prodüksiyon",
+    "title": "AI Showreels",
+    "description": "Yapay zeka ile geliştirdiğimiz AI Film projeleriyle markalara yenilikçi ve sinematik görsel deneyimler sunuyoruz. Seçili çalışmalarımızı keşfedin.",
+    "playButton": "Videoyu Oynat"
   },
   "footer": {
     "sections": {

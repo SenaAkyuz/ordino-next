@@ -9,6 +9,7 @@ export type NavKey =
   | "production"
   | "work"
   | "caseStudies"
+  | "aiShowreels"
   | "platform"
   | "about"
   | "contact"
@@ -33,6 +34,7 @@ export const navLinks: NavLink[] = [
   { key: "production", href: "/produksiyon", external: true },
   { key: "work", href: "/calisma" },
   { key: "caseStudies", href: "/referanslar" },
+  { key: "aiShowreels", href: "/ai-showreels" },
   { key: "platform", href: "/platform" },
   { key: "about", href: "/hakkimizda" },
   { key: "contact", href: "/iletisim" },

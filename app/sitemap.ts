@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { href: "/hizmetler", priority: 0.9, changeFrequency: "monthly" },
     { href: "/calisma", priority: 0.9, changeFrequency: "monthly" },
     { href: "/referanslar", priority: 0.9, changeFrequency: "monthly" },
+    { href: "/ai-showreels", priority: 0.85, changeFrequency: "monthly" },
     { href: "/platform", priority: 0.85, changeFrequency: "monthly" },
     { href: "/hakkimizda", priority: 0.85, changeFrequency: "monthly" },
     { href: "/iletisim", priority: 0.85, changeFrequency: "monthly" },

@@ -13,6 +13,7 @@ export const routing = defineRouting({
       tr: "/referanslar/[slug]",
       en: "/case-studies/[slug]",
     },
+    "/ai-showreels": "/ai-showreels",
     "/platform": "/platform",
     "/hakkimizda": { tr: "/hakkimizda", en: "/about" },
     "/iletisim": { tr: "/iletisim", en: "/contact" },
