@@ -4,6 +4,7 @@ import type { Locale } from "@/i18n/routing";
 import { Hero } from "@/components/sections/Hero";
 import { ClientsShowcase } from "@/components/sections/ClientsShowcase";
 import { HowWeWork } from "@/components/sections/HowWeWork";
+import { EtkinlikCoverflow } from "@/components/sections/EtkinlikCoverflow";
 import { InfluencerCarousel } from "@/components/sections/InfluencerCarousel";
 import { PartnerMarquee } from "@/components/sections/PartnerMarquee";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
@@ -68,6 +69,7 @@ export default async function Home({ params }: Props) {
         description={t("howWeWork.description")}
         stats={howWeWorkStats}
       />
+      <EtkinlikCoverflow />
       <PartnerMarquee eyebrow={t("partnerMarquee.label")} />
       <ServicesGrid
         title={`${t("servicesGrid.title")} `}

@@ -1486,5 +1486,10 @@
     "description": "Markalarımızın hedeflerine göre özel stratejiler oluşturmakta ve yoğun rekabet içerisinde, hizmet verdiğimiz her markanın büyümesinde pozitif katkı sunmaktayız.",
     "prevButton": "Önceki",
     "nextButton": "Sonraki"
+  },
+  "etkinlikGaleri": {
+    "eyebrow": "Etkinliklerimiz",
+    "title": "Sahada Olduğumuz Anlar",
+    "description": "Lansmanlardan organizasyonlara, markalarımızla yaşattığımız deneyimlerden kareler."
   }
 }

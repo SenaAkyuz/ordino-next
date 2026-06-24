@@ -1486,5 +1486,10 @@
     "description": "We craft custom strategies tailored to each brand's goals, contributing positively to the growth of every brand we serve in a highly competitive landscape.",
     "prevButton": "Previous",
     "nextButton": "Next"
+  },
+  "etkinlikGaleri": {
+    "eyebrow": "Our Events",
+    "title": "Moments On the Ground",
+    "description": "Frames from the experiences we create with our brands — from launches to large-scale organizations."
   }
 }

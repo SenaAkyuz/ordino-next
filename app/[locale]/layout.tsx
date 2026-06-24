@@ -133,35 +133,32 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${cormorant.variable} ${jost.variable}`}>
       <body className="min-h-screen flex flex-col" suppressHydrationWarning>
         {/* Consent Mode v2 default state — GTM/GA4'ten ÖNCE çalışmalı.
-            next/script beforeInteractive bu (nested) layout'ta afterInteractive'e
-            düşeceği için raw inline <script> kullanıyoruz: SSR HTML'inde parse
-            sırasında, afterInteractive olan GTM/GA4/Contentsquare'den önce çalışır.
+            next/script beforeInteractive: Next bunu initial HTML <head>'ine hoist eder.
+            Bu nested layout'ta beforeInteractive afterInteractive'e düşse bile, kaynak
+            sırasında GA4/GTM/Contentsquare'den ÖNCE geldiği için consent yine ilk çalışır.
             Tüm consent KVKK uyumlu 'denied' başlar; localStorage'da önceki onay varsa restore eder. */}
         {site.gtmId && (
-          <script
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                window.gtag = gtag;
-                var consent = 'denied';
-                try {
-                  if (localStorage.getItem('ordino-cookie-consent') === 'accepted') consent = 'granted';
-                } catch (e) {}
-                gtag('consent', 'default', {
-                  ad_storage: consent,
-                  ad_user_data: consent,
-                  ad_personalization: consent,
-                  analytics_storage: consent,
-                  functionality_storage: 'granted',
-                  security_storage: 'granted',
-                  wait_for_update: 500
-                });
-                gtag('set', { cookie_domain: 'auto' });
-              `,
-            }}
-          />
+          <Script id="consent-default" strategy="beforeInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = gtag;
+              var consent = 'denied';
+              try {
+                if (localStorage.getItem('ordino-cookie-consent') === 'accepted') consent = 'granted';
+              } catch (e) {}
+              gtag('consent', 'default', {
+                ad_storage: consent,
+                ad_user_data: consent,
+                ad_personalization: consent,
+                analytics_storage: consent,
+                functionality_storage: 'granted',
+                security_storage: 'granted',
+                wait_for_update: 500
+              });
+              gtag('set', { cookie_domain: 'auto' });
+            `}
+          </Script>
         )}
 
         {/* Google Tag Manager (noscript) — body'nin en başında, JS kapalı kullanıcılar için fallback */}
