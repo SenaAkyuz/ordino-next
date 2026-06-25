@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/ui/Reveal";
 
 const INDUSTRY_KEYS = [
@@ -53,9 +54,11 @@ export function ContactForm() {
   const dismissRef = useRef<number | null>(null);
 
   useEffect(() => {
+    // Ref değerini effect içinde yakala, cleanup'ta onu kullan (React önerisi).
+    const dismiss = dismissRef;
     return () => {
-      if (dismissRef.current !== null) {
-        window.clearTimeout(dismissRef.current);
+      if (dismiss.current !== null) {
+        window.clearTimeout(dismiss.current);
       }
     };
   }, []);
@@ -371,12 +374,12 @@ export function ContactForm() {
                   </button>
                   <p className="m-0 max-w-[280px] font-body text-[0.78rem] font-light leading-[1.5] text-gray">
                     {t("privacy.prefix")}{" "}
-                    <a
+                    <Link
                       href="/gizlilik-politikasi"
                       className="border-b border-[#ccc] text-black transition-colors hover:border-black"
                     >
                       {t("privacy.linkText")}
-                    </a>
+                    </Link>
                     {t("privacy.suffix")}
                   </p>
                 </div>

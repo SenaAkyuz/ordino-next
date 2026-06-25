@@ -35,34 +35,34 @@ function ShowreelHero({
 }) {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [inView, setInView] = useState(false);
   // active = user pressed "Videoyu Oynat": sound on + title overlay hidden
   const [active, setActive] = useState(false);
 
   // Muted background loop autoplays only while the section is in view —
   // preload="none" keeps the other videos from downloading until needed.
+  // setState, observer callback'i (harici sistem aboneliği) içinde çağrılır.
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
     const observer = new IntersectionObserver(
-      ([entry]) => setInView(entry.isIntersecting && entry.intersectionRatio >= 0.5),
+      ([entry]) => {
+        const inView =
+          entry.isIntersecting && entry.intersectionRatio >= 0.5;
+        const v = videoRef.current;
+        if (!v) return;
+        if (inView) {
+          v.play().catch(() => {});
+        } else {
+          v.pause();
+          v.muted = true;
+          setActive(false);
+        }
+      },
       { threshold: [0, 0.5, 1] },
     );
     observer.observe(section);
     return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    const v = videoRef.current;
-    if (!v) return;
-    if (inView) {
-      v.play().catch(() => {});
-    } else {
-      v.pause();
-      v.muted = true;
-      setActive(false);
-    }
-  }, [inView]);
 
   const handlePlay = () => {
     const v = videoRef.current;

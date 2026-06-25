@@ -407,11 +407,6 @@
         { "value": "Thousands", "label": "Campaigns Delivered" }
       ]
     },
-    "showreel": {
-      "eyebrow": "Studio Reel · 2026",
-      "title": "11 years of",
-      "emphasis": "storytelling."
-    },
     "leadership": {
       "eyebrow": "Leadership",
       "lead": "Ordino's leadership team — six executives leading strategy, performance, design, and operations.",
@@ -1403,7 +1398,7 @@
       "managingDirector": "Managing Director & Creative Lead",
       "operations": "Head of Operations",
       "performance": "Head of Performance Marketing",
-      "design": "Head of Design & Media Production"
+      "design": "Creative AI & Media Production Partner"
     },
     "bios": {
       "oguzOzbenli": "Founder of Ordino. Leads business development, marketing strategy, and brand partnerships across the agency. Brings a commercial lens to every engagement — translating campaign complexity into growth outcomes brands can measure.",

@@ -4,7 +4,6 @@ import type { Locale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { EditorialHero } from "@/components/sections/EditorialHero";
 import { HowWeWork } from "@/components/sections/HowWeWork";
-import { Showreel } from "@/components/sections/Showreel";
 import { Leadership } from "@/components/sections/Leadership";
 import { TeamStructure } from "@/components/sections/TeamStructure";
 import { PartnerLogos } from "@/components/sections/PartnerLogos";
@@ -81,11 +80,6 @@ export default async function HakkimizdaPage({ params }: Props) {
         emphasis={t("howWeWork.emphasis")}
         description={t("howWeWork.description")}
         stats={stats}
-      />
-      <Showreel
-        eyebrow={t("showreel.eyebrow")}
-        title={`${t("showreel.title")} `}
-        emphasis={t("showreel.emphasis")}
       />
       <Leadership
         eyebrow={t("leadership.eyebrow")}

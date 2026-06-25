@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { PageHero } from "@/components/sections/PageHero";
+import { Link } from "@/i18n/navigation";
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -123,9 +124,9 @@ function PrivacyTr() {
       <p>
         Web sitemiz çerezleri kullanmaktadır. Çerez kullanımı hakkında detaylı
         bilgi için lütfen{" "}
-        <a href="/cerez-politikasi" className="text-accent hover:underline">
+        <Link href="/cerez-politikasi" className="text-accent hover:underline">
           Çerez Politikamızı
-        </a>{" "}
+        </Link>{" "}
         inceleyiniz.
       </p>
 
@@ -254,9 +255,9 @@ function PrivacyEn() {
       <p>
         Our website uses cookies. For detailed information about our cookie
         usage, please review our{" "}
-        <a href="/en/cookie-policy" className="text-accent hover:underline">
+        <Link href="/cerez-politikasi" className="text-accent hover:underline">
           Cookie Policy
-        </a>
+        </Link>
         .
       </p>
 

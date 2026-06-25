@@ -38,6 +38,15 @@ export const leadership: Leader[] = [
     linkedin: "https://www.linkedin.com/in/oguz-ozbenli/",
   },
   {
+    name: "Halis Battal",
+    roleKey: "design",
+    bioKey: "halisBattal",
+    initials: "HB",
+    gradient: "linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #3a3a3a 100%)",
+    photo: "/team/halisbattal.webp",
+    linkedin: "https://www.linkedin.com/in/halisbattal/",
+  },
+  {
     name: "Hande Arış",
     roleKey: "strategicPartner",
     bioKey: "handeAris",
@@ -72,15 +81,6 @@ export const leadership: Leader[] = [
     gradient: "linear-gradient(135deg, #0d3b2e 0%, #2a7a5a 50%, #40916c 100%)",
     photo: "/team/omertoraman.webp",
     linkedin: "https://www.linkedin.com/in/yazar-%C3%B6mer-toraman-/",
-  },
-  {
-    name: "Halis Battal",
-    roleKey: "design",
-    bioKey: "halisBattal",
-    initials: "HB",
-    gradient: "linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #3a3a3a 100%)",
-    photo: "/team/halisbattal.webp",
-    linkedin: "https://www.linkedin.com/in/halisbattal/",
   },
 ];
 

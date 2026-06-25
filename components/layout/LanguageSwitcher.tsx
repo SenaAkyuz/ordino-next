@@ -25,7 +25,7 @@ export function LanguageSwitcher({ className }: Props) {
     });
   };
 
-  const btn = (target: Locale, label: string) =>
+  const btn = (target: Locale) =>
     cn(
       "cursor-pointer bg-transparent border-0 p-0 font-body text-[0.95rem] uppercase tracking-[1px] transition-opacity duration-200",
       locale === target ? "opacity-100 font-medium" : "opacity-50 hover:opacity-100",
@@ -42,7 +42,7 @@ export function LanguageSwitcher({ className }: Props) {
         type="button"
         onClick={() => switchTo("tr")}
         aria-current={locale === "tr" ? "true" : undefined}
-        className={btn("tr", "TR")}
+        className={btn("tr")}
         disabled={isPending}
       >
         TR
@@ -52,7 +52,7 @@ export function LanguageSwitcher({ className }: Props) {
         type="button"
         onClick={() => switchTo("en")}
         aria-current={locale === "en" ? "true" : undefined}
-        className={btn("en", "EN")}
+        className={btn("en")}
         disabled={isPending}
       >
         EN

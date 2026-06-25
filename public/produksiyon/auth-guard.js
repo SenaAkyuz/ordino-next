@@ -9,7 +9,7 @@
     if (sessionStorage.getItem('aiata_auth') !== 'granted') {
       window.location.replace('login.html');
     }
-  } catch (e) {
+  } catch {
     window.location.replace('login.html');
   }
 })();

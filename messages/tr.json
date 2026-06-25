@@ -407,11 +407,6 @@
         { "value": "Binlerce", "label": "Yönetilen Kampanya" }
       ]
     },
-    "showreel": {
-      "eyebrow": "Studio Reel · 2026",
-      "title": "11 yılın",
-      "emphasis": "hikayesi."
-    },
     "leadership": {
       "eyebrow": "Yönetim Kadrosu",
       "lead": "Ordino'nun yönetim kadrosu — strateji, performans, tasarım ve operasyondan sorumlu altı kişilik üst kadro.",
@@ -1403,7 +1398,7 @@
       "managingDirector": "Managing Director & Creative Lead",
       "operations": "Head of Operations",
       "performance": "Head of Performance Marketing",
-      "design": "Head of Design & Media Production"
+      "design": "Creative AI & Media Production Partner"
     },
     "bios": {
       "oguzOzbenli": "Ordino'nun kurucusu. Ajansın iş geliştirme, pazarlama stratejisi ve marka ortaklıklarını yönetiyor. Her angajmanda ticari bir bakış açısı getirir — kampanya karmaşıklığını markaların ölçebileceği büyüme sonuçlarına çevirir.",

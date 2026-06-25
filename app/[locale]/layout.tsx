@@ -132,13 +132,13 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${cormorant.variable} ${jost.variable}`}>
       <body className="min-h-screen flex flex-col" suppressHydrationWarning>
-        {/* Consent Mode v2 default state — GTM/GA4'ten ÖNCE çalışmalı.
-            next/script beforeInteractive: Next bunu initial HTML <head>'ine hoist eder.
-            Bu nested layout'ta beforeInteractive afterInteractive'e düşse bile, kaynak
-            sırasında GA4/GTM/Contentsquare'den ÖNCE geldiği için consent yine ilk çalışır.
+        {/* Consent Mode v2 default state — kaynak sırasında GA4/GTM/Contentsquare'den
+            ÖNCE tanımlı; hepsi afterInteractive olduğundan Next sırayı korur, consent ilk çalışır.
+            next/script kullanılıyor (ham inline <script> React 19'da "script tag while
+            rendering" uyarısı verir; next/script React ağacına gömmeden enjekte eder).
             Tüm consent KVKK uyumlu 'denied' başlar; localStorage'da önceki onay varsa restore eder. */}
         {site.gtmId && (
-          <Script id="consent-default" strategy="beforeInteractive">
+          <Script id="consent-default" strategy="afterInteractive">
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}

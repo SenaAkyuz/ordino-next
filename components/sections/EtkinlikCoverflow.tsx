@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { etkinlikImages } from "@/lib/data/etkinlikImages";
 
@@ -13,14 +13,17 @@ export function EtkinlikCoverflow() {
   const wheelLock = useRef(false);
   const stageRef = useRef<HTMLDivElement | null>(null);
 
-  const go = (dir: number) => {
-    setActive((prev) => {
-      const next = prev + dir;
-      if (next < 0) return 0;
-      if (next > total - 1) return total - 1;
-      return next;
-    });
-  };
+  const go = useCallback(
+    (dir: number) => {
+      setActive((prev) => {
+        const next = prev + dir;
+        if (next < 0) return 0;
+        if (next > total - 1) return total - 1;
+        return next;
+      });
+    },
+    [total],
+  );
 
   // Klavye okları — sadece galeri görünürken
   useEffect(() => {
@@ -45,7 +48,7 @@ export function EtkinlikCoverflow() {
       io.disconnect();
       window.removeEventListener("keydown", onKey);
     };
-  }, [total]);
+  }, [go]);
 
   // Touchpad / mouse wheel — yatay kaydırma (deltaX) ile geçiş
   useEffect(() => {
@@ -64,7 +67,7 @@ export function EtkinlikCoverflow() {
     };
     el.addEventListener("wheel", onWheel, { passive: false });
     return () => el.removeEventListener("wheel", onWheel);
-  }, [total]);
+  }, [go]);
 
   // Pointer drag — hem mouse hem touch (sağa/sola sürükle)
   const onPointerDown = (e: React.PointerEvent) => {

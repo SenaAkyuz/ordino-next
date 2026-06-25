@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { navLinks, navCta } from "@/lib/data/nav";
@@ -63,9 +63,13 @@ export function Navbar({ forceDark = false }: NavbarProps) {
   const instagram = site.social.find((s) => s.name === "Instagram");
   const linkedin = site.social.find((s) => s.name === "LinkedIn");
 
-  useEffect(() => {
+  // Rota değişince mobil menüyü kapat — effect yerine render anında reset
+  // (setState-in-effect kaynaklı zincirleme render'lardan kaçınır).
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
     setOpen(false);
-  }, [pathname]);
+  }
 
   const textColor = isDark ? "text-white" : "text-black";
   const borderColor = isDark ? "border-white" : "border-black";
