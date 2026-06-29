@@ -22,12 +22,11 @@ export async function Hero() {
 
       {/* MOBİL */}
       <div className="relative z-[2] flex min-h-screen w-full flex-col items-center justify-center gap-9 px-6 pt-[120px] pb-16 text-center md:hidden">
-        <Reveal>
-          <h1 className="font-display text-[clamp(2.4rem,9vw,3.6rem)] font-light leading-[1.08] tracking-[-1px] text-dark-bg [&_em]:font-normal [&_em]:italic">
-            {t("headline.lead")} <em>{t("headline.highlight")}</em>{" "}
-            {t("headline.tail")}
-          </h1>
-        </Reveal>
+        {/* LCP elementi — Reveal (opacity:0) ile gating YAPMA; ilk boyamada görünür kalsın */}
+        <h1 className="font-display text-[clamp(2.4rem,9vw,3.6rem)] font-light leading-[1.08] tracking-[-1px] text-dark-bg [&_em]:font-normal [&_em]:italic">
+          {t("headline.lead")} <em>{t("headline.highlight")}</em>{" "}
+          {t("headline.tail")}
+        </h1>
 
         <Reveal delay={0.15}>
           <p className="mx-auto max-w-[420px] font-body text-[0.95rem] leading-[1.6] tracking-[0.3px] text-dark-bg/70">
@@ -60,12 +59,11 @@ export async function Hero() {
       {/* DESKTOP + Tablet */}
       <div className="relative z-[2] mx-auto hidden min-h-screen w-full max-w-[1400px] items-center justify-between gap-10 px-10 pt-[120px] pb-16 md:flex lg:px-20">
         <div className="flex max-w-[640px] flex-1 flex-col items-start text-left">
-          <Reveal>
-            <h1 className="font-display text-[clamp(2.8rem,5.6vw,5.4rem)] font-light leading-[1.04] tracking-[-1.5px] text-dark-bg [&_em]:font-normal [&_em]:italic">
-              {t("headline.lead")} <em>{t("headline.highlight")}</em>{" "}
-              {t("headline.tail")}
-            </h1>
-          </Reveal>
+          {/* LCP elementi — Reveal (opacity:0) ile gating YAPMA; ilk boyamada görünür kalsın */}
+          <h1 className="font-display text-[clamp(2.8rem,5.6vw,5.4rem)] font-light leading-[1.04] tracking-[-1.5px] text-dark-bg [&_em]:font-normal [&_em]:italic">
+            {t("headline.lead")} <em>{t("headline.highlight")}</em>{" "}
+            {t("headline.tail")}
+          </h1>
 
           <Reveal delay={0.15}>
             <p className="mt-7 max-w-[560px] font-body text-[1.05rem] font-light leading-[1.65] tracking-[0.3px] text-dark-bg/70">
