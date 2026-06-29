@@ -1,6 +1,7 @@
 "use client";
 
 import { useTransition } from "react";
+import { useParams } from "next/navigation";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -13,15 +14,17 @@ type Props = {
 export function LanguageSwitcher({ className }: Props) {
   const locale = useLocale() as Locale;
   const router = useRouter();
-  // usePathname (i18n) kanonik (TR) pathname döner — locale değiştirirken aynı sayfada kalmamızı sağlar.
+  // usePathname (i18n) kanonik şablonu döner (örn. /referanslar/[slug]); dinamik
+  // segmentleri doldurmak için useParams() ile birlikte iletiyoruz.
   const pathname = usePathname();
+  const params = useParams();
   const [isPending, startTransition] = useTransition();
 
   const switchTo = (next: Locale) => {
     if (next === locale || isPending) return;
     startTransition(() => {
-      // @ts-expect-error — usePathname() runtime'da kanonik dönüyor; tip burada PathnamesKeys ile dar
-      router.replace(pathname, { locale: next });
+      // @ts-expect-error — pathname kanonik şablon; params dinamik segmentleri doldurur
+      router.replace({ pathname, params }, { locale: next });
     });
   };
 

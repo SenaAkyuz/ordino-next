@@ -49,8 +49,13 @@ export async function CaseBlock({ data, alt = false }: CaseBlockProps) {
             </Reveal>
             <Reveal>
               <h2 className="mb-[30px] font-display text-[clamp(2.2rem,4vw,3.4rem)] font-light leading-[1.2] tracking-[-1px] [&_em]:italic [&_em]:font-normal">
-                {data.title}{" "}
-                <em>{data.titleEm}</em>
+                {data.title}
+                {data.titleEm && (
+                  <>
+                    {" "}
+                    <em>{data.titleEm}</em>
+                  </>
+                )}
                 {data.titleTail && (
                   <>
                     {" "}
@@ -66,7 +71,7 @@ export async function CaseBlock({ data, alt = false }: CaseBlockProps) {
               </h2>
             </Reveal>
             <Reveal>
-              <p className="mb-[30px] font-body text-base font-light leading-[1.8] text-[#555]">
+              <p className="mb-[30px] font-body text-[1.0625rem] font-light leading-[1.85] text-[#555] md:text-[1.15rem]">
                 {data.lead}
               </p>
             </Reveal>
@@ -115,19 +120,16 @@ export async function CaseBlock({ data, alt = false }: CaseBlockProps) {
         data-theme="dark"
         className="bg-dark-bg px-5 py-20 text-white md:px-10 md:py-20 lg:px-20"
       >
-        <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-10 md:grid-cols-3 md:gap-10">
-          {data.stats.map((stat, i) => (
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-stretch justify-center gap-x-6 gap-y-12">
+          {data.stats.map((stat) => (
             <Reveal
               key={stat.label}
-              className={cn(
-                "px-5 text-center",
-                i < data.stats.length - 1 && "md:border-r md:border-white/10",
-              )}
+              className="flex w-[calc(50%-0.75rem)] flex-col px-4 text-center sm:w-auto sm:min-w-[180px] sm:max-w-[260px] sm:flex-1"
             >
-              <h3 className="mb-[14px] font-display text-[clamp(2.8rem,5vw,4.5rem)] font-normal leading-none text-accent">
+              <h3 className="mb-[14px] font-display text-[clamp(2rem,3.2vw,3.1rem)] font-normal leading-[1.05] text-accent">
                 {stat.value}
               </h3>
-              <p className="font-body text-[0.85rem] uppercase tracking-[1.5px] leading-[1.5] text-white/70">
+              <p className="mt-auto font-body text-[0.8rem] uppercase tracking-[1.5px] leading-[1.5] text-white/70">
                 {stat.label}
               </p>
             </Reveal>
@@ -148,14 +150,16 @@ export async function CaseBlock({ data, alt = false }: CaseBlockProps) {
             <h4 className="mb-5 font-body text-[0.75rem] font-medium uppercase tracking-[3px] text-accent">
               {t("challenge")}
             </h4>
-            <h3 className="mb-6 font-display text-[clamp(1.8rem,2.8vw,2.4rem)] font-light leading-[1.3] [&_em]:italic [&_em]:font-normal">
-              {data.challenge.head}{" "}
-              <em>{data.challenge.headEm}</em>
-            </h3>
+            {(data.challenge.head || data.challenge.headEm) && (
+              <h3 className="mb-6 font-display text-[clamp(1.8rem,2.8vw,2.4rem)] font-light leading-[1.3] [&_em]:italic [&_em]:font-normal">
+                {data.challenge.head}{" "}
+                <em>{data.challenge.headEm}</em>
+              </h3>
+            )}
             {data.challenge.paragraphs.map((p, i) => (
               <p
                 key={i}
-                className="mb-[18px] font-body text-base font-light leading-[1.9] text-[#555]"
+                className="mb-[18px] font-body text-[1.0625rem] font-light leading-[1.85] text-[#555] md:text-[1.15rem]"
               >
                 {p}
               </p>
@@ -166,28 +170,20 @@ export async function CaseBlock({ data, alt = false }: CaseBlockProps) {
             <h4 className="mb-5 font-body text-[0.75rem] font-medium uppercase tracking-[3px] text-accent">
               {t("solution")}
             </h4>
-            <h3 className="mb-6 font-display text-[clamp(1.8rem,2.8vw,2.4rem)] font-light leading-[1.3] [&_em]:italic [&_em]:font-normal">
-              {data.solution.head}{" "}
-              <em>{data.solution.headEm}</em>
-            </h3>
+            {(data.solution.head || data.solution.headEm) && (
+              <h3 className="mb-6 font-display text-[clamp(1.8rem,2.8vw,2.4rem)] font-light leading-[1.3] [&_em]:italic [&_em]:font-normal">
+                {data.solution.head}{" "}
+                <em>{data.solution.headEm}</em>
+              </h3>
+            )}
             {data.solution.paragraphs.map((p, i) => (
               <p
                 key={i}
-                className="mb-[18px] font-body text-base font-light leading-[1.9] text-[#555]"
+                className="mb-[18px] font-body text-[1.0625rem] font-light leading-[1.85] text-[#555] md:text-[1.15rem]"
               >
                 {p}
               </p>
             ))}
-            <ul className="mt-6 flex list-none flex-col gap-[14px]">
-              {data.featuredServices.map((item) => (
-                <li
-                  key={item}
-                  className="relative pl-[22px] font-body text-[0.95rem] font-light leading-[1.6] text-[#444] before:absolute before:left-0 before:top-3 before:h-px before:w-[10px] before:bg-accent"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
           </Reveal>
         </div>
       </section>
