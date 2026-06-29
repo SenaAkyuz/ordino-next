@@ -4,30 +4,31 @@ import { newsConfig } from "@/lib/data/news";
 import { routing } from "@/i18n/routing";
 import { getPathname } from "@/i18n/navigation";
 
-const host = "https://theordino.com";
+const host = "https://www.theordino.com";
 
 type Href = Parameters<typeof getPathname>[0]["href"];
 type ChangeFreq = NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
 
-function entry(
+// Her sayfa için TR ve EN URL'lerini ayrı <url> kayıtları olarak üretir;
+// her kayıt tüm dil varyantlarını karşılıklı hreflang alternate olarak listeler.
+function entries(
   href: Href,
   priority: number,
   changeFrequency: ChangeFreq,
-): MetadataRoute.Sitemap[number] {
-  const url = host + getPathname({ locale: routing.defaultLocale, href });
+): MetadataRoute.Sitemap {
   const languages = Object.fromEntries(
     routing.locales.map((locale) => [
       locale,
       host + getPathname({ locale, href }),
     ]),
   );
-  return {
-    url,
+  return routing.locales.map((locale) => ({
+    url: host + getPathname({ locale, href }),
     lastModified: new Date(),
     changeFrequency,
     priority,
     alternates: { languages },
-  };
+  }));
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -46,11 +47,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { href: "/iletisim", priority: 0.85, changeFrequency: "monthly" },
     { href: "/blog", priority: 0.8, changeFrequency: "weekly" },
     {
-      href: "/iletisim/tesekkurler",
-      priority: 0.3,
-      changeFrequency: "yearly",
-    },
-    {
       href: "/gizlilik-politikasi",
       priority: 0.4,
       changeFrequency: "yearly",
@@ -63,20 +59,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const staticEntries = staticRoutes.map((r) =>
-    entry(r.href, r.priority, r.changeFrequency),
+  const staticEntries = staticRoutes.flatMap((r) =>
+    entries(r.href, r.priority, r.changeFrequency),
   );
 
-  const caseStudyEntries = caseStudiesConfig.map((cs) =>
-    entry(
+  const caseStudyEntries = caseStudiesConfig.flatMap((cs) =>
+    entries(
       { pathname: "/referanslar/[slug]", params: { slug: cs.slug } },
       0.7,
       "monthly",
     ),
   );
 
-  const blogEntries = newsConfig.map((post) =>
-    entry(
+  const blogEntries = newsConfig.flatMap((post) =>
+    entries(
       { pathname: "/blog/[slug]", params: { slug: post.slug } },
       0.6,
       "monthly",

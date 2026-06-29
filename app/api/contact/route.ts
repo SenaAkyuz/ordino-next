@@ -154,7 +154,7 @@ export async function POST(request: Request) {
   if (isNonEmptyString(normalizedBudget)) pushField("budget", normalizedBudget);
   if (isNonEmptyString(data.message)) pushField("message", data.message.trim());
 
-  const referer = request.headers.get("referer") ?? "https://theordino.com/iletisim";
+  const referer = request.headers.get("referer") ?? "https://www.theordino.com/iletisim";
 
   const hubspotPayload = {
     fields,

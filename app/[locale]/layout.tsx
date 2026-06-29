@@ -45,7 +45,7 @@ export async function generateMetadata({
   const description = t("description");
 
   return {
-    metadataBase: new URL("https://theordino.com"),
+    metadataBase: new URL("https://www.theordino.com"),
     title: {
       default: siteTitle,
       template: t("titleTemplate"),
@@ -74,7 +74,7 @@ export async function generateMetadata({
     openGraph: {
       title: siteTitle,
       description,
-      url: "https://theordino.com",
+      url: "https://www.theordino.com",
       siteName: "Ordino",
       locale: t("ogLocale"),
       type: "website",

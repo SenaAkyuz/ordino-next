@@ -3,13 +3,13 @@ export function SchemaMarkup() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://theordino.com/#organization",
+    "@id": "https://www.theordino.com/#organization",
     name: "Ordino",
     alternateName: "Ordino Medya",
-    url: "https://theordino.com",
+    url: "https://www.theordino.com",
     logo: {
       "@type": "ImageObject",
-      url: "https://theordino.com/og.jpg",
+      url: "https://www.theordino.com/og.jpg",
       width: 1200,
       height: 630,
     },
@@ -38,10 +38,10 @@ export function SchemaMarkup() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://theordino.com/#localbusiness",
+    "@id": "https://www.theordino.com/#localbusiness",
     name: "Ordino — Istanbul Ofisi",
-    image: "https://theordino.com/og.jpg",
-    url: "https://theordino.com",
+    image: "https://www.theordino.com/og.jpg",
+    url: "https://www.theordino.com",
     telephone: "+90-212-996-71-47",
     email: "theordino.com",
     priceRange: "$$$",
@@ -79,12 +79,12 @@ export function SchemaMarkup() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://theordino.com/#website",
-    url: "https://theordino.com",
+    "@id": "https://www.theordino.com/#website",
+    url: "https://www.theordino.com",
     name: "Ordino",
     description: "Strateji. Yaratıcılık. Büyüme.",
     publisher: {
-      "@id": "https://theordino.com/#organization",
+      "@id": "https://www.theordino.com/#organization",
     },
     inLanguage: "tr-TR",
   };
