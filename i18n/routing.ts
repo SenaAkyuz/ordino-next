@@ -32,6 +32,9 @@ export const routing = defineRouting({
       en: "/cookie-policy",
     },
     "/kvkk": "/kvkk",
+    "/fynpad": "/fynpad",
+    "/fynpad/privacy": "/fynpad/privacy",
+    "/fynpad/terms": "/fynpad/terms",
   },
 });
 
