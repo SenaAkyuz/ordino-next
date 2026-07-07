@@ -1,13 +1,15 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/ui/Reveal";
-import { NEWS_CATEGORY_KEYS, type NewsPost } from "@/lib/data/news";
+import { NEWS_CATEGORY_KEYS } from "@/lib/data/news";
+import type { BlogPost } from "@/lib/blog/types";
 
 type BlogFilterProps = {
-  posts: NewsPost[];
+  posts: BlogPost[];
 };
 
 export function BlogFilter({ posts }: BlogFilterProps) {
@@ -64,11 +66,21 @@ export function BlogFilter({ posts }: BlogFilterProps) {
                 className="group block"
               >
                 <div className="relative mb-6 aspect-[4/3] w-full overflow-hidden">
-                  <div
-                    className="h-full w-full transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.04]"
-                    style={{ background: post.gradient }}
-                    aria-hidden="true"
-                  />
+                  {post.coverImageUrl ? (
+                    <Image
+                      src={post.coverImageUrl}
+                      alt={post.coverImageAlt || ""}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.04]"
+                    />
+                  ) : (
+                    <div
+                      className="h-full w-full transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.04]"
+                      style={{ background: post.gradient }}
+                      aria-hidden="true"
+                    />
+                  )}
                   {post.readTime && (
                     <span className="absolute right-3 top-3 inline-block rounded-full bg-black/40 px-3 py-1 font-body text-[0.7rem] text-white backdrop-blur-sm">
                       {post.readTime}

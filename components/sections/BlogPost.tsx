@@ -1,9 +1,11 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/Reveal";
-import type { NewsPost } from "@/lib/data/news";
+import { PortableBody } from "@/components/sections/PortableBody";
+import type { BlogPost as BlogPostType } from "@/lib/blog/types";
 
 type BlogPostProps = {
-  post: NewsPost;
+  post: BlogPostType;
 };
 
 export async function BlogPost({ post }: BlogPostProps) {
@@ -58,11 +60,27 @@ export async function BlogPost({ post }: BlogPostProps) {
         </Reveal>
 
         <Reveal>
-          <div
-            className="mb-12 aspect-[16/9] w-full overflow-hidden rounded-[4px]"
-            style={{ background: post.gradient }}
-            aria-hidden="true"
-          />
+          {post.coverImageUrl ? (
+            <div className="relative mb-12 aspect-[16/9] w-full overflow-hidden rounded-[4px]">
+              <Image
+                src={post.coverImageUrl}
+                alt={post.coverImageAlt || ""}
+                fill
+                priority
+                sizes="(max-width: 800px) 100vw, 800px"
+                className="object-cover"
+                {...(post.coverBlur
+                  ? { placeholder: "blur", blurDataURL: post.coverBlur }
+                  : {})}
+              />
+            </div>
+          ) : (
+            <div
+              className="mb-12 aspect-[16/9] w-full overflow-hidden rounded-[4px]"
+              style={{ background: post.gradient }}
+              aria-hidden="true"
+            />
+          )}
         </Reveal>
 
         <Reveal>
@@ -72,8 +90,10 @@ export async function BlogPost({ post }: BlogPostProps) {
         </Reveal>
 
         <Reveal>
-          <div className="font-body text-base font-light leading-[1.9] text-[#333]">
-            {isPlaceholder ? (
+          <div className="space-y-6 font-body text-base font-light leading-[1.9] text-[#333]">
+            {post.portableBody && post.portableBody.length > 0 ? (
+              <PortableBody value={post.portableBody} />
+            ) : isPlaceholder ? (
               <div className="my-12 rounded-[8px] border border-dashed border-[#ddd] bg-light-bg p-10 text-center">
                 <p className="mb-3 font-display text-[1.2rem] text-black">
                   {t("placeholderTitle")}

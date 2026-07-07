@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 import { caseStudiesConfig } from "@/lib/data/caseStudies";
-import { newsConfig } from "@/lib/data/news";
 import { routing } from "@/i18n/routing";
 import { getPathname } from "@/i18n/navigation";
+import { getSitemapBlogEntries } from "@/lib/blog/getPosts";
 
 const host = "https://www.theordino.com";
 
@@ -31,7 +31,7 @@ function entries(
   }));
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: Array<{
     href: Href;
     priority: number;
@@ -71,13 +71,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ),
   );
 
-  const blogEntries = newsConfig.flatMap((post) =>
-    entries(
-      { pathname: "/blog/[slug]", params: { slug: post.slug } },
-      0.6,
-      "monthly",
-    ),
-  );
+  // Blog: URL kaynagi Sanity (yayinlanmis) + hardcoded, getSitemapBlogEntries ile.
+  // TR her zaman, EN yalniz ceviri varsa; alternate'ler karsilikli (hreflang).
+  const blogPosts = await getSitemapBlogEntries();
+  const blogEntries: MetadataRoute.Sitemap = blogPosts.flatMap((post) => {
+    const languages: Record<string, string> = { tr: post.trUrl };
+    if (post.enUrl) languages.en = post.enUrl;
+    const urls: MetadataRoute.Sitemap = [
+      {
+        url: post.trUrl,
+        lastModified: post.lastModified,
+        changeFrequency: "monthly",
+        priority: 0.6,
+        alternates: { languages },
+      },
+    ];
+    if (post.enUrl) {
+      urls.push({
+        url: post.enUrl,
+        lastModified: post.lastModified,
+        changeFrequency: "monthly",
+        priority: 0.6,
+        alternates: { languages },
+      });
+    }
+    return urls;
+  });
 
   return [...staticEntries, ...caseStudyEntries, ...blogEntries];
 }

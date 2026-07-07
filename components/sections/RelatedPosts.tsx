@@ -1,10 +1,11 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Reveal } from "@/components/ui/Reveal";
-import type { NewsPost } from "@/lib/data/news";
+import type { BlogPost } from "@/lib/blog/types";
 
 type RelatedPostsProps = {
-  posts: NewsPost[];
+  posts: BlogPost[];
 };
 
 export async function RelatedPosts({ posts }: RelatedPostsProps) {
@@ -33,11 +34,21 @@ export async function RelatedPosts({ posts }: RelatedPostsProps) {
                 className="group block"
               >
                 <div className="relative mb-5 aspect-[4/3] w-full overflow-hidden rounded-[4px]">
-                  <div
-                    className="h-full w-full transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.04]"
-                    style={{ background: post.gradient }}
-                    aria-hidden="true"
-                  />
+                  {post.coverImageUrl ? (
+                    <Image
+                      src={post.coverImageUrl}
+                      alt={post.coverImageAlt || ""}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.04]"
+                    />
+                  ) : (
+                    <div
+                      className="h-full w-full transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.04]"
+                      style={{ background: post.gradient }}
+                      aria-hidden="true"
+                    />
+                  )}
                 </div>
                 <div className="mb-3 flex items-center gap-2">
                   <span className="inline-block rounded-full bg-accent/10 px-3 py-1 font-body text-[0.7rem] uppercase tracking-[1.5px] text-accent">

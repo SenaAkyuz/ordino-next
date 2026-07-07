@@ -1,21 +1,27 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { BlogPost } from "@/components/sections/BlogPost";
 import { RelatedPosts } from "@/components/sections/RelatedPosts";
-import { routing, type Locale } from "@/i18n/routing";
+import { ArticleSchema } from "@/components/seo/ArticleSchema";
+import { type Locale } from "@/i18n/routing";
+import { site } from "@/lib/data/site";
 import {
-  newsConfig,
-  type NewsPost,
-  type NewsPostContent,
-} from "@/lib/data/news";
+  getBlogPost,
+  getBlogPosts,
+  getAllBlogParams,
+  getRedirectTarget,
+} from "@/lib/blog/getPosts";
+import { getBlogUrls } from "@/lib/blog/urls";
 
 type Params = { locale: Locale; slug: string };
 
-export function generateStaticParams() {
-  return routing.locales.flatMap((locale) =>
-    newsConfig.map((cfg) => ({ locale, slug: cfg.slug })),
-  );
+// Studio'dan sonra eklenen yazi build param'inda olmasa da ISR ile gelsin (404 vermesin).
+export const dynamicParams = true;
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  return getAllBlogParams();
 }
 
 export async function generateMetadata({
@@ -24,26 +30,54 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const cfg = newsConfig.find((c) => c.slug === slug);
-  if (!cfg) return { title: "Post not found" };
+  const post = await getBlogPost(locale, slug);
+  if (!post) return { title: "Post not found" };
 
-  const localeTyped = locale as (typeof routing.locales)[number];
-  const tNewsPosts = await getTranslations({
-    locale: localeTyped,
-    namespace: "news.posts",
-  });
-  const tBlog = await getTranslations({
-    locale: localeTyped,
-    namespace: "blog",
-  });
+  const tBlog = await getTranslations({ locale, namespace: "blog" });
+  const { selfUrl, trUrl, enUrl } = getBlogUrls(locale, post);
 
-  const content = (tNewsPosts.raw as (key: string) => unknown)(
-    cfg.slug,
-  ) as NewsPostContent;
+  // hreflang — eksik dil kurali: EN alternate SADECE hasEn ise. x-default = trUrl
+  // (sitemap x-default basmiyor, defaultLocale tr).
+  const languages: Record<string, string> = { tr: trUrl, "x-default": trUrl };
+  if (post.hasEn) languages.en = enUrl;
+
+  const ogTitle = post.metaTitle || post.title;
+  const ogDescription = post.metaDescription || post.excerpt;
+  const ogImage = post.ogImageUrl || site.ogImage;
+  const alternateLocale =
+    locale === "tr"
+      ? post.hasEn
+        ? ["en_US"]
+        : undefined
+      : ["tr_TR"];
 
   return {
-    title: tBlog("detailTitleTemplate", { title: content.title }),
-    description: content.excerpt,
+    // title/description Adim 2 mantigi korunur.
+    title: tBlog("detailTitleTemplate", { title: ogTitle }),
+    description: ogDescription,
+    alternates: {
+      canonical: post.canonicalUrl || selfUrl,
+      languages,
+    },
+    ...(post.noIndex ? { robots: { index: false, follow: true } } : {}),
+    openGraph: {
+      type: "article",
+      title: ogTitle,
+      description: ogDescription,
+      url: selfUrl,
+      images: [ogImage],
+      publishedTime: post.publishedAtISO,
+      modifiedTime: post.updatedAt || post.publishedAtISO,
+      authors: post.author ? [post.author] : undefined,
+      locale: locale === "tr" ? "tr_TR" : "en_US",
+      alternateLocale,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description: ogDescription,
+      images: [ogImage],
+    },
   };
 }
 
@@ -55,41 +89,25 @@ export default async function BlogDetailPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  const cfg = newsConfig.find((c) => c.slug === slug);
-  if (!cfg) notFound();
+  const post = await getBlogPost(locale, slug);
+  if (!post) {
+    // Slug degismisse eski slug'i previousSlugs'ta ara → guncel URL'e kalici (308) yonlen.
+    const target = await getRedirectTarget(locale, slug);
+    if (target) permanentRedirect(target);
+    notFound();
+  }
 
-  const tNewsPosts = await getTranslations("news.posts");
-  const tCategories = await getTranslations("blog.categories");
+  const { selfUrl } = getBlogUrls(locale, post);
 
-  const content = (tNewsPosts.raw as (key: string) => unknown)(
-    cfg.slug,
-  ) as NewsPostContent;
-  const post: NewsPost = {
-    slug: cfg.slug,
-    category: tCategories(cfg.categoryKey),
-    gradient: cfg.gradient,
-    content: cfg.content,
-    ...content,
-  };
-
-  const relatedPosts: NewsPost[] = newsConfig
-    .filter((c) => c.slug !== slug && c.categoryKey === cfg.categoryKey)
-    .slice(0, 3)
-    .map((c) => {
-      const rc = (tNewsPosts.raw as (key: string) => unknown)(
-        c.slug,
-      ) as NewsPostContent;
-      return {
-        slug: c.slug,
-        category: tCategories(c.categoryKey),
-        gradient: c.gradient,
-        content: c.content,
-        ...rc,
-      };
-    });
+  // Ayni kategorideki diger yazilar (Sanity + hardcoded), mevcut yazi haric.
+  const allPosts = await getBlogPosts(locale);
+  const relatedPosts = allPosts
+    .filter((p) => p.slug !== post.slug && p.category === post.category)
+    .slice(0, 3);
 
   return (
     <>
+      <ArticleSchema post={post} locale={locale} url={selfUrl} />
       <BlogPost post={post} />
       {relatedPosts.length > 0 && <RelatedPosts posts={relatedPosts} />}
     </>
