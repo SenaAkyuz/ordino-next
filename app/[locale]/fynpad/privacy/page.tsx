@@ -55,7 +55,7 @@ function PrivacyTr() {
   return (
     <>
       <p>
-        <strong>Son güncelleme:</strong> 1 Temmuz 2026
+        <strong>Son güncelleme:</strong> 2 Temmuz 2026
       </p>
 
       <h2>1. Giriş</h2>
@@ -122,6 +122,32 @@ function PrivacyTr() {
         istediğiniz zaman cihaz ayarlarından geri alabilirsiniz.
       </p>
 
+      <h3>2.4 Reklam Verileri (Google AdMob)</h3>
+      <p>
+        FynPad'de reklamlar Google AdMob aracılığıyla gösterilir. Reklam
+        gösterimi sırasında AdMob aşağıdaki bilgileri toplayabilir:
+      </p>
+      <ul>
+        <li>Reklam Kimliği (Advertising ID)</li>
+        <li>Cihaz bilgileri (model, işletim sistemi sürümü)</li>
+        <li>Genel, IP tabanlı yaklaşık konum (hassas/GPS konum değil)</li>
+        <li>Reklam etkileşim verileri (gösterim ve tıklama istatistikleri)</li>
+      </ul>
+      <p>
+        Bu veriler Google'ın kendi Gizlilik Politikası kapsamında işlenir:{" "}
+        <a
+          href="https://policies.google.com/privacy"
+          className="text-accent hover:underline"
+        >
+          https://policies.google.com/privacy
+        </a>
+      </p>
+      <p>
+        Reklam kişiselleştirmesini cihazınızın ayarlarından (Google Ayarlar →
+        Reklamlar → Reklam kişiselleştirmesini devre dışı bırak) kontrol
+        edebilirsiniz.
+      </p>
+
       <h2>3. Bilgileri Nasıl Kullanıyoruz</h2>
       <p>Topladığımız bilgileri yalnızca şu amaçlarla kullanırız:</p>
       <ul>
@@ -150,15 +176,16 @@ function PrivacyTr() {
 
       <h2>5. Verilerin Üçüncü Taraflarla Paylaşımı</h2>
       <p>
-        <strong>
-          FynPad verilerinizi hiçbir üçüncü tarafla paylaşmaz, satmaz veya
-          kiralamaz.
-        </strong>
+        FynPad, kişisel ve finansal verilerinizi reklam veya pazarlama amacıyla
+        hiçbir üçüncü tarafla paylaşmaz, satmaz veya kiralamaz.
       </p>
       <p>
-        Verileriniz yalnızca uygulamanın çalışması için kullanılan altyapı
-        sağlayıcısında (Supabase) barındırılır. Reklam, pazarlama veya profilleme
-        amacıyla hiçbir kuruma aktarılmaz.
+        <strong>İstisna — Reklam Hizmeti:</strong> Uygulama içinde gösterilen
+        reklamlar Google AdMob tarafından sağlanır. Reklam hizmetinin
+        çalışabilmesi için Reklam Kimliği ve temel cihaz bilgileri Google ile
+        paylaşılır. Bu paylaşım yalnızca reklam gösterimi amacıyla sınırlıdır —
+        finansal verileriniz (gelir, gider, bütçe, hedef bilgileri) bu paylaşımın
+        hiçbir zaman kapsamında değildir ve yalnızca Supabase altyapımızda kalır.
       </p>
       <p>
         Google ile giriş yaptığınızda, kimlik doğrulama Google'ın kendi güvenli
@@ -241,7 +268,7 @@ function PrivacyEn() {
   return (
     <>
       <p>
-        <strong>Last updated:</strong> July 1, 2026
+        <strong>Last updated:</strong> July 2, 2026
       </p>
 
       <h2>1. Introduction</h2>
@@ -305,6 +332,31 @@ function PrivacyEn() {
         this permission at any time from your device settings.
       </p>
 
+      <h3>2.4 Advertising Data (Google AdMob)</h3>
+      <p>
+        Ads in FynPad are displayed through Google AdMob. While serving ads,
+        AdMob may collect:
+      </p>
+      <ul>
+        <li>Advertising ID</li>
+        <li>Device information (model, OS version)</li>
+        <li>General, IP-based approximate location (not precise/GPS location)</li>
+        <li>Ad interaction data (impression and click statistics)</li>
+      </ul>
+      <p>
+        This data is processed under Google's own Privacy Policy:{" "}
+        <a
+          href="https://policies.google.com/privacy"
+          className="text-accent hover:underline"
+        >
+          https://policies.google.com/privacy
+        </a>
+      </p>
+      <p>
+        You can control ad personalization from your device settings (Google
+        Settings → Ads → Opt out of Ads Personalization).
+      </p>
+
       <h2>3. How We Use Your Information</h2>
       <p>We use the information we collect solely for:</p>
       <ul>
@@ -334,14 +386,16 @@ function PrivacyEn() {
 
       <h2>5. Sharing Data with Third Parties</h2>
       <p>
-        <strong>
-          FynPad does not share, sell, or rent your data to any third party.
-        </strong>
+        FynPad does not share, sell, or rent your personal and financial data to
+        any third party for advertising or marketing purposes.
       </p>
       <p>
-        Your data is only hosted with the infrastructure provider used to operate
-        the app (Supabase). It is never transferred to any organization for
-        advertising, marketing, or profiling purposes.
+        <strong>Exception — Advertising Service:</strong> Ads displayed within
+        the app are provided by Google AdMob. For the ad service to function,
+        your Advertising ID and basic device information are shared with Google.
+        This sharing is strictly limited to ad delivery — your financial data
+        (income, expenses, budgets, goal information) is never included in this
+        sharing and remains solely within our Supabase infrastructure.
       </p>
       <p>
         When you sign in with Google, authentication occurs through Google's own
