@@ -64,8 +64,12 @@ function DeleteAccountTr() {
       <ol className="[&>li]:list-decimal">
         <li>FynPad uygulamasını açın ve giriş yapın</li>
         <li>Ayarlar ekranına gidin</li>
-        <li>&quot;Hesabı Sil&quot; seçeneğine dokunun</li>
-        <li>Onay için &quot;DELETE&quot; yazın ve işlemi tamamlayın</li>
+        <li>
+          &quot;Tehlikeli Bölge&quot; altındaki &quot;Hesabı Sil&quot; seçeneğine
+          dokunun
+        </li>
+        <li>Onay alanına &quot;SİL&quot; yazın</li>
+        <li>&quot;Hesabımı Kalıcı Olarak Sil&quot; düğmesine dokunun</li>
         <li>Hesabınız ve tüm verileriniz kalıcı olarak silinir</li>
       </ol>
 
@@ -91,6 +95,10 @@ function DeleteAccountTr() {
           <strong>İçerik:</strong> Hesabınızla ilişkili e-posta adresini belirtin
         </li>
       </ul>
+      <p>
+        Talebiniz doğrulama amacıyla kimlik teyidi gerektirebilir. Güvenliğiniz
+        için hiçbir zaman parolanızı e-posta ile göndermeyin.
+      </p>
       <p>
         Talebiniz en geç 30 gün içinde işleme alınır ve hesabınız ile tüm
         verileriniz silinir.
@@ -122,7 +130,7 @@ function DeleteAccountTr() {
           info@theordino.com
         </a>
         <br />
-        <strong>Şirket:</strong> Ordino
+        <strong>Geliştirici ve hizmet sağlayıcı:</strong> Ordino
       </p>
     </>
   );
@@ -140,9 +148,18 @@ function DeleteAccountEn() {
       <h2>1. Delete from Within the App</h2>
       <ol className="[&>li]:list-decimal">
         <li>Open the FynPad app and sign in</li>
-        <li>Go to the Settings screen</li>
-        <li>Tap &quot;Delete Account&quot;</li>
-        <li>Type &quot;DELETE&quot; to confirm and complete the process</li>
+        <li>Go to the Settings (Ayarlar) screen</li>
+        <li>
+          Under &quot;Tehlikeli Bölge&quot; (Danger Zone), tap &quot;Hesabı
+          Sil&quot; (Delete Account)
+        </li>
+        <li>
+          Type the confirmation word &quot;SİL&quot; in the confirmation field
+        </li>
+        <li>
+          Tap &quot;Hesabımı Kalıcı Olarak Sil&quot; (Permanently Delete My
+          Account)
+        </li>
         <li>Your account and all data are permanently deleted</li>
       </ol>
 
@@ -169,6 +186,10 @@ function DeleteAccountEn() {
           account
         </li>
       </ul>
+      <p>
+        Your request may require identity verification. For your security, never
+        send your password by email.
+      </p>
       <p>
         Your request will be processed within 30 days, and your account and all
         data will be deleted.
@@ -200,7 +221,7 @@ function DeleteAccountEn() {
           info@theordino.com
         </a>
         <br />
-        <strong>Company:</strong> Ordino
+        <strong>Developer and service provider:</strong> Ordino
       </p>
     </>
   );

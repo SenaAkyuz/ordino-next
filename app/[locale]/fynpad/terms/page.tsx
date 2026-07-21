@@ -177,7 +177,7 @@ function TermsTr() {
           info@theordino.com
         </a>
         <br />
-        <strong>Şirket:</strong> Ordino
+        <strong>Geliştirici ve hizmet sağlayıcı:</strong> Ordino
       </p>
     </>
   );
@@ -305,7 +305,7 @@ function TermsEn() {
           info@theordino.com
         </a>
         <br />
-        <strong>Company:</strong> Ordino
+        <strong>Developer and service provider:</strong> Ordino
       </p>
     </>
   );

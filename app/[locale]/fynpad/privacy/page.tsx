@@ -82,8 +82,8 @@ function PrivacyTr() {
       <ul>
         <li>E-posta adresi</li>
         <li>
-          Şifre (şifrelenmiş olarak saklanır, hiçbir zaman düz metin olarak
-          tutulmaz)
+          Parola (kimlik doğrulama için kullanılan parola, güvenli hash
+          yöntemleriyle korunur ve tarafımızca düz metin olarak görüntülenemez)
         </li>
       </ul>
       <p>
@@ -124,15 +124,34 @@ function PrivacyTr() {
 
       <h3>2.4 Reklam Verileri (Google AdMob)</h3>
       <p>
-        FynPad'de reklamlar Google AdMob aracılığıyla gösterilir. Reklam
-        gösterimi sırasında AdMob aşağıdaki bilgileri toplayabilir:
+        FynPad'de reklamlar Google AdMob aracılığıyla gösterilir. Google Mobile
+        Ads, reklam gösterimi sırasında aşağıdaki bilgileri otomatik olarak
+        toplayabilir ve paylaşabilir:
       </p>
       <ul>
-        <li>Reklam Kimliği (Advertising ID)</li>
-        <li>Cihaz bilgileri (model, işletim sistemi sürümü)</li>
-        <li>Genel, IP tabanlı yaklaşık konum (hassas/GPS konum değil)</li>
-        <li>Reklam etkileşim verileri (gösterim ve tıklama istatistikleri)</li>
+        <li>IP adresinden türetilen yaklaşık konum (hassas/GPS konum değil)</li>
+        <li>
+          Reklam kimliği (Advertising ID), uygulama seti kimliği (app set ID) ve
+          diğer cihaz/uygulama tanımlayıcıları
+        </li>
+        <li>
+          Uygulama açılışları, dokunuşlar, reklam gösterimleri ve reklam
+          etkileşimleri
+        </li>
+        <li>Uygulama/SDK tanılama ve performans bilgileri</li>
       </ul>
+      <p>Bu veriler aşağıdaki amaçlarla işlenebilir:</p>
+      <ul>
+        <li>Reklam gösterimi ve reklam performansının ölçülmesi</li>
+        <li>Analiz</li>
+        <li>
+          Dolandırıcılığın önlenmesi, güvenlik ve uyumluluk (fraud prevention)
+        </li>
+      </ul>
+      <p>
+        Uygulamaya girdiğiniz gelir, gider, bütçe, hedef, not, abonelik ve
+        benzeri finansal kayıtlar AdMob'a gönderilmez.
+      </p>
       <p>
         Bu veriler Google'ın kendi Gizlilik Politikası kapsamında işlenir:{" "}
         <a
@@ -157,6 +176,9 @@ function PrivacyTr() {
         <li>İstediğiniz analiz ve içgörüleri sunmak</li>
         <li>Ayarladığınız hatırlatma bildirimlerini göndermek</li>
         <li>Uygulamayı çalıştırmak ve teknik sorunları gidermek</li>
+        <li>Reklam göstermek ve reklam performansını ölçmek</li>
+        <li>Uygulama ve reklam SDK performansını analiz etmek</li>
+        <li>Güvenlik ile kötüye kullanım veya dolandırıcılığın önlenmesi</li>
       </ul>
 
       <h2>4. Verilerin Saklanması ve Güvenliği</h2>
@@ -166,7 +188,10 @@ function PrivacyTr() {
       </p>
       <ul>
         <li>Aktarım sırasında HTTPS/TLS şifrelemesiyle korunur</li>
-        <li>Disk üzerinde şifrelenmiş olarak saklanır</li>
+        <li>
+          Yetkisiz erişime karşı erişim kontrolleri ve teknik güvenlik
+          önlemleriyle korunur
+        </li>
         <li>
           Satır Bazlı Güvenlik (Row Level Security) ile korunur — yalnızca siz
           kendi verilerinize erişebilirsiniz
@@ -176,17 +201,23 @@ function PrivacyTr() {
 
       <h2>5. Verilerin Üçüncü Taraflarla Paylaşımı</h2>
       <p>
-        FynPad, kişisel ve finansal verilerinizi reklam veya pazarlama amacıyla
-        hiçbir üçüncü tarafla paylaşmaz, satmaz veya kiralamaz.
+        Uygulamaya girdiğiniz finansal kayıtlar reklamverenlere satılmaz ve
+        AdMob'a gönderilmez. Bununla birlikte, uygulamanın çalışabilmesi için
+        verileriniz aşağıdaki hizmet sağlayıcılar tarafından işlenir:
       </p>
-      <p>
-        <strong>İstisna — Reklam Hizmeti:</strong> Uygulama içinde gösterilen
-        reklamlar Google AdMob tarafından sağlanır. Reklam hizmetinin
-        çalışabilmesi için Reklam Kimliği ve temel cihaz bilgileri Google ile
-        paylaşılır. Bu paylaşım yalnızca reklam gösterimi amacıyla sınırlıdır —
-        finansal verileriniz (gelir, gider, bütçe, hedef bilgileri) bu paylaşımın
-        hiçbir zaman kapsamında değildir ve yalnızca Supabase altyapımızda kalır.
-      </p>
+      <ul>
+        <li>
+          <strong>Supabase:</strong> Hesap ve uygulama verileriniz, altyapı ve
+          kimlik doğrulama hizmet sağlayıcımız olan Supabase tarafından bizim
+          adımıza işlenir ve saklanır.
+        </li>
+        <li>
+          <strong>Google AdMob:</strong> Uygulama içinde gösterilen reklamlar
+          Google AdMob tarafından sağlanır. AdMob, yukarıda 2.4'te açıklanan
+          reklam/cihaz verilerini reklamcılık, analiz ve dolandırıcılık
+          önleme/güvenlik amaçlarıyla işleyebilir.
+        </li>
+      </ul>
       <p>
         Google ile giriş yaptığınızda, kimlik doğrulama Google'ın kendi güvenli
         sistemleri üzerinden gerçekleşir ve Google'ın Gizlilik Politikası da
@@ -219,8 +250,10 @@ function PrivacyTr() {
       </p>
       <ul>
         <li>
-          Uygulama içinde <strong>Ayarlar → Hesap → Hesabı Sil</strong> adımlarını
-          izleyin, veya
+          Uygulama içinde{" "}
+          <strong>Ayarlar → Tehlikeli Bölge → Hesabı Sil</strong> adımlarını
+          izleyin. Bu işlem başarıyla tamamlandığında aktif hesabınız ve ilişkili
+          uygulama verileriniz kalıcı olarak silinir, veya
         </li>
         <li>
           <a
@@ -229,15 +262,17 @@ function PrivacyTr() {
           >
             info@theordino.com
           </a>{" "}
-          adresine e-posta göndererek talep edin
+          adresine e-posta göndererek talep edin. Bu tür talepler kimlik
+          doğrulaması gerektirebilir ve en geç 30 gün içinde işleme alınır.
         </li>
       </ul>
-      <p>Silme talebiniz en geç 30 gün içinde işleme alınır.</p>
+      <p>Güvenliğiniz için parolanızı hiçbir zaman e-posta ile göndermeyin.</p>
 
       <h2>8. Çocukların Gizliliği</h2>
       <p>
-        FynPad 13 yaşından küçük çocuklara yönelik değildir. Bilerek 13 yaşından
-        küçük kullanıcılardan veri toplamayız.
+        FynPad 18 yaş ve üzerindeki kullanıcılara yöneliktir. Uygulama çocuklara
+        yönelik olarak tasarlanmamış veya pazarlanmamıştır. 18 yaşından küçük
+        kişilerden bilerek kişisel veri toplamayı amaçlamayız.
       </p>
 
       <h2>9. Değişiklikler</h2>
@@ -258,7 +293,7 @@ function PrivacyTr() {
           info@theordino.com
         </a>
         <br />
-        <strong>Şirket:</strong> Ordino
+        <strong>Geliştirici ve hizmet sağlayıcı:</strong> Ordino
       </p>
     </>
   );
@@ -294,7 +329,10 @@ function PrivacyEn() {
       </p>
       <ul>
         <li>Email address</li>
-        <li>Password (stored encrypted, never kept in plain text)</li>
+        <li>
+          Password (protected with secure hashing methods and cannot be viewed
+          by us in plain text)
+        </li>
       </ul>
       <p>
         <strong>Google Sign-In:</strong>
@@ -335,14 +373,26 @@ function PrivacyEn() {
       <h3>2.4 Advertising Data (Google AdMob)</h3>
       <p>
         Ads in FynPad are displayed through Google AdMob. While serving ads,
-        AdMob may collect:
+        Google Mobile Ads may automatically collect and share:
       </p>
       <ul>
-        <li>Advertising ID</li>
-        <li>Device information (model, OS version)</li>
-        <li>General, IP-based approximate location (not precise/GPS location)</li>
-        <li>Ad interaction data (impression and click statistics)</li>
+        <li>IP-derived approximate location (not precise/GPS location)</li>
+        <li>
+          Advertising ID, app set ID, and other device/app identifiers
+        </li>
+        <li>App launches, taps, ad impressions, and ad interactions</li>
+        <li>App/SDK diagnostic and performance information</li>
       </ul>
+      <p>This data may be processed for:</p>
+      <ul>
+        <li>Advertising and measuring ad performance</li>
+        <li>Analytics</li>
+        <li>Fraud prevention, security, and compliance</li>
+      </ul>
+      <p>
+        The income, expense, budget, goal, note, subscription, and similar
+        financial records you enter into the app are not sent to AdMob.
+      </p>
       <p>
         This data is processed under Google's own Privacy Policy:{" "}
         <a
@@ -366,6 +416,9 @@ function PrivacyEn() {
         <li>Providing the analytics and insights you request</li>
         <li>Sending reminder notifications you have configured</li>
         <li>Operating the app and resolving technical issues</li>
+        <li>Showing ads and measuring ad performance</li>
+        <li>Analyzing application and advertising SDK performance</li>
+        <li>Security and prevention of abuse or fraud</li>
       </ul>
 
       <h2>4. Data Storage and Security</h2>
@@ -375,7 +428,10 @@ function PrivacyEn() {
       </p>
       <ul>
         <li>Protected with HTTPS/TLS encryption during transmission</li>
-        <li>Stored encrypted at rest</li>
+        <li>
+          Protected against unauthorized access with access controls and
+          technical security measures
+        </li>
         <li>
           Protected with Row Level Security — only you can access your own data
         </li>
@@ -386,17 +442,23 @@ function PrivacyEn() {
 
       <h2>5. Sharing Data with Third Parties</h2>
       <p>
-        FynPad does not share, sell, or rent your personal and financial data to
-        any third party for advertising or marketing purposes.
+        The financial records you enter into the app are not sold to advertisers
+        and are not sent to AdMob. However, for the app to function, your data is
+        processed by the following service providers:
       </p>
-      <p>
-        <strong>Exception — Advertising Service:</strong> Ads displayed within
-        the app are provided by Google AdMob. For the ad service to function,
-        your Advertising ID and basic device information are shared with Google.
-        This sharing is strictly limited to ad delivery — your financial data
-        (income, expenses, budgets, goal information) is never included in this
-        sharing and remains solely within our Supabase infrastructure.
-      </p>
+      <ul>
+        <li>
+          <strong>Supabase:</strong> Your account and application data is
+          processed and stored on our behalf by Supabase, our infrastructure and
+          authentication service provider.
+        </li>
+        <li>
+          <strong>Google AdMob:</strong> Ads displayed within the app are
+          provided by Google AdMob. AdMob may process the advertising/device data
+          described in section 2.4 above for advertising, analytics, and fraud
+          prevention/security purposes.
+        </li>
+      </ul>
       <p>
         When you sign in with Google, authentication occurs through Google's own
         secure systems, and Google's Privacy Policy also applies.
@@ -429,8 +491,10 @@ function PrivacyEn() {
       </p>
       <ul>
         <li>
-          Follow <strong>Settings → Account → Delete Account</strong> within the
-          app, or
+          Follow{" "}
+          <strong>Settings → Danger Zone → Delete Account</strong> within the
+          app. When this is successfully completed, your active account and
+          associated application data are permanently deleted, or
         </li>
         <li>
           Request it by emailing{" "}
@@ -440,14 +504,17 @@ function PrivacyEn() {
           >
             info@theordino.com
           </a>
+          . Such requests may require identity verification and are processed
+          within 30 days.
         </li>
       </ul>
-      <p>Your deletion request will be processed within 30 days.</p>
+      <p>For your security, never send your password by email.</p>
 
       <h2>8. Children's Privacy</h2>
       <p>
-        FynPad is not intended for children under 13. We do not knowingly collect
-        data from users under 13.
+        FynPad is intended for users aged 18 and older. The app is not designed
+        or marketed for children. We do not knowingly collect personal data from
+        anyone under the age of 18.
       </p>
 
       <h2>9. Changes</h2>
@@ -468,7 +535,7 @@ function PrivacyEn() {
           info@theordino.com
         </a>
         <br />
-        <strong>Company:</strong> Ordino
+        <strong>Developer and service provider:</strong> Ordino
       </p>
     </>
   );

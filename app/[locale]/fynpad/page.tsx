@@ -164,8 +164,8 @@ export default async function FynPadPage({ params }: Props) {
           <Reveal>
             <p className="font-display text-[clamp(1.6rem,3vw,2.2rem)] font-light leading-[1.4] text-black">
               {isEn
-                ? "Your data is safe. FynPad does not share your financial data with any third party. All your information is stored encrypted."
-                : "Verileriniz güvende. FynPad finansal verilerinizi hiçbir üçüncü tarafla paylaşmaz. Tüm bilgileriniz şifreli olarak saklanır."}
+                ? "Your data is safe. Your financial records are not shared with or sold to advertisers. Your data is encrypted in transit and protected against unauthorized access with technical security measures. While ads are shown, certain device, interaction, and diagnostic data may be processed by Google AdMob."
+                : "Verileriniz güvende. Finansal kayıtlarınız reklamverenlerle paylaşılmaz veya satılmaz. Verileriniz aktarım sırasında şifrelenir ve yetkisiz erişime karşı teknik güvenlik önlemleriyle korunur. Reklam gösterimi sırasında belirli cihaz, etkileşim ve tanılama verileri Google AdMob tarafından işlenebilir."}
             </p>
           </Reveal>
         </div>
