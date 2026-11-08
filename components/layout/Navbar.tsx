@@ -80,7 +80,7 @@ export function Navbar({ forceDark = false }: NavbarProps) {
 
   const linkClass = (href: string) =>
     cn(
-      "relative text-[0.95rem] font-normal transition-[color,opacity] duration-300 ease-in-out hover:opacity-60",
+      "relative whitespace-nowrap text-[0.95rem] font-normal transition-[color,opacity] duration-300 ease-in-out hover:opacity-60",
       textColor,
       pathname === href &&
         "after:content-[''] after:absolute after:-bottom-[6px] after:left-0 after:h-px after:w-full after:bg-current",
@@ -127,7 +127,7 @@ export function Navbar({ forceDark = false }: NavbarProps) {
         </span>
       </Link>
 
-      <ul className="hidden md:flex items-center gap-11 list-none">
+      <ul className="hidden xl:flex items-center gap-6 2xl:gap-11 list-none">
         {navLinks.map((link) => (
           <li key={link.key}>
             {link.external ? (
@@ -146,7 +146,7 @@ export function Navbar({ forceDark = false }: NavbarProps) {
         ))}
       </ul>
 
-      <div className="hidden md:flex items-center gap-[20px]">
+      <div className="hidden xl:flex items-center gap-4 2xl:gap-[20px]">
         <LanguageSwitcher className={textColor} />
         <a
           href={navCta.href}
@@ -196,7 +196,7 @@ export function Navbar({ forceDark = false }: NavbarProps) {
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
-        className="relative z-[1001] md:hidden flex flex-col gap-[6px] cursor-pointer bg-transparent border-0 p-0"
+        className="relative z-[1001] xl:hidden flex flex-col gap-[6px] cursor-pointer bg-transparent border-0 p-0"
       >
         <span
           className={cn(
@@ -224,7 +224,7 @@ export function Navbar({ forceDark = false }: NavbarProps) {
       {open && (
         <ul
           className={cn(
-            "md:hidden fixed inset-0 z-[1000] flex flex-col justify-center items-center gap-[30px] list-none",
+            "xl:hidden fixed inset-0 z-[1000] flex flex-col justify-center items-center gap-[30px] list-none",
             isDark ? "bg-black" : "bg-white",
           )}
         >

@@ -35,6 +35,24 @@ body {
   }
 }
 
+@keyframes heroSlideIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroSlideOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 @keyframes heroBreathe {
   0%, 100% { transform: scale(1.02); }
   50%      { transform: scale(1.08); }

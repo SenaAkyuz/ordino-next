@@ -233,6 +233,22 @@
       "title": "Ordino — Strateji. Yaratıcılık. Büyüme.",
       "description": "London ve Istanbul merkezli full-service reklam ajansı. Google, Meta, TikTok ve X resmi reklam partnerliği ile Türk ve uluslararası markalara hizmet veriyoruz."
     },
+    "heroSlider": {
+      "ariaLabel": "Öne çıkan projeler",
+      "cta": "Projeyi incele",
+      "next": "Sonraki proje",
+      "goTo": "{name} projesine git",
+      "services": "Kreatif | Kampanya | Sosyal Medya | Reklam",
+      "slides": {
+        "aiata": "AIATA × Ordino — yat markası için kreatif ve dijital iletişim çalışması",
+        "sagra": "Sagra × Ordino — köklü marka için taze bir bakış",
+        "golf": "Golf × Ordino — dondurma ürünleri için kreatif video çalışmaları",
+        "sweeto": "Sweeto × Ordino — marka dünyasını dijital iletişime taşıyan yaratıcı içerikler",
+        "oyak-ordu-pazari": "OYAK Ordu Pazarı × Ordino — yeni marka kimliği",
+        "oyak-turizm": "OYAK Turizm × Ordino — seyahat hikâyeleri için yeni bir görsel dünya",
+        "burcu": "Burcu × Ordino — yapay zekâ ile üretilen reklam filmi"
+      }
+    },
     "hero": {
       "headline": {
         "lead": "Strateji.",
@@ -914,7 +930,17 @@
       "marie-claire": "Marie Claire — Medya / Yayıncılık",
       "fortune": "Fortune — Medya / Yayıncılık",
       "instyle": "InStyle Türkiye — Medya / Yayıncılık",
-      "inspera": "Inspera Bodrum — Kültür & Sanat"
+      "inspera": "Inspera Bodrum — Kültür & Sanat",
+      "golf": "Golf — Dondurma / Gıda",
+      "sweeto": "Sweeto — Şekerleme / Gıda",
+      "darphane": "Darphane ve Damga Matbaası — Kamu",
+      "penguen": "Penguen — Gıda",
+      "sagra": "Sagra — Gıda",
+      "oyak-pazarlama": "OYAK Pazarlama — Perakende / Pazarlama",
+      "oyak-ordu-pazari": "OYAK Ordu Pazarı — Perakende",
+      "oyak-turizm": "OYAK Turizm — Turizm",
+      "burcu": "Burcu — Gıda",
+      "rakle": "Rakle"
     }
   },
   "latestWorks": {

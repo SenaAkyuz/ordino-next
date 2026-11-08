@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
-import { Hero } from "@/components/sections/Hero";
+import { HeroSlider } from "@/components/sections/HeroSlider";
+import { HeroIntro } from "@/components/sections/HeroIntro";
 import { ClientsShowcase } from "@/components/sections/ClientsShowcase";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { EtkinlikCoverflow } from "@/components/sections/EtkinlikCoverflow";
@@ -59,7 +60,8 @@ export default async function Home({ params }: Props) {
 
   return (
     <>
-      <Hero />
+      <HeroSlider />
+      <HeroIntro />
       <ClientsShowcase />
       <InfluencerCarousel />
       <HowWeWork

@@ -71,3 +71,6 @@ TUR-*.txt
 
 # Cursor / Claude komut yardimcilari
 /cursor-claude-commands/
+
+# Eski anasayfa materyalleri (yerel arsiv, GitHub a gonderilmez)
+/eski/

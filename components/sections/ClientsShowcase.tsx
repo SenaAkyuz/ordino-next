@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/Reveal";
 import { clients } from "@/lib/data/clients";
+import { cn } from "@/lib/utils";
 
 export async function ClientsShowcase() {
   const t = await getTranslations("home.clientsShowcase");
@@ -41,7 +42,10 @@ export async function ClientsShowcase() {
                       width={240}
                       height={120}
                       style={{ transform: `scale(${c.scale ?? 1})` }}
-                      className="max-h-[55px] max-w-[85px] h-auto w-auto object-contain transition-transform duration-[400ms] group-hover:scale-[1.05] sm:max-h-[100px] sm:max-w-[170px] md:max-h-[110px] md:max-w-[200px]"
+                      className={cn(
+                        "max-h-[55px] max-w-[85px] h-auto w-auto object-contain transition-transform duration-[400ms] group-hover:scale-[1.05] sm:max-h-[100px] sm:max-w-[170px] md:max-h-[110px] md:max-w-[200px]",
+                        c.tile && "rounded-xl",
+                      )}
                       unoptimized
                     />
                   ) : (

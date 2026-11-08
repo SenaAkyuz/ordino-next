@@ -233,6 +233,22 @@
       "title": "Ordino — Strategy. Creativity. Growth.",
       "description": "A full-service advertising agency based in London and Istanbul. Official advertising partner of Google, Meta, TikTok, and X, serving brands locally and globally."
     },
+    "heroSlider": {
+      "ariaLabel": "Featured projects",
+      "cta": "View project",
+      "next": "Next project",
+      "goTo": "Go to {name} project",
+      "services": "Creative | Campaign | Social Media | Advertising",
+      "slides": {
+        "aiata": "AIATA × Ordino — creative and digital communication for a yacht brand",
+        "sagra": "Sagra × Ordino — a fresh look for a heritage brand",
+        "golf": "Golf × Ordino — creative video work for ice cream products",
+        "sweeto": "Sweeto × Ordino — creative content bringing the brand world to digital",
+        "oyak-ordu-pazari": "OYAK Ordu Pazarı × Ordino — a new brand identity",
+        "oyak-turizm": "OYAK Turizm × Ordino — a new visual world for travel stories",
+        "burcu": "Burcu × Ordino — an AI-generated commercial film"
+      }
+    },
     "hero": {
       "headline": {
         "lead": "Strategy.",
@@ -914,7 +930,17 @@
       "marie-claire": "Marie Claire — Media / Publishing",
       "fortune": "Fortune — Media / Publishing",
       "instyle": "InStyle Türkiye — Media / Publishing",
-      "inspera": "Inspera Bodrum — Culture & Arts"
+      "inspera": "Inspera Bodrum — Culture & Arts",
+      "golf": "Golf — Ice Cream / Food",
+      "sweeto": "Sweeto — Confectionery / Food",
+      "darphane": "Turkish Mint and Stamp Printing House — Public Sector",
+      "penguen": "Penguen — Food",
+      "sagra": "Sagra — Food",
+      "oyak-pazarlama": "OYAK Pazarlama — Retail / Marketing",
+      "oyak-ordu-pazari": "OYAK Ordu Pazarı — Retail",
+      "oyak-turizm": "OYAK Turizm — Tourism",
+      "burcu": "Burcu — Food",
+      "rakle": "Rakle"
     }
   },
   "latestWorks": {
