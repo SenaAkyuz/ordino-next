@@ -411,6 +411,9 @@
       "prose1": "Official advertising partner of Google, Meta, TikTok, and X.",
       "prose2": "Serving brands locally and globally."
     },
+    "teamPhoto": {
+      "alt": "The Ordino team"
+    },
     "howWeWork": {
       "eyebrow": "Ordino in Numbers",
       "title": "11 years of",
@@ -425,7 +428,7 @@
     },
     "leadership": {
       "eyebrow": "Leadership",
-      "lead": "Ordino's leadership team — six executives leading strategy, performance, design, and operations.",
+      "lead": "Ordino's leadership team — five executives leading strategy, performance, design, and operations.",
       "linkLabel": "LinkedIn →"
     },
     "partnerLogos": {
@@ -1451,7 +1454,6 @@
     "bios": {
       "oguzOzbenli": "Founder of Ordino. Leads business development, marketing strategy, and brand partnerships across the agency. Brings a commercial lens to every engagement — translating campaign complexity into growth outcomes brands can measure.",
       "handeAris": "Strategic partner and executive lead. Architect of Ordino's digital marketing approach. Leads long-term partnerships from 360° campaign strategy to brand positioning.",
-      "ilaydaOzcan": "Managing Director and Creative Lead. Owns brand vision, creative strategy development, and integrated communications. Carries Ordino's identity — and its clients' stories — onto the strategic plane through a creative lens.",
       "ugurOzbenli": "Head of operations. Keeps everything flowing — from agency processes and client management to resource planning and delivery tracking. Runs the engines behind Ordino.",
       "omerToraman": "Head of performance marketing. Owns campaign management, optimization, and ROAS maximization across Google Ads, Meta, TikTok, and beyond. Data-driven, results-obsessed.",
       "halisBattal": "Head of design and media production. Leads visual identity, video production, motion graphics, and digital design end-to-end. The quality bar for Ordino's creative output."

@@ -9,7 +9,6 @@ export type RoleKey =
 export type BioKey =
   | "oguzOzbenli"
   | "handeAris"
-  | "ilaydaOzcan"
   | "ugurOzbenli"
   | "omerToraman"
   | "halisBattal";
@@ -54,15 +53,6 @@ export const leadership: Leader[] = [
     gradient: "linear-gradient(135deg, #b28f6c 0%, #8b6f50 50%, #6e553d 100%)",
     photo: "/team/handearis.webp",
     linkedin: "https://www.linkedin.com/in/hande-ar%C4%B1s-b878557b/",
-  },
-  {
-    name: "İlayda Özcan",
-    roleKey: "managingDirector",
-    bioKey: "ilaydaOzcan",
-    initials: "İÖ",
-    gradient: "linear-gradient(135deg, #4a0e2e 0%, #6b1a3a 50%, #8b3a5a 100%)",
-    photo: "/team/ilaydaozcan.webp",
-    linkedin: "https://www.linkedin.com/in/ilayda-%C3%B6zcan-3980231b5/",
   },
   {
     name: "Uğur Özbenli",

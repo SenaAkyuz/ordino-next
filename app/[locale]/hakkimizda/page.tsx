@@ -3,6 +3,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { EditorialHero } from "@/components/sections/EditorialHero";
+import { TeamPhoto } from "@/components/sections/TeamPhoto";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { Leadership } from "@/components/sections/Leadership";
 import { TeamStructure } from "@/components/sections/TeamStructure";
@@ -74,6 +75,7 @@ export default async function HakkimizdaPage({ params }: Props) {
         emphasis={t("editorialHero.emphasis")}
         prose={[t("editorialHero.prose1"), t("editorialHero.prose2")]}
       />
+      <TeamPhoto alt={t("teamPhoto.alt")} />
       <HowWeWork
         eyebrow={t("howWeWork.eyebrow")}
         title={t("howWeWork.title")}
