@@ -36,6 +36,10 @@ export const routing = defineRouting({
     "/fynpad/privacy": "/fynpad/privacy",
     "/fynpad/terms": "/fynpad/terms",
     "/fynpad/delete-account": "/fynpad/delete-account",
+    "/castletap/gizlilik": {
+      tr: "/castletap/gizlilik",
+      en: "/castletap/privacy",
+    },
   },
 });
 
