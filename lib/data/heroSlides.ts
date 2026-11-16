@@ -1,7 +1,6 @@
 export type HeroSlideSlug =
   | "aiata"
   | "sagra"
-  | "golf"
   | "sweeto"
   | "oyak-ordu-pazari"
   | "oyak-turizm"
@@ -47,14 +46,6 @@ export const heroSlides: HeroSlide[] = [
     href: "https://www.youtube.com/watch?v=s7V4RMYELRM",
     logo: "/clients/sagra.webp",
     bg: "#591911",
-  },
-  {
-    slug: "golf",
-    cta: { left: 4, top: 95.5, tone: "dark" },
-    name: "Golf",
-    href: "https://www.instagram.com/golfdondurmalar/",
-    logo: "/clients/golf-mono.webp",
-    bg: "#5bb1c5",
   },
   {
     slug: "sweeto",

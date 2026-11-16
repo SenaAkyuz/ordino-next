@@ -144,7 +144,7 @@ export function useAdaptiveNav({
   return { isDark, isScrolled };
 }
 
-// ——— Also exported for SideFixed which samples near the bottom of viewport ———
+// ——— Exported helper: background luminance at a viewport point ———
 export function backgroundLuminanceAt(x: number, y: number): number | null {
   const el = document.elementFromPoint(x, y);
   if (!el) return null;

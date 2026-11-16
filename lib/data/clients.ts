@@ -12,7 +12,6 @@ export type ClientSlug =
   | "fortune"
   | "instyle"
   | "inspera"
-  | "golf"
   | "sweeto"
   | "darphane"
   | "penguen"
@@ -38,7 +37,6 @@ export const clients: Client[] = [
   { slug: "oyak-ordu-pazari", name: "OYAK Ordu Pazarı", logoExt: "webp", hasLogo: true, scale: 1 },
   { slug: "oyak-turizm", name: "OYAK Turizm", logoExt: "webp", hasLogo: true, scale: 1 },
   { slug: "sagra", name: "Sagra", logoExt: "webp", hasLogo: true, scale: 1 },
-  { slug: "golf", name: "Golf", logoExt: "webp", hasLogo: true, scale: 0.8, tile: true },
   { slug: "sweeto", name: "Sweeto", logoExt: "webp", hasLogo: true, scale: 1 },
   { slug: "burcu", name: "Burcu", logoExt: "webp", hasLogo: true, scale: 0.9 },
   { slug: "penguen", name: "Penguen", logoExt: "webp", hasLogo: true, scale: 1 },

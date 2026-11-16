@@ -5,7 +5,6 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { SideFixed } from "@/components/layout/SideFixed";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { CookieBanner } from "@/components/ui/CookieBanner";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
@@ -178,7 +177,6 @@ export default async function LocaleLayout({
           {site.gtmId && <PageViewTracker />}
           <SchemaMarkup />
           <Navbar />
-          <SideFixed />
           <main className="flex-1">{children}</main>
           <Footer />
           <CustomCursor />

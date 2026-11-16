@@ -15,7 +15,7 @@ export function TeamPhoto({ alt }: TeamPhotoProps) {
       <Reveal>
         <div className="mx-auto max-w-[1600px]">
           <Image
-            src="/images/yonetim-kadrosu.webp"
+            src="/images/ordino-ekip.webp"
             alt={alt}
             width={1920}
             height={1080}

@@ -46,7 +46,7 @@ export const leadership: Leader[] = [
     linkedin: "https://www.linkedin.com/in/halisbattal/",
   },
   {
-    name: "Hande Arış",
+    name: "Hande Arıs",
     roleKey: "strategicPartner",
     bioKey: "handeAris",
     initials: "HA",
