@@ -53,13 +53,15 @@ export function WhatsAppButton({ variant = "fab", className }: WhatsAppButtonPro
         aria-label={t("ariaLabel")}
         onClick={handleClick}
         className={[
-          "fixed bottom-6 right-6 z-50",
+          // Ana sayfa hero'sundaki logo seridinin (mobil 68px / md 84px)
+          // "sonraki" butonuyla cakismamak icin seridin ustunde durur
+          "fixed bottom-24 right-6 z-50",
           "flex h-14 w-14 items-center justify-center",
           "rounded-full bg-[#25D366] text-white",
           "shadow-lg transition-all duration-300",
           "hover:scale-110 hover:shadow-xl",
           "focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2",
-          "md:bottom-8 md:right-8 md:h-16 md:w-16",
+          "md:bottom-28 md:right-8 md:h-16 md:w-16",
           className,
         ]
           .filter(Boolean)
