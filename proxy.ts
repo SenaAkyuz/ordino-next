@@ -5,6 +5,6 @@ export default createMiddleware(routing);
 
 export const config = {
   // API, Next internals, public asset'ler, /produksiyon ve /en/produksiyon
-  // static site'lar ve metadata route'lari middleware'den haric tutuluyor.
-  matcher: ["/((?!api|_next|_vercel|produksiyon|en/produksiyon|studio|.*\\..*).*)"],
+  // static site'lar, /sky-marble-rush gizlilik sayfalari ve metadata route'lari middleware'den haric tutuluyor.
+  matcher: ["/((?!api|_next|_vercel|produksiyon|en/produksiyon|sky-marble-rush|studio|.*\\..*).*)"],
 };

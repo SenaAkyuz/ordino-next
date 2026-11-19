@@ -20,6 +20,8 @@ const nextConfig: NextConfig = {
       { source: "/produksiyon/", destination: "/produksiyon/index.html" },
       { source: "/en/produksiyon", destination: "/en/produksiyon/index.html" },
       { source: "/en/produksiyon/", destination: "/en/produksiyon/index.html" },
+      { source: "/sky-marble-rush/privacy", destination: "/sky-marble-rush/privacy.html" },
+      { source: "/sky-marble-rush/gizlilik", destination: "/sky-marble-rush/gizlilik.html" },
     ];
   },
 };
